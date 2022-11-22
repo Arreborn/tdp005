@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wall -Wextra -std=c++17 CMakeFiles/lab1.dir/lab1.cc.o -o lab1  /usr/lib/libsfml-network.so.2.5.1 /usr/lib/libsfml-graphics.so.2.5.1 /usr/lib/libsfml-window.so.2.5.1 /usr/lib/libsfml-system.so.2.5.1 
