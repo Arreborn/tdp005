@@ -8,9 +8,10 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/VideoMode.hpp>
+#include <cmath>
 
 // this function returns the direction the object should move
-sf::Vector2f direction() {
+sf::Vector2f find_direction() {
   sf::Vector2f direction;
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
     direction.y -= 1;
@@ -24,10 +25,8 @@ sf::Vector2f direction() {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
   direction.x += 1;
   }
-  return normalize(direction);
+  return direction;
 }
-
-
 
 int main() {
 
@@ -41,11 +40,13 @@ int main() {
   sf::Event event;
   sf::CircleShape circle{40};
   circle.setPosition(sf::Vector2f{300, 300});
+  sf::Clock clock;
 
   //runs a continuous loop
   while (window.waitEvent(event)) {
     // checks the event types
     switch (event.type) {
+    // closes program is the window is closed
     case sf::Event::Closed:
       is_running = false;
       break;
@@ -54,6 +55,13 @@ int main() {
       break;
     }
 
+    sf::Vector2f direction{find_direction()};
+
+    auto delta{clock.restart()};
+    {
+      float distance{250.0f * delta.asSeconds()};
+      circle += direction;
+    }
 
     // draws the stored shape in the position noted in the circle object
     window.draw(circle);
