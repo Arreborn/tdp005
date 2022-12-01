@@ -1,4 +1,4 @@
 CMakeCache.txt
 *.cmake
 in_progress
-/CMakeFiles
+CMakeFiles/
