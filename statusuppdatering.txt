@@ -1,6 +1,0 @@
------ 2022 - 11 - 28 -----
-Vi ligger för närvarande lite bakom vår planerade tidslinje rörande designspecifikationen. Förhoppningen är att färdigställa det första utkastet tidigt denna vecka för att börja skriva kod, preliminärt på torsdag. Under detta skede ska vi se till att få en god, grundläggande struktur och i den mån det är möjligt snickra ihop våra h-filer.
-
-Det övriga arbetet rör sig i en god riktning. Det finns förberedda sprites som vi kan använda i ett tidigt skede för att få till en god visuell profil redan från start. Detta gör att vi redan från start kan utveckla spelet med de sprites vi kommer att använda, och eventuella animationer kan läggas in tidigt om möjighet finns. Vi har studerat lite hur animationer implementeras i SFML, och det verkar vara ett överkomligt moment.
-
-Preliminärt mot slutet av veckan siktar vi på att ha en spelare som kan röra sig i en platt, väldigt statisk miljö. Både rörelser åt höger och vänster ska fungera, sedan vill vi även få till spelarens hopp (dock utan double jump i detta skede). Finns tiden till det kommer vi även att försöka få till grundläggande animation för dessa rörelser.
