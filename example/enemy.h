@@ -9,10 +9,9 @@
  */
 class Enemy : public Textured_Object {
 public:
-    Enemy(sf::Vector2f position, const string &texture)
-        : Textured_Object(position, texture) {}
+  Enemy(sf::Vector2f position, const string &texture)
+      : Textured_Object(position, texture) {}
 };
-
 
 /**
  * This is an enemy that moves from the top somewhere and down through the
@@ -20,35 +19,34 @@ public:
  */
 class Spawner : public Enemy {
 public:
-    Spawner(float x, size_t lifetime);
+  Spawner(float x, size_t lifetime);
 
-    /**
-     * Update the position of this enemy.
-     */
-    bool tick(sf::Time delta, World &world) override;
+  /**
+   * Update the position of this enemy.
+   */
+  bool tick(sf::Time delta, World &world) override;
 
 private:
-    /**
-     * Total time we have been alive.
-     */
-    sf::Time cumulated_time;
+  /**
+   * Total time we have been alive.
+   */
+  sf::Time cumulated_time;
 
-    /**
-     * Total lifetime.
-     */
-    sf::Time lifetime;
+  /**
+   * Total lifetime.
+   */
+  sf::Time lifetime;
 
-    /**
-     * Time left until spawn.
-     */
-    sf::Time until_spawn;
+  /**
+   * Time left until spawn.
+   */
+  sf::Time until_spawn;
 
-    /**
-     * Original x position.
-     */
-    float x;
+  /**
+   * Original x position.
+   */
+  float x;
 };
-
 
 /**
  * This is an enemy that moves from a Spawner and then downwards to the edge of
@@ -56,21 +54,21 @@ private:
  */
 class Bullet : public Enemy {
 public:
-    Bullet(sf::Vector2f position);
+  Bullet(sf::Vector2f position);
 
-    /**
-     * Update the position of this enemy.
-     */
-    bool tick(sf::Time delta, World &world) override;
+  /**
+   * Update the position of this enemy.
+   */
+  bool tick(sf::Time delta, World &world) override;
 
 private:
-    /**
-     * Speed.
-     */
-    float speed;
+  /**
+   * Speed.
+   */
+  float speed;
 
-    /**
-     * Direction we're aiming for.
-     */
-    sf::Vector2f direction;
+  /**
+   * Direction we're aiming for.
+   */
+  sf::Vector2f direction;
 };
