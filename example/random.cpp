@@ -1,5 +1,6 @@
 #include "random.h"
 #include <random>
+#include <time.h>
 
 /**
  * Random number generator.
