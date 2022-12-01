@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -Wall -Wextra -std=c++17 -rdynamic CMakeFiles/in_progress.dir/in_progress.o -o in_progress  /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1 
