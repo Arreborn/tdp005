@@ -27,7 +27,8 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state){
           break;
       }
     }
-
+    
+    window.clear();
     if (auto new_state = state->tick(clock.restart())){
       if (std::dynamic_pointer_cast<ExitState>(new_state)){
         return;
@@ -36,7 +37,7 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state){
       }
       continue;
     }
-    window.clear();
+
     state->render(window);
     window.display();
   }

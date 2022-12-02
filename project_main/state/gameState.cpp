@@ -4,13 +4,10 @@
 #include <SFML/System/Vector2.hpp>
 
 GameState::GameState() {
-  world.add(std::make_shared<Player>(sf::Vector2f(width / 2.0f, height * 4.0f / 5.0f)));
+  world.add(std::make_shared<Player>(sf::Vector2f(width, height)));
 }
 
 shared_ptr<State> GameState::tick(sf::Time time) {
-
-  world.add(std::make_shared<Player>(sf::Vector2f{width / 2.0f, height * 4.0f / 5.0f}));
-
   world.tick(time);
 
   // Checks for pause

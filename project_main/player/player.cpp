@@ -8,15 +8,18 @@ Player::Player(sf::Vector2f center)
 
 sf::Vector2f find_position() {
     sf::Vector2f position;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) // this must handle jumps
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)){ // this must handle jumps
         position.y -= 1;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
         position.y += 1;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
         position.x -= 1;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
         position.x += 1;
-
+    }
     float len = sqrt(pow(position.x, 2) + pow(position.y, 2)); // why don't brackets work
     if (len > 0.0f)
         return position * (1.0f / len);
