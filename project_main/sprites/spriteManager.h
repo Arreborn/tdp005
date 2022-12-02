@@ -29,6 +29,12 @@ private:
   SpriteManager() = default;
 
   /**
+   * @brief Destroy the Sprite Manager object.
+   * 
+   */
+  ~SpriteManager() = default;
+
+  /**
    * @brief This is the only instance of this object.
    * 
    */

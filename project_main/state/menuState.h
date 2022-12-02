@@ -9,7 +9,7 @@ public:
  * "resume"-option to return to that state.
  * 
  */
-  MenuState(shared_ptr<State>) resume = nullptr); 
+  MenuState(shared_ptr<State> resume = nullptr); 
 
   /**
    * @brief Handles key-presses.

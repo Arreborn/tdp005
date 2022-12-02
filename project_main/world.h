@@ -4,6 +4,9 @@
 
 class World {
 public:
+
+  ~World() = default;
+  
   /**
    * @brief Updates all objects in the world.
    * 

@@ -67,7 +67,7 @@ public:
    * @param center 
    * @param texture 
    */
-  TexturedEntity(sf::Vector2f center, const string &texture);
+  TexturedEntity(sf::Vector2f center, const string &sprite);
 
   /**
    * @brief Override for the rendering of the object.

@@ -1,8 +1,10 @@
 #include "entity.h"
 #include "../sprites/spriteManager.h"
 
-TexturedEntity::TexturedEntity(sf::Vector2f center, const string &texture) : Entity(center, texture) {
-    sf::Texture *t = SpriteManager::get(texture);
+TexturedEntity::TexturedEntity(sf::Vector2f center, const string &sprite) 
+: Entity(center, 0.0f) {
+    
+    sf::Texture *t = SpriteManager::get(sprite);
     auto size= t->getSize();
     shape.setSize(sf::Vector2f(size.x, size.y));
     shape.setTexture(t);

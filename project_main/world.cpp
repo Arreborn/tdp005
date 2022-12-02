@@ -19,7 +19,7 @@ void World::add(shared_ptr<Entity> object) {
   objects.push_back(object);
 }
 
-static bool collides(Entity &a, Entity &b) {
+/* static bool collides(Entity &a, Entity &b) {
   // collision code here
 }
 
@@ -34,4 +34,4 @@ vector<shared_ptr<Entity>> World::collidesWith(Entity &me) const {
     }
   }
   return result;
-}
+} */

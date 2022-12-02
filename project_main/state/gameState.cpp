@@ -1,14 +1,21 @@
 #include "gameState.h"
 #include "menuState.h"
+#include "../player/player.h"
+#include <SFML/System/Vector2.hpp>
+
+GameState::GameState() {
+  world.add(std::make_shared<Player>(sf::Vector2f(width / 2.0f, height * 4.0f / 5.0f)));
+}
 
 shared_ptr<State> GameState::tick(sf::Time time) {
-  // here the basic file created enemies
+
+  world.add(std::make_shared<Player>(sf::Vector2f{width / 2.0f, height * 4.0f / 5.0f}));
 
   world.tick(time);
 
   // Checks for pause
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-    return std::make_shared<MenuState>(shared_from_this()); // why you no work
+    return std::make_shared<MenuState>(shared_from_this());
   }
   return nullptr;
 }
