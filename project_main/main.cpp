@@ -1,8 +1,8 @@
 #include "common.h"
 #include "state/menuState.h"
 
-const size_t width = 1024;
-const size_t height = 768;
+const size_t width = 1280;
+const size_t height = 800;
 
 int main() {
     sf::RenderWindow window{sf::VideoMode{width, height}, "Hello Warrior!"};

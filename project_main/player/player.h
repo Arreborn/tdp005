@@ -1,7 +1,7 @@
 #pragma once
 #include "../components/component.h"
 
-class Player : public TexturedEntity{
+class Player : public BaseClass{
 public:
 
   /**

@@ -1,3 +1,4 @@
+#pragma once
 #include "../common.h"
 #include "../entity/entity.h"
 #include <SFML/System/Vector2.hpp>
@@ -5,7 +6,8 @@
 class BaseClass : public TexturedEntity {
 public:
   
-  BaseClass(sf::Vector2f center, const string &sprite);
+  BaseClass(sf::Vector2f center, const string &sprite) 
+  : TexturedEntity(center, sprite) {}
 
   /**
    * @brief Destroy the Base Class object.
