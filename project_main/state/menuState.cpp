@@ -1,5 +1,5 @@
-#include "menu_state.h"
-#include "game_state.h"
+#include "menuState.h"
+#include "gameState.h"
 
 MenuState::MenuState(shared_ptr<State> resume) 
   : selected(0), isEnterPressed(false), delay(sf::milliseconds(300)) {

@@ -1,5 +1,5 @@
-#include "game_state.h"
-#include "menu_state.h"
+#include "gameState.h"
+#include "menuState.h"
 
 shared_ptr<State> GameState::tick(sf::Time time) {
   // here the basic file created enemies
@@ -15,4 +15,4 @@ shared_ptr<State> GameState::tick(sf::Time time) {
 
 void GameState::render(sf::RenderWindow &drawTo){
   world.render(drawTo);
-}
+};
