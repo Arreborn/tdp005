@@ -8,7 +8,6 @@ GameState::GameState() {
 }
 
 shared_ptr<State> GameState::tick(sf::Time time) {
-
   world.add(std::make_shared<Player>(sf::Vector2f{width / 2.0f, height * 4.0f / 5.0f}));
 
   world.tick(time);
@@ -21,5 +20,6 @@ shared_ptr<State> GameState::tick(sf::Time time) {
 }
 
 void GameState::render(sf::RenderWindow &drawTo){
+  
   world.render(drawTo);
 };

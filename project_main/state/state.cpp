@@ -32,6 +32,7 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state){
       if (std::dynamic_pointer_cast<ExitState>(new_state)){
         return;
       } else {
+         window.clear();
         state = new_state;
       }
       continue;
