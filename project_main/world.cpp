@@ -2,9 +2,10 @@
 
 void World::tick(sf::Time time) {
 
-  for (size_t i{0}; i < objects.size(); ++i) {
+  for (size_t i{}; i < objects.size(); ++i) {
     if (!objects[i]->tick(time, *this)) {
         objects.erase(objects.begin() + i);
+        --i;
     }
   }
 }
@@ -19,7 +20,7 @@ void World::add(shared_ptr<Entity> object) {
   objects.push_back(object);
 }
 
-/* static bool collides(Entity &a, Entity &b) {
+static bool collides(Entity &a, Entity &b) {
   // collision code here
 }
 
@@ -34,4 +35,4 @@ vector<shared_ptr<Entity>> World::collidesWith(Entity &me) const {
     }
   }
   return result;
-} */
+}
