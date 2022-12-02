@@ -1,18 +1,19 @@
 #include "menuState.h"
 #include "gameState.h"
-#include <SFML/Graphics/RenderWindow.hpp>
 
 MenuState::MenuState(shared_ptr<State> resume) 
   : selected(0), isEnterPressed(false), delay(sf::milliseconds(300)) {
   
-  font.loadFromFile("static/font.ttf");
+  font.loadFromFile("state/static/font.ttf");
 
   if (resume) {
-    MenuState::add("Resume", [resume]() { return resume; });
+    add("Resume", [resume]() { return resume; });
     bg = resume;
   }
 
-  MenuState::add("New game", []() { return std::make_shared<GameState>(); });
+  add("New game", []() { return std::make_shared<GameState>(); });
+  add("Exit", []() { return std::make_shared<ExitState>(); });
+
 }
 
 void MenuState::add(const string &text, Action action){
@@ -21,15 +22,14 @@ void MenuState::add(const string &text, Action action){
 
 void MenuState::keyPress(sf::Keyboard::Key key){
   switch (key) {
-  case sf::Keyboard::Down:
+  case sf::Keyboard::S:
     if (selected + 1 < entries.size()){
-      ++selected;
+      selected++;
     }
     break;
-
-  case sf::Keyboard::Up:
+  case sf::Keyboard::W:
     if (selected > 0){
-      --selected;
+      selected--;
     }
     break;
 
@@ -52,14 +52,15 @@ shared_ptr<State> MenuState::tick(sf::Time time) {
       e.state += diff;
       if (e.state > 1.0f){
         e.state = 1.0f;
-      } else {
-        e.state -= diff;
-        if (e.state < 0.0f){
-          e.state = 0.0f;
-        }
+      }
+    } else {
+      e.state -= diff;
+      if (e.state < 0.0f){
+        e.state = 0.0f;
       }
     }
   }
+
   if (isEnterPressed){
     return entries[selected].action();
   } else {
@@ -80,7 +81,7 @@ void MenuState::render(sf::RenderWindow &drawTo){
     e.text.setPosition((windowSize.x - bounds.width) / 2, y);
     y += bounds.height * 2.0f;
 
-    int state{static_cast<int>(255 * e.state)};
+    int state = static_cast<int>(255 * e.state);
     e.text.setFillColor(sf::Color(state, 255, state));
     drawTo.draw(e.text);
   }
