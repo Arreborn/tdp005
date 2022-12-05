@@ -4,3 +4,16 @@ Vi ligger för närvarande lite bakom vår planerade tidslinje rörande designsp
 Det övriga arbetet rör sig i en god riktning. Det finns förberedda sprites som vi kan använda i ett tidigt skede för att få till en god visuell profil redan från start. Detta gör att vi redan från start kan utveckla spelet med de sprites vi kommer att använda, och eventuella animationer kan läggas in tidigt om möjighet finns. Vi har studerat lite hur animationer implementeras i SFML, och det verkar vara ett överkomligt moment.
 
 Preliminärt mot slutet av veckan siktar vi på att ha en spelare som kan röra sig i en platt, väldigt statisk miljö. Både rörelser åt höger och vänster ska fungera, sedan vill vi även få till spelarens hopp (dock utan double jump i detta skede). Finns tiden till det kommer vi även att försöka få till grundläggande animation för dessa rörelser.
+
+----- 2022 - 12 - 05 -----
+Från förra veckan så har vi fått klart utkasten till all dokumentation, och kommit igång med att koda. Planen i första hand var att rita ut spelaren och lite segment (alltså krav 1 - 4, 6, 13 - 16), men när vi väl kom igång med det praktiska visade det sig tidigt att vi först och främst behövde konstruera den bakomliggande strukturen som driver spelet innan vi kunde arbeta med segment. Med bakomliggande struktur talar vi om spelets states, en texture manager och lite andra diverse komponenter.
+
+Det vi väl har från våra mål från förra veckan är en spelarsprite som kan röra sig åt fyra håll på en statisk svart bakgrund (krav 1 - 2 är alltså klart). Men vi har även byggt ihop en god grund att konstruera resten av spelet med, så denna vecka har vi bättre förutsättningar att nå upp till samtliga delmål i och med att vi ligger i bättre fas.
+
+Vår preliminära plan för slutet av veckan är att kunna rita ut enskilda block med tillhörande kollision (krav 6), att ha en spelare som påverkas av "gravitation" (delmål för krav 6, 14), samt att spelaren ska kunna hoppa (krav 3, 4). Det är alltså tekniskt sett samma mål som föregående vecka, men med grunderna klara. Vi ska även se till att alla spelarens stats (hälsa, hastighet) ska lagras i spelarkassen och nyttjas för att manipulera rörelsehastigheten på ett godtyckligt sätt (krav 9, 10).
+
+Vidare, så ska segmenthanteraren konstrueras, så att segment ska kunna läsas in och skrivas ut (krav 13 - 17). Vi vill även se till att spelaren ska kunna färdas mellan olika segment, så att vi har möjligheten att generera en hel nivå, dock utan fiender i detta skede (krav 18).
+
+Slutligen så ämnar vi skapa grunden till spelarens dash och attack (krav 5, delvis krav 29 och 30) samt att skapa grunden till spelarens attacker (krav 26, delvis krav 27).
+
+Förhoppningen är även att börja skapa fiendeklasserna, så att vi förhoppningsvis kan få ut fiender på spelplanen under denna vecka. Låg prio ligger på att skapa fiendernas beteende i detta skede, prio ligger på att få ut dem och att se till att kollision fungerar korrekt (krav 7, 8, 22 - 24)

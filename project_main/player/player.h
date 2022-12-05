@@ -1,6 +1,10 @@
 #pragma once
 #include "../components/component.h"
 
+/**
+ * @brief This class defines and handles the player character.
+ * 
+ */
 class Player : public BaseClass{
 public:
 
