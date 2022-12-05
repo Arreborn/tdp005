@@ -1,5 +1,5 @@
-- 4: Spelaren ska kunna röra sig till höger och vänster
-- 5: Spelare ska kunna hoppa
-- 25: Segment ska kunna ritas ut
-- 10: Spelaren ska kollidera med block-objekt som ritas ut på spelplanen
+- [DONE] 4: Spelaren ska kunna röra sig till höger och vänster 
+- 5: Spelare ska kunna hoppa (push to next week)
+- 25: Segment ska kunna ritas ut (push to next week)
+- 10: Spelaren ska kollidera med block-objekt som ritas ut på spelplanen (push to next week)
 --------

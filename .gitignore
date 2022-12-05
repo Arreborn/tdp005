@@ -1,4 +1,8 @@
+*.o
 CMakeCache.txt
 *.cmake
 in_progress
 CMakeFiles/
+.cache/
+build/
+.vscode/settings.json
