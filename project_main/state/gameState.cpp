@@ -4,7 +4,7 @@
 #include <SFML/System/Vector2.hpp>
 
 GameState::GameState() {
-  world.add(std::make_shared<Player>(sf::Vector2f(width, height)));
+  world.add(std::make_shared<Player>(sf::Vector2f(width / 2.0, height / 2.0)));
 }
 
 shared_ptr<State> GameState::tick(sf::Time time) {

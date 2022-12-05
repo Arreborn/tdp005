@@ -4,7 +4,7 @@
 #include <SFML/System/Vector2.hpp>
 
 Player::Player(sf::Vector2f center) 
-    : BaseClass(center, "sprites/warrior1.png"), health{10}, speed{300.0}, type{'p'} {}
+    : BaseClass(center, "sprites/warrior1.png"), health{10}, speed{400.0}, type{'P'} {}
 
 sf::Vector2f find_position() {
     sf::Vector2f position;
