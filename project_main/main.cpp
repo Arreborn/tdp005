@@ -6,6 +6,7 @@ const size_t height = 800;
 
 int main() {
     sf::RenderWindow window{sf::VideoMode{width, height}, "Hello Warrior!"};
+    
     window.setKeyRepeatEnabled(false);
     window.setVerticalSyncEnabled(true);
 

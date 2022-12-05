@@ -36,6 +36,8 @@ public:
    */
   bool borderCheck();
 
+  // sf::Vector2f getPosition() { return ;}
+
 protected:
   int health;
   float speed;

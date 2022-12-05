@@ -8,11 +8,6 @@ GameState::GameState() {
 }
 
 shared_ptr<State> GameState::tick(sf::Time time) {
-<<<<<<< HEAD
-  world.add(std::make_shared<Player>(sf::Vector2f{width / 2.0f, height * 4.0f / 5.0f}));
-
-=======
->>>>>>> 04374b0767348ed3cf31c0bd773e9fd6e3c784ba
   world.tick(time);
 
   // Checks for pause
@@ -23,6 +18,5 @@ shared_ptr<State> GameState::tick(sf::Time time) {
 }
 
 void GameState::render(sf::RenderWindow &drawTo){
-  
   world.render(drawTo);
 };
