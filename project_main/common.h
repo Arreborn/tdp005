@@ -1,5 +1,6 @@
 #pragma once
 
+// includes basic libraries commonly used
 #include <iostream>
 #include <string>
 #include <vector>
@@ -7,6 +8,7 @@
 #include <cmath>
 #include <SFML/Graphics.hpp>
 
+// sets some useful namespaces
 using std::cout;
 using std::endl;
 

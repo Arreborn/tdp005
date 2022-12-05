@@ -1,10 +1,11 @@
-project(in_progress)
+cmake_minimum_required(VERSION 3.25)
+project(demo)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -std=c++17")
 
 # Detta kommer från kurshemsidan
-set(SOURCE_FILES in_progress.cc)
+set(SOURCE_FILES main.cpp world.cpp state/state.cpp state/menuState.cpp state/gameState.cpp sprites/spriteManager.cpp player/player.cpp entity/entity.cpp components/component.cpp)
 # På skolans Linux - system finns det två versioner av SFML. Se efter vilken som används :
 if (DEFINED ENV{LOADEDMODULES} AND ("$ENV{LOADEDMODULES}" MATCHES ".*prog/gcc/6.1.0.*"))
   set(CMAKE_CXX_COMPILER /sw/gcc-6.1.0/bin/g++)
@@ -28,5 +29,5 @@ if (NOT (${SFML_FOUND} STREQUAL "TRUE"))
   endforeach (i)
 endif ()
 
-add_executable (in_progress ${SOURCE_FILES})
-target_link_libraries (in_progress ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+add_executable (demo ${SOURCE_FILES})
+target_link_libraries (demo ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
