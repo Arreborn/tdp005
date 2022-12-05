@@ -1,7 +1,9 @@
 {
   "files.associations": {
     "*.tcc": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "random": "cpp",
+    "string_view": "cpp"
   },
   "cmake.sourceDirectory": "${workspaceFolder}/project_main"
 }

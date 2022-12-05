@@ -1,13 +1,17 @@
 #include "player.h"
 #include "../world.h"
+#include "../staticEntity/block.h"
 #include "../components/component.h"
 #include <SFML/System/Vector2.hpp>
+
+bool canMove{true};
 
 Player::Player(sf::Vector2f center) 
     : BaseClass(center, "sprites/warrior1.png"), health{10}, speed{400.0}, type{'P'} {}
 
 sf::Vector2f find_position() {
     sf::Vector2f position;
+    if (!canMove) { return position; }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)){ // this must handle jumps
         position.y -= 1;
     }
@@ -28,9 +32,15 @@ sf::Vector2f find_position() {
 }
 
 bool Player::tick(sf::Time time, World &world) {
+    for (auto &collision : world.collidesWith(*this)){
+        if (!(dynamic_cast<Entity *>(collision.get()))){
+            canMove = false;
+        }
+    }
+
     auto dir{find_position()};
     center += dir * (speed * time.asMicroseconds() / 1000000.0f);
-
+    canMove = true;
     return true;
 }
 

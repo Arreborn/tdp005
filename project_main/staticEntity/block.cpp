@@ -3,7 +3,9 @@
 #include "../components/component.h"
 
 Block::Block(sf::Vector2f center)
-  : BaseClass(center, "sprites/Grass.png") {};
+  : BaseClass(center, "sprites/Grass.png") {
+    shape.setOrigin(0, 0);
+  };
 
 // mandatory override
 bool Block::tick(sf::Time, World &){

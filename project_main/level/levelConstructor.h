@@ -1,28 +1,30 @@
 #pragma once
 #include "../common.h"
 #include "segmentManager.h"
+#include "../world.h"
+#include "../staticEntity/block.h"
 #include "../components/component.h"
 
+// TODO:
+// Check viability of shared_ptr for the vector thingys
+// Might be able to return that from selector
+
+/**
+ * @brief This class manages construction of levels from segments.
+ * 
+ */
 class LevelConstructor{
 private:
-  /**
-   * @brief Stores the loaded level.
-   * 
-   */
-  vector<vector<TexturedEntity *>> level{};
-
-    /**
+   /**
    * @brief General switch function that creates a new object depending on the
-   * character designated in the segment.
+   * character designated in the segment. This is separate to simplify
+   * expansion with more objects.
    * 
    * @param x 
    * @return TexturedEntity 
    */
-  TexturedEntity* selector(char a, int x, int y);
+  static void selector(char a, int x, int y, World &world);
 
-  vector<TexturedEntity *>generateLevel(string &segment);
-
-public:
   /**
    * @brief Construct a new level with the designated number of segments.
    * 
@@ -35,5 +37,10 @@ public:
    * 
    */
   ~LevelConstructor() = default;
+
+  static LevelConstructor instance;
+
+public:
+  static void generateLevel(World &world);
 
 };
