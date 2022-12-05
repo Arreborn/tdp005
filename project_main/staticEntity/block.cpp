@@ -5,6 +5,8 @@
 Block::Block(sf::Vector2f center)
   : BaseClass(center, "sprites/Grass.png") {
     shape.setOrigin(0, 0);
+    shape.setOutlineColor(sf::Color::White);
+    shape.setOutlineThickness(2);
   };
 
 // mandatory override

@@ -10,7 +10,7 @@ LevelConstructor::LevelConstructor(int numberOfSegments){
 
 void LevelConstructor::generateLevel(World &world){
   std::ifstream file{}; 
-  file.open("segments/seg1.txt");
+  file.open("segments/seg1.txt"); // temporary until segment manager works
   string segment{};
   string temp{};
 
