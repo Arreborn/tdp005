@@ -23,7 +23,7 @@ void World::add(shared_ptr<Entity> object) {
 static bool collides(Entity &a, Entity &b) {
   auto aBounds{a.getBorder()->getGlobalBounds()};
   auto bBounds{b.getBorder()->getGlobalBounds()};
-  return (aBounds.intersects(bBounds));
+  	return (aBounds.intersects(bBounds));
 }
 
 vector<shared_ptr<Entity>> World::collidesWith(Entity &me) const {

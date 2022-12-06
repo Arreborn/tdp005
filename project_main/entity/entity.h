@@ -2,46 +2,89 @@
 #include "../common.h"
 #include <SFML/Graphics/Rect.hpp>
 
+class World;
 
 /**
- * @brief This class contains all objects in the world.
- * 
+ * @brief An abstract game object.
+ *
  */
 class World;
 
 
 class Entity {
 public:
+  /**
+   * @brief Construct a new Entity bject.
+   *
+   * @param center
+   * @param radius
+   */
+  Entity(sf::Vector2f center, float radius)
+      : center{center}, radius{radius} {} // this may need to be changed
 
-  Entity(sf::Vector2f shape, string const &sprite);
-
+  /**
+   * @brief Destroy the Entity object.
+   *
+   */
   virtual ~Entity() = default;
 
+  /**
+   * @brief Position of the objects center.
+   *
+   */
   sf::Vector2f center;
 
-  virtual bool tick(sf::Time time, World &world);
+  /**
+   * @brief Radius of this object.
+   *
+   */
+  float radius; // may need to change
 
-  virtual void render(sf::RenderWindow &window);
+  /**
+   * @brief Updates the object for each frame, returns
+   * 'false' if the object is to be removed.
+   *
+   * @param time
+   * @param world
+   * @return true
+   * @return false
+   */
+  virtual bool tick(sf::Time time, World &world) = 0;
 
-  virtual sf::RectangleShape* getBorder();
+  /**
+   * @brief Renders the object.
+   *
+   * @param window
+   */
+  virtual void render(sf::RenderWindow &window) = 0;
 
-  protected:
-
-  sf::RectangleShape shape;
-  
+  virtual sf::RectangleShape *getBorder() = 0;
 };
 /*
 class TexturedEntity : public Entity {
 public:
-
+  /**
+   * @brief Construct a new Textured Entity object.
+   *
+   * @param center
+   * @param texture
+   */
   TexturedEntity(sf::Vector2f center, const string &sprite);
 
+  /**
+   * @brief Override for the rendering of the object.
+   *
+   * @param window
+   */
   void render(sf::RenderWindow &window) override;
 
-  bool tick(sf::Time time, World &world) override;
+  sf::RectangleShape *getBorder() override;
 
-  sf::RectangleShape* getBorder() override;
-
-
+protected:
+  /**
+   * @brief This is the shape to render.
+   *
+   */
+  sf::RectangleShape shape;
 };
 */

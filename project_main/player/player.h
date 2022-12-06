@@ -33,6 +33,16 @@ public:
    */
   void render(sf::RenderWindow &drawTo) override;
 
+  /**
+   * @brief Checks if players movement is about to escape the playing field.
+   * 
+   * @return true 
+   * @return false 
+   */
+  bool borderCheck();
+
+  // sf::Vector2f getPosition() { return ;}
+
 protected:
   int health;
   float speed;

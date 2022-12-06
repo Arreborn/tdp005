@@ -1,12 +1,12 @@
 #pragma once
 
 // includes basic libraries commonly used
+#include <SFML/Graphics.hpp>
+#include <cmath>
 #include <iostream>
+#include <memory>
 #include <string>
 #include <vector>
-#include <memory>
-#include <cmath>
-#include <SFML/Graphics.hpp>
 
 // sets some useful namespaces
 using std::cout;
@@ -15,11 +15,11 @@ using std::endl;
 using std::shared_ptr;
 using std::unique_ptr;
 
-using std::vector;
 using std::string;
+using std::vector;
 
-using std::min;
 using std::max;
+using std::min;
 
 extern const size_t width;
 extern const size_t height;

@@ -22,6 +22,5 @@ shared_ptr<State> GameState::tick(sf::Time time) {
 }
 
 void GameState::render(sf::RenderWindow &drawTo){
-  
   world.render(drawTo);
 };
