@@ -9,7 +9,7 @@ class World;
  * @brief An abstract game object.
  * 
  */
-class Entity { // will any object or entity not have a texture?
+class Entity {
 public:
 
   /**
@@ -56,6 +56,8 @@ public:
    * @param window 
    */
   virtual void render(sf::RenderWindow &window) = 0;
+
+  virtual sf::RectangleShape* getBorder() = 0;
 };
 
 class TexturedEntity : public Entity {
@@ -76,13 +78,13 @@ public:
    */
   void render(sf::RenderWindow &window) override;
 
-private:
+  sf::RectangleShape* getBorder() override;
+
+protected:
 
   /**
    * @brief This is the shape to render.
    * 
    */
   sf::RectangleShape shape;
-
-
 };

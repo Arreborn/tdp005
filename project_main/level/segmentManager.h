@@ -15,7 +15,7 @@ private:
    * container when constructed. Segments should be placed in segments/.
    * 
    */
-  SegmentManager();
+  SegmentManager() = default;
 
   /**
    * @brief Destroy the Segment Manager object.
@@ -29,18 +29,20 @@ private:
    */
   static SegmentManager instance;
 
+  protected:
+
   /**
    * @brief This container stores all segments loaded in from the file(s).
    * 
    */
-  vector<string> storedSegments;
+  //vector<string> storedSegments;
 
   /**
    * @brief Stores the index of all previously generated segments to avoid 
    * duplicate segments per level.
    * 
    */
-  vector<int> alreadyGenerated;
+  //vector<int> alreadyGenerated;
 
 public:
   
