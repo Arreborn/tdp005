@@ -1,11 +1,12 @@
 #pragma once
-#include "../components/component.h"
+#include "../entity/entity.h"
+#include "../common.h"
 
 /**
  * @brief This class defines and handles the player character.
  * 
  */
-class Player : public BaseClass{
+class Player : public Entity{
 public:
 
   /**
@@ -31,14 +32,6 @@ public:
    * @param drawTo 
    */
   void render(sf::RenderWindow &drawTo) override;
-
-  /**
-   * @brief Checks if players movement is about to escape the playing field.
-   * 
-   * @return true 
-   * @return false 
-   */
-  bool borderCheck();
 
 protected:
   int health;

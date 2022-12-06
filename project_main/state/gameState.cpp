@@ -2,6 +2,8 @@
 #include "menuState.h"
 #include "../level/levelConstructor.h"
 #include "../player/player.h"
+#include "../entity/entity.h"
+#include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/System/Vector2.hpp>
 
 GameState::GameState() {

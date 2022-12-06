@@ -3,7 +3,7 @@
 #include "segmentManager.h"
 #include "../world.h"
 #include "../staticEntity/block.h"
-#include "../components/component.h"
+#include "../entity/entity.h"
 
 // TODO:
 // Check viability of shared_ptr for the vector thingys

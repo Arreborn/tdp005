@@ -1,13 +1,13 @@
 #pragma once
 #include "../common.h"
-#include "../components/component.h"
+#include "../entity/entity.h"
 
 /**
  * @brief This is a general base class handling the creation of
  * block-objects.
  * 
  */
-class Block : public BaseClass {
+class Block : public Entity {
 public:
   /**
    * @brief Construct a new Block object.
