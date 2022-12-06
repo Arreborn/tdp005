@@ -4,7 +4,7 @@
 #include <SFML/System/Vector2.hpp>
 
 Player::Player(sf::Vector2f center) 
-    : BaseClass(center, "sprites/warrior1.png"), health{10}, speed{400.0}, type{'P'} {}
+    : BaseClass(center, "sprites/fighter_idle.png"), health{10}, speed{400.0}, type{'P'} {}
 
 sf::Vector2f find_position() {
     sf::Vector2f position;
@@ -16,9 +16,11 @@ sf::Vector2f find_position() {
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
         position.x -= 1;
+        Animation.update(time);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
         position.x += 1;
+        Animation.update(time);
     }
     float len = sqrt(pow(position.x, 2) + pow(position.y, 2)); // why don't brackets work
     if (len > 0.0f)
