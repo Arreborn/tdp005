@@ -54,14 +54,14 @@ public:
    */
   virtual void render(sf::RenderWindow &window) = 0;
 
-  virtual sf::RectangleShape *getBorder();
+  virtual sf::Sprite *getBorder();
 
 protected:
   /**
    * @brief This is the shape to render.
    *
    */
-  sf::RectangleShape shape;
+  sf::Sprite sprite;
 };
 
 /* 
