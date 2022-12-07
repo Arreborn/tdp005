@@ -4,8 +4,8 @@
 - 10: Spelaren ska kollidera med block-objekt som ritas ut på spelplanen (push to next week)
 --------
 2022-12-05
-- Spelaren ska kunna hoppa - se krav 1, 3, 4
-- Spelaren behöver påverkas av gravitation för att kunna hoppa - se krav 3, 4
+- [OK] Spelaren ska kunna hoppa - se krav 1, 3, 4
+- [OK] Spelaren behöver påverkas av gravitation för att kunna hoppa - se krav 3, 4
 - [OK] Block-objekt ska kunna ritas ut på statiska punkter på spelplanen - delmål för krav 6, 14
 - [OK] Spelaren ska kollidera med block-objekt - se krav 6
 - Spelarens hälsa och hastighet ska läsas in och godtyckligt kunna manipuleras -  se krav 9, 10)
