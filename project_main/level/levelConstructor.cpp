@@ -10,7 +10,7 @@ LevelConstructor::LevelConstructor(int numberOfSegments){
 
 void LevelConstructor::generateLevel(World &world){
   std::ifstream file{}; 
-  file.open("segments/seg1"); // temporary until segment manager works
+  file.open("segments/seg1.txt"); // temporary until segment manager works
   string segment{};
   string temp{};
 
@@ -37,12 +37,34 @@ void LevelConstructor::generateLevel(World &world){
 
 void LevelConstructor::selector(char a, int x, int y, World &world){
   switch (a){
-    case 'B': case 'b':
-       world.add(std::make_shared<Block>(sf::Vector2f(x, y)));
+    case 'B': case 'b': //Top block
+       world.add(std::make_shared<Block>(sf::Vector2f(x, y),sf::IntRect(16,0,16,16)));
        break;
-
+    case 'F':case 'f': //Bottom right corner block
+      world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(32,32,16,16)));
+      break;
+    case 'O':case 'o': // Bottom left corner block
+      world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(0,32,16,16)));
+      break;
+    case 'R':case 'r': // Top right corner block
+      world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(16,0,16,16)));
+      break;
+    case 'L':case 'l': // Top left corner block
+      world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(0,0,16,16)));
+      break;
+    case 'E':case 'e': // Side block right
+      world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(32,16,16,16)));
+      break;
+    case 'K':case 'k': // Side block left
+      world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(0,16,16,16)));
+      break;
+    case 'D':case 'd': // Bottom block ground
+      world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(16,32,16,16)));
+      break;
+    case 'G':case 'g':
+      world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(16,16,16,16)));
+      break;
     default:
-
       break;
   }
 }
