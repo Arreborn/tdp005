@@ -1,4 +1,5 @@
 #include "levelConstructor.h"
+#include "segmentManager.h"
 #include <fstream>
 
 LevelConstructor::LevelConstructor(int numberOfSegments){
@@ -10,7 +11,7 @@ LevelConstructor::LevelConstructor(int numberOfSegments){
 
 void LevelConstructor::generateLevel(World &world){
   std::ifstream file{}; 
-  file.open("segments/seg1"); // temporary until segment manager works
+  file.open(SegmentManager::get().c_str()); // temporary until segment manager works
   string segment{};
   string temp{};
 

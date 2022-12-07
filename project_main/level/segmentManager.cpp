@@ -3,9 +3,11 @@
 #include <sstream>
 #include <fstream>
 #include <algorithm>
+#include <random>
 
 vector<string> storedSegments;
 vector<int> alreadyGenerated;
+const auto rng{std::default_random_engine {}};
 
 string SegmentManager::get(){
   if (storedSegments.size() == 0){
@@ -19,7 +21,14 @@ string SegmentManager::get(){
       storedSegments.push_back(ss.str());
       ss.clear(); 
     }
-
   }
-}
+  shuffle(storedSegments.begin(), storedSegments.end(), rng);
+  string pickedSegment{storedSegments.back()};
+  cout << "Pre-pop: " << pickedSegment << endl;
+  storedSegments.pop_back();
+  cout << "Post-pop: " << pickedSegment << endl;
+  return pickedSegment;
+
+ }
+
 
