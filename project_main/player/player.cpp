@@ -11,7 +11,7 @@ Player::Player(sf::Vector2f center)
 }
 
 sf::Vector2f verticalPosition(sf::Vector2f &acceleration, bool &isJumping) {
-  if (isJumping && acceleration.y < 10){
+  if (isJumping && acceleration.y < 16){
     acceleration.y += 1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) { 
@@ -23,27 +23,17 @@ sf::Vector2f verticalPosition(sf::Vector2f &acceleration, bool &isJumping) {
   return acceleration;
 }
 
-sf::Vector2f horizontalPosition(){
+sf::Vector2f horizontalPosition(bool &facingRight){
   sf::Vector2f position{};
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) { // left
     position.x -= 1;
+    facingRight = false;
   }
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) { // right
     position.x += 1;
+    facingRight = true;
   }
   return position;
-}
-
-void pixelPerfect(shared_ptr<Entity> current, Player* player){
-  sf::FloatRect a{current->getBounds()};
-  sf::FloatRect p{player->getBounds()};
-  int iterations{};
-  while (true){
-    player->center.y -= 0.001;
-    if (p.intersects(a)){ break; }
-    ++iterations;
-  }
-  cout << iterations << endl;
 }
 
 bool Player::tick(sf::Time time, World &world) {
@@ -57,14 +47,15 @@ bool Player::tick(sf::Time time, World &world) {
   for (auto &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Block *>(collision.get())) {
       center = vold;
-      pixelPerfect(collision, this);
+      center -= sf::Vector2f{0, center.y - collision.get()->center.y + 15};
+      acceleration.y = 8;
       isJumping = false;
     } else {
       isJumping = true;
     }
   }
   sf::Vector2f hold(center);
-  auto hdir(horizontalPosition());
+  auto hdir(horizontalPosition(facingRight));
   //center += hdir * (speed * time.asMicroseconds() / 1000000.0f);
   center += hdir * speed;
   sprite.setPosition(center);
@@ -78,7 +69,11 @@ bool Player::tick(sf::Time time, World &world) {
 
   return true;
 }
-
 void Player::render(sf::RenderWindow &drawTo) {
+  if (facingRight){
+    sprite.scale(-1, 1);
+  } else {
+    sprite.scale(1, 1);
+  }
   Entity::render(drawTo);
 }
