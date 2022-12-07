@@ -10,12 +10,13 @@ Player::Player(sf::Vector2f center)
       type{'P'}, isJumping{true} {
 }
 
-sf::Vector2f horizontal_position(sf::Vector2f &acceleration, bool &isJumping) {
+sf::Vector2f verticalPosition(sf::Vector2f &acceleration, bool &isJumping) {
   if (isJumping && acceleration.y < 10){
     ++acceleration.y;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) { // this must handle jumps
       if (!isJumping){
+        cout << "Jump" << endl;
         isJumping = true;
         acceleration.y -= 10;
       }
@@ -24,7 +25,7 @@ sf::Vector2f horizontal_position(sf::Vector2f &acceleration, bool &isJumping) {
   return acceleration;
 }
 
-sf::Vector2f vertical_position(){
+sf::Vector2f horizontalPosition(){
   sf::Vector2f position{};
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
     position.x -= 3.6;
@@ -36,30 +37,27 @@ sf::Vector2f vertical_position(){
 }
 
 bool Player::tick(sf::Time time, World &world) {
-  sf::Vector2f hold{center};
-  // if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) {
-  //   Attack::attackMelee();
-  // }
-
-  auto hdir{horizontal_position(acceleration, isJumping)};
-  center += hdir * (speed * time.asMicroseconds() / 1000000.0f);
+  sf::Vector2f vold{center};
+  auto vdir{verticalPosition(acceleration, isJumping)};
+  center += vdir * (speed * time.asMicroseconds() / 1000000.0f);
   sprite.setPosition(center);
 
   for (auto &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Block *>(collision.get())) {
-      center = hold;
-      sprite.setPosition(hold);
+      center = vold;
+      sprite.setPosition(vold);
+      isJumping = false;
     }
   }
-  sf::Vector2f vold(center);
-  auto vdir(vertical_position());
-  center += vdir * (speed * time.asMicroseconds() / 1000000.0f);
+  sf::Vector2f hold(center);
+  auto hdir(horizontalPosition());
+  center += hdir * (speed * time.asMicroseconds() / 1000000.0f);
   sprite.setPosition(center);
 
     for (auto &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Block *>(collision.get())) {
-      center = vold;
-      sprite.setPosition(vold);
+      center = hold;
+      sprite.setPosition(hold);
     }
   }
 
