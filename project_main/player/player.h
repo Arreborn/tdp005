@@ -46,7 +46,7 @@ protected:
   int health;
   float speed;
   char type;
-  bool isJumping{};
-  sf::Vector2f velocity = sf::Vector2f(0, -30);
-  sf::Vector2f acceleration = sf::Vector2f(0, 0);
+  bool isJumping;
+  sf::Vector2f acceleration{sf::Vector2f(0, 0)};
+  bool facingRight{};
 };

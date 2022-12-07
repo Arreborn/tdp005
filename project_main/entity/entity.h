@@ -56,6 +56,8 @@ public:
 
   virtual sf::Sprite *getBorder();
 
+  sf::FloatRect getBounds();
+
 protected:
   /**
    * @brief This is the sprite to render.
