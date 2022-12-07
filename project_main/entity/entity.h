@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.h"
-#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 class World;
 
@@ -54,13 +54,13 @@ public:
    */
   virtual void render(sf::RenderWindow &window) = 0;
 
-  virtual sf::RectangleShape *getBorder();
+  virtual sf::Sprite *getBorder();
 
 protected:
   /**
-   * @brief This is the shape to render.
+   * @brief This is the sprite to render.
    *
    */
-  sf::RectangleShape shape;
+  sf::Sprite sprite;
 };
 
