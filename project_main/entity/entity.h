@@ -64,34 +64,3 @@ protected:
   sf::RectangleShape shape;
 };
 
-/* 
-class TexturedEntity : public Entity {
-public:
-  /**
-   * @brief Construct a new Textured Entity object.
-   *
-   * @param center
-   * @param texture
-   */
-  /*
-  TexturedEntity(sf::Vector2f center, const string &sprite);
-
-  /**
-   * @brief Override for the rendering of the object.
-   *
-   * @param window
-   */
-  /*
-  void render(sf::RenderWindow &window) override;
-
-  sf::RectangleShape *getBorder() override;
-
-protected:
-  /**
-   * @brief This is the shape to render.
-   *
-   */
-  /*
-  sf::RectangleShape shape;
-};
- */
