@@ -12,45 +12,56 @@ Player::Player(sf::Vector2f center)
   shape.setOutlineThickness(0);
 }
 
-sf::Vector2f find_position() {
-  sf::Vector2f position;
-  if (!canMove) {
-    return position;
-  }
+sf::Vector2f horizontal_position() {
+  sf::Vector2f position{0, 1};
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) { // this must handle jumps
     position.y -= 1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
     position.y += 1;
   }
+    return position;
+}
+
+sf::Vector2f vertical_position(){
+  sf::Vector2f position{};
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
     position.x -= 1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
     position.x += 1;
   }
-  float len =
-      sqrt(pow(position.x, 2) + pow(position.y, 2)); // why don't brackets work
-  if (len > 0.0f)
-    return position * (1.0f / len);
-  else
-    return position;
+  return position;
 }
 
 bool Player::tick(sf::Time time, World &world) {
-  sf::Vector2f old{center};
+  sf::Vector2f hold{center};
+  sf::Vector2f vold(center);
   // if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) {
   //   Attack::attackMelee();
   // }
 
-  auto dir{find_position()};
-  center += dir * (speed * time.asMicroseconds() / 1000000.0f);
+  auto hdir{horizontal_position()};
+
+  center += hdir * (speed * time.asMicroseconds() / 1000000.0f);
   shape.setPosition(center);
 
   for (auto &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Block *>(collision.get())) {
-      center = old;
-      shape.setPosition(old);
+      center = hold;
+      shape.setPosition(hold);
+    }
+  }
+
+  auto vdir(vertical_position());
+
+  center += vdir * (speed * time.asMicroseconds() / 1000000.0f);
+  shape.setPosition(center);
+
+    for (auto &collision : world.collidesWith(*this)) {
+    if (dynamic_cast<Block *>(collision.get())) {
+      center = vold;
+      shape.setPosition(vold);
     }
   }
 
