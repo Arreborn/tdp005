@@ -20,3 +20,7 @@ void Entity::render(sf::RenderWindow &window){
 sf::Sprite *Entity::getBorder(){
     return &sprite;
 }
+
+sf::FloatRect Entity::getBounds(){
+    return sprite.getGlobalBounds();
+}
