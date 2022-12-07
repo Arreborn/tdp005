@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -std=c++17")
 
 # Detta kommer från kurshemsidan
-set(SOURCE_FILES main.cpp world.cpp state/state.cpp state/menuState.cpp state/gameState.cpp sprites/spriteManager.cpp entity/entity.cpp level/segmentManager.cpp level/levelConstructor.cpp player/player.cpp staticEntity/block.cpp)
+set(SOURCE_FILES main.cpp world.cpp state/state.cpp state/menuState.cpp state/gameState.cpp sprites/spriteManager.cpp player/player.cpp entity/entity.cpp level/segmentManager.cpp level/levelConstructor.cpp staticEntity/block.cpp)
 # På skolans Linux - system finns det två versioner av SFML. Se efter vilken som används :
 if (DEFINED ENV{LOADEDMODULES} AND ("$ENV{LOADEDMODULES}" MATCHES ".*prog/gcc/6.1.0.*"))
   set(CMAKE_CXX_COMPILER /sw/gcc-6.1.0/bin/g++)

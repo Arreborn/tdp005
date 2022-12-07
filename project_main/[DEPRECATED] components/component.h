@@ -3,8 +3,6 @@
 #include "../entity/entity.h"
 #include <SFML/System/Vector2.hpp>
 
-// this should not inherit from entity, but rather be stored in an entity
-
 class BaseClass : public TexturedEntity {
 public:
   BaseClass(sf::Vector2f center, const string &sprite)

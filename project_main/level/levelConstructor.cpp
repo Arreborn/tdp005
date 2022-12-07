@@ -34,6 +34,7 @@ void LevelConstructor::generateLevel(World &world){
   }
 }
 
+
 void LevelConstructor::selector(char a, int x, int y, World &world){
   switch (a){
     case 'B': case 'b':

@@ -1,5 +1,4 @@
 #include "player.h"
-#include "../components/component.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
 #include <SFML/System/Vector2.hpp>
@@ -7,10 +6,10 @@
 bool canMove{true};
 
 Player::Player(sf::Vector2f center)
-    : BaseClass(center, "sprites/warrior1.png"), health{10}, speed{400.0},
+    : Entity(center, "sprites/warrior1_new.png"), health{10}, speed{400.0},
       type{'P'} {
   shape.setOutlineColor(sf::Color::Blue);
-  shape.setOutlineThickness(2);
+  shape.setOutlineThickness(0);
 }
 
 sf::Vector2f find_position() {
@@ -39,21 +38,25 @@ sf::Vector2f find_position() {
 }
 
 bool Player::tick(sf::Time time, World &world) {
-  for (auto &collision : world.collidesWith(*this)) {
-    if (dynamic_cast<Entity *>(collision.get())) {
-      cout << "HIT!" << endl;
-    }
-  }
-
+  sf::Vector2f old{center};
   // if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) {
   //   Attack::attackMelee();
   // }
 
   auto dir{find_position()};
   center += dir * (speed * time.asMicroseconds() / 1000000.0f);
+  shape.setPosition(center);
+
+  for (auto &collision : world.collidesWith(*this)) {
+    if (dynamic_cast<Block *>(collision.get())) {
+      center = old;
+      shape.setPosition(old);
+    }
+  }
+
   return true;
 }
 
 void Player::render(sf::RenderWindow &drawTo) {
-  TexturedEntity::render(drawTo);
+  Entity::render(drawTo);
 }

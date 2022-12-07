@@ -11,7 +11,7 @@ void State::keyRelease(sf::Keyboard::Key) {}
 
 void State::run(sf::RenderWindow &window, shared_ptr<State> state){
   sf::Clock clock;
-  sf::View view{sf::Vector2f(640.0f,190.0f),sf::Vector2f(640.0f,400.0f)};
+  //sf::View view{sf::Vector2f(1280.0f,800.0f),sf::Vector2f(1280.0f,800.0f)};
 
 
   
@@ -45,6 +45,6 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state){
 
     state->render(window);
     window.display();  
-    window.setView(view);
+    //window.setView(view);
   }
 }

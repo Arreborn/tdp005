@@ -23,3 +23,5 @@ using std::min;
 
 extern const size_t width;
 extern const size_t height;
+
+//extern const float gravity{0.3};

@@ -1,5 +1,6 @@
 #include "block.h"
 #include "../world.h"
+#include "../entity/entity.h"
 
 Block::Block(sf::Vector2f center)
   : Entity(center, "sprites/Grass.png") {

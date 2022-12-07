@@ -1,6 +1,5 @@
 #pragma once
 #include "../entity/entity.h"
-#include "../common.h"
 
 /**
  * @brief This class defines and handles the player character.
@@ -47,4 +46,7 @@ protected:
   int health;
   float speed;
   char type;
+  bool isJumping;
+  sf::Vector2f velocity = sf::Vector2f(0, -30);
+  sf::Vector2f acceleration = sf::Vector2f(0, 9.81);
 };

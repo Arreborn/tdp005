@@ -31,11 +31,8 @@ vector<shared_ptr<Entity>> World::collidesWith(Entity &me) const {
 
   for (auto &x : objects) {
     if (x.get() == &me){
-      //cout << "ME" << endl;
       continue;
-    }
-    if (collides(*x, me)){
-      //cout << "other" << endl;
+    } else if (collides(*x, me)){
       result.push_back(x);
     }
   }

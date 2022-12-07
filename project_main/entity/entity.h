@@ -8,9 +8,6 @@ class World;
  * @brief An abstract game object.
  *
  */
-class World;
-
-
 class Entity {
 public:
   /**
@@ -19,8 +16,7 @@ public:
    * @param center
    * @param radius
    */
-  Entity(sf::Vector2f center, float radius)
-      : center{center}, radius{radius} {} // this may need to be changed
+  Entity(sf::Vector2f center, string const &sprite);
 
   /**
    * @brief Destroy the Entity object.
@@ -38,7 +34,7 @@ public:
    * @brief Radius of this object.
    *
    */
-  float radius; // may need to change
+  float radius; // may need to change?
 
   /**
    * @brief Updates the object for each frame, returns
@@ -58,9 +54,17 @@ public:
    */
   virtual void render(sf::RenderWindow &window) = 0;
 
-  virtual sf::RectangleShape *getBorder() = 0;
+  virtual sf::RectangleShape *getBorder();
+
+protected:
+  /**
+   * @brief This is the shape to render.
+   *
+   */
+  sf::RectangleShape shape;
 };
-/*
+
+/* 
 class TexturedEntity : public Entity {
 public:
   /**
@@ -69,6 +73,7 @@ public:
    * @param center
    * @param texture
    */
+  /*
   TexturedEntity(sf::Vector2f center, const string &sprite);
 
   /**
@@ -76,6 +81,7 @@ public:
    *
    * @param window
    */
+  /*
   void render(sf::RenderWindow &window) override;
 
   sf::RectangleShape *getBorder() override;
@@ -85,6 +91,7 @@ protected:
    * @brief This is the shape to render.
    *
    */
+  /*
   sf::RectangleShape shape;
 };
-*/
+ */

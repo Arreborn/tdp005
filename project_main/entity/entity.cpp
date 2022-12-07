@@ -1,10 +1,8 @@
 #include "entity.h"
 #include "../sprites/spriteManager.h"
-#include <SFML/System/Vector2.hpp>
 
-TexturedEntity::TexturedEntity(sf::Vector2f center, const string &sprite)
-    : Entity(center, 0.0f)
-{
+Entity::Entity(sf::Vector2f center, const string &sprite)
+    : center(center) {
 
     sf::Texture *t = SpriteManager::get(sprite);
     auto size = t->getSize();
@@ -14,21 +12,11 @@ TexturedEntity::TexturedEntity(sf::Vector2f center, const string &sprite)
     radius = max(size.x, size.y) / 2.0f;
 }
 
-void TexturedEntity::render(sf::RenderWindow &window)
-{
+void Entity::render(sf::RenderWindow &window){
     shape.setPosition(center);
-    //radius = max(size.x, size.y) / 2.0f;
-}
-
-bool Entity::tick(sf::Time, World&){
-  return true;
-}
-
-void Entity::render(sf::RenderWindow &window) {
     window.draw(shape);
 }
 
-sf::RectangleShape *TexturedEntity::getBorder()
-{
+sf::RectangleShape *Entity::getBorder(){
     return &shape;
 }
