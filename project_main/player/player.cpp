@@ -6,7 +6,7 @@
 bool canMove{true};
 
 Player::Player(sf::Vector2f center)
-    : Entity(center, "sprites/warrior1_new.png"), health{10}, speed{100.0},
+    : Entity(center, "sprites/warrior1.png"), health{10}, speed{100.0},
       type{'P'}, isJumping{true} {
 }
 
@@ -16,7 +16,6 @@ sf::Vector2f verticalPosition(sf::Vector2f &acceleration, bool &isJumping) {
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) { // this must handle jumps
       if (!isJumping){
-        cout << "Jump" << endl;
         isJumping = true;
         acceleration.y -= 10;
       }
