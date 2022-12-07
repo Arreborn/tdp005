@@ -6,8 +6,6 @@
 #include <random>
 
 vector<string> storedSegments;
-vector<int> alreadyGenerated;
-const auto rng{std::default_random_engine {}};
 
 string SegmentManager::get(){
   if (storedSegments.size() == 0){
@@ -15,19 +13,20 @@ string SegmentManager::get(){
     std::stringstream ss{};
 
     // stores path to all segments in the container
-    for (const auto & entry : std::filesystem::directory_iterator(path)){
-      cout <<"Path: " << entry << endl;
+    for (const std::filesystem::directory_entry &entry : std::filesystem::directory_iterator(path)){
       ss << entry;
       storedSegments.push_back(ss.str());
-      ss.clear(); 
+      ss.str(""); 
     }
+    std::random_device device;
+    std::default_random_engine engine(device());
+    shuffle(begin(storedSegments), end(storedSegments), engine);
   }
-  shuffle(storedSegments.begin(), storedSegments.end(), rng);
-  string pickedSegment{storedSegments.back()};
-  cout << "Pre-pop: " << pickedSegment << endl;
+
+  const char* randomSegment{storedSegments.back().c_str()};
   storedSegments.pop_back();
-  cout << "Post-pop: " << pickedSegment << endl;
-  return pickedSegment;
+  return randomSegment;
+  
 
  }
 

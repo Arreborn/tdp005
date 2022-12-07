@@ -1,0 +1,9 @@
+B: Regular, walkable top-block.
+R: Regular, walkable top-block, top right corner.
+L: Regular, walkable top-block, top left corner.
+E: Side block, right side.
+K: Side block, left side.
+F: Bottom corner block, right side.
+O: Bottom corner block, left side.
+D: Bottom block, beneath.
+G: Ground block, mainly for decoration.

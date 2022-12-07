@@ -11,8 +11,14 @@ Player::Player(sf::Vector2f center)
       type{'P'}, isJumping{true} {}
 
 sf::Vector2f verticalPosition(sf::Vector2f &acceleration, bool &isJumping) {
-  if (isJumping && acceleration.y < 16){
-    acceleration.y += 1;
+  if (isJumping && acceleration.y < 30){
+    if (acceleration.y < 0){
+      acceleration.y += 1;
+    } else if (acceleration.y < 10){
+      acceleration.y += 1.5;
+    } else {
+      acceleration.y += 1.8;
+    }
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::W ) || sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) { 
       if (!isJumping){
@@ -38,7 +44,6 @@ bool Player::tick(sf::Time, World &world) {
   sf::Vector2f vold{center};
 
   auto vdir{verticalPosition(acceleration, isJumping)};
-  //center += vdir * (speed * time.asMicroseconds() / 3000000.0f);
   center += vdir;
   sprite.setPosition(center);
 
@@ -47,19 +52,17 @@ bool Player::tick(sf::Time, World &world) {
       center = vold;
       if (collision->center.y > center.y){
         center -= sf::Vector2f{0, (center.y - collision.get()->center.y + 15) - float{0.5}};
-        acceleration.y = 8;
+        acceleration.y = 2;
         isJumping = false;
       } else {
         acceleration.y = 0;
       }
-
     } else {
       isJumping = true;
     }
   }
   sf::Vector2f hold(center);
   auto hdir(horizontalPosition());
-  //center += hdir * (speed * time.asMicroseconds() / 1000000.0f);
   center += hdir * speed;
   sprite.setPosition(center);
 
@@ -69,7 +72,10 @@ bool Player::tick(sf::Time, World &world) {
       sprite.setPosition(hold);
     }
   }
-
+  
+  if (center.y != vold.y){
+    isJumping = true;
+  }
   return true;
 }
 
