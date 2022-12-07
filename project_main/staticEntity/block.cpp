@@ -4,7 +4,7 @@
 
 Block::Block(sf::Vector2f center)
   : Entity(center, "sprites/Grass.png") {
-    shape.setOrigin(0, 0);
+    sprite.setOrigin(0, 0);
   };
 
 // mandatory override

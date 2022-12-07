@@ -1,6 +1,6 @@
 #pragma once
 #include "../common.h"
-#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 class World;
 
@@ -58,7 +58,7 @@ public:
 
 protected:
   /**
-   * @brief This is the shape to render.
+   * @brief This is the sprite to render.
    *
    */
   sf::Sprite sprite;

@@ -8,8 +8,6 @@ bool canMove{true};
 Player::Player(sf::Vector2f center)
     : Entity(center, "sprites/warrior1_new.png"), health{10}, speed{400.0},
       type{'P'} {
-  shape.setOutlineColor(sf::Color::Blue);
-  shape.setOutlineThickness(0);
 }
 
 sf::Vector2f horizontal_position() {
@@ -44,24 +42,24 @@ bool Player::tick(sf::Time time, World &world) {
   auto hdir{horizontal_position()};
 
   center += hdir * (speed * time.asMicroseconds() / 1000000.0f);
-  shape.setPosition(center);
+  sprite.setPosition(center);
 
   for (auto &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Block *>(collision.get())) {
       center = hold;
-      shape.setPosition(hold);
+      sprite.setPosition(hold);
     }
   }
 
   auto vdir(vertical_position());
 
   center += vdir * (speed * time.asMicroseconds() / 1000000.0f);
-  shape.setPosition(center);
+  sprite.setPosition(center);
 
     for (auto &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Block *>(collision.get())) {
       center = vold;
-      shape.setPosition(vold);
+      sprite.setPosition(vold);
     }
   }
 
