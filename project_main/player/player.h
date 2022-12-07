@@ -1,7 +1,11 @@
 #pragma once
-#include "../components/component.h"
+#include "../entity/entity.h"
 
-class Player : public BaseClass{
+/**
+ * @brief This class defines and handles the player character.
+ * 
+ */
+class Player : public Entity{
 public:
 
   /**
@@ -36,8 +40,13 @@ public:
    */
   bool borderCheck();
 
+  // sf::Vector2f getPosition() { return ;}
+
 protected:
   int health;
   float speed;
   char type;
+  bool isJumping;
+  sf::Vector2f acceleration{sf::Vector2f(0, 0)};
+  bool facingRight{};
 };

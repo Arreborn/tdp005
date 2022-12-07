@@ -6,3 +6,4 @@ CMakeFiles/
 .cache/
 build/
 .vscode/settings.json
+.vscode/c_cpp_properties.json

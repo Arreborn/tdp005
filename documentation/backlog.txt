@@ -3,3 +3,16 @@
 - 25: Segment ska kunna ritas ut (push to next week)
 - 10: Spelaren ska kollidera med block-objekt som ritas ut på spelplanen (push to next week)
 --------
+2022-12-05
+- Spelaren ska kunna hoppa - se krav 1, 3, 4
+- Spelaren behöver påverkas av gravitation för att kunna hoppa - se krav 3, 4
+- [OK] Block-objekt ska kunna ritas ut på statiska punkter på spelplanen - delmål för krav 6, 14
+- [OK] Spelaren ska kollidera med block-objekt - se krav 6
+- Spelarens hälsa och hastighet ska läsas in och godtyckligt kunna manipuleras -  se krav 9, 10)
+
+- Segmenthanteraren ska fungera, och kunna läsa in samtliga segment och konvertera dem till en sträng som kan tolkas och ritas ut - se krav 13 - 17
+- Spelaren ska kunna färdas sömlöst mellan flera olika segment
+- Spelaren ska kunna använda grundläggande attacker - se krav 26 (delvis krav 27)
+- Spelaren ska kunna utföra en kort dash - se krav 5 (delvis krav 29 - 30)
+
+- Fiender ska kunna ritas ut på spelplanen och ha korrekt kollision enligt kravspecifikationen - se krav 7, 8, 22 - 24

@@ -1,0 +1,5 @@
+Spelplan grid: 80 bredd / 50 hög (16x16 block)
+Kan behöva lägga till kameraflytt
+
+
+Spelaren 32(width)x24(bredd)

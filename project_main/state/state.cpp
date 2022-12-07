@@ -1,4 +1,5 @@
 #include "state.h"
+#include "menuState.h"
 
 State::State() {}
 
@@ -10,7 +11,10 @@ void State::keyRelease(sf::Keyboard::Key) {}
 
 void State::run(sf::RenderWindow &window, shared_ptr<State> state){
   sf::Clock clock;
+  //sf::View view{sf::Vector2f(1280.0f,800.0f),sf::Vector2f(1280.0f,800.0f)};
 
+
+  
   while (state){
     sf::Event event{};
     while (window.pollEvent(event)){
@@ -34,12 +38,13 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state){
         return;
       } else {
          window.clear();
-        state = new_state;
+        state = new_state; 
       }
       continue;
     }
 
     state->render(window);
-    window.display();
+    window.display();  
+    //window.setView(view);
   }
 }
