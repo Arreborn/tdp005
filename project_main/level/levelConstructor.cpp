@@ -12,7 +12,11 @@ LevelConstructor::LevelConstructor(int numberOfSegments){
 void LevelConstructor::generateLevel(World &world){
   string str{SegmentManager::get()};
   std::ifstream file{};
+<<<<<<< HEAD
   // cout << str << endl;
+=======
+  //cout << str << endl;
+>>>>>>> 6ba8966cf69070a494e86eed7dad4a9f2e5d4610
   file.open("segments/seg1");
   string segment{};
   string temp{};

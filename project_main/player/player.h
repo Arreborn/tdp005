@@ -1,5 +1,6 @@
 #pragma once
 #include "../entity/entity.h"
+#include <SFML/System/Vector2.hpp>
 
 /**
  * @brief This class defines and handles the player character.
@@ -40,12 +41,16 @@ public:
    */
   bool borderCheck();
 
-  // sf::Vector2f getPosition() { return ;}
+  //void dash();
 
 protected:
-  int health;
-  float speed;
-  char type;
-  bool isJumping;
+  int health{};
+  float speed{};
+  char type{};
+  bool isJumping{};
+  bool dashing{};
+  char direction{};
   sf::Vector2f acceleration{sf::Vector2f(0, 0)};
+  sf::Time dashDuration{};
+  sf::Time dashCooldown{};
 };

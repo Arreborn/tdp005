@@ -58,6 +58,12 @@ private:
      * 
      */
     Action action;
+
+    /**
+     * @brief Destroy the Entry object.
+     * 
+     */
+    ~Entry() = default;
   };
   
   /**

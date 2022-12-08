@@ -2,6 +2,7 @@
 #include "state.h"
 #include "../sprites/spriteManager.h"
 #include "menuState.h"
+#include <memory>
 
 
 State::State() {} 
@@ -48,4 +49,8 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
     // window.setView(view);
     // view.setCenter(sf::Vector2f(600.0f, 600.0f));
   }
+}
+
+shared_ptr<State> ExitState::tick(sf::Time){
+  return nullptr;
 }

@@ -64,5 +64,9 @@ protected:
    *
    */
   sf::Sprite sprite;
+
+private:
+
+  //vector<shared_ptr<Component>> components{};
 };
 
