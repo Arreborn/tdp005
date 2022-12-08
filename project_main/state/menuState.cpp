@@ -1,5 +1,6 @@
 #include "menuState.h"
 #include "gameState.h"
+#include <SFML/Graphics/Font.hpp>
 
 MenuState::MenuState(shared_ptr<State> resume) 
   : selected(0), isEnterPressed(false), delay(sf::milliseconds(300)) {

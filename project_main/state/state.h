@@ -66,6 +66,6 @@ class State : public std::enable_shared_from_this<State>{
  */
 class ExitState : public State {
   public:
-    shared_ptr<State> tick(sf::Time) { return nullptr; }
+    shared_ptr<State> tick(sf::Time);
     void render(sf::RenderWindow &) {}
 };
