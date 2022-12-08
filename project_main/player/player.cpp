@@ -11,7 +11,7 @@ Player::Player(sf::Vector2f center)
       type{'P'}, isJumping{true} {}
 
 sf::Vector2f verticalPosition(sf::Vector2f &acceleration, bool &isJumping) {
-  if (isJumping && acceleration.y < 30){
+  if (isJumping && acceleration.y < 25){
     if (acceleration.y < 0){
       acceleration.y += 1;
     } else if (acceleration.y < 10){
