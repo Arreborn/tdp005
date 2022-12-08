@@ -2,8 +2,10 @@
 #include "../world.h"
 #include "../entity/entity.h"
 
-Block::Block(sf::Vector2f center)
-  : Entity(center, "sprites/Grass.png") {
+Block::Block(sf::Vector2f center, const sf::IntRect& tile)
+  : Entity(center, "sprites/Forest_blocks.png") {
+    
+    sprite.setTextureRect(tile);
     sprite.setOrigin(0, 0);
   };
 

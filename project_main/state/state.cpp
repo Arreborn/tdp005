@@ -1,5 +1,7 @@
 #include "state.h"
 #include "menuState.h"
+#include "../sprites/spriteManager.h"
+#include <SFML/Graphics/Color.hpp>
 
 State::State() {}
 
@@ -11,10 +13,8 @@ void State::keyRelease(sf::Keyboard::Key) {}
 
 void State::run(sf::RenderWindow &window, shared_ptr<State> state){
   sf::Clock clock;
-  //sf::View view{sf::Vector2f(1280.0f,800.0f),sf::Vector2f(1280.0f,800.0f)};
+  // sf::View view{sf::Vector2f(300.0f,175.0f),sf::Vector2f(640.0f,400.0f)};
 
-
-  
   while (state){
     sf::Event event{};
     while (window.pollEvent(event)){
@@ -32,7 +32,7 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state){
       }
     }
     
-    window.clear();
+    window.clear(sf::Color::Cyan);
     if (auto new_state = state->tick(clock.restart())){
       if (std::dynamic_pointer_cast<ExitState>(new_state)){
         return;
@@ -42,9 +42,9 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state){
       }
       continue;
     }
-
     state->render(window);
     window.display();  
-    //window.setView(view);
+    // window.setView(view);
+    // view.setCenter(sf::Vector2f(600.0f, 600.0f));
   }
 }

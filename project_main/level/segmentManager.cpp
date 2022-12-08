@@ -3,9 +3,9 @@
 #include <sstream>
 #include <fstream>
 #include <algorithm>
+#include <random>
 
 vector<string> storedSegments;
-vector<int> alreadyGenerated;
 
 string SegmentManager::get(){
   if (storedSegments.size() == 0){
@@ -13,13 +13,21 @@ string SegmentManager::get(){
     std::stringstream ss{};
 
     // stores path to all segments in the container
-    for (const auto & entry : std::filesystem::directory_iterator(path)){
-      cout <<"Path: " << entry << endl;
+    for (const std::filesystem::directory_entry &entry : std::filesystem::directory_iterator(path)){
       ss << entry;
       storedSegments.push_back(ss.str());
-      ss.clear(); 
+      ss.str(""); 
     }
-
+    std::random_device device;
+    std::default_random_engine engine(device());
+    shuffle(begin(storedSegments), end(storedSegments), engine);
   }
-}
+
+  const std::string randomSegment{storedSegments.back().str()}; // Nånting tappas vid konvertering mellan chars
+  storedSegments.pop_back();
+  return randomSegment;
+  
+
+ }
+
 

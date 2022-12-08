@@ -7,6 +7,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <random>
 
 // sets some useful namespaces
 using std::cout;

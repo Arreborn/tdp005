@@ -48,5 +48,4 @@ protected:
   char type;
   bool isJumping;
   sf::Vector2f acceleration{sf::Vector2f(0, 0)};
-  bool facingRight{};
 };
