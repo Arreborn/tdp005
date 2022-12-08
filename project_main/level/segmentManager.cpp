@@ -23,7 +23,7 @@ string SegmentManager::get(){
     shuffle(begin(storedSegments), end(storedSegments), engine);
   }
 
-  const char* randomSegment{storedSegments.back().c_str()};
+  const char* randomSegment{storedSegments.back().c_str()}; // Nånting tappas vid konvertering mellan chars
   storedSegments.pop_back();
   return randomSegment;
   
