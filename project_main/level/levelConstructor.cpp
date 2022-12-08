@@ -12,8 +12,8 @@ LevelConstructor::LevelConstructor(int numberOfSegments){
 void LevelConstructor::generateLevel(World &world){
   string str{SegmentManager::get()};
   std::ifstream file{};
-  cout << str << endl;
-  file.open(str.c_str());
+  //cout << str << endl;
+  file.open("segments/seg1");
   string segment{};
   string temp{};
 
