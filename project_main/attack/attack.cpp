@@ -1,7 +1,7 @@
 #include "attack.h"
 
 Attack::Attack(sf::Vector2f center, float damage, shared_ptr<Entity> attacker)
-    : Entity{center, "sprites/swoosh.png"}, damage{damage}, attackDuration{sf::seconds(2.f)}, attacker{attacker}
+    : Entity{center, "sprites/swoosh.png", 'a'}, damage{damage}, attackDuration{sf::seconds(2.f)}, attacker{attacker}
 {
     sprite.setTextureRect(sf::IntRect(0, 0, 30, 30));
 }
