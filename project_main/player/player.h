@@ -27,11 +27,17 @@ public:
   bool tick(sf::Time time, World &world) override;
 
   /**
-   * @brief Draws the player in the world.
+   * @brief Draws the player in the game world.
    * 
    * @param drawTo 
    */
   void render(sf::RenderWindow &drawTo) override;
+
+  sf::Vector2f verticalPosition();
+
+  float dash();
+
+  sf::Vector2f horizontalPosition(sf::Time const &time);
 
   /**
    * @brief Checks if players movement is about to escape the playing field.
@@ -41,16 +47,62 @@ public:
    */
   bool borderCheck();
 
-  //void dash();
-
 protected:
+  /**
+   * @brief Player health. Always decreases by one when hit.
+   * 
+   */
   int health{};
+
+  /**
+   * @brief Player speed. Used to manipulate movement speed. 5.0 by default.
+   * 
+   */
   float speed{};
+
+  /**
+   * @brief The entity type, used for some collisions. 'p' for player.
+   * 
+   */
   char type{};
+
+  /**
+   * @brief This bool activates when the player is in the air, to accelerate
+   * the gravitational pull.
+   * 
+   */
   bool isJumping{};
+
+  /**
+   * @brief This bool signifies whether or not the player is currently dashing.
+   * 
+   */
   bool dashing{};
+
+  bool thrown{};
+
+  /**
+   * @brief This char signifies the direction the player is facing. Used for sprite
+   * manipulation as well as dashing. Values: 'l' for left, 'r' for right.
+   * 
+   */
   char direction{};
+
+  /**
+   * @brief This vector is used to simulate gravitational pull.
+   * 
+   */
   sf::Vector2f acceleration{sf::Vector2f(0, 0)};
+
+  /**
+   * @brief The duration the player has been dashing. When at 0, the dash ends.
+   * 
+   */
   sf::Time dashDuration{};
+
+  /**
+   * @brief During the cooldown, the player cannot dash again.
+   * 
+   */
   sf::Time dashCooldown{};
 };

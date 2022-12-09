@@ -1,0 +1,55 @@
+#pragma once
+#include "../common.h"
+#include "../entity/entity.h"
+
+/**
+ * @brief This is a base class for hostiles. From this, sub-classes for more 
+ * avanced enemies can be added.
+ * 
+ */
+class Hostile : public Entity{
+public:
+  /**
+   * @brief Construct a new Hostile entity.
+   * 
+   * @param center 
+   */
+  Hostile(sf::Vector2f center);
+
+  /**
+   * @brief Updates the object. Will return false when the unit has died.
+   * 
+   * @param time 
+   * @param world 
+   * @return true 
+   * @return false 
+   */
+  bool tick(sf::Time time, World &world) override;
+
+  /**
+   * @brief Draws the object in the game world.
+   * 
+   * @param drawTo 
+   */
+  void render(sf::RenderWindow &drawTo) override;
+
+  protected:
+    /**
+     * @brief Stores the health of the hostile.
+     * 
+     */
+    int health{};
+
+    /**
+     * @brief The units movement speed.
+     * 
+     */
+    float speed{};
+
+    /**
+     * @brief This char signifies the type of enemy. 'h' for hostile.
+     * 
+     */
+    char type{};
+    sf::Vector2f acceleration{};
+};

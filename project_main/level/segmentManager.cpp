@@ -22,12 +22,9 @@ string SegmentManager::get(){
     std::default_random_engine engine(device());
     shuffle(begin(storedSegments), end(storedSegments), engine);
   }
-
-  const char* randomSegment{storedSegments.back().c_str()}; // Nånting tappas vid konvertering mellan chars
+  string randomSegment{storedSegments.back()}; // Nånting tappas vid konvertering mellan chars
   storedSegments.pop_back();
   return randomSegment;
-  
-
  }
 
 

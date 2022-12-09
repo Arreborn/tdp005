@@ -1,9 +1,10 @@
 #pragma once
-#include "../common.h"
 #include "segmentManager.h"
+#include "../common.h"
 #include "../world.h"
 #include "../staticEntity/block.h"
 #include "../entity/entity.h"
+#include "../hostile/hostile.h"
 
 // TODO:
 // Check viability of shared_ptr for the vector thingys

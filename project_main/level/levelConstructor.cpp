@@ -1,6 +1,7 @@
 #include "levelConstructor.h"
 #include "segmentManager.h"
 #include <fstream>
+#include <memory>
 
 LevelConstructor::LevelConstructor(int numberOfSegments){
   string current{};
@@ -11,13 +12,10 @@ LevelConstructor::LevelConstructor(int numberOfSegments){
 
 void LevelConstructor::generateLevel(World &world){
   string str{SegmentManager::get()};
+  str = str.substr(1, str.size() - 2);
   std::ifstream file{};
-<<<<<<< HEAD
-  // cout << str << endl;
-=======
-  //cout << str << endl;
->>>>>>> 6ba8966cf69070a494e86eed7dad4a9f2e5d4610
-  file.open("segments/seg1");
+  cout << str << endl;
+  file.open(str);
   string segment{};
   string temp{};
 
@@ -44,48 +42,50 @@ void LevelConstructor::generateLevel(World &world){
 
 void LevelConstructor::selector(char a, int x, int y, World &world){
   switch (a){
-    case 'B': case 'b': //Top block
+    case 'B': //Top block
        world.add(std::make_shared<Block>(sf::Vector2f(x, y),sf::IntRect(16,0,16,16)));
        break;
-    case 'F':case 'f': //Bottom right corner block
+    case 'F': //Bottom right corner block
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(32,32,16,16)));
       break;
-    case 'O':case 'o': // Bottom left corner block
+    case 'O': // Bottom left corner block
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(0,32,16,16)));
       break;
-    case 'R':case 'r': // Top right corner block
+    case 'R': // Top right corner block
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(32,0,16,16)));
       break;
-    case 'L':case 'l': // Top left corner block
+    case 'L': // Top left corner block
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(0,0,16,16)));
       break;
-    case 'E':case 'e': // Side block right
+    case 'E': // Side block right
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(32,16,16,16)));
       break;
-    case 'K':case 'k': // Side block left
+    case 'K': // Side block left
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(0,16,16,16)));
       break;
-    case 'D':case 'd': // Bottom block ground
+    case 'D': // Bottom block ground
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(16,32,16,16)));
       break;
-    case 'G':case 'g': // Ground block
+    case 'G': // Ground block
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(16,16,16,16)));
       break;
-    case 'H':case 'h': // Top left inside corner
+    case 'H': // Top left inside corner
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(48,0,16,16)));
       break;
-    case 'J':case 'j': // Top right inside corner
+    case 'J': // Top right inside corner
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(64,0,16,16)));
       break;
-    case 'N':case 'n': // Bottom left inside corner
+    case 'N': // Bottom left inside corner
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(48,16,16,16)));
       break;
-    case 'M':case 'm': //  Bottom right inside corner
+    case 'M': //  Bottom right inside corner
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(64,16,16,16)));
       break;
-    case 'T': case 't': // A tree place 3 blocks above ground in txt file
+    case 'T': // A tree place 3 blocks above ground in txt file
       world.add(std::make_shared<Block>(sf::Vector2f(x,y), sf::IntRect(0,48,48,48)));
       break;
+    case 'h':
+      world.add(std::make_shared<Hostile>(sf::Vector2f(x, y)));
     default:
       break;
   }
