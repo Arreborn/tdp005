@@ -4,25 +4,25 @@
 
 /**
  * @brief This class defines and handles the player character.
- * 
+ *
  */
-class Player : public Entity{
+class Player : public Entity
+{
 public:
-
   /**
    * @brief Construct a new Player object.
-   * 
-   * @param center 
+   *
+   * @param center
    */
   Player(sf::Vector2f center);
 
   /**
    * @brief Updates player position.
-   * 
-   * @param time 
-   * @param world 
-   * @return true 
-   * @return false 
+   *
+   * @param time
+   * @param world
+   * @return true
+   * @return false
    */
   bool tick(sf::Time time, World &world) override;
 
@@ -41,11 +41,13 @@ public:
 
   /**
    * @brief Checks if players movement is about to escape the playing field.
-   * 
-   * @return true 
-   * @return false 
+   *
+   * @return true
+   * @return false
    */
   bool borderCheck();
+
+  //void dash();
 
 protected:
   /**
@@ -79,11 +81,14 @@ protected:
    */
   bool dashing{};
 
+  /**
+   * @brief This bool checks if the player has collided with an enemy, and will be thrown.
+   * 
+   */
   bool thrown{};
 
   /**
-   * @brief This char signifies the direction the player is facing. Used for sprite
-   * manipulation as well as dashing. Values: 'l' for left, 'r' for right.
+   * @brief This char manages the direction the player is facing. Value: left = 'l', right = 'r'.
    * 
    */
   char direction{};
@@ -105,4 +110,6 @@ protected:
    * 
    */
   sf::Time dashCooldown{};
+  // sf::Time attackDuration{};
+  // sf::Time attackDelay{};
 };

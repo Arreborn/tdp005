@@ -4,8 +4,7 @@
 #include "menuState.h"
 #include <memory>
 
-
-State::State() {} 
+State::State() {}
 
 State::~State() {}
 
@@ -13,14 +12,18 @@ void State::keyPress(sf::Keyboard::Key) {}
 
 void State::keyRelease(sf::Keyboard::Key) {}
 
-void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
+void State::run(sf::RenderWindow &window, shared_ptr<State> state)
+{
   sf::Clock clock;
-  // sf::View view{sf::Vector2f(300.0f,175.0f),sf::Vector2f(640.0f,400.0f)};
+  sf::View view{sf::Vector2f(300.0f, 175.0f), sf::Vector2f(640.0f, 400.0f)};
 
-  while (state) {
+  while (state)
+  {
     sf::Event event{};
-    while (window.pollEvent(event)) {
-      switch (event.type) {
+    while (window.pollEvent(event))
+    {
+      switch (event.type)
+      {
       case sf::Event::Closed:
         return;
       case sf::Event::KeyPressed:
@@ -35,10 +38,14 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
     }
 
     window.clear(sf::Color::Cyan);
-    if (auto new_state = state->tick(clock.restart())) {
-      if (std::dynamic_pointer_cast<ExitState>(new_state)) {
+    if (auto new_state = state->tick(clock.restart()))
+    {
+      if (std::dynamic_pointer_cast<ExitState>(new_state))
+      {
         return;
-      } else {
+      }
+      else
+      {
         window.clear();
         state = new_state;
       }
@@ -46,11 +53,12 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
     }
     state->render(window);
     window.display();
-    // window.setView(view);
-    // view.setCenter(sf::Vector2f(600.0f, 600.0f));
+    window.setView(view);
+    view.setCenter(sf::Vector2f(520.0f, 400.0f));
   }
 }
 
-shared_ptr<State> ExitState::tick(sf::Time){
+shared_ptr<State> ExitState::tick(sf::Time)
+{
   return nullptr;
 }

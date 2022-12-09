@@ -12,28 +12,57 @@ sf::Vector2f Player::verticalPosition() {
   if (dashing){
     return sf::Vector2f{0, 0};
   }
-  if (isJumping && acceleration.y < 25){
-    if (acceleration.y < 0){
+  if (isJumping && acceleration.y < 25)
+  {
+    if (acceleration.y < 0)
+    {
       acceleration.y += 1;
-    } else if (acceleration.y < 10){
+    }
+    else if (acceleration.y < 10)
+    {
       acceleration.y += 1.5;
-    } else {
+    }
+    else
+    {
       acceleration.y += 1.8;
     }
   }
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::W ) || sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) { 
-      if (!isJumping){
-        isJumping = true;
-        acceleration.y = -10;
-      }
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+  {
+    if (!isJumping)
+    {
+      isJumping = true;
+      acceleration.y = -10;
+    }
   }
   return acceleration;
-
 }
 
+/* void attack(bool &attacking, sf::Time &attackDuration, char const &attackDirection, sf::Time const &attackDelay)
+{
+  string slashSprite{"/sprites/swoosh.png"};
+  sf::Texture *slSprite = SpriteManager::get(slashSprite);
+  sf::Sprite slash;
+  slash.setTexture(*slSprite);
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::J))
+  {
+    attacking = true;
+    attackDuration == sf::seconds(0.2);
+  }
+
+  if (attackDirection == 'l' && attacking)
+  {
+    slash.setTextureRect(sf::IntRect(0, 0, 118, 32));
+  }
+  else
+  {
+    slash.setTextureRect(sf::IntRect(0, 0, 118, 32));
+  }
+ */
 float Player::dash(){
   float position{};
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) && !dashing && dashCooldown == sf::seconds(0)){
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) && !dashing && dashCooldown == sf::seconds(0))
+  {
     dashing = true;
     dashDuration = sf::seconds(0.1);
   }
@@ -44,7 +73,7 @@ float Player::dash(){
     position += 2.5;
   }
 
-return position;
+  return position;
 }
 
 sf::Vector2f Player::horizontalPosition(sf::Time const &time/*, bool &dashing, bool &thrown, char &direction, sf::Time &dashDuration, sf::Time &dashCooldown, sf::Vector2f acceleration*/){
@@ -66,9 +95,11 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time/*, bool &dashing, b
     }
   }
 
-  if (dashing){
+  if (dashing)
+  {
     dashDuration -= time;
-    if (dashDuration <= sf::seconds(0)){
+    if (dashDuration <= sf::seconds(0))
+    {
       dashDuration = sf::seconds(0);
       dashing = false;
       dashCooldown = sf::seconds(1.5);
@@ -144,22 +175,36 @@ bool Player::tick(sf::Time time, World &world) {
       sprite.setPosition(hold);
     }
   }
-  
-  if (center.y != vold.y){
+
+  if (center.y != vold.y)
+  {
     isJumping = true;
   }
 
-  if (dashCooldown >= sf::seconds(0)){
+  if (dashCooldown >= sf::seconds(0))
+  {
     dashCooldown -= time;
-    if (dashCooldown <= sf::seconds(0)){
+    if (dashCooldown <= sf::seconds(0))
+    {
       dashCooldown = sf::seconds(0);
     }
+  }
+
+  if (direction == 'l')
+  {
+    // attack(attacking, attackDuration, direction, attackDelay);
+    sprite.scale(-1.0f, 1.0f);
+  }
+  else
+  {
+    sprite.scale(1.f, 1.f);
   }
 
   return true;
 }
 
-void Player::render(sf::RenderWindow &drawTo) {
+void Player::render(sf::RenderWindow &drawTo)
+{
 
   Entity::render(drawTo);
 }
