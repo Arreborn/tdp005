@@ -2,6 +2,9 @@
 #include "../staticEntity/block.h"
 #include "../hostile/hostile.h"
 #include "../world.h"
+#include "../attack/attack.h"
+#include "../world.h"
+#include <SFML/System/Time.hpp>
 
 Player::Player(sf::Vector2f center)
     : Entity(center, "sprites/warrior1_new.png", 'p'), health{10}, speed{5.0},
@@ -39,27 +42,16 @@ sf::Vector2f Player::verticalPosition()
   return acceleration;
 }
 
-/* void attack(bool &attacking, sf::Time &attackDuration, char const &attackDirection, sf::Time const &attackDelay)
+void Player::attack(World &world)
 {
-  string slashSprite{"/sprites/swoosh.png"};
-  sf::Texture *slSprite = SpriteManager::get(slashSprite);
-  sf::Sprite slash;
-  slash.setTexture(*slSprite);
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::J))
-  {
-    attacking = true;
-    attackDuration == sf::seconds(0.2);
-  }
 
-  if (attackDirection == 'l' && attacking)
-{
-    slash.setTextureRect(sf::IntRect(0, 0, 118, 32));
-  }
-  else
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::J) && attackCooldown == sf::seconds(0.0f))
   {
-    slash.setTextureRect(sf::IntRect(0, 0, 118, 32));
+    world.add(std::make_shared<Attack>(center, 35, this));
+    attackCooldown = sf::seconds(2.0f);
   }
- */
+}
+
 float Player::dash()
 {
   float position{};
@@ -227,6 +219,17 @@ bool Player::tick(sf::Time time, World &world)
   else
   {
     sprite.setScale(1.f, 1.f);
+  }
+
+  attack(world);
+
+  if (attackCooldown <= sf::seconds(0.0f))
+  {
+    attackCooldown = sf::seconds(0.0f);
+  }
+  else
+  {
+    attackCooldown -= time;
   }
 
   return true;

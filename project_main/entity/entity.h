@@ -61,6 +61,10 @@ public:
 
   virtual bool isAlive();
 
+  char getType();
+
+  virtual void takeDamage(float damage);
+
 protected:
   /**
    * @brief This is the sprite to render.
@@ -68,7 +72,7 @@ protected:
    */
   sf::Sprite sprite;
 
-    /**
+  /**
    * @brief The entity type, used for some collisions. 'p' for player.
    * 
    */

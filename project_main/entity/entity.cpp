@@ -30,6 +30,12 @@ sf::Vector2f const Entity::getCenter(){
   return center;
 }
 
-bool isAlive(){
+bool Entity::isAlive(){
     return true;
 }
+
+char Entity::getType(){
+    return type;
+}
+
+void Entity::takeDamage(float){};
