@@ -2,11 +2,10 @@
 #include "../staticEntity/block.h"
 #include "../hostile/hostile.h"
 #include "../world.h"
-#include <SFML/System/Vector2.hpp>
 
 Player::Player(sf::Vector2f center)
-    : Entity(center, "sprites/warrior1_new.png"), health{10}, speed{5.0},
-      type{'P'}, isJumping{true} {}
+    : Entity(center, "sprites/warrior1_new.png", 'p'), health{10}, speed{5.0},
+      isJumping{true} {}
 
 sf::Vector2f Player::verticalPosition() {
   if (dashing){
@@ -202,4 +201,12 @@ bool Player::tick(sf::Time time, World &world) {
 
 void Player::render(sf::RenderWindow &drawTo){
   Entity::render(drawTo);
+}
+
+bool Player::isAlive(){
+  if (health <= 0){
+    return false;
+  } else {
+    return true;
+  }
 }

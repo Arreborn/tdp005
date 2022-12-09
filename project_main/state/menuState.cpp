@@ -1,6 +1,7 @@
 #include "menuState.h"
 #include "gameState.h"
 #include <SFML/Graphics/Font.hpp>
+#include <SFML/Window/Keyboard.hpp>
 
 MenuState::MenuState(shared_ptr<State> resume) 
   : selected(0), isEnterPressed(false), delay(sf::milliseconds(300)) {
@@ -23,12 +24,12 @@ void MenuState::add(const string &text, Action action){
 
 void MenuState::keyPress(sf::Keyboard::Key key){
   switch (key) {
-  case sf::Keyboard::S:
+  case sf::Keyboard::S: case sf::Keyboard::Down:
     if (selected + 1 < entries.size()){
       selected++;
     }
     break;
-  case sf::Keyboard::W:
+  case sf::Keyboard::W: case sf::Keyboard::Up:
     if (selected > 0){
       selected--;
     }

@@ -3,7 +3,6 @@
 #include <SFML/System/Vector2.hpp>
 
 void World::tick(sf::Time time) {
-
   for (size_t i{}; i < objects.size(); ++i) {
     if (!objects[i]->tick(time, *this)) {
         objects.erase(objects.begin() + i);
@@ -20,7 +19,6 @@ void World::render(sf::RenderWindow &drawTo) {
 
 void World::add(shared_ptr<Entity> object) {
   if (dynamic_cast<Player *>(object.get())){
-    cout << "Player found!" << endl;
     playerCharacter = object;
   }
   objects.push_back(object);
@@ -47,6 +45,7 @@ vector<shared_ptr<Entity>> World::collidesWith(Entity &me) const {
 
 const sf::Vector2f World::getCenter(){
   sf::Vector2f center{playerCharacter->getCenter()};
+  center.y -= 70;
   if (center.x <= 320.0f){
     center.x = 320.0f;
   } else if (center.x >= 960){
@@ -60,4 +59,8 @@ const sf::Vector2f World::getCenter(){
   }
 
   return center;  
+}
+
+bool World::isPlayerAlive(){
+  return playerCharacter->isAlive();
 }

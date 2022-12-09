@@ -2,8 +2,8 @@
 #include "../sprites/spriteManager.h"
 #include <SFML/System/Vector2.hpp>
 
-Entity::Entity(sf::Vector2f center, const string &renderSprite)
-    : center(center) {
+Entity::Entity(sf::Vector2f center, const string &renderSprite, char const type)
+    : center(center), type{type} {
 
     sf::Texture *t = SpriteManager::get(renderSprite);
     auto size = t->getSize();
@@ -28,4 +28,8 @@ sf::FloatRect Entity::getBounds(){
 
 sf::Vector2f const Entity::getCenter(){
   return center;
+}
+
+bool isAlive(){
+    return true;
 }

@@ -42,6 +42,8 @@ public:
 
   const sf::Vector2f getCenter();
 
+  bool isPlayerAlive();
+
 private:
   /**
    * @brief This container stores all game objects.

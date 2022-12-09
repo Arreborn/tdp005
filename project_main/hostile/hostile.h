@@ -33,6 +33,8 @@ public:
    */
   void render(sf::RenderWindow &drawTo) override;
 
+  bool isAlive() override;
+
   protected:
     /**
      * @brief Stores the health of the hostile.
@@ -46,10 +48,5 @@ public:
      */
     float speed{};
 
-    /**
-     * @brief This char signifies the type of enemy. 'h' for hostile.
-     * 
-     */
-    char type{};
     sf::Vector2f acceleration{};
 };

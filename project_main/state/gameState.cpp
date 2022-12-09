@@ -23,6 +23,11 @@ shared_ptr<State> GameState::tick(sf::Time time) {
     view.setSize(1280.0, 800.0);
     return std::make_shared<MenuState>(shared_from_this());
   }
+
+  if (!world.isPlayerAlive()){
+    // return GameOverState ptr
+  }
+
   return nullptr;
 }
 

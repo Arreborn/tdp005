@@ -47,6 +47,8 @@ public:
    */
   bool borderCheck();
 
+  bool isAlive() override;
+
 protected:
   /**
    * @brief Player health. Always decreases by one when hit.
@@ -59,12 +61,6 @@ protected:
    * 
    */
   float speed{};
-
-  /**
-   * @brief The entity type, used for some collisions. 'p' for player.
-   * 
-   */
-  char type{};
 
   /**
    * @brief This bool activates when the player is in the air, to accelerate

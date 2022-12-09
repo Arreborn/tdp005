@@ -3,7 +3,7 @@
 #include "../entity/entity.h"
 
 Block::Block(sf::Vector2f center, const sf::IntRect& tile)
-  : Entity(center, "sprites/Tileset.png") {
+  : Entity(center, "sprites/Tileset.png", 'B') {
     
     sprite.setTextureRect(tile);
     sprite.setOrigin(0, 0);

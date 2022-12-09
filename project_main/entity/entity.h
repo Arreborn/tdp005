@@ -1,7 +1,5 @@
 #pragma once
 #include "../common.h"
-#include <SFML/Graphics/Sprite.hpp>
-#include <SFML/System/Vector2.hpp>
 
 class World;
 
@@ -17,7 +15,7 @@ public:
    * @param center
    * @param radius
    */
-  Entity(sf::Vector2f center, string const &sprite);
+  Entity(sf::Vector2f center, string const &sprite, char const type);
 
   /**
    * @brief Destroy the Entity object.
@@ -61,6 +59,8 @@ public:
 
   sf::Vector2f const getCenter();
 
+  virtual bool isAlive();
+
 protected:
   /**
    * @brief This is the sprite to render.
@@ -68,8 +68,10 @@ protected:
    */
   sf::Sprite sprite;
 
-private:
-
-  //vector<shared_ptr<Component>> components{};
+    /**
+   * @brief The entity type, used for some collisions. 'p' for player.
+   * 
+   */
+  char type{};
 };
 
