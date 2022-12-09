@@ -16,7 +16,8 @@ set(SOURCE_FILES main.cpp
   level/segmentManager.cpp
   level/levelConstructor.cpp
   staticEntity/block.cpp
-  hostile/hostile.cpp)
+  hostile/hostile.cpp
+  attack/attack.cpp)
 # På skolans Linux - system finns det två versioner av SFML. Se efter vilken som används :
 if (DEFINED ENV{LOADEDMODULES} AND ("$ENV{LOADEDMODULES}" MATCHES ".*prog/gcc/6.1.0.*"))
   set(CMAKE_CXX_COMPILER /sw/gcc-6.1.0/bin/g++)
