@@ -2,6 +2,10 @@
 #include "../staticEntity/block.h"
 #include "../hostile/hostile.h"
 #include "../world.h"
+#include "../attack/attack.h"
+#include "../world.h"
+#include <SFML/System/Time.hpp>
+#include <memory>
 
 Player::Player(sf::Vector2f center)
     : Entity(center, "sprites/warrior1_new.png", 'p'), health{10}, speed{5.0},
@@ -37,31 +41,18 @@ sf::Vector2f Player::verticalPosition() {
   return acceleration;
 }
 
-/* void attack(bool &attacking, sf::Time &attackDuration, char const &attackDirection, sf::Time const &attackDelay)
-{
-  string slashSprite{"/sprites/swoosh.png"};
-  sf::Texture *slSprite = SpriteManager::get(slashSprite);
-  sf::Sprite slash;
-  slash.setTexture(*slSprite);
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::J))
-  {
-    attacking = true;
-    attackDuration == sf::seconds(0.2);
-  }
+void Player::attack(World &world){
 
-  if (attackDirection == 'l' && attacking)
-  {
-    slash.setTextureRect(sf::IntRect(0, 0, 118, 32));
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::J) && attackCooldown == sf::seconds(0.0f)){
+    world.add(std::make_shared<Attack>(center, 35, this));
+    attackCooldown = sf::seconds(2.0f);
   }
-  else
-  {
-    slash.setTextureRect(sf::IntRect(0, 0, 118, 32));
-  }
- */
+}
+
 float Player::dash(){
   float position{};
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) && !dashing && dashCooldown == sf::seconds(0))
-  {
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) 
+      && !dashing && dashCooldown == sf::seconds(0)){
     dashing = true;
     dashDuration = sf::seconds(0.1);
   }
@@ -194,6 +185,14 @@ bool Player::tick(sf::Time time, World &world) {
     sprite.setScale(-1.0f, 1.0f);
   } else {
     sprite.setScale(1.f, 1.f);
+  }
+
+  attack(world);
+
+  if (attackCooldown <= sf::seconds(0.0f)){
+    attackCooldown = sf::seconds(0.0f);
+  } else {
+    attackCooldown -= time;
   }
 
   return true;

@@ -9,13 +9,13 @@
 class Attack : public Entity
 {
 public:
-    Attack(sf::Vector2f center, float const damage, shared_ptr<Entity> attacker);
+    Attack(sf::Vector2f center, float const damage, Entity* attacker);
 
     bool tick(sf::Time time, World &world) override;
     void render(sf::RenderWindow &window) override;
 
 protected:
-    shared_ptr<Entity> attacker{};
-    sf::Time attackDuration{};
     float damage{};
+    sf::Time attackDuration{};
+    shared_ptr<Entity> attacker{};
 };

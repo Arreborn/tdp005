@@ -49,6 +49,8 @@ public:
 
   bool isAlive() override;
 
+  void attack(World &world);
+
 protected:
   /**
    * @brief Player health. Always decreases by one when hit.
@@ -104,6 +106,6 @@ protected:
    * 
    */
   sf::Time dashCooldown{};
-  // sf::Time attackDuration{};
-  // sf::Time attackDelay{};
+
+  sf::Time attackCooldown{};
 };
