@@ -1,6 +1,8 @@
 #pragma once
 #include "common.h"
+#include "player/player.h"
 #include "entity/entity.h"
+#include <SFML/System/Vector2.hpp>
 
 class World {
 public:
@@ -38,10 +40,14 @@ public:
    */
   vector<shared_ptr<Entity>> collidesWith(Entity &me) const;
 
+  const sf::Vector2f getCenter();
+
 private:
   /**
    * @brief This container stores all game objects.
    * 
    */
   vector<shared_ptr<Entity>> objects;
+
+  shared_ptr<Entity> playerCharacter{};
 };

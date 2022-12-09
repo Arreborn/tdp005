@@ -1,4 +1,6 @@
 #include "world.h"
+#include "player/player.h"
+#include <SFML/System/Vector2.hpp>
 
 void World::tick(sf::Time time) {
 
@@ -17,6 +19,10 @@ void World::render(sf::RenderWindow &drawTo) {
 }
 
 void World::add(shared_ptr<Entity> object) {
+  if (dynamic_cast<Player *>(object.get())){
+    cout << "Player found!" << endl;
+    playerCharacter = object;
+  }
   objects.push_back(object);
 }
 
@@ -37,4 +43,21 @@ vector<shared_ptr<Entity>> World::collidesWith(Entity &me) const {
     }
   }
   return result;
+}
+
+const sf::Vector2f World::getCenter(){
+  sf::Vector2f center{playerCharacter->getCenter()};
+  if (center.x <= 320.0f){
+    center.x = 320.0f;
+  } else if (center.x >= 960){
+    center.x = 960.0f;
+  }
+
+  if (center.y >= 600){
+    center.y = 600;
+  } else if (center.y <= 200){
+    center.y = 200;
+  }
+
+  return center;  
 }

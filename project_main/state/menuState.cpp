@@ -83,7 +83,7 @@ void MenuState::render(sf::RenderWindow &drawTo){
     y += bounds.height * 2.0f;
 
     int state = static_cast<int>(255 * e.state);
-    e.text.setFillColor(sf::Color(state, 255, state));
+    e.text.setFillColor(sf::Color(state, state, 100));
     drawTo.draw(e.text);
   }
 }

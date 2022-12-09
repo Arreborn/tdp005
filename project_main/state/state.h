@@ -58,6 +58,9 @@ class State : public std::enable_shared_from_this<State>{
      */
     static void run(sf::RenderWindow &window, shared_ptr<State> state);
 
+  protected:
+    sf::View view{};
+
 };
 
 /**

@@ -47,8 +47,6 @@ public:
    */
   bool borderCheck();
 
-  //void dash();
-
 protected:
   /**
    * @brief Player health. Always decreases by one when hit.

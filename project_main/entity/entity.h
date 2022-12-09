@@ -1,6 +1,7 @@
 #pragma once
 #include "../common.h"
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Vector2.hpp>
 
 class World;
 
@@ -57,6 +58,8 @@ public:
   virtual sf::Sprite *getBorder();
 
   sf::FloatRect getBounds();
+
+  sf::Vector2f const getCenter();
 
 protected:
   /**

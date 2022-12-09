@@ -1,5 +1,6 @@
 #include "entity.h"
 #include "../sprites/spriteManager.h"
+#include <SFML/System/Vector2.hpp>
 
 Entity::Entity(sf::Vector2f center, const string &renderSprite)
     : center(center) {
@@ -23,4 +24,8 @@ sf::Sprite *Entity::getBorder(){
 
 sf::FloatRect Entity::getBounds(){
     return sprite.getGlobalBounds();
+}
+
+sf::Vector2f const Entity::getCenter(){
+  return center;
 }

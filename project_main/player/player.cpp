@@ -190,21 +190,16 @@ bool Player::tick(sf::Time time, World &world) {
     }
   }
 
-  if (direction == 'l')
-  {
+  if (direction == 'l'){
     // attack(attacking, attackDuration, direction, attackDelay);
-    sprite.scale(-1.0f, 1.0f);
-  }
-  else
-  {
-    sprite.scale(1.f, 1.f);
+    sprite.setScale(-1.0f, 1.0f);
+  } else {
+    sprite.setScale(1.f, 1.f);
   }
 
   return true;
 }
 
-void Player::render(sf::RenderWindow &drawTo)
-{
-
+void Player::render(sf::RenderWindow &drawTo){
   Entity::render(drawTo);
 }
