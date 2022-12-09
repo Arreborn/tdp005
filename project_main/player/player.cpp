@@ -7,8 +7,10 @@ Player::Player(sf::Vector2f center)
     : Entity(center, "sprites/warrior1_new.png", 'p'), health{10}, speed{5.0},
       isJumping{true} {}
 
-sf::Vector2f Player::verticalPosition() {
-  if (dashing){
+sf::Vector2f Player::verticalPosition()
+{
+  if (dashing)
+  {
     return sf::Vector2f{0, 0};
   }
   if (isJumping && acceleration.y < 25)
@@ -50,7 +52,7 @@ sf::Vector2f Player::verticalPosition() {
   }
 
   if (attackDirection == 'l' && attacking)
-  {
+{
     slash.setTextureRect(sf::IntRect(0, 0, 118, 32));
   }
   else
@@ -58,7 +60,8 @@ sf::Vector2f Player::verticalPosition() {
     slash.setTextureRect(sf::IntRect(0, 0, 118, 32));
   }
  */
-float Player::dash(){
+float Player::dash()
+{
   float position{};
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) && !dashing && dashCooldown == sf::seconds(0))
   {
@@ -66,30 +69,41 @@ float Player::dash(){
     dashDuration = sf::seconds(0.1);
   }
 
-  if (direction == 'l' && dashing){
+  if (direction == 'l' && dashing)
+  {
     position -= 2.5;
-  } else if (direction == 'r' && dashing) {
+  }
+  else if (direction == 'r' && dashing)
+  {
     position += 2.5;
   }
 
   return position;
 }
 
-sf::Vector2f Player::horizontalPosition(sf::Time const &time/*, bool &dashing, bool &thrown, char &direction, sf::Time &dashDuration, sf::Time &dashCooldown, sf::Vector2f acceleration*/){
+sf::Vector2f Player::horizontalPosition(sf::Time const &time /*, bool &dashing, bool &thrown, char &direction, sf::Time &dashDuration, sf::Time &dashCooldown, sf::Vector2f acceleration*/)
+{
   sf::Vector2f position{};
-  if (dashCooldown == sf::seconds(0)){
+  if (dashCooldown == sf::seconds(0))
+  {
     position.x += dash();
   }
 
-  if (thrown){
+  if (thrown)
+  {
     position.x += acceleration.x;
-    if (direction == 'l'){
-      if (acceleration.x != 0){
+    if (direction == 'l')
+    {
+      if (acceleration.x != 0)
+      {
         acceleration.x -= 0.5;
       }
-    } else if (direction == 'r'){
-        if (acceleration.x != 0){
-          acceleration.x += 0.5;
+    }
+    else if (direction == 'r')
+    {
+      if (acceleration.x != 0)
+      {
+        acceleration.x += 0.5;
       }
     }
   }
@@ -105,11 +119,13 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time/*, bool &dashing, b
     }
   }
 
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && !dashing && !thrown) { // left
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && !dashing && !thrown)
+  { // left
     position.x -= 1;
     direction = 'l';
   }
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && !dashing && !thrown) { // right
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && !dashing && !thrown)
+  { // right
     position.x += 1;
     direction = 'r';
   }
@@ -117,7 +133,8 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time/*, bool &dashing, b
 }
 // TODO:
 // Consider moving the collision with blocks to the base class
-bool Player::tick(sf::Time time, World &world) {
+bool Player::tick(sf::Time time, World &world)
+{
   // coordinates to reset the player to if a collision is triggered
   sf::Vector2f vold{center};
 
@@ -126,24 +143,30 @@ bool Player::tick(sf::Time time, World &world) {
   sprite.setPosition(center);
 
   // checks with all entities currently colliding with the player
-  for (auto &collision : world.collidesWith(*this)) { // vertical collision
-    
+  for (auto &collision : world.collidesWith(*this))
+  { // vertical collision
+
     // collision with block
-    if (dynamic_cast<Block *>(collision.get())) {
+    if (dynamic_cast<Block *>(collision.get()))
+    {
       center = vold;
       // this case manages pixel perfect contact with the ground
-      if (collision->center.y > center.y){
+      if (collision->center.y > center.y)
+      {
         center -= sf::Vector2f{0, (center.y - collision.get()->center.y + 15) - float{0.5}};
         acceleration.y = 2; // standard gravitational pull
         isJumping = false;
         thrown = false;
-      } else { // unclear when we enter this
+      }
+      else
+      { // unclear when we enter this
         acceleration.y = 0;
       }
       // break the loop if we collide with a block
       break;
-
-    } else if (dynamic_cast<Hostile *>(collision.get())){
+    }
+    else if (dynamic_cast<Hostile *>(collision.get()))
+    {
       // vertical collision with an enemy will get the player thrown back
       center = vold;
       // gives some lift when being thrown
@@ -153,12 +176,17 @@ bool Player::tick(sf::Time time, World &world) {
       // is used to trigger another path in vertical movement
       thrown = true;
       // these variables control the distance a player hets thrown
-      if (direction == 'l'){
+      if (direction == 'l')
+      {
         acceleration.x += 4; // increase to throw further
-      } else {
+      }
+      else
+      {
         acceleration.x -= 4; // set to same value as previous case
       }
-    } else { // is triggered when the player lands
+    }
+    else
+    { // is triggered when the player lands
       isJumping = true;
     }
   }
@@ -168,8 +196,10 @@ bool Player::tick(sf::Time time, World &world) {
   center += hdir * speed;
   sprite.setPosition(center);
 
-    for (auto &collision : world.collidesWith(*this)) { // horiontal collision
-    if (dynamic_cast<Block *>(collision.get()) || dynamic_cast<Hostile *>(collision.get())) {
+  for (auto &collision : world.collidesWith(*this))
+  { // horiontal collision
+    if (dynamic_cast<Block *>(collision.get()) || dynamic_cast<Hostile *>(collision.get()))
+    {
       center = hold;
       sprite.setPosition(hold);
     }
@@ -189,24 +219,32 @@ bool Player::tick(sf::Time time, World &world) {
     }
   }
 
-  if (direction == 'l'){
+  if (direction == 'l')
+  {
     // attack(attacking, attackDuration, direction, attackDelay);
     sprite.setScale(-1.0f, 1.0f);
-  } else {
+  }
+  else
+  {
     sprite.setScale(1.f, 1.f);
   }
 
   return true;
 }
 
-void Player::render(sf::RenderWindow &drawTo){
+void Player::render(sf::RenderWindow &drawTo)
+{
   Entity::render(drawTo);
 }
 
-bool Player::isAlive(){
-  if (health <= 0){
+bool Player::isAlive()
+{
+  if (health <= 0)
+  {
     return false;
-  } else {
+  }
+  else
+  {
     return true;
   }
 }
