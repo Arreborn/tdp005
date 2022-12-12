@@ -3,30 +3,48 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
 
-Hostile::Hostile(sf::Vector2f center) 
-  : Entity(center, "sprites/mushy_test.png", 'h'), health{100}, speed(5.0){
-    sprite.setOrigin(0, 0);
-  }
+Hostile::Hostile(sf::Vector2f center)
+    : Entity(center, "sprites/mushy_test.png", 'h'), health{100}, speed(5.0)
+{
+  sprite.setOrigin(0, 0);
+}
 
-bool Hostile::tick(sf::Time, World &){ 
+bool Hostile::tick(sf::Time, World &)
+{
 
   // movement and behaviour
 
-  if (!isAlive()){
+  if (!isAlive())
+  {
     // death animation
+    return false;
   }
 
   return true;
- };
+};
 
-void Hostile::render(sf::RenderWindow &drawTo){
+void Hostile::render(sf::RenderWindow &drawTo)
+{
   Entity::render(drawTo);
 }
 
-bool Hostile::isAlive(){
-  if (health <= 0){
+bool Hostile::isAlive()
+{
+  if (health <= 0)
+  {
     return false;
-  } else {
+  }
+  else
+  {
     return true;
+  }
+}
+
+void Hostile::takeDamage(float damage)
+{
+  if (isAlive())
+  {
+    health -= damage;
+    cout << health << endl;
   }
 }

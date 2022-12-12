@@ -28,8 +28,8 @@ public:
 
   /**
    * @brief Draws the player in the game world.
-   * 
-   * @param drawTo 
+   *
+   * @param drawTo
    */
   void render(sf::RenderWindow &drawTo) override;
 
@@ -51,59 +51,61 @@ public:
 
   void attack(World &world);
 
+  void takeDamage(float damage) override;
+
 protected:
   /**
    * @brief Player health. Always decreases by one when hit.
-   * 
+   *
    */
   int health{};
 
   /**
    * @brief Player speed. Used to manipulate movement speed. 5.0 by default.
-   * 
+   *
    */
   float speed{};
 
   /**
    * @brief This bool activates when the player is in the air, to accelerate
    * the gravitational pull.
-   * 
+   *
    */
   bool isJumping{};
 
   /**
    * @brief This bool signifies whether or not the player is currently dashing.
-   * 
+   *
    */
   bool dashing{};
 
   /**
    * @brief This bool checks if the player has collided with an enemy, and will be thrown.
-   * 
+   *
    */
   bool thrown{};
 
   /**
    * @brief This char manages the direction the player is facing. Value: left = 'l', right = 'r'.
-   * 
+   *
    */
   char direction{};
 
   /**
    * @brief This vector is used to simulate gravitational pull.
-   * 
+   *
    */
   sf::Vector2f acceleration{sf::Vector2f(0, 0)};
 
   /**
    * @brief The duration the player has been dashing. When at 0, the dash ends.
-   * 
+   *
    */
   sf::Time dashDuration{};
 
   /**
    * @brief During the cooldown, the player cannot dash again.
-   * 
+   *
    */
   sf::Time dashCooldown{};
 

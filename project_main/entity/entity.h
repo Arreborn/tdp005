@@ -7,7 +7,8 @@ class World;
  * @brief An abstract game object.
  *
  */
-class Entity {
+class Entity
+{
 public:
   /**
    * @brief Construct a new Entity bject.
@@ -63,7 +64,7 @@ public:
 
   char getType();
 
-  virtual void takeDamage(float damage);
+  virtual void takeDamage(float damage) = 0;
 
 protected:
   /**
@@ -74,8 +75,7 @@ protected:
 
   /**
    * @brief The entity type, used for some collisions. 'p' for player.
-   * 
+   *
    */
   char type{};
 };
-

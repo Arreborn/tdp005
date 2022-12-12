@@ -3,7 +3,7 @@
 Attack::Attack(sf::Vector2f center, float damage, Entity *attacker)
     : Entity{center, "sprites/swoosh.png", 'a'}, damage{damage}, attackDuration{sf::seconds(2.f)}, attacker{attacker}
 {
-    sprite.setTextureRect(sf::IntRect(0, 0, 30, 30));
+    sprite.setTextureRect(sf::IntRect(0, 0, 28, 28));
 }
 
 bool Attack::tick(sf::Time time, World &world)
@@ -14,6 +14,10 @@ bool Attack::tick(sf::Time time, World &world)
         if (dynamic_cast<Entity *>(collision.get())->getType() != attacker->getType() && !(dynamic_cast<Block *>(collision.get())))
         {
             collision->takeDamage(damage);
+            if (!isAlive())
+            {
+                // Remove entity
+            }
         }
     }
     if (attackDuration != sf::seconds(0))
@@ -43,4 +47,9 @@ bool Attack::tick(sf::Time time, World &world)
 void Attack::render(sf::RenderWindow &render)
 {
     Entity::render(render);
+}
+
+void Attack::takeDamage(float)
+{
+    cout << "Collided with itself" << endl;
 }

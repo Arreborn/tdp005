@@ -127,6 +127,12 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time /*, bool &dashing, 
 // Consider moving the collision with blocks to the base class
 bool Player::tick(sf::Time time, World &world)
 {
+  if (!isAlive())
+  {
+    // Game over screen???
+    // Death animation
+    return false;
+  }
   // coordinates to reset the player to if a collision is triggered
   sf::Vector2f vold{center};
 
@@ -249,5 +255,14 @@ bool Player::isAlive()
   else
   {
     return true;
+  }
+}
+
+void Player::takeDamage(float damage)
+{
+  if (isAlive())
+  {
+    health -= damage;
+    cout << "Player took damage" << endl;
   }
 }

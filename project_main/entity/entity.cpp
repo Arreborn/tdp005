@@ -44,9 +44,3 @@ char Entity::getType()
 {
     return type;
 }
-
-void Entity::takeDamage(float damage)
-{
-    Entity.health -= damage;
-    cout << "Damage: " << damage << "~~~~Taken: " << *Entity->health << endl;
-};

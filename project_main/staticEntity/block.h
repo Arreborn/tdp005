@@ -5,39 +5,41 @@
 /**
  * @brief This is a general base class handling the creation of
  * block-objects.
- * 
+ *
  */
-class Block : public Entity {
+class Block : public Entity
+{
 public:
   /**
    * @brief Construct a new Block object.
-   * 
-   * @param center 
+   *
+   * @param center
    */
-  Block(sf::Vector2f center, const sf::IntRect& tile); // maybe top left corner for easier drawing?
-  
+  Block(sf::Vector2f center, const sf::IntRect &tile); // maybe top left corner for easier drawing?
+
   /**
    * @brief Handles updates for collision checking.
-   * 
-   * @param time 
-   * @param world 
-   * @return true 
-   * @return false 
+   *
+   * @param time
+   * @param world
+   * @return true
+   * @return false
    */
   bool tick(sf::Time time, World &world) override;
 
   /**
    * @brief Renders the object in the provided window.
-   * 
-   * @param drawTo 
+   *
+   * @param drawTo
    */
   void render(sf::RenderWindow &drawTo) override;
 
-protected:
+  void takeDamage(float damage) override;
 
+protected:
   /**
    * @brief Stores the type for collision checking and drawing.
-   * 
+   *
    */
-  //char type{'B'};
+  // char type{'B'};
 };
