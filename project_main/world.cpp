@@ -62,3 +62,11 @@ const sf::Vector2f World::getCenter() {
 }
 
 bool World::isPlayerAlive() { return playerCharacter->isAlive(); }
+
+void World::clear(){
+  for (int i{}; i >= 0; --i){
+    if (objects[i] != playerCharacter){
+      objects.erase(objects.begin() + i);
+    }
+  }
+}

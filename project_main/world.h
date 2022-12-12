@@ -43,6 +43,8 @@ public:
 
   bool isPlayerAlive();
 
+  void clear();
+
 private:
   /**
    * @brief This container stores all game objects.
@@ -50,5 +52,12 @@ private:
    */
   vector<shared_ptr<Entity>> objects;
 
+  /**
+   * @brief This pointer stores the player character while it exists.xs
+   * 
+   */
   shared_ptr<Entity> playerCharacter{};
+
+  int currentStage{};
+
 };
