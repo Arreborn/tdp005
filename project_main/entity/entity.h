@@ -65,6 +65,8 @@ public:
 
   virtual void takeDamage(float damage);
 
+  char getDirection();
+
 protected:
   /**
    * @brief This is the sprite to render.
@@ -77,5 +79,11 @@ protected:
    * 
    */
   char type{};
+
+  /**
+   * @brief The direction the entity is looking.
+   * 
+   */
+  char direction{};
 };
 

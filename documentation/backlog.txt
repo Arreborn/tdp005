@@ -16,3 +16,18 @@
 - [OK] Spelaren ska kunna utföra en kort dash - se krav 5 (delvis krav 29 - 30)
 
 - [OK] Fiender ska kunna ritas ut på spelplanen och ha korrekt kollision enligt kravspecifikationen - se krav 7, 8, 22 - 24
+--------
+2022-12-12
+- Krav som genomförts: 1 - 9, 13 - 17
+- Krav krav att hantera: 10 - 12, 18 - 33
+
+Kort sammanfattning av det som behöver göras för att kraven ska uppfyllas:
+- Spelarens hälsa ska visas på skärmen och manipuleras när spelaren tar skada - se krav 10 - 11
+- Ett game over-state ska konstrueras som nyttjas när spelarens liv är slut - se krav 13
+
+- Spelaren ska kunna färdas mellan olika segment, och ska inte kunna byta segment innan alla fiender är döda - se krav 18 - 19
+- Spelaren ska anses ha vunnit när alla segment har slut på fiender - se krav 20
+
+- Vi har för närvarande en typ av fiende utan beteenden (men med korrekt kollision), från denna klass ska fler fiender kunna konstrueras och dessa ska ha funktionalitet som definierar deras beteenden - se krav 21 - 25
+- Interaktioner mellan spelaren och fiender måste byggas och verifieras - se krav 26 - 33
+

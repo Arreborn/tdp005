@@ -1,9 +1,10 @@
 #include "gameState.h"
-#include "menuState.h"
 #include "../level/levelConstructor.h"
 #include "../player/player.h"
+#include "menuState.h"
 #include <SFML/Graphics/View.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <memory>
 
 GameState::GameState() {
   LevelConstructor::generateLevel(world);
@@ -17,21 +18,21 @@ shared_ptr<State> GameState::tick(sf::Time time) {
   world.tick(time);
 
   // Checks for pause
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
     // resets viewport
     view.setCenter(640.0f, 400.0f);
     view.setSize(1280.0, 800.0);
     return std::make_shared<MenuState>(shared_from_this());
   }
 
-  if (!world.isPlayerAlive()){
+  if (!world.isPlayerAlive()) {
     // return GameOverState ptr
   }
 
   return nullptr;
 }
 
-void GameState::render(sf::RenderWindow &drawTo){
+void GameState::render(sf::RenderWindow &drawTo) {
   world.render(drawTo);
   drawTo.setView(view);
 };
