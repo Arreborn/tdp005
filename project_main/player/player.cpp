@@ -105,8 +105,35 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time) {
 // TODO:
 // Consider moving the collision with blocks to the base class
 
+<<<<<<< HEAD
+bool Player::tick(sf::Time time, World &world)
+{
+  takeDamage(1);
+  if (iFrame <= sf::seconds(0))
+  {
+    iFrame = sf::seconds(0);
+  }
+  else
+  {
+    iFrame -= time;
+  }
+
+  // if (iFrame >= sf::seconds(0))
+  // {
+  //   iFrame -= time;
+  //   if (iFrame <= sf::seconds(0))
+  //   {
+  //     iFrame = sf::seconds(0);
+  //   }
+  // }
+
+  if (!isAlive())
+  {
+
+=======
 bool Player::tick(sf::Time time, World &world) {
   if (!isAlive()) {
+>>>>>>> 665ca2dbab57d608ef92f6ab72888e81306c1b7a
     // Game over screen???
     // Death animation
     return false;
@@ -214,11 +241,24 @@ bool Player::isAlive() {
   }
 }
 
+<<<<<<< HEAD
+void Player::takeDamage(float damage)
+{
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && isAlive() && !isHit && iFrame == sf::seconds(0))
+  {
+    isHit = true;
+    iFrame = sf::seconds(2);
+=======
 void Player::takeDamage(float damage) {
 
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && isAlive()) {
+>>>>>>> 665ca2dbab57d608ef92f6ab72888e81306c1b7a
     health -= damage;
     cout << health << endl;
+  }
+  if (isHit && iFrame == sf::seconds(0))
+  {
+    isHit = false;
   }
 }
 std::shared_ptr<Entity> Player::ptrGet() { return shared_from_this(); }
