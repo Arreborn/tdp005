@@ -267,7 +267,8 @@ bool Player::isAlive()
 
 void Player::takeDamage(float damage)
 {
-  if (isAlive())
+
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && isAlive())
   {
     health -= damage;
     cout << "Player took damage" << endl;
