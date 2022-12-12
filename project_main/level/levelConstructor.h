@@ -5,6 +5,7 @@
 #include "../staticEntity/block.h"
 #include "../entity/entity.h"
 #include "../hostile/hostile.h"
+#include <memory>
 
 // TODO:
 // Check viability of shared_ptr for the vector thingys
@@ -24,7 +25,7 @@ private:
    * @param x 
    * @return TexturedEntity 
    */
-  static void selector(char a, int x, int y, World &world);
+  static void selector(char a, int x, int y, World &world, shared_ptr<Player> player, bool &playerSet);
 
   /**
    * @brief Construct a new level with the designated number of segments.
@@ -42,6 +43,6 @@ private:
   static LevelConstructor instance;
 
 public:
-  static void generateLevel(World &world);
+  static void generateLevel(World &world, shared_ptr<Player> player);
 
 };

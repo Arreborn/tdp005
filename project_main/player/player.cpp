@@ -105,16 +105,11 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time) {
 // TODO:
 // Consider moving the collision with blocks to the base class
 
-<<<<<<< HEAD
-bool Player::tick(sf::Time time, World &world)
-{
+bool Player::tick(sf::Time time, World &world) {
   takeDamage(1);
-  if (iFrame <= sf::seconds(0))
-  {
+  if (iFrame <= sf::seconds(0)) {
     iFrame = sf::seconds(0);
-  }
-  else
-  {
+  } else {
     iFrame -= time;
   }
 
@@ -127,13 +122,8 @@ bool Player::tick(sf::Time time, World &world)
   //   }
   // }
 
-  if (!isAlive())
-  {
-
-=======
-bool Player::tick(sf::Time time, World &world) {
   if (!isAlive()) {
->>>>>>> 665ca2dbab57d608ef92f6ab72888e81306c1b7a
+
     // Game over screen???
     // Death animation
     return false;
@@ -146,7 +136,8 @@ bool Player::tick(sf::Time time, World &world) {
   sprite.setPosition(center);
 
   // checks with all entities currently colliding with the player
-  for (shared_ptr<Entity> &collision : world.collidesWith(*this)) { // vertical collision
+  for (shared_ptr<Entity> &collision :
+       world.collidesWith(*this)) { // vertical collision
 
     // collision with block
     if (dynamic_cast<Block *>(collision.get())) {
@@ -200,6 +191,9 @@ bool Player::tick(sf::Time time, World &world) {
   if (center.x < 0 || center.x > 1280) {
     center = hold;
     sprite.setPosition(hold);
+    atBorder = true;
+  } else {
+    atBorder = false;
   }
 
   if (center.y != vold.y) {
@@ -241,24 +235,23 @@ bool Player::isAlive() {
   }
 }
 
-<<<<<<< HEAD
-void Player::takeDamage(float damage)
-{
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && isAlive() && !isHit && iFrame == sf::seconds(0))
-  {
+void Player::takeDamage(float damage) {
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && isAlive() && !isHit &&
+      iFrame == sf::seconds(0)) {
     isHit = true;
     iFrame = sf::seconds(2);
-=======
-void Player::takeDamage(float damage) {
-
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && isAlive()) {
->>>>>>> 665ca2dbab57d608ef92f6ab72888e81306c1b7a
     health -= damage;
     cout << health << endl;
   }
-  if (isHit && iFrame == sf::seconds(0))
-  {
+  if (isHit && iFrame == sf::seconds(0)) {
     isHit = false;
   }
 }
 std::shared_ptr<Entity> Player::ptrGet() { return shared_from_this(); }
+
+void Player::set(int x, int y) {
+  center = sf::Vector2f(x, y);
+  sprite.setPosition(center);
+}
+
+bool Player::hittingBorder() { return atBorder; }

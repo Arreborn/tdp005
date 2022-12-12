@@ -56,6 +56,10 @@ public:
 
   shared_ptr<Entity> ptrGet();
 
+  void set(int x, int y);
+
+  bool hittingBorder();
+
 protected:
   /**
    * @brief Player health. Always decreases by one when hit.
@@ -119,4 +123,6 @@ protected:
   sf::Time attackCooldown{};
 
   sf::Time iFrame{};
+
+  bool atBorder{};
 };

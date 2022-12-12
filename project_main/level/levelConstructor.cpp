@@ -1,6 +1,7 @@
 #include "levelConstructor.h"
 #include "segmentManager.h"
 #include <fstream>
+#include <memory>
 
 LevelConstructor::LevelConstructor(int numberOfSegments) {
   string current{};
@@ -9,13 +10,14 @@ LevelConstructor::LevelConstructor(int numberOfSegments) {
   }
 }
 
-void LevelConstructor::generateLevel(World &world) {
+void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player) {
   string str{SegmentManager::get()};
   str = str.substr(1, str.size() - 2);
   std::ifstream file{};
   file.open(str);
   string segment{};
   string temp{};
+  bool playerSet{false};
 
   while (getline(file, temp)) {
     segment += temp;
@@ -26,7 +28,7 @@ void LevelConstructor::generateLevel(World &world) {
 
   for (string::size_type i{}; i < segment.length(); i++) {
     if (segment[i] != '.') {
-      selector(segment[i], x, y, world);
+      selector(segment[i], x, y, world, player, playerSet);
     }
 
     x += 16;
@@ -37,7 +39,8 @@ void LevelConstructor::generateLevel(World &world) {
   }
 }
 
-void LevelConstructor::selector(char a, int x, int y, World &world) {
+void LevelConstructor::selector(char a, int x, int y, World &world,
+                                shared_ptr<Player> player, bool &playerSet) {
   switch (a) {
   case 'B': // Top block
     world.add(std::make_shared<Block>(sf::Vector2f(x, y),
@@ -97,8 +100,24 @@ void LevelConstructor::selector(char a, int x, int y, World &world) {
     break;
   case 'h':
     world.add(std::make_shared<Hostile>(sf::Vector2f(x, y)));
+    world.addEnemy();
+    break;
+
+  case 'l':
+    if (player->getCenter().x > 640 && !playerSet) {
+      playerSet = true;
+      player->set(x, y);
+    }
+    break;
+
+  case 'r':
+    if (player->getCenter().x < 640 && !playerSet) {
+      playerSet = true;
+      player->set(x, y);
+    }
+    break;
+
   default:
     break;
-  
   }
 }

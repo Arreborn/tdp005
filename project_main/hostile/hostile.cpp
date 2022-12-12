@@ -1,5 +1,6 @@
 #include "hostile.h"
 #include "../staticEntity/block.h"
+#include "../world.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
 
@@ -20,7 +21,7 @@ bool Hostile::tick(sf::Time time, World &world) {
   // movement and behaviour
 
   if (!isAlive()) {
-    // death animation
+    world.removeEnemy();
     return false;
   }
 

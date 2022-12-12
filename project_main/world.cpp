@@ -63,10 +63,23 @@ const sf::Vector2f World::getCenter() {
 
 bool World::isPlayerAlive() { return playerCharacter->isAlive(); }
 
-void World::clear(){
-  for (int i{}; i >= 0; --i){
-    if (objects[i] != playerCharacter){
+void World::clear() {
+  for (size_t i{}; i < objects.size(); ++i) {
+    if (!dynamic_cast<Player *>(objects[i].get())) {
       objects.erase(objects.begin() + i);
+      --i;
     }
+  }
+}
+
+void World::addEnemy() { ++enemiesAlive; }
+
+void World::removeEnemy() { --enemiesAlive; }
+
+bool World::levelCleared() {
+  if (enemiesAlive == 0) {
+    return true;
+  } else {
+    return false;
   }
 }

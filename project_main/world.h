@@ -45,6 +45,12 @@ public:
 
   void clear();
 
+  void addEnemy();
+
+  void removeEnemy();
+
+  bool levelCleared();
+
 private:
   /**
    * @brief This container stores all game objects.
@@ -59,5 +65,7 @@ private:
   shared_ptr<Entity> playerCharacter{};
 
   int currentStage{};
+
+  int enemiesAlive{};
 
 };
