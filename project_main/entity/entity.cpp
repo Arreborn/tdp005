@@ -11,6 +11,7 @@ Entity::Entity(sf::Vector2f center, const string &renderSprite, char const type)
     sprite.setTexture(*t);
     sprite.setOrigin(size.x / 2.0, size.y / 2.0);
     radius = max(size.x, size.y) / 2.0f;
+    direction = 'r';
 }
 
 void Entity::render(sf::RenderWindow &window){
@@ -39,3 +40,7 @@ char Entity::getType(){
 }
 
 void Entity::takeDamage(float){};
+
+char Entity::getDirection(){
+    return direction;
+}

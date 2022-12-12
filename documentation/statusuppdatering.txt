@@ -17,3 +17,12 @@ Vidare, så ska segmenthanteraren konstrueras, så att segment ska kunna läsas 
 Slutligen så ämnar vi skapa grunden till spelarens dash och attack (krav 5, delvis krav 29 och 30) samt att skapa grunden till spelarens attacker (krav 26, delvis krav 27).
 
 Förhoppningen är även att börja skapa fiendeklasserna, så att vi förhoppningsvis kan få ut fiender på spelplanen under denna vecka. Låg prio ligger på att skapa fiendernas beteende i detta skede, prio ligger på att få ut dem och att se till att kollision fungerar korrekt (krav 7, 8, 22 - 24)
+
+----- 2022 - 12 - 12 -----
+Förra veckan fick vi klart i princip allt som planerat förutom förflyttning mellan olika segment. Med detta i åtanke ligger vi nu relativt bra till i planeringen, då stora delar av grundarbetet nu är gjort och det som kvarstår är att anpassa dessa byggstenar så att resten av spelet hanteras korrekt. Så snart som spelaren fungerar som tänkt kan vi "bygga om" denna klass lite för att fungera för fiender.
+
+Något värt att notera är att vi tänkt i banorna för ett komponentbaserat spel under föregående vecka, men efter noggranna undersökningar med de resurser som assistenten tillhandahöll under föregående vecka visade det sig att vår nuvarande struktur var bättre ämnad att bygga upp en ren arvstruktur. Så medan vi inte justerat koden, så kommer en markant ändring i designspecifikationen att ske.
+
+Vi har för närvarande kvar att göra krav 10 - 12 samt 18 - 33, resten av kraven är uppfyllda i nuvarande versionen av spelet. Medan det må låta som väldigt mycket så är det en hanterbar mängd, då vi har lagt grunden för att bygga upp de klasser som krävs med deras integrationer.
+
+Preliminärt planerar vi att all kodning ska vara klar absolut senast på torsdag, men gärna på onsdag. När alla bör-krav är uppfyllda kommer vi att gå över till att skriva dokumentation.

@@ -1,12 +1,13 @@
 #pragma once
 #include "../entity/entity.h"
 #include <SFML/System/Vector2.hpp>
+#include <memory>
 
 /**
  * @brief This class defines and handles the player character.
  *
  */
-class Player : public Entity
+class Player : public Entity, public std::enable_shared_from_this<Entity>
 {
 public:
   /**
@@ -51,6 +52,8 @@ public:
 
   void attack(World &world);
 
+  shared_ptr<Entity> ptrGet();
+
 protected:
   /**
    * @brief Player health. Always decreases by one when hit.
@@ -87,7 +90,7 @@ protected:
    * @brief This char manages the direction the player is facing. Value: left = 'l', right = 'r'.
    * 
    */
-  char direction{};
+  //char direction{};
 
   /**
    * @brief This vector is used to simulate gravitational pull.
