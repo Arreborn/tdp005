@@ -135,8 +135,28 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time)
 
 bool Player::tick(sf::Time time, World &world)
 {
+  takeDamage(1);
+  if (iFrame <= sf::seconds(0))
+  {
+    iFrame = sf::seconds(0);
+  }
+  else
+  {
+    iFrame -= time;
+  }
+
+  // if (iFrame >= sf::seconds(0))
+  // {
+  //   iFrame -= time;
+  //   if (iFrame <= sf::seconds(0))
+  //   {
+  //     iFrame = sf::seconds(0);
+  //   }
+  // }
+
   if (!isAlive())
   {
+
     // Game over screen???
     // Death animation
     return false;
@@ -267,11 +287,16 @@ bool Player::isAlive()
 
 void Player::takeDamage(float damage)
 {
-
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && isAlive())
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && isAlive() && !isHit && iFrame == sf::seconds(0))
   {
+    isHit = true;
+    iFrame = sf::seconds(2);
     health -= damage;
     cout << health << endl;
+  }
+  if (isHit && iFrame == sf::seconds(0))
+  {
+    isHit = false;
   }
 }
 std::shared_ptr<Entity> Player::ptrGet() { return shared_from_this(); }

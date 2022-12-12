@@ -7,7 +7,8 @@
  * @brief This class defines and handles the player character.
  *
  */
-class Player : public Entity, public std::enable_shared_from_this<Entity> {
+class Player : public Entity, public std::enable_shared_from_this<Entity>
+{
 public:
   /**
    * @brief Construct a new Player object.
@@ -62,6 +63,8 @@ protected:
    */
   int health{};
 
+  bool isHit{};
+
   /**
    * @brief Player speed. Used to manipulate movement speed. 5.0 by default.
    *
@@ -114,4 +117,6 @@ protected:
   sf::Time dashCooldown{};
 
   sf::Time attackCooldown{};
+
+  sf::Time iFrame{};
 };
