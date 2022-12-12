@@ -7,8 +7,7 @@
  * @brief This class defines and handles the player character.
  *
  */
-class Player : public Entity, public std::enable_shared_from_this<Entity>
-{
+class Player : public Entity, public std::enable_shared_from_this<Entity> {
 public:
   /**
    * @brief Construct a new Player object.
@@ -52,11 +51,9 @@ public:
 
   void attack(World &world);
 
-
   void takeDamage(float damage) override;
 
   shared_ptr<Entity> ptrGet();
-
 
 protected:
   /**
@@ -85,16 +82,18 @@ protected:
   bool dashing{};
 
   /**
-   * @brief This bool checks if the player has collided with an enemy, and will be thrown.
+   * @brief This bool checks if the player has collided with an enemy, and will
+   * be thrown.
    *
    */
   bool thrown{};
 
   /**
-   * @brief This char manages the direction the player is facing. Value: left = 'l', right = 'r'.
+   * @brief This char manages the direction the player is facing. Value: left =
+   * 'l', right = 'r'.
    *
    */
-  //char direction{};
+  // char direction{};
 
   /**
    * @brief This vector is used to simulate gravitational pull.
