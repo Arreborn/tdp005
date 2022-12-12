@@ -3,7 +3,8 @@
 #include <SFML/System/Vector2.hpp>
 
 Entity::Entity(sf::Vector2f center, const string &renderSprite, char const type)
-    : center(center), type{type} {
+    : center(center), type{type}
+{
 
     sf::Texture *t = SpriteManager::get(renderSprite);
     auto size = t->getSize();
@@ -13,29 +14,39 @@ Entity::Entity(sf::Vector2f center, const string &renderSprite, char const type)
     radius = max(size.x, size.y) / 2.0f;
 }
 
-void Entity::render(sf::RenderWindow &window){
+void Entity::render(sf::RenderWindow &window)
+{
     sprite.setPosition(center);
     window.draw(sprite);
 }
 
-sf::Sprite *Entity::getBorder(){
+sf::Sprite *Entity::getBorder()
+{
     return &sprite;
 }
 
-sf::FloatRect Entity::getBounds(){
+sf::FloatRect Entity::getBounds()
+{
     return sprite.getGlobalBounds();
 }
 
-sf::Vector2f const Entity::getCenter(){
-  return center;
+sf::Vector2f const Entity::getCenter()
+{
+    return center;
 }
 
-bool Entity::isAlive(){
+bool Entity::isAlive()
+{
     return true;
 }
 
-char Entity::getType(){
+char Entity::getType()
+{
     return type;
 }
 
-void Entity::takeDamage(float){};
+void Entity::takeDamage(float damage)
+{
+    Entity.health -= damage;
+    cout << "Damage: " << damage << "~~~~Taken: " << *Entity->health << endl;
+};
