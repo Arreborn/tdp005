@@ -87,7 +87,7 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time) {
       dashCooldown = sf::seconds(1.5);
     }
   }
-
+  
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && !dashing &&
       !thrown) { // left
     position.x -= 1;
@@ -98,6 +98,7 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time) {
     position.x += 1;
     direction = 'r';
   }
+
   return position;
 }
 
@@ -166,6 +167,11 @@ bool Player::tick(sf::Time time, World &world) {
       center = hold;
       sprite.setPosition(hold);
     }
+  }
+
+  if (center.x < 0 || center.x > 1280){
+    center = hold;
+    sprite.setPosition(hold);
   }
 
   if (center.y != vold.y) {

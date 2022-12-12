@@ -99,5 +99,6 @@ void LevelConstructor::selector(char a, int x, int y, World &world) {
     world.add(std::make_shared<Hostile>(sf::Vector2f(x, y)));
   default:
     break;
+  
   }
 }
