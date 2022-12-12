@@ -40,9 +40,19 @@ private:
    */
   ~LevelConstructor() = default;
 
+  /**
+   * @brief The only instance of this object.
+   * 
+   */
   static LevelConstructor instance;
 
 public:
+  /**
+   * @brief Generates a level which will be drawn in the game world.
+   * 
+   * @param world 
+   * @param player 
+   */
   static void generateLevel(World &world, shared_ptr<Player> player);
 
 };

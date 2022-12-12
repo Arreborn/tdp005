@@ -7,8 +7,7 @@
  * @brief This class defines and handles the player character.
  *
  */
-class Player : public Entity, public std::enable_shared_from_this<Entity>
-{
+class Player : public Entity, public std::enable_shared_from_this<Entity> {
 public:
   /**
    * @brief Construct a new Player object.
@@ -41,23 +40,49 @@ public:
   sf::Vector2f horizontalPosition(sf::Time const &time);
 
   /**
-   * @brief Checks if players movement is about to escape the playing field.
+   * @brief Checks if the player is alive. Used to enter game over-state.
    *
    * @return true
    * @return false
    */
-  bool borderCheck();
-
   bool isAlive() override;
 
+  /**
+   * @brief Basic attack for the player. Draws a new attack-object in the world.
+   *
+   * @param world
+   */
   void attack(World &world);
 
+  /**
+   * @brief Allows the player to take damage.
+   *
+   * @param damage
+   */
   void takeDamage(float damage) override;
 
+  /**
+   * @brief Returns a shared pointer to the player. Used when attacking.
+   *
+   * @return shared_ptr<Entity>
+   */
   shared_ptr<Entity> ptrGet();
 
+  /**
+   * @brief Setter for player position. Used when contructing levels.
+   *
+   * @param x
+   * @param y
+   */
   void set(int x, int y);
 
+  /**
+   * @brief Checks if the player is hitting a border. Prevents the player from
+   * moving to the next segment before killing all enemies.
+   *
+   * @return true
+   * @return false
+   */
   bool hittingBorder();
 
 protected:
@@ -67,6 +92,10 @@ protected:
    */
   int health{};
 
+  /**
+   * @brief Triggers invincibility-frames for the player after being hit.
+   *
+   */
   bool isHit{};
 
   /**
@@ -90,7 +119,7 @@ protected:
 
   /**
    * @brief This bool checks if the player has collided with an enemy, and will
-   * be thrown.
+   * be thrown away from said enemy..
    *
    */
   bool thrown{};
@@ -120,9 +149,21 @@ protected:
    */
   sf::Time dashCooldown{};
 
+  /**
+   * @brief Stores a cooldown for the attack, to prevent spamming attacks.
+   * 
+   */
   sf::Time attackCooldown{};
 
+  /**
+   * @brief Stores the time the player will be invincible after being hit.
+   * 
+   */
   sf::Time iFrame{};
 
+  /**
+   * @brief Stores if the player is at the border.
+   * 
+   */
   bool atBorder{};
 };

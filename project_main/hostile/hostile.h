@@ -34,8 +34,19 @@ public:
    */
   void render(sf::RenderWindow &drawTo) override;
 
+  /**
+   * @brief Returns whether the hostile is alive or not.
+   * 
+   * @return true 
+   * @return false 
+   */
   bool isAlive() override;
 
+  /**
+   * @brief Allows the entity to take damage.
+   * 
+   * @param damage 
+   */
   void takeDamage(float damage) override;
 
 protected:
@@ -51,7 +62,17 @@ protected:
    */
   float speed{};
 
+  /**
+   * @brief Stores the acceleration for the hostile, which allows them to 
+   * be affected by gravity.
+   * 
+   */
   sf::Vector2f acceleration{};
 
+  /**
+   * @brief When taking damage, the hostile will turn red momentarily. This 
+   * variable stores the current color.
+   * 
+   */
   sf::Time blinkDuration{};
 };

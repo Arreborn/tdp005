@@ -7,8 +7,10 @@
 #include <memory>
 
 GameState::GameState() {
-  player = std::make_shared<Player>(sf::Vector2f(1100, 1100)); // these coordinates are set to ensure the player starts at the left
-  world.add(player); // adds the player object into the game world
+  player = std::make_shared<Player>(
+      sf::Vector2f(1100, 1100)); // these coordinates are set to ensure the
+                                 // player starts at the left
+  world.add(player);             // adds the player object into the game world
   LevelConstructor::generateLevel(world, player); // generates a first level
 }
 
@@ -17,7 +19,6 @@ shared_ptr<State> GameState::tick(sf::Time time) {
   view.setCenter(world.getCenter());
   view.setSize(640.0f, 400.0f);
   world.tick(time);
-  
 
   // Checks for pause
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
@@ -31,7 +32,7 @@ shared_ptr<State> GameState::tick(sf::Time time) {
     // return GameOverState ptr
   }
 
-  if (world.levelCleared() && player->hittingBorder()){
+  if (world.levelCleared() && player->hittingBorder()) {
     world.clear();
     LevelConstructor::generateLevel(world, player);
   }
