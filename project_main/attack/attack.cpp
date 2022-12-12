@@ -42,4 +42,12 @@ bool Attack::tick(sf::Time time, World &world) {
   }
 }
 
-void Attack::render(sf::RenderWindow &render) { Entity::render(render); }
+void Attack::render(sf::RenderWindow &render)
+{
+    Entity::render(render);
+}
+
+void Attack::takeDamage(float)
+{
+    cout << "Collided with itself" << endl;
+}

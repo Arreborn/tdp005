@@ -6,15 +6,20 @@
 #include <SFML/System/Vector2.hpp>
 #include <memory>
 
-GameState::GameState() {
+GameState::GameState()
+{
+
   LevelConstructor::generateLevel(world);
   world.add(std::make_shared<Player>(sf::Vector2f(width / 2.0, height / 2.0)));
 }
 
-shared_ptr<State> GameState::tick(sf::Time time) {
+shared_ptr<State> GameState::tick(sf::Time time)
+{
   // zooms camera when in gamestate
   view.setCenter(world.getCenter());
   view.setSize(640.0f, 400.0f);
+  world.playerCharacter()->health;
+  cout < < < < endl;
   world.tick(time);
 
   // Checks for pause

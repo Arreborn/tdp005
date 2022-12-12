@@ -13,6 +13,7 @@ public:
 
     bool tick(sf::Time time, World &world) override;
     void render(sf::RenderWindow &window) override;
+    void takeDamage(float damage) override;
 
 protected:
     float damage{};
