@@ -59,6 +59,8 @@ public:
   void set(int x, int y);
 
   bool hittingBorder();
+  bool damageTaken();
+  int getHealth();
 
 protected:
   /**

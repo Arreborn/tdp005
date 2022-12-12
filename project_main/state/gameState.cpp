@@ -22,12 +22,24 @@ GameState::GameState()
 
 shared_ptr<State> GameState::tick(sf::Time time)
 {
-  if (player.isHit)
+  int curr{};
+  if (player->damageTaken())
   {
-    hpBar.setTextureRect(sf::IntRect(0, 0, 54, 8));
+    if (player->getHealth() % 2 == 0)
+    {
+      curr = ((player->getHealth() / 2) * 9 + ((player->getHealth() / 2)) * 3);
+      hpBar.setTextureRect(sf::IntRect(0, 0, curr, 8));
+    }
+    else
+    {
+      curr = ((player->getHealth() - 1) / 2) * 9 + 5 + (((player->getHealth() + 1) / 2) - 1) * 3;
+      hpBar.setTextureRect(sf::IntRect(0, 0, curr, 8));
+    }
   }
 
   // zooms camera when in gamestate
+  // sf::Vector2f hpPos{world.getCenter()};
+  // hpBar.setOrigin(hpPos.x + 100.0f, hpPos.y + 400.0f);
   view.setCenter(world.getCenter());
   view.setSize(640.0f, 400.0f);
   world.tick(time);
