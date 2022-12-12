@@ -87,7 +87,7 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time) {
       dashCooldown = sf::seconds(1.5);
     }
   }
-  
+
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && !dashing &&
       !thrown) { // left
     position.x -= 1;
@@ -169,7 +169,12 @@ bool Player::tick(sf::Time time, World &world) {
     }
   }
 
-  if (center.x < 0 || center.x > 1280){
+  if (center.x < 0 || center.x > 1280) {
+    center = hold;
+    sprite.setPosition(hold);
+  }
+
+  if (center.x < 0 || center.x > 1280) {
     center = hold;
     sprite.setPosition(hold);
   }
@@ -214,9 +219,10 @@ bool Player::isAlive() {
 }
 
 void Player::takeDamage(float damage) {
-  if (isAlive()) {
+
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && isAlive()) {
     health -= damage;
-    cout << "Player took damage" << endl;
+    cout << health << endl;
   }
 }
 std::shared_ptr<Entity> Player::ptrGet() { return shared_from_this(); }
