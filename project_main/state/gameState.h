@@ -1,6 +1,7 @@
 #pragma once
 #include "state.h"
 #include "../world.h"
+#include <memory>
 
 class GameState : public State
 {
@@ -35,4 +36,10 @@ private:
    *
    */
   World world;
+
+  /**
+   * @brief Keeps track of the player object.
+   * 
+   */
+  shared_ptr<Player> player{};
 };

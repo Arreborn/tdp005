@@ -15,9 +15,9 @@ GameState::GameState()
   hpBar.setTexture(*t);
   hpBar.setOrigin(size.x, size.y / 2.0f);
 
-  LevelConstructor::generateLevel(world);
-  auto player{std::make_shared<Player>(sf::Vector2f(width / 2.0, height / 2.0))};
-  world.add(player);
+  player = std::make_shared<Player>(sf::Vector2f(1100, 1100)); // these coordinates are set to ensure the player starts at the left
+  world.add(player);                                           // adds the player object into the game world
+  LevelConstructor::generateLevel(world, player);              // generates a first level
 }
 
 shared_ptr<State> GameState::tick(sf::Time time)
@@ -44,6 +44,11 @@ shared_ptr<State> GameState::tick(sf::Time time)
   if (!world.isPlayerAlive())
   {
     // return GameOverState ptr
+  }
+  if (world.levelCleared() && player->hittingBorder())
+  {
+    world.clear();
+    LevelConstructor::generateLevel(world, player);
   }
 
   return nullptr;
