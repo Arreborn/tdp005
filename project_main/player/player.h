@@ -84,6 +84,8 @@ public:
    * @return false
    */
   bool hittingBorder();
+  bool damageTaken();
+  int getHealth();
 
 protected:
   /**
