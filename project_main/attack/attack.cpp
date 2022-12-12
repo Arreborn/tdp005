@@ -2,7 +2,7 @@
 #include <SFML/System/Vector2.hpp>
 
 Attack::Attack(sf::Vector2f center, float damage, shared_ptr<Entity> attacker)
-    : Entity{center, "sprites/swoosh.png", 'a'}, damage{damage}{
+    : Entity{center, "sprites/swoosh.png", 'a'}, damage{damage} {
   thisAttacker = attacker.get();
   sprite.setTextureRect(sf::IntRect(
       0, 0, 30, 30)); // edit attackDuration to adjust duration of attacks
@@ -10,10 +10,10 @@ Attack::Attack(sf::Vector2f center, float damage, shared_ptr<Entity> attacker)
 
 bool Attack::tick(sf::Time time, World &world) {
   center = thisAttacker->center;
-  if (thisAttacker->getDirection() == 'l'){
+  if (thisAttacker->getDirection() == 'l') {
     center.x -= 65;
     sprite.setScale(-1, 1);
-  } else if (thisAttacker->getDirection() == 'r'){
+  } else if (thisAttacker->getDirection() == 'r') {
     center.x += 65;
     sprite.setScale(1, 1);
   }
@@ -42,12 +42,6 @@ bool Attack::tick(sf::Time time, World &world) {
   }
 }
 
-void Attack::render(sf::RenderWindow &render)
-{
-    Entity::render(render);
-}
+void Attack::render(sf::RenderWindow &render) { Entity::render(render); }
 
-void Attack::takeDamage(float)
-{
-    cout << "Collided with itself" << endl;
-}
+void Attack::takeDamage(float) { cout << "Collided with itself" << endl; }

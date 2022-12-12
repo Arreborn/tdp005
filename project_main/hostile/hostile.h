@@ -52,4 +52,6 @@ protected:
   float speed{};
 
   sf::Vector2f acceleration{};
+
+  sf::Time blinkDuration{};
 };

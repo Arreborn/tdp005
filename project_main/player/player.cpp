@@ -271,10 +271,7 @@ void Player::takeDamage(float damage)
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::M) && isAlive())
   {
     health -= damage;
-    cout << "Player took damage" << endl;
+    cout << health << endl;
   }
 }
-std::shared_ptr<Entity> Player::ptrGet()
-{
-  return shared_from_this();
-}
+std::shared_ptr<Entity> Player::ptrGet() { return shared_from_this(); }

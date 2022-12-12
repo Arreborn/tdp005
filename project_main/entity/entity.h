@@ -7,8 +7,7 @@ class World;
  * @brief An abstract game object.
  *
  */
-class Entity
-{
+class Entity {
 public:
   /**
    * @brief Construct a new Entity bject.
@@ -83,7 +82,7 @@ protected:
 
   /**
    * @brief The direction the entity is looking.
-   * 
+   *
    */
   char direction{};
 };
