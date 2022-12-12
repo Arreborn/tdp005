@@ -114,12 +114,12 @@ bool Player::tick(sf::Time time, World &world) {
   // coordinates to reset the player to if a collision is triggered
   sf::Vector2f vold{center};
 
-  auto vdir{verticalPosition()};
+  sf::Vector2f vdir{verticalPosition()};
   center += vdir;
   sprite.setPosition(center);
 
   // checks with all entities currently colliding with the player
-  for (auto &collision : world.collidesWith(*this)) { // vertical collision
+  for (shared_ptr<Entity> &collision : world.collidesWith(*this)) { // vertical collision
 
     // collision with block
     if (dynamic_cast<Block *>(collision.get())) {
@@ -161,17 +161,13 @@ bool Player::tick(sf::Time time, World &world) {
   center += hdir * speed;
   sprite.setPosition(center);
 
-  for (auto &collision : world.collidesWith(*this)) { // horiontal collision
+  for (shared_ptr<Entity> &collision :
+       world.collidesWith(*this)) { // horiontal collision
     if (dynamic_cast<Block *>(collision.get()) ||
         dynamic_cast<Hostile *>(collision.get())) {
       center = hold;
       sprite.setPosition(hold);
     }
-  }
-
-  if (center.x < 0 || center.x > 1280) {
-    center = hold;
-    sprite.setPosition(hold);
   }
 
   if (center.x < 0 || center.x > 1280) {

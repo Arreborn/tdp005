@@ -8,7 +8,7 @@
 
 GameState::GameState() {
   LevelConstructor::generateLevel(world);
-  auto player{std::make_shared<Player>(sf::Vector2f(width / 2.0, height / 2.0))};
+  shared_ptr<Player> player{std::make_shared<Player>(sf::Vector2f(width / 2.0, height / 2.0))};
   world.add(player);
 }
 
