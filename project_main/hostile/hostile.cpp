@@ -45,6 +45,7 @@ void Hostile::takeDamage(float damage)
   if (isAlive())
   {
     health -= damage;
+    sprite.setColor(sf::Color::Red);
     cout << health << endl;
   }
 }
