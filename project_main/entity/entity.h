@@ -7,7 +7,8 @@ class World;
  * @brief An abstract game object.
  *
  */
-class Entity {
+class Entity
+{
 public:
   /**
    * @brief Construct a new Entity object. As this is an interface,
@@ -99,6 +100,8 @@ public:
    * @param damage
    */
   virtual void takeDamage(float damage) = 0;
+
+  virtual void setFrame(sf::IntRect frame);
 
   /**
    * @brief Returns the direction the entity is facing.

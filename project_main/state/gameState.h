@@ -20,6 +20,7 @@ public:
    */
   shared_ptr<State> tick(sf::Time delta) override;
 
+  void loadTextures();
   /**
    * @brief Draws all game elements.
    *
@@ -29,6 +30,11 @@ public:
 
 protected:
   sf::Sprite hpBar;
+  sf::Sprite hpBarBackground;
+  sf::Sprite bgBack;
+  sf::Sprite bgTree;
+  sf::Sprite bgFore;
+  sf::Sprite bgLights;
 
 private:
   /**
@@ -39,7 +45,7 @@ private:
 
   /**
    * @brief Keeps track of the player object.
-   * 
+   *
    */
   shared_ptr<Player> player{};
 };
