@@ -1,5 +1,6 @@
 #pragma once
 #include "../common.h"
+#include <SFML/Graphics/RenderWindow.hpp>
 
 /**
  * @brief This state represents the larger state of the game, for instance
@@ -41,7 +42,7 @@ public:
    * @param time
    * @return shared_ptr<State>
    */
-  virtual shared_ptr<State> tick(sf::Time time) = 0;
+  virtual shared_ptr<State> tick(sf::Time time, sf::RenderWindow &window) = 0;
 
   /**
    * @brief This function is called to draw the screen.
@@ -71,6 +72,6 @@ protected:
  */
 class ExitState : public State {
 public:
-  shared_ptr<State> tick(sf::Time);
+  shared_ptr<State> tick(sf::Time, sf::RenderWindow &window);
   void render(sf::RenderWindow &) {}
 };

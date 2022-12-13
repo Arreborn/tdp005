@@ -2,7 +2,9 @@
 #include "common.h"
 #include "entity/entity.h"
 #include "player/player.h"
+#include <SFML/Graphics/Rect.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <memory>
 
 class World {
 public:
@@ -37,7 +39,9 @@ public:
    * @param me
    * @return vector<shared_ptr<Entity>>
    */
-  vector<shared_ptr<Entity>> collidesWith(Entity &me) const;
+  vector<shared_ptr<Entity>> collidesWith(Entity &me);
+
+  bool detectEdge(sf::FloatRect &check);
 
   /**
    * @brief Fetches positions. (DEPRECATED?)

@@ -4,6 +4,7 @@
 #include "../sprites/spriteManager.h"
 #include "menuState.h"
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/View.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <memory>
@@ -16,7 +17,7 @@ GameState::GameState() {
   LevelConstructor::generateLevel(world, player); // generates a first level
 }
 
-shared_ptr<State> GameState::tick(sf::Time time) {
+shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
   int curr{};
   if (player->damageTaken()) {
     if (player->getHealth() % 2 == 0) {
@@ -55,6 +56,7 @@ shared_ptr<State> GameState::tick(sf::Time time) {
     // resets viewport
     view.setCenter(640.0f, 400.0f);
     view.setSize(1280.0, 800.0);
+    window.setView(view);
     return std::make_shared<MenuState>(shared_from_this());
   } else {
     return nullptr;

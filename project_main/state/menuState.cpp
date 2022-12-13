@@ -1,5 +1,6 @@
 #include "menuState.h"
 #include "gameState.h"
+#include <SFML/Graphics/RenderWindow.hpp>
 #include <memory>
 
 MenuState::MenuState(shared_ptr<State> resume)
@@ -49,7 +50,7 @@ void MenuState::keyPress(sf::Keyboard::Key key) {
   }
 }
 
-shared_ptr<State> MenuState::tick(sf::Time time) {
+shared_ptr<State> MenuState::tick(sf::Time time, sf::RenderWindow &) {
   float diff{float(time.asMicroseconds()) / float(delay.asMicroseconds())};
 
   for (size_t i{0}; i < entries.size(); ++i) {
@@ -79,7 +80,6 @@ void MenuState::render(sf::RenderWindow &drawTo) {
   if (bg) {
     bg->render(drawTo);
   }
-
   float y{100};
   auto windowSize{drawTo.getSize()};
 
@@ -90,6 +90,8 @@ void MenuState::render(sf::RenderWindow &drawTo) {
 
     int state = static_cast<int>(255 * e.state);
     e.text.setFillColor(sf::Color(state, state, 100));
+    string out{e.text.getString()};
+    cout << out << endl;
     drawTo.draw(e.text);
   }
 }

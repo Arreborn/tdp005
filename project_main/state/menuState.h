@@ -1,6 +1,7 @@
 #pragma once
 #include "../player/player.h"
 #include "state.h"
+#include <SFML/Graphics/RenderWindow.hpp>
 #include <functional>
 
 class MenuState : public State {
@@ -25,7 +26,7 @@ public:
    * @param time
    * @return shared_ptr<State>
    */
-  shared_ptr<State> tick(sf::Time time) override;
+  shared_ptr<State> tick(sf::Time time, sf::RenderWindow &window) override;
 
   /**
    * @brief Render-function override.

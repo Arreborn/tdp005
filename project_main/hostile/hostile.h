@@ -1,6 +1,7 @@
 #pragma once
 #include "../common.h"
 #include "../entity/entity.h"
+#include <SFML/System/Time.hpp>
 #include <SFML/System/Vector2.hpp>
 
 /**
@@ -71,7 +72,7 @@ protected:
    * be affected by gravity.
    *
    */
-  sf::Vector2f acceleration{};
+  sf::Vector2f acceleration{0, 2};
 
   /**
    * @brief When taking damage, the hostile will turn red momentarily. This
@@ -79,4 +80,6 @@ protected:
    *
    */
   sf::Time blinkDuration{};
+
+  sf::Time movementDuration{};
 };
