@@ -11,11 +11,11 @@ Hostile::Hostile(sf::Vector2f center)
 
 bool Hostile::tick(sf::Time time, World &world) {
 
-  if (blinkDuration <= sf::seconds(0)){
+  if (blinkDuration <= sf::seconds(0)) {
     sprite.setColor(sf::Color::White);
     blinkDuration = sf::seconds(0);
   } else {
-    blinkDuration -= time;  
+    blinkDuration -= time;
   }
 
   // movement and behaviour
