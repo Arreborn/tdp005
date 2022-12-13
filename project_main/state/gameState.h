@@ -1,10 +1,10 @@
 #pragma once
-#include "state.h"
 #include "../world.h"
+#include "state.h"
+#include <SFML/Graphics/RenderWindow.hpp>
 #include <memory>
 
-class GameState : public State
-{
+class GameState : public State {
 public:
   /**
    * @brief Construct a new Game State object.
@@ -18,7 +18,7 @@ public:
    * @param delta
    * @return shared_ptr<State>
    */
-  shared_ptr<State> tick(sf::Time delta) override;
+  shared_ptr<State> tick(sf::Time delta, sf::RenderWindow &window) override;
 
   void loadTextures();
   /**

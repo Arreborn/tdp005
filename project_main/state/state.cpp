@@ -2,6 +2,7 @@
 #include "../sprites/spriteManager.h"
 #include "menuState.h"
 #include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 #include <memory>
 
 State::State() {}
@@ -33,7 +34,7 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
     }
 
     window.clear(sf::Color::Cyan);
-    if (shared_ptr<State> new_state = state->tick(clock.restart())) {
+    if (shared_ptr<State> new_state = state->tick(clock.restart(), window)) {
       if (std::dynamic_pointer_cast<ExitState>(new_state)) {
         return;
       } else {
@@ -50,4 +51,6 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
 
 bool State::isGameOver() { return gameOver; }
 
-shared_ptr<State> ExitState::tick(sf::Time) { return nullptr; }
+shared_ptr<State> ExitState::tick(sf::Time, sf::RenderWindow &) {
+  return nullptr;
+}

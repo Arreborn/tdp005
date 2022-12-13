@@ -1,6 +1,6 @@
 #include "world.h"
 #include "player/player.h"
-#include <SFML/System/Vector2.hpp>
+#include "staticEntity/block.h"
 
 void World::tick(sf::Time time) {
   for (size_t i{}; i < objects.size(); ++i) {
@@ -30,10 +30,10 @@ static bool collides(Entity &a, Entity &b) {
   return (aBounds.intersects(bBounds));
 }
 
-vector<shared_ptr<Entity>> World::collidesWith(Entity &me) const {
+vector<shared_ptr<Entity>> World::collidesWith(Entity &me) {
   vector<shared_ptr<Entity>> result;
 
-  for (auto &x : objects) {
+  for (shared_ptr<Entity> &x : objects) {
     if (x.get() == &me) {
       continue;
     } else if (collides(*x, me)) {
@@ -41,6 +41,17 @@ vector<shared_ptr<Entity>> World::collidesWith(Entity &me) const {
     }
   }
   return result;
+}
+
+bool World::detectEdge(sf::FloatRect &check) {
+  for (shared_ptr<Entity> &x : objects) {
+    if (dynamic_cast<Block *>(x.get())) {
+      if (x->getBounds().intersects(check)) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 const sf::Vector2f World::getCenter() {

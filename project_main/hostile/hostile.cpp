@@ -1,13 +1,16 @@
 #include "hostile.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/System/Vector2.hpp>
 
 Hostile::Hostile(sf::Vector2f center)
     : Entity(center, "sprites/mushy_test.png", 'h'), health{100}, speed(5.0) {
   sprite.setOrigin(0, 0);
 }
 
-void Hostile::horizontalPosition(const sf::Time &, World &world) {
+void Hostile::horizontalPosition(const sf::Time &time, World &world) {
   sf::Vector2f playerPos{world.playerCharacter->getCenter()};
   if (playerPos.y == center.y + 1.5) {
     if (playerPos.x < center.x) {
@@ -18,13 +21,41 @@ void Hostile::horizontalPosition(const sf::Time &, World &world) {
       center.x += 0.95f;
     }
   } else {
-    // random movement
+    int random{rand() % 100 + 1};
+    if (random == 100) {
+      direction = 'l';
+      movementDuration += sf::seconds(0.2);
+    } else if (random == 1) {
+      direction = 'r';
+      movementDuration += sf::seconds(0.2);
+    }
+
+    if (movementDuration < sf::seconds(0)) {
+      movementDuration = sf::seconds(0);
+    } else if (direction == 'l' && movementDuration > sf::seconds(0)) {
+      center.x -= 1;
+      movementDuration -= time;
+    } else if (direction == 'r' && movementDuration > sf::seconds(0)) {
+      center.x += 1;
+      movementDuration -= time;
+    }
   }
 }
 
-void Hostile::verticaPositon() { center.y += acceleration.y; }
+void Hostile::verticaPositon() { center.y += 4; }
 
 bool Hostile::tick(sf::Time time, World &world) {
+
+  /*   sf::Vector2f vold{center};
+    verticaPositon();
+    sprite.setPosition(center);
+    for (shared_ptr<Entity> &collision : world.collidesWith(*this)) {
+      if (dynamic_cast<Block *>(collision.get())) {
+        center = vold;
+        center -= sf::Vector2f{0, (center.y - collision.get()->center.y + 15) +
+                                      float{1.2}};
+      }
+    } */
 
   // toggles damage indicator
   if (blinkDuration <= sf::seconds(0)) {
@@ -34,8 +65,8 @@ bool Hostile::tick(sf::Time time, World &world) {
     blinkDuration -= time;
   }
 
-  // collision detection for horizontal movement
   sf::Vector2f hold{center};
+  // collision detection for horizontal movement
   horizontalPosition(time, world);
   for (shared_ptr<Entity> &collision :
        world.collidesWith(*this)) { // horiontal collision
