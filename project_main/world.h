@@ -83,18 +83,18 @@ public:
    */
   bool levelCleared();
 
+  /**
+   * @brief This pointer stores the player character while it exists.xs
+   *
+   */
+  shared_ptr<Entity> playerCharacter{};
+
 private:
   /**
    * @brief This container stores all game objects.
    *
    */
   vector<shared_ptr<Entity>> objects;
-
-  /**
-   * @brief This pointer stores the player character while it exists.xs
-   *
-   */
-  shared_ptr<Entity> playerCharacter{};
 
   /**
    * @brief Stores the current stage.

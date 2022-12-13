@@ -1,7 +1,6 @@
 #include "hostile.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
-#include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Vector2.hpp>
 
 Hostile::Hostile(sf::Vector2f center)
@@ -18,7 +17,36 @@ bool Hostile::tick(sf::Time time, World &world) {
     blinkDuration -= time;
   }
 
-  // movement and behaviour
+  sf::Vector2f playerPos{world.playerCharacter->getCenter()};
+  // cout << "Player: " << playerPos.y << " | Hostile: " << center.y << endl;
+  if (playerPos.y == center.y + 1.5f) {
+    if (playerPos.x < center.x) {
+      direction = 'l';
+      center.x -= 0.9f;
+    } else {
+      direction = 'r';
+      center.x += 0.9f;
+    }
+  } else {
+    // random movement
+  }
+
+  // collision detection for horizontal movement
+  sf::Vector2f hold{center};
+  for (shared_ptr<Entity> &collision :
+       world.collidesWith(*this)) { // horiontal collision
+    if (dynamic_cast<Block *>(collision.get()) ||
+        dynamic_cast<Player *>(collision.get())) {
+      center = hold;
+      sprite.setPosition(hold);
+    }
+  }
+
+  if (direction == 'l') {
+    sprite.setScale(-1.0f, 1.0f);
+  } else {
+    sprite.setScale(1.f, 1.f);
+  }
 
   if (!isAlive()) {
     world.removeEnemy();

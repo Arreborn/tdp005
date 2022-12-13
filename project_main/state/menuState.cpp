@@ -1,19 +1,23 @@
 #include "menuState.h"
 #include "gameState.h"
-#include <SFML/Graphics/Font.hpp>
-#include <SFML/Window/Keyboard.hpp>
+#include <memory>
 
 MenuState::MenuState(shared_ptr<State> resume)
     : selected(0), isEnterPressed(false), delay(sf::milliseconds(300)) {
 
   font.loadFromFile("state/static/font.ttf");
 
+  string menuText{"New game"};
   if (resume) {
-    add("Resume", [resume]() { return resume; });
-    bg = resume;
+    if (!(resume->isGameOver())) {
+      add("Resume", [resume]() { return resume; });
+      bg = resume;
+    } else {
+      menuText = "Game over! Play again?";
+    }
   }
 
-  add("New game", []() { return std::make_shared<GameState>(); });
+  add(menuText, []() { return std::make_shared<GameState>(); });
   add("Exit", []() { return std::make_shared<ExitState>(); });
 }
 
@@ -79,8 +83,8 @@ void MenuState::render(sf::RenderWindow &drawTo) {
   float y{100};
   auto windowSize{drawTo.getSize()};
 
-  for (auto &e : entries) {
-    auto bounds{e.text.getLocalBounds()};
+  for (Entry &e : entries) {
+    sf::FloatRect bounds{e.text.getLocalBounds()};
     e.text.setPosition((windowSize.x - bounds.width) / 2, y);
     y += bounds.height * 2.0f;
 
