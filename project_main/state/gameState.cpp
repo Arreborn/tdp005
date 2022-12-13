@@ -29,6 +29,8 @@ shared_ptr<State> GameState::tick(sf::Time time) {
     }
   }
 
+  gameOver = !player->isAlive();
+
   // zooms camera when in gamestate
   // sf::Vector2f hpPos{world.getCenter()};
   // hpBar.setOrigin(hpPos.x + 100.0f, hpPos.y + 400.0f);
@@ -44,16 +46,19 @@ shared_ptr<State> GameState::tick(sf::Time time) {
     return std::make_shared<MenuState>(shared_from_this());
   }
 
-  if (!world.isPlayerAlive()) {
-    // return GameOverState ptr
-  }
-
   if (world.levelCleared() && player->hittingBorder()) {
     world.clear();
     LevelConstructor::generateLevel(world, player);
   }
 
-  return nullptr;
+  if (gameOver) {
+    // resets viewport
+    view.setCenter(640.0f, 400.0f);
+    view.setSize(1280.0, 800.0);
+    return std::make_shared<MenuState>(shared_from_this());
+  } else {
+    return nullptr;
+  }
 }
 
 void GameState::render(sf::RenderWindow &drawTo) {

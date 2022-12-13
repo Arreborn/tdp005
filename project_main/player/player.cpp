@@ -3,8 +3,6 @@
 #include "../hostile/hostile.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
-#include <SFML/System/Time.hpp>
-#include <SFML/System/Vector2.hpp>
 #include <memory>
 
 Player::Player(sf::Vector2f center)
@@ -239,13 +237,14 @@ void Player::takeDamage(float damage) {
       iFrame == sf::seconds(0)) {
     isHit = true;
     iFrame = sf::seconds(2);
-    health -= damage;
-    cout << health << endl;
+    health -= 10;
+    // cout << health << endl;
   }
   if (isHit && iFrame == sf::seconds(0)) {
     isHit = false;
   }
 }
+
 std::shared_ptr<Entity> Player::ptrGet() { return shared_from_this(); }
 
 void Player::set(int x, int y) {

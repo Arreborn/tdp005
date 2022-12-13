@@ -48,4 +48,6 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
   }
 }
 
+bool State::isGameOver() { return gameOver; }
+
 shared_ptr<State> ExitState::tick(sf::Time) { return nullptr; }

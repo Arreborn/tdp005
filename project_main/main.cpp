@@ -6,14 +6,15 @@ const size_t width = 1280;
 const size_t height = 800;
 
 int main() {
-    sf::RenderWindow* window = new sf::RenderWindow{sf::VideoMode{width, height}, "Hello Warrior!"};
-    
-    window->setKeyRepeatEnabled(false);
-    window->setVerticalSyncEnabled(true);
+  sf::RenderWindow *window =
+      new sf::RenderWindow{sf::VideoMode{width, height}, "Hello Warrior!"};
 
-	State::run(*window, std::make_shared<MenuState>(nullptr));
+  window->setKeyRepeatEnabled(false);
+  window->setVerticalSyncEnabled(true);
 
-    delete window;
+  State::run(*window, std::make_shared<MenuState>(nullptr));
 
-    return 0;
+  delete window;
+
+  return 0;
 }
