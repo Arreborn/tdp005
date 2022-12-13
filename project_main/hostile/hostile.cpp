@@ -1,15 +1,32 @@
 #include "hostile.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
-#include <SFML/System/Vector2.hpp>
 
 Hostile::Hostile(sf::Vector2f center)
     : Entity(center, "sprites/mushy_test.png", 'h'), health{100}, speed(5.0) {
   sprite.setOrigin(0, 0);
 }
 
+void Hostile::horizontalPosition(const sf::Time &, World &world) {
+  sf::Vector2f playerPos{world.playerCharacter->getCenter()};
+  if (playerPos.y == center.y + 1.5) {
+    if (playerPos.x < center.x) {
+      direction = 'l';
+      center.x -= 0.95f;
+    } else {
+      direction = 'r';
+      center.x += 0.95f;
+    }
+  } else {
+    // random movement
+  }
+}
+
+void Hostile::verticaPositon() { center.y += acceleration.y; }
+
 bool Hostile::tick(sf::Time time, World &world) {
 
+  // toggles damage indicator
   if (blinkDuration <= sf::seconds(0)) {
     sprite.setColor(sf::Color::White);
     blinkDuration = sf::seconds(0);
@@ -17,22 +34,9 @@ bool Hostile::tick(sf::Time time, World &world) {
     blinkDuration -= time;
   }
 
-  sf::Vector2f playerPos{world.playerCharacter->getCenter()};
-  // cout << "Player: " << playerPos.y << " | Hostile: " << center.y << endl;
-  if (playerPos.y == center.y + 1.5f) {
-    if (playerPos.x < center.x) {
-      direction = 'l';
-      center.x -= 0.9f;
-    } else {
-      direction = 'r';
-      center.x += 0.9f;
-    }
-  } else {
-    // random movement
-  }
-
   // collision detection for horizontal movement
   sf::Vector2f hold{center};
+  horizontalPosition(time, world);
   for (shared_ptr<Entity> &collision :
        world.collidesWith(*this)) { // horiontal collision
     if (dynamic_cast<Block *>(collision.get()) ||

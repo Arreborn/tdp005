@@ -75,6 +75,8 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time) {
         acceleration.x += 0.5;
       }
     }
+  } else {
+    acceleration.x = 0;
   }
 
   if (dashing) {
@@ -110,15 +112,6 @@ bool Player::tick(sf::Time time, World &world) {
     iFrame -= time;
   }
 
-  // if (iFrame >= sf::seconds(0))
-  // {
-  //   iFrame -= time;
-  //   if (iFrame <= sf::seconds(0))
-  //   {
-  //     iFrame = sf::seconds(0);
-  //   }
-  // }
-
   if (!isAlive()) {
 
     // Game over screen???
@@ -146,13 +139,15 @@ bool Player::tick(sf::Time time, World &world) {
         acceleration.y = 2; // standard gravitational pull
         isJumping = false;
         thrown = false;
+        lastY = collision.get()->center.y;
       } else { // unclear when we enter this
         acceleration.y = 0;
       }
       // break the loop if we collide with a block
       break;
-    } else if (dynamic_cast<Hostile *>(collision.get())) {
+    } else if (dynamic_cast<Hostile *>(collision.get()) && acceleration.y > 0) {
       // vertical collision with an enemy will get the player thrown back
+      // provided the player is falling downwards, and not already being thrown
       center = vold;
       // gives some lift when being thrown
       acceleration.y = -6;
@@ -166,8 +161,6 @@ bool Player::tick(sf::Time time, World &world) {
       } else {
         acceleration.x -= 4; // set to same value as previous case
       }
-    } else { // is triggered when the player lands
-      isJumping = true;
     }
   }
 
@@ -257,3 +250,5 @@ bool Player::hittingBorder() { return atBorder; }
 bool Player::damageTaken() { return isHit; }
 
 int Player::getHealth() { return health; }
+
+float Player::getLastY() { return lastY; }

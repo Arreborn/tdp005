@@ -5,9 +5,9 @@
 #include <cmath>
 #include <iostream>
 #include <memory>
+#include <random>
 #include <string>
 #include <vector>
-#include <random>
 
 // sets some useful namespaces
 using std::cout;
@@ -25,4 +25,4 @@ using std::min;
 extern const size_t width;
 extern const size_t height;
 
-//extern const float gravity{0.3};
+// extern const float gravity{0.3};

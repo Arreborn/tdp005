@@ -86,6 +86,7 @@ public:
   bool hittingBorder();
   bool damageTaken();
   int getHealth();
+  float getLastY();
 
 protected:
   /**
@@ -153,19 +154,21 @@ protected:
 
   /**
    * @brief Stores a cooldown for the attack, to prevent spamming attacks.
-   * 
+   *
    */
   sf::Time attackCooldown{};
 
   /**
    * @brief Stores the time the player will be invincible after being hit.
-   * 
+   *
    */
   sf::Time iFrame{};
 
   /**
    * @brief Stores if the player is at the border.
-   * 
+   *
    */
   bool atBorder{};
+
+  float lastY{};
 };

@@ -1,14 +1,14 @@
 #pragma once
 #include "../common.h"
 #include "../entity/entity.h"
+#include <SFML/System/Vector2.hpp>
 
 /**
  * @brief This is a base class for hostiles. From this, sub-classes for more
  * avanced enemies can be added.
  *
  */
-class Hostile : public Entity
-{
+class Hostile : public Entity {
 public:
   /**
    * @brief Construct a new Hostile entity.
@@ -36,18 +36,22 @@ public:
 
   /**
    * @brief Returns whether the hostile is alive or not.
-   * 
-   * @return true 
-   * @return false 
+   *
+   * @return true
+   * @return false
    */
   bool isAlive() override;
 
   /**
    * @brief Allows the entity to take damage.
-   * 
-   * @param damage 
+   *
+   * @param damage
    */
   void takeDamage(float damage) override;
+
+  virtual void verticaPositon();
+
+  virtual void horizontalPosition(sf::Time const &time, World &world);
 
 protected:
   /**
@@ -63,16 +67,16 @@ protected:
   float speed{};
 
   /**
-   * @brief Stores the acceleration for the hostile, which allows them to 
+   * @brief Stores the acceleration for the hostile, which allows them to
    * be affected by gravity.
-   * 
+   *
    */
   sf::Vector2f acceleration{};
 
   /**
-   * @brief When taking damage, the hostile will turn red momentarily. This 
+   * @brief When taking damage, the hostile will turn red momentarily. This
    * variable stores the current color.
-   * 
+   *
    */
   sf::Time blinkDuration{};
 };
