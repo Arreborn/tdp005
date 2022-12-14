@@ -153,6 +153,30 @@ attack/attack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/attack.cpp.s
 .PHONY : attack/attack.cpp.s
 
+attack/rangedAttack.o: attack/rangedAttack.cpp.o
+.PHONY : attack/rangedAttack.o
+
+# target to build an object file
+attack/rangedAttack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/rangedAttack.cpp.o
+.PHONY : attack/rangedAttack.cpp.o
+
+attack/rangedAttack.i: attack/rangedAttack.cpp.i
+.PHONY : attack/rangedAttack.i
+
+# target to preprocess a source file
+attack/rangedAttack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/rangedAttack.cpp.i
+.PHONY : attack/rangedAttack.cpp.i
+
+attack/rangedAttack.s: attack/rangedAttack.cpp.s
+.PHONY : attack/rangedAttack.s
+
+# target to generate assembly for a file
+attack/rangedAttack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/rangedAttack.cpp.s
+.PHONY : attack/rangedAttack.cpp.s
+
 entity/entity.o: entity/entity.cpp.o
 .PHONY : entity/entity.o
 
@@ -477,6 +501,9 @@ help:
 	@echo "... attack/attack.o"
 	@echo "... attack/attack.i"
 	@echo "... attack/attack.s"
+	@echo "... attack/rangedAttack.o"
+	@echo "... attack/rangedAttack.i"
+	@echo "... attack/rangedAttack.s"
 	@echo "... entity/entity.o"
 	@echo "... entity/entity.i"
 	@echo "... entity/entity.s"

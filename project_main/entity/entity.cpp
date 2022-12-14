@@ -19,6 +19,8 @@ void Entity::render(sf::RenderWindow &window) {
   window.draw(sprite);
 }
 
+std::shared_ptr<Entity> Entity::ptrGet() { return shared_from_this(); }
+
 void Entity::setFrame(sf::IntRect frame) { sprite.setTextureRect(frame); }
 
 sf::Sprite *Entity::getBorder() { return &sprite; }

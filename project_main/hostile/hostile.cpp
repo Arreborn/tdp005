@@ -64,17 +64,6 @@ void Hostile::verticalPosition() { center.y += 4; }
 
 bool Hostile::tick(sf::Time time, World &world) {
 
-  /*   sf::Vector2f vold{center};
-    verticaPositon();
-    sprite.setPosition(center);
-    for (shared_ptr<Entity> &collision : world.collidesWith(*this)) {
-      if (dynamic_cast<Block *>(collision.get())) {
-        center = vold;
-        center -= sf::Vector2f{0, (center.y - collision.get()->center.y + 15) +
-                                      float{1.2}};
-      }
-    } */
-
   // toggles damage indicator
   if (blinkDuration <= sf::seconds(0)) {
     sprite.setColor(sf::Color::White);
@@ -82,6 +71,10 @@ bool Hostile::tick(sf::Time time, World &world) {
   } else {
     blinkDuration -= time;
   }
+
+  sf::Vector2f playerPos{world.playerCharacter->getCenter()};
+
+  // charge up melee attack?
 
   sf::Vector2f hold{center};
   // collision detection for horizontal movement
