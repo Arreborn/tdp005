@@ -17,17 +17,12 @@ Archer::Archer(sf::Vector2f center) : Hostile(center)
 
 bool Archer::tick(sf::Time time, World &world)
 {
-    sf::Vector2f playerPos{world.playerCharacter->getCenter()};
-    if (playerPos.x == center.x + 10)
-    {
-        world.add(std::make_shared<Attack>(center, 5, ptrGet()));
-    }
     return Hostile::tick(time, world);
 }
 
 void Archer::render(sf::RenderWindow &drawTo) { Hostile::render(drawTo); }
 
-void Archer::verticalPosition() { cout << "slide to the left" << endl; }
+void Archer::verticalPosition() {}
 
 void Archer::horizontalPosition(sf::Time const &time, World &world)
 {
