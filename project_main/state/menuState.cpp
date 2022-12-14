@@ -116,8 +116,6 @@ void MenuState::render(sf::RenderWindow &drawTo)
 
     int state = static_cast<int>(255 * e.state);
     e.text.setFillColor(sf::Color(state, state, 100));
-    string out{e.text.getString()};
-    cout << out << endl;
     drawTo.draw(e.text);
   }
 }

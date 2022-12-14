@@ -9,7 +9,8 @@
  * avanced enemies can be added.
  *
  */
-class Hostile : public Entity {
+class Hostile : public Entity
+{
 public:
   /**
    * @brief Construct a new Hostile entity.
@@ -50,11 +51,11 @@ public:
    */
   void takeDamage(float damage) override;
 
-  virtual void verticaPositon();
+  virtual void verticalPosition();
 
   virtual void horizontalPosition(sf::Time const &time, World &world);
 
-  // virtual void attack();
+  virtual void attack();
 
 protected:
   /**

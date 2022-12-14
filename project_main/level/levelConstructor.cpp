@@ -3,14 +3,17 @@
 #include <fstream>
 #include <memory>
 
-LevelConstructor::LevelConstructor(int numberOfSegments) {
+LevelConstructor::LevelConstructor(int numberOfSegments)
+{
   string current{};
-  for (int i{}; i < numberOfSegments; ++i) {
+  for (int i{}; i < numberOfSegments; ++i)
+  {
     current = SegmentManager::get();
   }
 }
 
-void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player) {
+void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player)
+{
   string str{SegmentManager::get()};
   str = str.substr(1, str.size() - 2);
   std::ifstream file{};
@@ -19,20 +22,24 @@ void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player) {
   string temp{};
   bool playerSet{false};
 
-  while (getline(file, temp)) {
+  while (getline(file, temp))
+  {
     segment += temp;
   }
 
   int x{};
   int y{};
 
-  for (string::size_type i{}; i < segment.length(); i++) {
-    if (segment[i] != '.') {
+  for (string::size_type i{}; i < segment.length(); i++)
+  {
+    if (segment[i] != '.')
+    {
       selector(segment[i], x, y, world, player, playerSet);
     }
 
     x += 16;
-    if (x == 1280) {
+    if (x == 1280)
+    {
       x = 0;
       y += 16;
     }
@@ -40,8 +47,11 @@ void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player) {
 }
 
 void LevelConstructor::selector(char a, int x, int y, World &world,
-                                shared_ptr<Player> player, bool &playerSet) {
-  switch (a) {
+                                shared_ptr<Player> player, bool &playerSet)
+{
+  switch (a)
+  {
+  /* Diverse blocks */
   case 'B': // Top block
     world.add(std::make_shared<Block>(sf::Vector2f(x, y),
                                       sf::IntRect(16, 0, 16, 16)));
@@ -96,22 +106,31 @@ void LevelConstructor::selector(char a, int x, int y, World &world,
     break;
   case 'T': // A tree place 3 blocks above ground in txt file
     world.add(std::make_shared<Block>(sf::Vector2f(x, y),
-                                      sf::IntRect(0, 48, 48, 48)));
+                                      sf::IntRect(0, 64, 48, 48)));
     break;
+
+  /* Enemies */
   case 'h':
     world.add(std::make_shared<Hostile>(sf::Vector2f(x, y)));
     world.addEnemy();
     break;
+  case 'a':
+    world.add(std::make_shared<Archer>(sf::Vector2f(x, y)));
+    world.addEnemy();
+    break;
 
+  /* Player spawning */
   case 'l':
-    if (player->getCenter().x > 640 && !playerSet) {
+    if (player->getCenter().x > 640 && !playerSet)
+    {
       playerSet = true;
       player->set(x, y);
     }
     break;
 
   case 'r':
-    if (player->getCenter().x < 640 && !playerSet) {
+    if (player->getCenter().x < 640 && !playerSet)
+    {
       playerSet = true;
       player->set(x, y);
     }
