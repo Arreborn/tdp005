@@ -54,6 +54,8 @@ public:
 
   virtual void horizontalPosition(sf::Time const &time, World &world);
 
+  virtual void attack();
+
 protected:
   /**
    * @brief Stores the health of the hostile.
