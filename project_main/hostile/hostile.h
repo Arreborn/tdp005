@@ -54,7 +54,7 @@ public:
 
   virtual void horizontalPosition(sf::Time const &time, World &world);
 
-  virtual void attack();
+  // virtual void attack();
 
 protected:
   /**

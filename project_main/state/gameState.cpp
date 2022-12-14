@@ -9,30 +9,25 @@
 #include <SFML/System/Vector2.hpp>
 #include <memory>
 
-GameState::GameState()
-{
+GameState::GameState() {
   // Loading textures
   loadTextures();
   // Creating objects
   player = std::make_shared<Player>(
-      sf::Vector2f(1100, 1100));                  // these coordinates are set to ensure the
-                                                  // player starts at the left
-  world.add(player);                              // adds the player object into the game world
+      sf::Vector2f(1100, 1100)); // these coordinates are set to ensure the
+                                 // player starts at the left
+  world.add(player);             // adds the player object into the game world
   LevelConstructor::generateLevel(world, player); // generates a first level
 }
 
-shared_ptr<State> GameState::tick(sf::Time time)
-{
+shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
   int currFrame{};
-  if (player->damageTaken())
-  {
-    if (player->getHealth() % 2 == 0)
-    {
-      currFrame = ((player->getHealth() / 2) * 9 + ((player->getHealth() / 2)) * 3);
+  if (player->damageTaken()) {
+    if (player->getHealth() % 2 == 0) {
+      currFrame =
+          ((player->getHealth() / 2) * 9 + ((player->getHealth() / 2)) * 3);
       hpBar.setTextureRect(sf::IntRect(0, 0, currFrame, 8));
-    }
-    else
-    {
+    } else {
       currFrame = ((player->getHealth() - 1) / 2) * 9 + 5 +
                   (((player->getHealth() + 1) / 2) - 1) * 3;
       hpBar.setTextureRect(sf::IntRect(0, 0, currFrame, 8));
@@ -51,35 +46,29 @@ shared_ptr<State> GameState::tick(sf::Time time)
 
   //
   // resets viewport
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-  {
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
     view.setCenter(640.0f, 400.0f);
     view.setSize(1280.0, 800.0);
     return std::make_shared<MenuState>(shared_from_this());
   }
 
-  if (world.levelCleared() && player->hittingBorder())
-  {
+  if (world.levelCleared() && player->hittingBorder()) {
     world.clear();
     LevelConstructor::generateLevel(world, player);
   }
 
-  if (gameOver)
-  {
+  if (gameOver) {
     // resets viewport
     view.setCenter(640.0f, 400.0f);
     view.setSize(1280.0, 800.0);
     window.setView(view);
     return std::make_shared<MenuState>(shared_from_this());
-  }
-  else
-  {
+  } else {
     return nullptr;
   }
 }
 
-void GameState::loadTextures()
-{
+void GameState::loadTextures() {
   // Texture loading
   sf::Texture *hpText = SpriteManager::get("sprites/Healthbar.png");
   sf::Texture *hpBg = SpriteManager::get("sprites/uiBackground.png");
@@ -102,7 +91,9 @@ void GameState::loadTextures()
   // Setting default positions and scaling
   hpBar.setScale(2.0f, 2.0f);
   hpBarBackground.setScale(2.0f, 2.0f);
-  hpBar.setPosition(sf::Vector2f(240.0f, 268.0f)); // Background and foreground should differ 12 pixels in y
+  hpBar.setPosition(sf::Vector2f(
+      240.0f,
+      268.0f)); // Background and foreground should differ 12 pixels in y
   hpBarBackground.setPosition(sf::Vector2f(240.0f, 280.0f));
   // Background
   bgBack.setScale(5.0f, 5.0f);
@@ -115,8 +106,7 @@ void GameState::loadTextures()
   bgFore.setPosition(sf::Vector2f(0.0f, 0.0f));
 }
 
-void GameState::render(sf::RenderWindow &drawTo)
-{
+void GameState::render(sf::RenderWindow &drawTo) {
   drawTo.draw(bgBack);
   drawTo.draw(bgLights);
   drawTo.draw(bgTree);
