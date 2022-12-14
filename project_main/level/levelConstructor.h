@@ -2,9 +2,12 @@
 #include "../common.h"
 #include "../entity/entity.h"
 #include "../hostile/archer.h"
-#include "../hostile/hostile.h"
-#include "../hostile/archer.h"
 #include "../hostile/flying.h"
+#include "../hostile/hostile.h"
+#include "../player/player.h"
+#include "../staticEntity/block.h"
+#include "../world.h"
+#include "segmentManager.h"
 #include <memory>
 
 // TODO:
@@ -15,8 +18,7 @@
  * @brief This class manages construction of levels from segments.
  *
  */
-class LevelConstructor
-{
+class LevelConstructor {
 private:
   /**
    * @brief General switch function that creates a new object depending on the

@@ -68,4 +68,6 @@ protected:
    *
    */
   Entity *thisAttacker{};
+
+  char meleeDirection{};
 };

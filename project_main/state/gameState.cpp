@@ -3,6 +3,9 @@
 #include "../player/player.h"
 #include "../sprites/spriteManager.h"
 #include "menuState.h"
+#include <memory>
+
+void updateHud(std::shared_ptr<Player> player, sf::Sprite &hpBar);
 
 GameState::GameState() {
   // Loading textures
@@ -16,18 +19,8 @@ GameState::GameState() {
 }
 
 shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
-  int currFrame{};
-  if (player->damageTaken()) {
-    if (player->getHealth() % 2 == 0) {
-      currFrame =
-          ((player->getHealth() / 2) * 9 + ((player->getHealth() / 2)) * 3);
-      hpBar.setTextureRect(sf::IntRect(0, 0, currFrame, 8));
-    } else {
-      currFrame = ((player->getHealth() - 1) / 2) * 9 + 5 +
-                  (((player->getHealth() + 1) / 2) - 1) * 3;
-      hpBar.setTextureRect(sf::IntRect(0, 0, currFrame, 8));
-    }
-  }
+
+  updateHud(player, hpBar);
 
   gameOver = !player->isAlive();
 
@@ -48,6 +41,7 @@ shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
   }
 
   if (world.levelCleared() && player->hittingBorder()) {
+    player->heal();
     world.getLevel((player->getCenter().x > 640), player);
   }
 
@@ -110,3 +104,16 @@ void GameState::render(sf::RenderWindow &drawTo) {
   drawTo.draw(hpBarBackground);
   drawTo.draw(hpBar);
 };
+
+void updateHud(shared_ptr<Player> player, sf::Sprite &hpBar) {
+  int currFrame{};
+  if (player->getHealth() % 2 == 0) {
+    currFrame =
+        ((player->getHealth() / 2) * 9 + ((player->getHealth() / 2)) * 3);
+    hpBar.setTextureRect(sf::IntRect(0, 0, currFrame, 8));
+  } else {
+    currFrame = ((player->getHealth() - 1) / 2) * 9 + 5 +
+                (((player->getHealth() + 1) / 2) - 1) * 3;
+    hpBar.setTextureRect(sf::IntRect(0, 0, currFrame, 8));
+  }
+}

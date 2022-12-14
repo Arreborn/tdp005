@@ -86,6 +86,7 @@ public:
   bool damageTaken();
   int getHealth();
   float getLastY();
+  void heal();
 
 protected:
   /**
