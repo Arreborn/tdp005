@@ -7,8 +7,7 @@ class World;
  * @brief An abstract game object.
  *
  */
-class Entity
-{
+class Entity : public std::enable_shared_from_this<Entity> {
 public:
   /**
    * @brief Construct a new Entity object. As this is an interface,
@@ -102,6 +101,8 @@ public:
   virtual void takeDamage(float damage) = 0;
 
   virtual void setFrame(sf::IntRect frame);
+
+  virtual shared_ptr<Entity> ptrGet();
 
   /**
    * @brief Returns the direction the entity is facing.

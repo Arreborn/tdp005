@@ -33,7 +33,7 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
       }
     }
 
-    window.clear(sf::Color::Cyan);
+    window.clear(sf::Color::Black);
     if (shared_ptr<State> new_state = state->tick(clock.restart(), window)) {
       if (std::dynamic_pointer_cast<ExitState>(new_state)) {
         return;

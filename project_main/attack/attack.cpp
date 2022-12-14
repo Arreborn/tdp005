@@ -1,19 +1,23 @@
 #include "attack.h"
 #include <SFML/System/Vector2.hpp>
 
+char meleeDirection{};
+
 Attack::Attack(sf::Vector2f center, float damage, shared_ptr<Entity> attacker)
     : Entity{center, "sprites/swoosh.png", 'a'}, damage{damage} {
   thisAttacker = attacker.get();
-  sprite.setTextureRect(sf::IntRect(
-      0, 0, 30, 30)); // edit attackDuration to adjust duration of attacks
+  sprite.setTextureRect(sf::IntRect(0, 0, 30, 30));
+  // edit attackDuration to adjust duration of attacks
+
+  meleeDirection = thisAttacker->getDirection();
 }
 
 bool Attack::tick(sf::Time time, World &world) {
   center = thisAttacker->center;
-  if (thisAttacker->getDirection() == 'l') {
+  if (meleeDirection == 'l') {
     center.x -= 65;
     sprite.setScale(-1, 1);
-  } else if (thisAttacker->getDirection() == 'r') {
+  } else if (meleeDirection == 'r') {
     center.x += 65;
     sprite.setScale(1, 1);
   }

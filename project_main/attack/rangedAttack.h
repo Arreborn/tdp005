@@ -1,18 +1,12 @@
 #pragma once
-#include "../common.h"
-#include "../entity/entity.h"
-#include "../hostile/hostile.h"
-#include "../player/player.h"
-#include "../staticEntity/block.h"
-#include "../world.h"
-#include <SFML/Graphics.hpp>
+#include "attack.h"
 
 /**
  * @brief This class produces general attacks in the game world. These will be
  * used by both the player character and enemies.
  *
  */
-class Attack : public Entity {
+class RangedAttack : public Attack {
 public:
   /**
    * @brief The constructor accepts the center of the unit producing the attack,
@@ -23,7 +17,8 @@ public:
    * @param damage
    * @param attacker
    */
-  Attack(sf::Vector2f center, float const damage, shared_ptr<Entity> attacker);
+  RangedAttack(sf::Vector2f center, float const damage,
+               shared_ptr<Entity> attacker);
 
   /**
    * @brief General tick function to remove the attack from the game world once
@@ -57,6 +52,8 @@ protected:
    */
   float damage{};
 
+  char attackDirection{};
+
   /**
    * @brief The duration of the attack.
    *
@@ -68,4 +65,8 @@ protected:
    *
    */
   Entity *thisAttacker{};
+
+  int animation{1};
+
+  int tickCount{};
 };

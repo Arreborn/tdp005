@@ -7,8 +7,7 @@
  * @brief This class defines and handles the player character.
  *
  */
-class Player : public Entity, public std::enable_shared_from_this<Entity>
-{
+class Player : public Entity {
 public:
   /**
    * @brief Construct a new Player object.
@@ -67,7 +66,6 @@ public:
    *
    * @return shared_ptr<Entity>
    */
-  shared_ptr<Entity> ptrGet();
 
   /**
    * @brief Setter for player position. Used when contructing levels.
