@@ -55,7 +55,7 @@ public:
 
   virtual void horizontalPosition(sf::Time const &time, World &world);
 
-  virtual void attack();
+  virtual void attack(World &world);
 
 protected:
   /**
@@ -83,6 +83,7 @@ protected:
    *
    */
   sf::Time blinkDuration{};
+  sf::Time attackCooldown{};
 
   sf::Time movementDuration{};
 };

@@ -18,6 +18,7 @@ set(SOURCE_FILES main.cpp
   staticEntity/block.cpp
   hostile/hostile.cpp
   hostile/archer.cpp
+  hostile/flying.cpp
   attack/attack.cpp
   attack/rangedAttack.cpp)
 # På skolans Linux - system finns det två versioner av SFML. Se efter vilken som används :

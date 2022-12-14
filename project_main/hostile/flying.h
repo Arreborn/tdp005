@@ -4,10 +4,10 @@
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Vector2.hpp>
 
-class Archer : public Hostile
+class Flying : public Hostile
 {
 public:
-    Archer(sf::Vector2f center);
+    Flying(sf::Vector2f center);
     bool tick(sf::Time time, World &world) override;
     void render(sf::RenderWindow &drawto) override;
 

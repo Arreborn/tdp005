@@ -225,6 +225,30 @@ hostile/archer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/archer.cpp.s
 .PHONY : hostile/archer.cpp.s
 
+hostile/flying.o: hostile/flying.cpp.o
+.PHONY : hostile/flying.o
+
+# target to build an object file
+hostile/flying.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/flying.cpp.o
+.PHONY : hostile/flying.cpp.o
+
+hostile/flying.i: hostile/flying.cpp.i
+.PHONY : hostile/flying.i
+
+# target to preprocess a source file
+hostile/flying.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/flying.cpp.i
+.PHONY : hostile/flying.cpp.i
+
+hostile/flying.s: hostile/flying.cpp.s
+.PHONY : hostile/flying.s
+
+# target to generate assembly for a file
+hostile/flying.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/flying.cpp.s
+.PHONY : hostile/flying.cpp.s
+
 hostile/hostile.o: hostile/hostile.cpp.o
 .PHONY : hostile/hostile.o
 
@@ -510,6 +534,9 @@ help:
 	@echo "... hostile/archer.o"
 	@echo "... hostile/archer.i"
 	@echo "... hostile/archer.s"
+	@echo "... hostile/flying.o"
+	@echo "... hostile/flying.i"
+	@echo "... hostile/flying.s"
 	@echo "... hostile/hostile.o"
 	@echo "... hostile/hostile.i"
 	@echo "... hostile/hostile.s"

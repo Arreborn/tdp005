@@ -6,6 +6,7 @@
 #include "../entity/entity.h"
 #include "../hostile/hostile.h"
 #include "../hostile/archer.h"
+#include "../hostile/flying.h"
 #include <memory>
 
 // TODO:

@@ -118,6 +118,10 @@ void LevelConstructor::selector(char a, int x, int y, World &world,
     world.add(std::make_shared<Archer>(sf::Vector2f(x, y)));
     world.addEnemy();
     break;
+  case 'f':
+    world.add(std::make_shared<Flying>(sf::Vector2f(x, y)));
+    world.addEnemy();
+    break;
 
   /* Player spawning */
   case 'l':

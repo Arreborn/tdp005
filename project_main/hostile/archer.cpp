@@ -1,7 +1,7 @@
 #include "archer.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
-#include "../attack/attack.h"
+#include "../attack/rangedAttack.h"
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Vector2.hpp>
@@ -76,6 +76,11 @@ void Archer::horizontalPosition(sf::Time const &time, World &world)
     }
 }
 
-void Archer::attack()
+void Archer::attack(World &world)
 {
+    if (attackCooldown == sf::seconds(0.0f))
+    {
+        world.add(std::make_shared<RangedAttack>(center, 1, ptrGet()));
+        attackCooldown = sf::seconds(2.0f);
+    }
 }
