@@ -1,9 +1,7 @@
 #pragma once
-#include "segmentManager.h"
 #include "../common.h"
-#include "../world.h"
-#include "../staticEntity/block.h"
 #include "../entity/entity.h"
+#include "../hostile/archer.h"
 #include "../hostile/hostile.h"
 #include "../hostile/archer.h"
 #include "../hostile/flying.h"
@@ -28,14 +26,16 @@ private:
    * @param x
    * @return TexturedEntity
    */
-  static void selector(char a, int x, int y, World &world, shared_ptr<Player> player, bool &playerSet);
+  static void selector(char a, int x, int y, World &world,
+                       shared_ptr<Player> player, bool &playerSet,
+                       bool const loadHostiles);
 
   /**
    * @brief Construct a new level with the designated number of segments.
    *
    * @param numberOfSegments
    */
-  LevelConstructor(int numberOfSegments);
+  LevelConstructor() = default;
 
   /**
    * @brief Destroys the level.
@@ -56,5 +56,8 @@ public:
    * @param world
    * @param player
    */
-  static void generateLevel(World &world, shared_ptr<Player> player);
+  static string generateLevel(World &world, shared_ptr<Player> player,
+                              bool loadHostiles, string str);
+
+  static vector<string> loadLevels(int numberOfLevels);
 };

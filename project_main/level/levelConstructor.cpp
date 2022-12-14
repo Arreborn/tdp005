@@ -3,19 +3,21 @@
 #include <fstream>
 #include <memory>
 
-LevelConstructor::LevelConstructor(int numberOfSegments)
+vector<string> LevelConstructor::loadLevels(int numberOfLevels)
 {
-  string current{};
-  for (int i{}; i < numberOfSegments; ++i)
+  vector<string> loaded{};
+  for (int i{}; i < numberOfLevels; ++i)
   {
-    current = SegmentManager::get();
+    loaded.push_back(SegmentManager::get());
   }
+  return loaded;
 }
 
-void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player)
+string LevelConstructor::generateLevel(World &world, shared_ptr<Player> player,
+                                       bool loadHostiles, string str)
 {
-  string str{SegmentManager::get()};
   str = str.substr(1, str.size() - 2);
+  cout << str << endl;
   std::ifstream file{};
   file.open(str);
   string segment{};
@@ -34,7 +36,7 @@ void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player)
   {
     if (segment[i] != '.')
     {
-      selector(segment[i], x, y, world, player, playerSet);
+      selector(segment[i], x, y, world, player, playerSet, loadHostiles);
     }
 
     x += 16;
@@ -44,10 +46,12 @@ void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player)
       y += 16;
     }
   }
+  return segment;
 }
 
 void LevelConstructor::selector(char a, int x, int y, World &world,
-                                shared_ptr<Player> player, bool &playerSet)
+                                shared_ptr<Player> player, bool &playerSet,
+                                bool const loadHostiles)
 {
   switch (a)
   {
@@ -111,12 +115,19 @@ void LevelConstructor::selector(char a, int x, int y, World &world,
 
   /* Enemies */
   case 'h':
-    world.add(std::make_shared<Hostile>(sf::Vector2f(x, y)));
-    world.addEnemy();
+    if (loadHostiles)
+    {
+      world.add(std::make_shared<Hostile>(sf::Vector2f(x, y)));
+      world.addEnemy();
+    }
     break;
+
   case 'a':
-    world.add(std::make_shared<Archer>(sf::Vector2f(x, y)));
-    world.addEnemy();
+    if (loadHostiles)
+    {
+      world.add(std::make_shared<Archer>(sf::Vector2f(x, y)));
+      world.addEnemy();
+    }
     break;
   case 'f':
     world.add(std::make_shared<Flying>(sf::Vector2f(x, y)));

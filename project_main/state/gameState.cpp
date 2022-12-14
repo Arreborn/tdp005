@@ -3,11 +3,6 @@
 #include "../player/player.h"
 #include "../sprites/spriteManager.h"
 #include "menuState.h"
-#include <SFML/Graphics.hpp>
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Graphics/View.hpp>
-#include <SFML/System/Vector2.hpp>
-#include <memory>
 
 GameState::GameState() {
   // Loading textures
@@ -17,7 +12,7 @@ GameState::GameState() {
       sf::Vector2f(1100, 1100)); // these coordinates are set to ensure the
                                  // player starts at the left
   world.add(player);             // adds the player object into the game world
-  LevelConstructor::generateLevel(world, player); // generates a first level
+  world.getLevel(true, player);  // generates a first level
 }
 
 shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
@@ -53,8 +48,7 @@ shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
   }
 
   if (world.levelCleared() && player->hittingBorder()) {
-    world.clear();
-    LevelConstructor::generateLevel(world, player);
+    world.getLevel((player->getCenter().x > 640), player);
   }
 
   if (gameOver) {
