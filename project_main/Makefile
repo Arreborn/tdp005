@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kasken/Documents/TDP005/project_main
+CMAKE_SOURCE_DIR = /home/arreborn/Documents/TDP005/project_main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kasken/Documents/TDP005/project_main
+CMAKE_BINARY_DIR = /home/arreborn/Documents/TDP005/project_main
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kasken/Documents/TDP005/project_main/CMakeFiles /home/kasken/Documents/TDP005/project_main//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arreborn/Documents/TDP005/project_main/CMakeFiles /home/arreborn/Documents/TDP005/project_main//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kasken/Documents/TDP005/project_main/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arreborn/Documents/TDP005/project_main/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -176,6 +176,30 @@ entity/entity.s: entity/entity.cpp.s
 entity/entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/entity/entity.cpp.s
 .PHONY : entity/entity.cpp.s
+
+hostile/archer.o: hostile/archer.cpp.o
+.PHONY : hostile/archer.o
+
+# target to build an object file
+hostile/archer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/archer.cpp.o
+.PHONY : hostile/archer.cpp.o
+
+hostile/archer.i: hostile/archer.cpp.i
+.PHONY : hostile/archer.i
+
+# target to preprocess a source file
+hostile/archer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/archer.cpp.i
+.PHONY : hostile/archer.cpp.i
+
+hostile/archer.s: hostile/archer.cpp.s
+.PHONY : hostile/archer.s
+
+# target to generate assembly for a file
+hostile/archer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/archer.cpp.s
+.PHONY : hostile/archer.cpp.s
 
 hostile/hostile.o: hostile/hostile.cpp.o
 .PHONY : hostile/hostile.o
@@ -456,6 +480,9 @@ help:
 	@echo "... entity/entity.o"
 	@echo "... entity/entity.i"
 	@echo "... entity/entity.s"
+	@echo "... hostile/archer.o"
+	@echo "... hostile/archer.i"
+	@echo "... hostile/archer.s"
 	@echo "... hostile/hostile.o"
 	@echo "... hostile/hostile.i"
 	@echo "... hostile/hostile.s"

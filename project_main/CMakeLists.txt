@@ -17,6 +17,7 @@ set(SOURCE_FILES main.cpp
   level/levelConstructor.cpp
   staticEntity/block.cpp
   hostile/hostile.cpp
+  hostile/archer.cpp
   attack/attack.cpp)
 # På skolans Linux - system finns det två versioner av SFML. Se efter vilken som används :
 if (DEFINED ENV{LOADEDMODULES} AND ("$ENV{LOADEDMODULES}" MATCHES ".*prog/gcc/6.1.0.*"))

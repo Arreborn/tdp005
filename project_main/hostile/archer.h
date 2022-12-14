@@ -2,29 +2,28 @@
 #include "../common.h"
 #include "hostile.h"
 
-class Archer : public Hostile
-{
+class Archer : public Hostile {
 public:
-    Archer(sf::Vector2f center);
-    bool tick(sf::Time time, World &world) override;
-    void render(sf::RenderWindow &drawto) override;
+  Archer(sf::Vector2f center);
+  bool tick(sf::Time time, World &world) override;
+  void render(sf::RenderWindow &drawto) override;
 
-    void verticalPosition() override;
-    void horizontalPosition(sf::Time const &time, World &world) override;
-    void attack() override;
+  void verticalPosition() override;
+  void horizontalPosition(sf::Time const &time, World &world) override;
+  void attack() override;
 
 protected:
-    int health{};
+  int health{};
 
-    float speed{};
+  float speed{};
 
-    sf::Vector2f acceleration{0, 2};
+  sf::Vector2f acceleration{0, 2};
 
-    /**
-     * @brief When taking damage, the hostile will turn red momentarily. This
-     * variable stores the current color.
-     *
-     */
-    sf::Time blinkDuration{};
-    sf::Time movementDuration{};
+  /**
+   * @brief When taking damage, the hostile will turn red momentarily. This
+   * variable stores the current color.
+   *
+   */
+  sf::Time blinkDuration{};
+  sf::Time movementDuration{};
 };
