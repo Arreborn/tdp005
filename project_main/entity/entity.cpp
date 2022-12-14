@@ -3,8 +3,7 @@
 #include <SFML/System/Vector2.hpp>
 
 Entity::Entity(sf::Vector2f center, const string &renderSprite, char const type)
-    : center(center), type{type}
-{
+    : center(center), type{type} {
 
   sf::Texture *t = SpriteManager::get(renderSprite);
   auto size = t->getSize();
@@ -15,21 +14,14 @@ Entity::Entity(sf::Vector2f center, const string &renderSprite, char const type)
   direction = 'r';
 }
 
-void Entity::render(sf::RenderWindow &window)
-{
+void Entity::render(sf::RenderWindow &window) {
   sprite.setPosition(center);
   window.draw(sprite);
 }
 
-void Entity::setFrame(sf::IntRect frame)
-{
-  sprite.setTextureRect(frame);
-}
+void Entity::setFrame(sf::IntRect frame) { sprite.setTextureRect(frame); }
 
-sf::Sprite *Entity::getBorder()
-{
-  return &sprite;
-}
+sf::Sprite *Entity::getBorder() { return &sprite; }
 
 sf::FloatRect Entity::getBounds() { return sprite.getGlobalBounds(); }
 
