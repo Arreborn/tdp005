@@ -1,4 +1,5 @@
 #include "world.h"
+#include "level/levelConstructor.h"
 #include "player/player.h"
 #include "staticEntity/block.h"
 #include <SFML/Graphics/Rect.hpp>
@@ -91,8 +92,32 @@ void World::removeEnemy() { --enemiesAlive; }
 
 bool World::levelCleared() {
   if (enemiesAlive == 0) {
+    if (currentStage > completedLevels) {
+      ++completedLevels;
+    }
     return true;
   } else {
     return false;
+  }
+}
+
+void World::getLevel(bool right, shared_ptr<Player> player) {
+  if (loadedSegments.empty()) {
+    loadedSegments = LevelConstructor::loadLevels(15);
+    LevelConstructor::generateLevel(*this, player, true,
+                                    loadedSegments[currentStage]);
+  } else {
+    if (right) {
+      ++currentStage;
+    } else {
+      if (currentStage == 0) {
+        return;
+      }
+      --currentStage;
+    }
+    clear();
+    LevelConstructor::generateLevel(*this, player,
+                                    (currentStage > completedLevels),
+                                    loadedSegments[currentStage]);
   }
 }

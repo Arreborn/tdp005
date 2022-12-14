@@ -93,6 +93,8 @@ public:
    */
   shared_ptr<Entity> playerCharacter{};
 
+  void getLevel(bool right, shared_ptr<Player> player);
+
 private:
   /**
    * @brief This container stores all game objects.
@@ -104,7 +106,15 @@ private:
    * @brief Stores the current stage.
    *
    */
-  int currentStage{};
+  size_t currentStage{};
+
+  /**
+   * @brief Stores the loaded segments.
+   *
+   */
+  vector<string> loadedSegments{};
+
+  size_t completedLevels{};
 
   /**
    * @brief Tracks the number of enemies currently alive.

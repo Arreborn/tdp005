@@ -3,54 +3,49 @@
 #include <fstream>
 #include <memory>
 
-LevelConstructor::LevelConstructor(int numberOfSegments)
-{
-  string current{};
-  for (int i{}; i < numberOfSegments; ++i)
-  {
-    current = SegmentManager::get();
+vector<string> LevelConstructor::loadLevels(int numberOfLevels) {
+  vector<string> loaded{};
+  for (int i{}; i < numberOfLevels; ++i) {
+    loaded.push_back(SegmentManager::get());
   }
+  return loaded;
 }
 
-void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player)
-{
-  string str{SegmentManager::get()};
+string LevelConstructor::generateLevel(World &world, shared_ptr<Player> player,
+                                       bool loadHostiles, string str) {
   str = str.substr(1, str.size() - 2);
+  cout << str << endl;
   std::ifstream file{};
   file.open(str);
   string segment{};
   string temp{};
   bool playerSet{false};
 
-  while (getline(file, temp))
-  {
+  while (getline(file, temp)) {
     segment += temp;
   }
 
   int x{};
   int y{};
 
-  for (string::size_type i{}; i < segment.length(); i++)
-  {
-    if (segment[i] != '.')
-    {
-      selector(segment[i], x, y, world, player, playerSet);
+  for (string::size_type i{}; i < segment.length(); i++) {
+    if (segment[i] != '.') {
+      selector(segment[i], x, y, world, player, playerSet, loadHostiles);
     }
 
     x += 16;
-    if (x == 1280)
-    {
+    if (x == 1280) {
       x = 0;
       y += 16;
     }
   }
+  return segment;
 }
 
 void LevelConstructor::selector(char a, int x, int y, World &world,
-                                shared_ptr<Player> player, bool &playerSet)
-{
-  switch (a)
-  {
+                                shared_ptr<Player> player, bool &playerSet,
+                                bool const loadHostiles) {
+  switch (a) {
   /* Diverse blocks */
   case 'B': // Top block
     world.add(std::make_shared<Block>(sf::Vector2f(x, y),
@@ -111,26 +106,29 @@ void LevelConstructor::selector(char a, int x, int y, World &world,
 
   /* Enemies */
   case 'h':
-    world.add(std::make_shared<Hostile>(sf::Vector2f(x, y)));
-    world.addEnemy();
+    if (loadHostiles) {
+      world.add(std::make_shared<Hostile>(sf::Vector2f(x, y)));
+      world.addEnemy();
+    }
     break;
+
   case 'a':
-    world.add(std::make_shared<Archer>(sf::Vector2f(x, y)));
-    world.addEnemy();
+    if (loadHostiles) {
+      world.add(std::make_shared<Archer>(sf::Vector2f(x, y)));
+      world.addEnemy();
+    }
     break;
 
   /* Player spawning */
   case 'l':
-    if (player->getCenter().x > 640 && !playerSet)
-    {
+    if (player->getCenter().x > 640 && !playerSet) {
       playerSet = true;
       player->set(x, y);
     }
     break;
 
   case 'r':
-    if (player->getCenter().x < 640 && !playerSet)
-    {
+    if (player->getCenter().x < 640 && !playerSet) {
       playerSet = true;
       player->set(x, y);
     }
