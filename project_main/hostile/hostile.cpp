@@ -4,6 +4,7 @@
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <tuple>
 
 Hostile::Hostile(sf::Vector2f center)
     : Entity(center, "sprites/Enemie_sheet.png", 'h'), health{100}, speed(5.0)
@@ -14,18 +15,35 @@ Hostile::Hostile(sf::Vector2f center)
 
 void Hostile::horizontalPosition(const sf::Time &time, World &world)
 {
+  float xOffset{};
+  float yOffset{getBounds().top + 16 + 1};
+  if (direction == 'l')
+  {
+    xOffset = getBounds().left - 1;
+  }
+  else if (direction == 'r')
+  {
+    xOffset = getBounds().left + getBounds().width + 1;
+  }
+
   sf::Vector2f playerPos{world.playerCharacter->getCenter()};
   if (playerPos.y == center.y + 1.5)
   {
     if (playerPos.x < center.x)
     {
       direction = 'l';
-      center.x -= 0.95f;
+      if (world.detectEdge(xOffset, yOffset))
+      {
+        center.x -= 1;
+      }
     }
     else
     {
       direction = 'r';
-      center.x += 0.95f;
+      if (world.detectEdge(xOffset, yOffset))
+      {
+        center.x += 1;
+      }
     }
   }
   else
@@ -48,12 +66,18 @@ void Hostile::horizontalPosition(const sf::Time &time, World &world)
     }
     else if (direction == 'l' && movementDuration > sf::seconds(0))
     {
-      center.x -= 1;
+      if (world.detectEdge(xOffset, yOffset))
+      {
+        center.x -= 1;
+      }
       movementDuration -= time;
     }
     else if (direction == 'r' && movementDuration > sf::seconds(0))
     {
-      center.x += 1;
+      if (world.detectEdge(xOffset, yOffset))
+      {
+        center.x += 1;
+      }
       movementDuration -= time;
     }
   }

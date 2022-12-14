@@ -41,7 +41,7 @@ public:
    */
   vector<shared_ptr<Entity>> collidesWith(Entity &me);
 
-  bool detectEdge(sf::FloatRect &check);
+  bool detectEdge(float const x, float const y);
 
   /**
    * @brief Fetches positions. (DEPRECATED?)

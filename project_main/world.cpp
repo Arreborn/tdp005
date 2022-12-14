@@ -1,6 +1,7 @@
 #include "world.h"
 #include "player/player.h"
 #include "staticEntity/block.h"
+#include <SFML/Graphics/Rect.hpp>
 
 void World::tick(sf::Time time) {
   for (size_t i{}; i < objects.size(); ++i) {
@@ -43,10 +44,11 @@ vector<shared_ptr<Entity>> World::collidesWith(Entity &me) {
   return result;
 }
 
-bool World::detectEdge(sf::FloatRect &check) {
-  for (shared_ptr<Entity> &x : objects) {
-    if (dynamic_cast<Block *>(x.get())) {
-      if (x->getBounds().intersects(check)) {
+bool World::detectEdge(float const x, float const y) {
+  sf::Rect<float> checking(x, y, 1, 1);
+  for (shared_ptr<Entity> &e : objects) {
+    if (e.get()->getType() == 'B') {
+      if (e->getBounds().intersects(checking)) {
         return true;
       }
     }
