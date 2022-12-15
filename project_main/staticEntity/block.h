@@ -7,15 +7,15 @@
  * block-objects.
  *
  */
-class Block : public Entity
-{
+class Block : public Entity {
 public:
   /**
    * @brief Construct a new Block object.
    *
    * @param center
    */
-  Block(sf::Vector2f center, const sf::IntRect &tile); // maybe top left corner for easier drawing?
+  Block(sf::Vector2f center,
+        const sf::IntRect &tile); // maybe top left corner for easier drawing?
 
   /**
    * @brief Handles updates for collision checking.
@@ -41,5 +41,5 @@ protected:
    * @brief Stores the type for collision checking and drawing.
    *
    */
-  // char type{'B'};
+  char type{'B'};
 };

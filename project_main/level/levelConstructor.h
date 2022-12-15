@@ -8,11 +8,6 @@
 #include "../staticEntity/block.h"
 #include "../world.h"
 #include "segmentManager.h"
-#include <memory>
-
-// TODO:
-// Check viability of shared_ptr for the vector thingys
-// Might be able to return that from selector
 
 /**
  * @brief This class manages construction of levels from segments.
@@ -61,5 +56,12 @@ public:
   static string generateLevel(World &world, shared_ptr<Player> player,
                               bool loadHostiles, string str);
 
+  /**
+   * @brief This function utilizes the SegmentManager to construct and return a
+   * number of levels in a vector to the game world.
+   *
+   * @param numberOfLevels
+   * @return vector<string>
+   */
   static vector<string> loadLevels(int numberOfLevels);
 };

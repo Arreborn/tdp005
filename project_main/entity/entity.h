@@ -4,7 +4,8 @@
 class World;
 
 /**
- * @brief An abstract game object.
+ * @brief An abstract game object for all types of entities that will be drawn
+ * in the game world.
  *
  */
 class Entity : public std::enable_shared_from_this<Entity> {

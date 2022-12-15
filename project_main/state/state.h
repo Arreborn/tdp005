@@ -59,11 +59,44 @@ public:
    */
   static void run(sf::RenderWindow &window, shared_ptr<State> state);
 
+  /**
+   * @brief In order to facilitate a game over-state, this function allows any
+   * state to check if the players health reaches zero. Placed in the base
+   * state-class to facilitate easier access between GameState and MenuState.
+   *
+   * @return true
+   * @return false
+   */
   bool isGameOver();
 
+  /**
+   * @brief This function checks whether the player has won. Placed in the base
+   * state-class to facilitate easier access between GameState and MenuState.
+   *
+   * @return true
+   * @return false
+   */
+  bool victoryState();
+
 protected:
+  /**
+   * @brief This variable tracks the current viewport to enable zooming in and
+   * out depending on the current state.
+   *
+   */
   sf::View view{};
+
+  /**
+   * @brief Tracks whether the game is over or not.
+   *
+   */
   bool gameOver{};
+
+  /**
+   * @brief Tracks whether the player has won or not.
+   *
+   */
+  bool victory{};
 };
 
 /**

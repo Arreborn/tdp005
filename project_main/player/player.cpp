@@ -259,4 +259,4 @@ int Player::getHealth() { return health; }
 
 float Player::getLastY() { return lastY; }
 
-void Player::heal() { health += 2; }
+void Player::heal() { health = 10; }

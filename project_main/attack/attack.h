@@ -64,10 +64,17 @@ protected:
   sf::Time attackDuration{};
 
   /**
-   * @brief A pointer to the attacking unit to avoid friendly fire.
+   * @brief A pointer to the attacking unit to check its type and avoid friendly
+   * fire.
    *
    */
   Entity *thisAttacker{};
 
+  /**
+   * @brief In order to allow the attack to face different directions, this char
+   * stores the current direction the attack will be facing no matter where the
+   * attacker faces.
+   *
+   */
   char meleeDirection{};
 };

@@ -86,6 +86,14 @@ void World::clear() {
   }
 }
 
+bool World::victory() {
+  if (completedLevels == 15) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 void World::addEnemy() { ++enemiesAlive; }
 
 void World::removeEnemy() { --enemiesAlive; }
@@ -103,7 +111,7 @@ bool World::levelCleared() {
 
 void World::getLevel(bool right, shared_ptr<Player> player) {
   if (loadedSegments.empty()) {
-    loadedSegments = LevelConstructor::loadLevels(15);
+    loadedSegments = LevelConstructor::loadLevels(16);
     LevelConstructor::generateLevel(*this, player, true,
                                     loadedSegments[currentStage]);
   } else {

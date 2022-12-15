@@ -6,6 +6,12 @@
 #include <SFML/System/Vector2.hpp>
 #include <memory>
 
+/**
+ * @brief This class tracks all objects in the game world, and keeps them in one
+ * place to update all objects. It also enables the loading of levels using the
+ * level constructor.
+ *
+ */
 class World {
 public:
   ~World() = default;
@@ -41,6 +47,15 @@ public:
    */
   vector<shared_ptr<Entity>> collidesWith(Entity &me);
 
+  /**
+   * @brief Allows an entity to detect if it's about to walk off an edge
+   * in the game world.
+   *
+   * @param x
+   * @param y
+   * @return true
+   * @return false
+   */
   bool detectEdge(float const x, float const y);
 
   /**
@@ -57,6 +72,8 @@ public:
    * @return false
    */
   bool isPlayerAlive();
+
+  bool victory();
 
   /**
    * @brief Clears the game board when transitioning between segments.
@@ -93,6 +110,13 @@ public:
    */
   shared_ptr<Entity> playerCharacter{};
 
+  /**
+   * @brief Utilizes the level constructor to load in a new level, or generate
+   * a set of levels if it hasn't been done.
+   *
+   * @param right
+   * @param player
+   */
   void getLevel(bool right, shared_ptr<Player> player);
 
 private:
@@ -114,6 +138,11 @@ private:
    */
   vector<string> loadedSegments{};
 
+  /**
+   * @brief Keeps track of the number of completed levels to track when the
+   * player has won.
+   *
+   */
   size_t completedLevels{};
 
   /**

@@ -83,9 +83,28 @@ public:
    * @return false
    */
   bool hittingBorder();
+
+  /**
+   * @brief This function allows the world and states check if the player has
+   * taken damage recently.
+   *
+   * @return true
+   * @return false
+   */
   bool damageTaken();
+
+  /**
+   * @brief Returns the players current health. Allows states to check current
+   * health for the HUD as well as checking of the player has died.
+   *
+   * @return int
+   */
   int getHealth();
-  float getLastY();
+
+  /**
+   * @brief Heals the player a small amount when passing between segments.
+   *
+   */
   void heal();
 
 protected:
@@ -165,10 +184,8 @@ protected:
   sf::Time iFrame{};
 
   /**
-   * @brief Stores if the player is at the border.
+   * @brief Stores if the player is at the border of the screen.
    *
    */
   bool atBorder{};
-
-  float lastY{};
 };

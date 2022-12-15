@@ -2,7 +2,7 @@
 #include "attack.h"
 
 /**
- * @brief This class produces general attacks in the game world. These will be
+ * @brief This class produces ranged attacks in the game world. These can be
  * used by both the player character and enemies.
  *
  */
@@ -66,7 +66,16 @@ protected:
    */
   Entity *thisAttacker{};
 
+  /**
+   * @brief This integer tracks the current animation frame for this object.
+   *
+   */
   int animation{1};
 
+  /**
+   * @brief Every tick, this is incremented by one, in order to facilitate a
+   * smooth but fast animation for the object.
+   *
+   */
   int tickCount{};
 };

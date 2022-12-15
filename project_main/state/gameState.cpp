@@ -3,7 +3,6 @@
 #include "../player/player.h"
 #include "../sprites/spriteManager.h"
 #include "menuState.h"
-#include <memory>
 
 void updateHud(std::shared_ptr<Player> player, sf::Sprite &hpBar);
 
@@ -41,6 +40,13 @@ shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
   }
 
   if (world.levelCleared() && player->hittingBorder()) {
+    if (world.victory()) {
+      victory = true;
+      view.setCenter(640.0f, 400.0f);
+      view.setSize(1280.0, 800.0);
+      window.setView(view);
+      return std::make_shared<MenuState>(shared_from_this());
+    }
     player->heal();
     world.getLevel((player->getCenter().x > 640), player);
   }

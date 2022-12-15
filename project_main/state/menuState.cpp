@@ -1,7 +1,5 @@
 #include "menuState.h"
 #include "gameState.h"
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <memory>
 
 MenuState::MenuState(shared_ptr<State> resume)
     : selected(0), isEnterPressed(false), delay(sf::milliseconds(300)) {
@@ -10,9 +8,11 @@ MenuState::MenuState(shared_ptr<State> resume)
 
   string menuText{"New game"};
   if (resume) {
-    if (!(resume->isGameOver())) {
+    if (!resume->isGameOver() && !resume->victoryState()) {
       add("Resume", [resume]() { return resume; });
       bg = resume;
+    } else if (resume->victoryState()) {
+      menuText = "You win! Play again?";
     } else {
       menuText = "Game over! Play again?";
     }

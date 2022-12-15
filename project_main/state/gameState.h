@@ -28,14 +28,6 @@ public:
    */
   void render(sf::RenderWindow &drawTo) override;
 
-protected:
-  sf::Sprite hpBar;
-  sf::Sprite hpBarBackground;
-  sf::Sprite bgBack;
-  sf::Sprite bgTree;
-  sf::Sprite bgFore;
-  sf::Sprite bgLights;
-
 private:
   /**
    * @brief Stores the game world.
@@ -44,8 +36,45 @@ private:
   World world;
 
   /**
-   * @brief Keeps track of the player object.
+   * @brief Keeps track of the player object and allows certain functions to be
+   * run during the game state.
    *
    */
   shared_ptr<Player> player{};
+
+  /**
+   * @brief Sprite for the HUD health bar.
+   *
+   */
+  sf::Sprite hpBar;
+
+  /**
+   * @brief Background sprite for the health bar.
+   *
+   */
+  sf::Sprite hpBarBackground;
+
+  /**
+   * @brief Sprite for the background image.
+   *
+   */
+  sf::Sprite bgBack;
+
+  /**
+   * @brief Sprite for the background image.
+   *
+   */
+  sf::Sprite bgTree;
+
+  /**
+   * @brief Sprite for the background image.
+   *
+   */
+  sf::Sprite bgFore;
+
+  /**
+   * @brief Sprite for the background image.
+   *
+   */
+  sf::Sprite bgLights;
 };

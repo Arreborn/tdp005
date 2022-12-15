@@ -2,9 +2,6 @@
 #include "../attack/rangedAttack.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
-#include <SFML/Graphics/Rect.hpp>
-#include <SFML/System/Time.hpp>
-#include <SFML/System/Vector2.hpp>
 
 Archer::Archer(sf::Vector2f center) : Hostile(center) {
   type = 'h';

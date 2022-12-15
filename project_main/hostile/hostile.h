@@ -9,11 +9,11 @@
  * avanced enemies can be added.
  *
  */
-class Hostile : public Entity
-{
+class Hostile : public Entity {
 public:
   /**
-   * @brief Construct a new Hostile entity.
+   * @brief Construct a new Hostile entity.Only accepts center which designates
+   * the objects position.
    *
    * @param center
    */
@@ -30,7 +30,7 @@ public:
   bool tick(sf::Time time, World &world) override;
 
   /**
-   * @brief Draws the object in the game world.
+   * @brief Renders the object.
    *
    * @param drawTo
    */
@@ -51,10 +51,26 @@ public:
    */
   void takeDamage(float damage) override;
 
+  /**
+   * @brief Handles the behaviour for vertical movement. DEPRECATED?
+   *
+   */
   virtual void verticalPosition();
 
+  /**
+   * @brief Handles the behaviour for horizontal movement.
+   *
+   * @param time
+   * @param world
+   */
   virtual void horizontalPosition(sf::Time const &time, World &world);
 
+  /**
+   * @brief Checks if an attack is appropriate, and creates a ranged attack
+   * object if it is.
+   *
+   * @param world
+   */
   virtual void attack(World &world);
 
 protected:
