@@ -2,6 +2,7 @@
 #include "../attack/dropAttack.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
+#include <SFML/System/Time.hpp>
 #include <SFML/System/Vector2.hpp>
 
 Flying::Flying(sf::Vector2f center) : Hostile(center) {
@@ -10,21 +11,21 @@ Flying::Flying(sf::Vector2f center) : Hostile(center) {
   speed = 7.0;
   sprite.setTextureRect(sf::IntRect(32, 16, 16, 16));
   sprite.setOrigin(0, 0);
+  canAttack = false;
+  attackCooldown = sf::seconds(0.0f);
 }
 
 void Flying::verticalPosition(sf::Time const &time, World &world) {
   sf::Vector2f vold{center};
   // the flying enemy will have some variance in its max position
-  bool yMax{};
+  bool yMax{false};
   float randomHeight{
       1.0f + (static_cast<float>(rand()) / static_cast<float>(RAND_MAX))};
   sf::Vector2f playerPos{world.playerCharacter->getCenter()};
 
   // checks if max coordinate (with variance) has been reached
-  if (playerPos.y >= center.y + (75 + (10 * randomHeight))) {
+  if (playerPos.y >= center.y + (60 + (10 * randomHeight))) {
     yMax = true;
-  } else if (playerPos.y < center.y) {
-    yMax = false;
   }
 
   // gives some ranomness to the movement
@@ -49,7 +50,7 @@ void Flying::verticalPosition(sf::Time const &time, World &world) {
   for (shared_ptr<Entity> &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Block *>(collision.get())) {
       center = vold;
-      center.y += 1;
+      center.y -= 1;
     }
   }
 }
