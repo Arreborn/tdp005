@@ -108,6 +108,10 @@ void LevelConstructor::selector(char a, int x, int y, World &world,
     world.add(std::make_shared<Block>(sf::Vector2f(x, y),
                                       sf::IntRect(64, 16, 16, 16)));
     break;
+  case 'Y':
+    world.add(std::make_shared<Block>(sf::Vector2f(x, y), sf::IntRect(0, 52, 48, 12)));
+    break;
+
   case 'T': // A tree place 3 blocks above ground in txt file
     world.add(std::make_shared<Block>(sf::Vector2f(x, y),
                                       sf::IntRect(0, 64, 48, 48)));
