@@ -104,14 +104,14 @@ bool Hostile::tick(sf::Time time, World &world)
   sf::Vector2f playerPos{world.playerCharacter->getCenter()};
 
   // charge up melee attack?
-  float xCoord{};
-  if (direction == 'l')
-  {
-    xCoord = thisAttacker->getBorder().left;
-  }
-  else if (direction == 'r')
-  {
-  }
+  // float xCoord{};
+  // if (direction == 'l')
+  // {
+  //   xCoord = thisAttacker->getBorder().left;
+  // }
+  // else if (direction == 'r')
+  // {
+  // }
   if (attackCooldown <= sf::seconds(0.0f))
   {
     attackCooldown = sf::seconds(0.0f);

@@ -2,9 +2,11 @@
 #include "../common.h"
 #include "../entity/entity.h"
 #include "../hostile/archer.h"
-#include "../hostile/hostile.h"
-#include "../hostile/archer.h"
 #include "../hostile/flying.h"
+#include "../hostile/hostile.h"
+#include "../staticEntity/block.h"
+#include "../world.h"
+#include "segmentManager.h"
 #include <memory>
 
 // TODO:
