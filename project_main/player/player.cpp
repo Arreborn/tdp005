@@ -266,4 +266,9 @@ bool Player::damageTaken() { return isHit; }
 
 int Player::getHealth() { return health; }
 
-void Player::heal() { health += 4; }
+void Player::heal() {
+  health += 2;
+  if (health > 10) {
+    health = 10;
+  }
+}
