@@ -1,12 +1,10 @@
 #include "player.h"
 #include "../attack/attack.h"
 #include "../attack/rangedAttack.h"
+#include "../hostile/flying.h"
 #include "../hostile/hostile.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
-#include <SFML/System/Time.hpp>
-#include <SFML/Window/Keyboard.hpp>
-#include <memory>
 
 Player::Player(sf::Vector2f center)
     : Entity(center, "sprites/warrior1_new.png", 'p'), health{10}, speed{5.0},
@@ -189,7 +187,7 @@ bool Player::tick(sf::Time time, World &world)
         thrown = false;
       }
       else
-      { // unclear when we enter this
+      { // ensures we stop when hitting something above us
         acceleration.y = 0;
       }
       // break the loop if we collide with a block
@@ -199,21 +197,24 @@ bool Player::tick(sf::Time time, World &world)
     {
       // vertical collision with an enemy will get the player thrown back
       // provided the player is falling downwards, and not already being thrown
-      center = vold;
-      // gives some lift when being thrown
-      acceleration.y = -6;
-      // ensures that the player is not considered landing
-      isJumping = false;
-      // is used to trigger another path in vertical movement
-      thrown = true;
-      // these variables control the distance a player hets thrown
-      if (direction == 'l')
+      if (!dynamic_cast<Flying *>(collision.get()))
       {
-        acceleration.x += 4; // increase to throw further
-      }
-      else
-      {
-        acceleration.x -= 4; // set to same value as previous case
+        center = vold;
+        // gives some lift when being thrown
+        acceleration.y = -6;
+        // ensures that the player is not considered landing
+        isJumping = false;
+        // is used to trigger another path in vertical movement
+        thrown = true;
+        // these variables control the distance a player hets thrown
+        if (direction == 'l')
+        {
+          acceleration.x += 4; // increase to throw further
+        }
+        else
+        {
+          acceleration.x -= 4; // set to same value as previous case
+        }
       }
     }
   }
@@ -283,8 +284,6 @@ bool Player::tick(sf::Time time, World &world)
   return true;
 }
 
-void Player::render(sf::RenderWindow &drawTo) { Entity::render(drawTo); }
-
 bool Player::isAlive()
 {
   if (health <= 0)
@@ -327,4 +326,4 @@ bool Player::damageTaken() { return isHit; }
 
 int Player::getHealth() { return health; }
 
-void Player::heal() { health = 10; }
+void Player::heal() { health = 2; }

@@ -1,0 +1,6 @@
+<map id="Archer" name="Archer">
+<area shape="rect" id="node1" title="This sub&#45;class is a basic ranged enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="5,753,151,881"/>
+<area shape="rect" id="node2" href="$classHostile.html" title="This is a base class for hostiles. From this, sub&#45;classes for more avanced enemies can be added." alt="" coords="5,460,151,705"/>
+<area shape="rect" id="node3" href="$classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="20,108,136,412"/>
+<area shape="rect" id="node4" title=" " alt="" coords="7,5,149,60"/>
+</map>

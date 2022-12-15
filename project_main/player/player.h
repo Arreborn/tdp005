@@ -27,16 +27,25 @@ public:
   bool tick(sf::Time time, World &world) override;
 
   /**
-   * @brief Draws the player in the game world.
+   * @brief Function used to enable a dash.
    *
-   * @param drawTo
+   * @return float
    */
-  void render(sf::RenderWindow &drawTo) override;
-
-  sf::Vector2f verticalPosition();
-
   float dash();
 
+  /**
+   * @brief Manages the players vertical position in the game world.
+   *
+   * @return sf::Vector2f
+   */
+  sf::Vector2f verticalPosition();
+
+  /**
+   * @brief Manages the players horizontal position in the game world.
+   *
+   * @param time
+   * @return sf::Vector2f
+   */
   sf::Vector2f horizontalPosition(sf::Time const &time);
 
   /**

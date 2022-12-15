@@ -21,10 +21,6 @@ void Entity::render(sf::RenderWindow &window) {
 
 std::shared_ptr<Entity> Entity::ptrGet() { return shared_from_this(); }
 
-void Entity::setFrame(sf::IntRect frame) { sprite.setTextureRect(frame); }
-
-sf::Sprite *Entity::getBorder() { return &sprite; }
-
 sf::FloatRect Entity::getBounds() { return sprite.getGlobalBounds(); }
 
 sf::Vector2f const Entity::getCenter() { return center; }

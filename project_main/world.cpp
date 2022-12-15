@@ -27,8 +27,8 @@ void World::add(shared_ptr<Entity> object) {
 }
 
 static bool collides(Entity &a, Entity &b) {
-  auto aBounds{a.getBorder()->getGlobalBounds()};
-  auto bBounds{b.getBorder()->getGlobalBounds()};
+  auto aBounds{a.getBounds()};
+  auto bBounds{b.getBounds()};
   return (aBounds.intersects(bBounds));
 }
 
@@ -74,8 +74,6 @@ const sf::Vector2f World::getCenter() {
 
   return center;
 }
-
-bool World::isPlayerAlive() { return playerCharacter->isAlive(); }
 
 void World::clear() {
   for (size_t i{}; i < objects.size(); ++i) {

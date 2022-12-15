@@ -59,20 +59,18 @@ public:
   bool detectEdge(float const x, float const y);
 
   /**
-   * @brief Fetches positions. (DEPRECATED?)
+   * @brief Fetches positions.
    *
    * @return const sf::Vector2f
    */
   const sf::Vector2f getCenter();
 
   /**
-   * @brief Returns if the player is alive. (DEPRECATED?)
+   * @brief Returns true if the player has won the game.
    *
    * @return true
    * @return false
    */
-  bool isPlayerAlive();
-
   bool victory();
 
   /**
