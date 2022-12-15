@@ -23,7 +23,6 @@ bool Attack::tick(sf::Time time, World &world) {
     if (dynamic_cast<Entity *>(collision.get())->getType() !=
             thisAttacker->getType() &&
         !(dynamic_cast<Block *>(collision.get()))) {
-      cout << collision->getType() << endl;
       collision->takeDamage(damage);
     }
   }
@@ -45,4 +44,5 @@ bool Attack::tick(sf::Time time, World &world) {
   }
 }
 
-void Attack::takeDamage(float) { cout << "colliding" << endl; }
+// Not used for this object
+void Attack::takeDamage(float) {}

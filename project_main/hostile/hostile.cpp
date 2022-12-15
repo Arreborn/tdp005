@@ -149,6 +149,5 @@ void Hostile::takeDamage(float damage) {
     health -= damage;
     sprite.setColor(sf::Color::Red);
     blinkDuration = sf::seconds(0.4f);
-    cout << health << endl;
   }
 }

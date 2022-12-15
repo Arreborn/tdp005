@@ -80,4 +80,5 @@ bool RangedAttack::tick(sf::Time, World &world) {
   }
 }
 
-void RangedAttack::takeDamage(float) { cout << "Collided with itself" << endl; }
+// not used for this object
+void RangedAttack::takeDamage(float) {}

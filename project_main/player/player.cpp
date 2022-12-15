@@ -236,7 +236,6 @@ void Player::takeDamage(float damage) {
     if (!dashing) {
       health -= damage;
     }
-    // cout << health << endl;
   }
   if (isHit && iFrame == sf::seconds(0)) {
     isHit = false;

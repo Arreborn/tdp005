@@ -12,4 +12,5 @@ Block::Block(sf::Vector2f center, const sf::IntRect &tile)
 // mandatory override
 bool Block::tick(sf::Time, World &) { return true; }
 
-void Block::takeDamage(float) { cout << "Block" << endl; }
+// not used for this object
+void Block::takeDamage(float) {}
