@@ -1,7 +1,8 @@
 #include "attack.h"
 #include <SFML/System/Vector2.hpp>
 
-Attack::Attack(sf::Vector2f center, float damage, shared_ptr<Entity> attacker)
+Attack::Attack(sf::Vector2f center, float const damage,
+               shared_ptr<Entity> attacker)
     : Entity{center, "sprites/swoosh.png", 's'}, damage{damage} {
   thisAttacker = attacker.get();
   sprite.setTextureRect(sf::IntRect(0, 0, 30, 30));

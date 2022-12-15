@@ -3,7 +3,7 @@
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Vector2.hpp>
 
-RangedAttack::RangedAttack(sf::Vector2f center, float damage,
+RangedAttack::RangedAttack(sf::Vector2f center, float const damage,
                            shared_ptr<Entity> attacker)
     : Attack{center, damage, attacker} {
   sf::Texture *t = SpriteManager::get("sprites/Arrow.png");

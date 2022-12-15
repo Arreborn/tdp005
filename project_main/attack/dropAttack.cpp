@@ -1,7 +1,7 @@
 #include "dropAttack.h"
 #include "../sprites/spriteManager.h"
 
-DropAttack::DropAttack(sf::Vector2f center, float damage,
+DropAttack::DropAttack(sf::Vector2f center, float const damage,
                        shared_ptr<Entity> attacker)
     : Attack{center, damage, attacker} {
   sf::Texture *t = SpriteManager::get("sprites/dropping.png");

@@ -5,7 +5,7 @@
 // this interfacce class manages base behaviour for all classes that inherit
 // from it
 
-Entity::Entity(sf::Vector2f center, const string &renderSprite, char const type)
+Entity::Entity(sf::Vector2f center, string const &renderSprite, char const type)
     : center(center), type{type} {
 
   // fetches the correct sprite with the sprite manager
