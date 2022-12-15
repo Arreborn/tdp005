@@ -40,24 +40,10 @@ public:
 
 protected:
   /**
-   * @brief Stores the damage of the attack while the object lives.
+   * @brief The direction of this attack.
    *
    */
-  float damage{};
-
   char attackDirection{};
-
-  /**
-   * @brief The duration of the attack.
-   *
-   */
-  sf::Time attackDuration{};
-
-  /**
-   * @brief A pointer to the attacking unit to avoid friendly fire.
-   *
-   */
-  Entity *thisAttacker{};
 
   /**
    * @brief This integer tracks the current animation frame for this object.

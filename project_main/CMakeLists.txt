@@ -20,7 +20,8 @@ set(SOURCE_FILES main.cpp
   hostile/archer.cpp
   hostile/flying.cpp
   attack/attack.cpp
-  attack/rangedAttack.cpp)
+  attack/rangedAttack.cpp
+  attack/dropAttack.cpp)
 # På skolans Linux - system finns det två versioner av SFML. Se efter vilken som används :
 if (DEFINED ENV{LOADEDMODULES} AND ("$ENV{LOADEDMODULES}" MATCHES ".*prog/gcc/6.1.0.*"))
   set(CMAKE_CXX_COMPILER /sw/gcc-6.1.0/bin/g++)

@@ -5,7 +5,7 @@
 
 RangedAttack::RangedAttack(sf::Vector2f center, float damage,
                            shared_ptr<Entity> attacker)
-    : Attack{center, damage, attacker}, damage{damage} {
+    : Attack{center, damage, attacker} {
   sf::Texture *t = SpriteManager::get("sprites/Arrow.png");
   auto size = t->getSize();
   sprite.setTexture(*t);

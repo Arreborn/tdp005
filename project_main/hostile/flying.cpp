@@ -1,5 +1,5 @@
 #include "flying.h"
-#include "../attack/rangedAttack.h"
+#include "../attack/dropAttack.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
 
@@ -13,10 +13,12 @@ Flying::Flying(sf::Vector2f center) : Hostile(center) {
 
 void Flying::verticalPosition(sf::Time const &time, World &world) {
   bool yMax{};
+  float randomHeight{
+      1.0f + (static_cast<float>(rand()) / static_cast<float>(RAND_MAX))};
   sf::Vector2f playerPos{world.playerCharacter->getCenter()};
   // sf::Vector2f vold{center};
 
-  if (playerPos.y >= center.y + 75) {
+  if (playerPos.y >= center.y + (85 + (10 * randomHeight))) {
     yMax = true;
   } else if (playerPos.y < center.y) {
     yMax = false;
@@ -35,7 +37,8 @@ void Flying::verticalPosition(sf::Time const &time, World &world) {
     }
   }
 
-  if (attackCooldown == sf::seconds(0.0f)) {
+  if (attackCooldown == sf::seconds(0.0f) &&
+      (playerPos.x > center.x - 150 || playerPos.x < center.x + 150)) {
     if (playerPos.x > center.x) {
       center.x += 1;
     } else if (playerPos.x < center.x) {
@@ -98,8 +101,8 @@ void Flying::horizontalPosition(sf::Time const &time, World &world) {
 
 void Flying::attack(World &world) {
   if (attackCooldown == sf::seconds(0.0f) && canAttack) {
-    world.add(std::make_shared<RangedAttack>(center, 2, ptrGet()));
-    attackCooldown = sf::seconds(4.0f);
+    world.add(std::make_shared<DropAttack>(center, 1, ptrGet()));
+    attackCooldown = sf::seconds(5.0f);
     canAttack = false;
   }
 }
