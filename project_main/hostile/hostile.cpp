@@ -1,8 +1,8 @@
 #include "hostile.h"
-#include "../staticEntity/block.h"
-#include "../world.h"
 #include "../attack/attack.h"
 #include "../attack/rangedAttack.h"
+#include "../staticEntity/block.h"
+#include "../world.h"
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Vector2.hpp>
@@ -101,17 +101,11 @@ bool Hostile::tick(sf::Time time, World &world)
     blinkDuration -= time;
   }
 
-  sf::Vector2f playerPos{world.playerCharacter->getCenter()};
+  // sf::Vector2f playerPos{world.playerCharacter->getCenter()};
 
   // charge up melee attack?
-  // float xCoord{};
-  // if (direction == 'l')
-  // {
-  //   xCoord = thisAttacker->getBorder().left;
-  // }
-  // else if (direction == 'r')
-  // {
-  // }
+  attack(world);
+
   if (attackCooldown <= sf::seconds(0.0f))
   {
     attackCooldown = sf::seconds(0.0f);
@@ -155,10 +149,24 @@ bool Hostile::tick(sf::Time time, World &world)
 
 void Hostile::attack(World &world)
 {
-  if (attackCooldown == sf::seconds(0.0f))
+
+  float xCoord{};
+  if (direction == 'l')
   {
-    world.add(std::make_shared<Attack>(center, 1, ptrGet()));
-    attackCooldown = sf::seconds(2.0f);
+    xCoord = getBounds().left - 20;
+  }
+  else if (direction == 'r')
+  {
+    xCoord = getBounds().left + getBounds().width + 20;
+  }
+
+  if (world.playerCharacter->getBounds().contains(xCoord, center.y + 12))
+  {
+    if (attackCooldown == sf::seconds(0.0f))
+    {
+      world.add(std::make_shared<Attack>(center, 1, ptrGet()));
+      attackCooldown = sf::seconds(2.0f);
+    }
   }
 }
 
