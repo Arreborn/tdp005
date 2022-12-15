@@ -86,9 +86,20 @@ Inheritance diagram for Attack:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAttack__inherit__graph.png" border="0" usemap="#aAttack_inherit__map" alt="Inheritance graph"/></div>
 <map name="aAttack_inherit__map" id="aAttack_inherit__map">
-<area shape="rect" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="16,431,136,573"/>
-<area shape="rect" href="classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="12,621,140,793"/>
-<area shape="rect" href="classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="18,108,134,383"/>
+<area shape="rect" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="75,431,195,573"/>
+<area shape="rect" href="classDropAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="5,651,120,720"/>
+<area shape="rect" href="classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="144,621,272,749"/>
+<area shape="rect" href="classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="77,108,193,383"/>
+<area shape="rect" title=" " alt="" coords="64,5,205,60"/>
+</map>
+</div>
+<div class="dynheader">
+Collaboration diagram for Attack:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAttack__coll__graph.png" border="0" usemap="#aAttack_coll__map" alt="Collaboration graph"/></div>
+<map name="aAttack_coll__map" id="aAttack_coll__map">
+<area shape="rect" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="16,447,136,575"/>
+<area shape="rect" href="classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="18,109,134,384"/>
 <area shape="rect" title=" " alt="" coords="5,5,147,60"/>
 </map>
 </div>
@@ -129,9 +140,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">getType</a> ()</td></tr>
 <tr class="memdesc:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the object.  <a href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">More...</a><br /></td></tr>
 <tr class="separator:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">takeDamage</a> (float damage)=0</td></tr>
-<tr class="memdesc:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual function that allows entities to take damage.  <a href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">More...</a><br /></td></tr>
-<tr class="separator:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa863cbb2f678afefb5574ccd32051cbf inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aa863cbb2f678afefb5574ccd32051cbf">takeDamage</a> (float damage)=0</td></tr>
+<tr class="memdesc:aa863cbb2f678afefb5574ccd32051cbf inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual function that allows entities to take damage.  <a href="classEntity.html#aa863cbb2f678afefb5574ccd32051cbf">More...</a><br /></td></tr>
+<tr class="separator:aa863cbb2f678afefb5574ccd32051cbf inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classEntity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">ptrGet</a> ()</td></tr>
 <tr class="memdesc:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a shared pointer from this entity to ensure no friendly fire when attacking.  <a href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">More...</a><br /></td></tr>
 <tr class="separator:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,7 +265,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">Entity</a>.</p>
+<p>Implements <a class="el" href="classEntity.html#aa863cbb2f678afefb5574ccd32051cbf">Entity</a>.</p>
 
 <p>Reimplemented in <a class="el" href="classRangedAttack.html#aef21471a2ba156f578f01393e1b274aa">RangedAttack</a>.</p>
 
@@ -308,7 +319,7 @@ false </dd></dl>
 
 <p>Implements <a class="el" href="classEntity.html#ac848982e3a9c90e51dae85ea897b6558">Entity</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classRangedAttack.html#a0e7487b47c3dd38139be7e24138e4d90">RangedAttack</a>.</p>
+<p>Reimplemented in <a class="el" href="classDropAttack.html#a5b94abf1cdf20877a7831d5a5205917c">DropAttack</a>, and <a class="el" href="classRangedAttack.html#a0e7487b47c3dd38139be7e24138e4d90">RangedAttack</a>.</p>
 
 </div>
 </div>

@@ -12,6 +12,8 @@ Attack::Attack(sf::Vector2f center, float damage, shared_ptr<Entity> attacker)
 
 bool Attack::tick(sf::Time time, World &world) {
   center = thisAttacker->center;
+
+  // sets position for the sprite depending on direction
   if (meleeDirection == 'l') {
     center.x -= 65;
     sprite.setScale(-1, 1);
@@ -19,6 +21,9 @@ bool Attack::tick(sf::Time time, World &world) {
     center.x += 65;
     sprite.setScale(1, 1);
   }
+
+  // checks for collision with anything that isn't a block and doesn't have the
+  // same type as thisAttacker
   for (auto &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Entity *>(collision.get())->getType() !=
             thisAttacker->getType() &&
@@ -26,6 +31,8 @@ bool Attack::tick(sf::Time time, World &world) {
       collision->takeDamage(damage);
     }
   }
+
+  // animates the sprite depending on the duration
   float duration{30.0f};
   if (attackDuration.asMilliseconds() <= duration) {
     sprite.setTextureRect(sf::IntRect(28, 0, 30, 32));
@@ -37,6 +44,7 @@ bool Attack::tick(sf::Time time, World &world) {
 
   attackDuration += time;
 
+  // returns false if the animation is finished
   if (attackDuration.asMilliseconds() >= duration * 4) {
     return false;
   } else {

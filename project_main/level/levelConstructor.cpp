@@ -11,8 +11,10 @@ vector<string> LevelConstructor::loadLevels(int numberOfLevels) {
   return loaded;
 }
 
-string LevelConstructor::generateLevel(World &world, shared_ptr<Player> player,
-                                       bool loadHostiles, string str) {
+void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player,
+                                     bool loadHostiles, string str) {
+
+  // takes a string with a path, and opens the file in said path
   str = str.substr(1, str.size() - 2);
   std::ifstream file{};
   file.open(str);
@@ -20,6 +22,7 @@ string LevelConstructor::generateLevel(World &world, shared_ptr<Player> player,
   string temp{};
   bool playerSet{false};
 
+  // takes all lines from the file and inserts them into a string
   while (getline(file, temp)) {
     segment += temp;
   }
@@ -27,6 +30,8 @@ string LevelConstructor::generateLevel(World &world, shared_ptr<Player> player,
   int x{};
   int y{};
 
+  // reads the string and interprets it to add the proper object to the game
+  // world
   for (string::size_type i{}; i < segment.length(); i++) {
     if (segment[i] != '.') {
       selector(segment[i], x, y, world, player, playerSet, loadHostiles);
@@ -38,14 +43,15 @@ string LevelConstructor::generateLevel(World &world, shared_ptr<Player> player,
       y += 16;
     }
   }
-  return segment;
 }
 
+// accepts a character from the level generation string and adds the correct
+// objects to the game world
 void LevelConstructor::selector(char a, int x, int y, World &world,
                                 shared_ptr<Player> player, bool &playerSet,
                                 bool const loadHostiles) {
   switch (a) {
-  /* Diverse blocks */
+  /* Building blocks */
   case 'B': // Top block
     world.add(std::make_shared<Block>(sf::Vector2f(x, y),
                                       sf::IntRect(16, 0, 16, 16)));

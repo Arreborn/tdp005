@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['levelconstructor_0',['LevelConstructor',['../classLevelConstructor.html',1,'']]]
+  ['hostile_0',['Hostile',['../classHostile.html',1,'']]]
 ];

@@ -118,11 +118,9 @@ bool Player::tick(sf::Time time, World &world) {
   }
 
   if (!isAlive()) {
-
-    // Game over screen???
-    // Death animation
     return false;
   }
+
   // coordinates to reset the player to if a collision is triggered
   sf::Vector2f vold{center};
 
@@ -134,7 +132,6 @@ bool Player::tick(sf::Time time, World &world) {
   for (shared_ptr<Entity> &collision :
        world.collidesWith(*this)) { // vertical collision
 
-    // collision with block
     if (dynamic_cast<Block *>(collision.get())) {
       center = vold;
       // this case manages pixel perfect contact with the ground
@@ -147,19 +144,17 @@ bool Player::tick(sf::Time time, World &world) {
       } else { // ensures we stop when hitting something above us
         acceleration.y = 0;
       }
-      // break the loop if we collide with a block
       break;
+
     } else if (dynamic_cast<Hostile *>(collision.get()) && acceleration.y > 0) {
       // vertical collision with an enemy will get the player thrown back
       // provided the player is falling downwards, and not already being thrown
       if (!dynamic_cast<Flying *>(collision.get())) {
         center = vold;
-        // gives some lift when being thrown
         acceleration.y = -6;
-        // ensures that the player is not considered landing
         isJumping = false;
-        // is used to trigger another path in vertical movement
         thrown = true;
+
         // these variables control the distance a player hets thrown
         if (direction == 'l') {
           acceleration.x += 4; // increase to throw further
@@ -184,6 +179,7 @@ bool Player::tick(sf::Time time, World &world) {
     }
   }
 
+  // checks if the player is at a border
   if (center.x < 0 || center.x > 1280) {
     center = hold;
     sprite.setPosition(hold);

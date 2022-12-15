@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['damage_0',['damage',['../classAttack.html#aebc541003702819369c4645d425b8ba0',1,'Attack::damage()'],['../classRangedAttack.html#ae121958c9bc53b578e7af2d910533f0d',1,'RangedAttack::damage()']]],
+  ['damage_0',['damage',['../classAttack.html#aebc541003702819369c4645d425b8ba0',1,'Attack']]],
   ['dashcooldown_1',['dashCooldown',['../classPlayer.html#a0b333651cef0c8176af1a30a4c9faa8e',1,'Player']]],
   ['dashduration_2',['dashDuration',['../classPlayer.html#a21a82db69cdd2127b47ccdd20c76cc73',1,'Player']]],
   ['dashing_3',['dashing',['../classPlayer.html#add722e816cd9156867b7987ca8b13ec3',1,'Player']]],

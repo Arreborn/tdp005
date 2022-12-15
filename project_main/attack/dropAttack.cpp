@@ -15,9 +15,11 @@ DropAttack::DropAttack(sf::Vector2f center, float damage,
 }
 
 bool DropAttack::tick(sf::Time, World &world) {
-
+  // drops the attack straight down
   center.y += 2.5;
 
+  // checks for collision and damages anything that isn't a block and the same
+  // type as this, asks to be removed after collision
   for (auto &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Entity *>(collision.get())->getType() !=
         thisAttacker->getType()) {

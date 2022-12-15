@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rangedattack_0',['RangedAttack',['../classRangedAttack.html',1,'']]]
+  ['player_0',['Player',['../classPlayer.html',1,'']]]
 ];

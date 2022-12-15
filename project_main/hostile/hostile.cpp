@@ -62,9 +62,10 @@ void Hostile::horizontalPosition(const sf::Time &time, World &world) {
 // not used for this object
 void Hostile::verticalPosition(sf::Time const &, World &) {}
 
+// this tick is used for all hostiles
 bool Hostile::tick(sf::Time time, World &world) {
 
-  // toggles damage indicator
+  // toggles damage indicator when the enemy has been hit
   if (blinkDuration <= sf::seconds(0)) {
     sprite.setColor(sf::Color::White);
     blinkDuration = sf::seconds(0);
@@ -72,26 +73,18 @@ bool Hostile::tick(sf::Time time, World &world) {
     blinkDuration -= time;
   }
 
-  // sf::Vector2f playerPos{world.playerCharacter->getCenter()};
-
-  // charge up melee attack?
+  // runs the code for attacking for this specific hostile
   attack(world);
 
+  // manages attack cooldown
   if (attackCooldown <= sf::seconds(0.0f)) {
     attackCooldown = sf::seconds(0.0f);
   } else {
     attackCooldown -= time;
   }
 
-  sf::Vector2f vold{center};
+  // manages vertical collision when applicable
   verticalPosition(time, world);
-  for (shared_ptr<Entity> &collision : world.collidesWith(*this)) {
-    if (dynamic_cast<Block *>(collision.get()) ||
-        dynamic_cast<Player *>(collision.get())) {
-      center = vold;
-      sprite.setPosition(vold);
-    }
-  }
 
   sf::Vector2f hold{center};
   // collision detection for horizontal movement
@@ -105,22 +98,26 @@ bool Hostile::tick(sf::Time time, World &world) {
     }
   }
 
+  // fixes sprite direction
   if (direction == 'l') {
     sprite.setScale(-1.0f, 1.0f);
   } else {
     sprite.setScale(1.f, 1.f);
   }
 
+  // removes dead enemues
   if (!isAlive()) {
     world.removeEnemy();
     return false;
+  } else {
+    return true;
   }
-
-  return true;
 };
 
+// this is a standard melee attack
 void Hostile::attack(World &world) {
 
+  // finds coordinates in front of the hostile
   float xCoord{};
   if (direction == 'l') {
     xCoord = getBounds().left - 20;
@@ -128,6 +125,7 @@ void Hostile::attack(World &world) {
     xCoord = getBounds().left + getBounds().width + 20;
   }
 
+  // if the player is close to the hostile, it will attack
   if (world.playerCharacter->getBounds().contains(xCoord, center.y + 12)) {
     if (attackCooldown == sf::seconds(0.0f)) {
       world.add(std::make_shared<Attack>(center, 1, ptrGet()));
