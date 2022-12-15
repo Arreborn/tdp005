@@ -7,7 +7,7 @@
 #include <SFML/System/Vector2.hpp>
 
 Archer::Archer(sf::Vector2f center) : Hostile(center) {
-  type = 'a';
+  type = 'h';
   health = 60;
   speed = 6.0;
   sprite.setTextureRect(sf::IntRect(32, 0, 16, 16));
@@ -74,7 +74,10 @@ void Archer::horizontalPosition(sf::Time const &time, World &world) {
 }
 
 void Archer::attack(World &world) {
-  if (attackCooldown == sf::seconds(0.0f)) {
+  if (attackCooldown == sf::seconds(0.0f) &&
+      (world.playerCharacter->getCenter().x > center.x - 200 ||
+       world.playerCharacter->getCenter().x < center.x + 200) &&
+      world.playerCharacter->getCenter().y == center.y + 1.5) {
     world.add(std::make_shared<RangedAttack>(center, 1, ptrGet()));
     attackCooldown = sf::seconds(2.0f);
   }
