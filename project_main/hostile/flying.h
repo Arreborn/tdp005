@@ -9,8 +9,6 @@ class Flying : public Hostile
 public:
     Flying(sf::Vector2f center);
     bool tick(sf::Time time, World &world) override;
-    void render(sf::RenderWindow &drawto) override;
-
     void verticalPosition(sf::Time const &time, World &world) override;
     void horizontalPosition(sf::Time const &time, World &world) override;
     void attack(World &world) override;
