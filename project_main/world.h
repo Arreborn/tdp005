@@ -6,7 +6,8 @@
 #include <SFML/System/Vector2.hpp>
 #include <memory>
 
-class World {
+class World
+{
 public:
   ~World() = default;
 

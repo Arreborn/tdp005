@@ -85,7 +85,7 @@ void Hostile::horizontalPosition(const sf::Time &time, World &world)
   }
 }
 
-void Hostile::verticalPosition() { center.y += 4; }
+void Hostile::verticalPosition(sf::Time const &time, World &world) {}
 
 bool Hostile::tick(sf::Time time, World &world)
 {
@@ -113,6 +113,16 @@ bool Hostile::tick(sf::Time time, World &world)
   else
   {
     attackCooldown -= time;
+  }
+  sf::Vector2f vold{center};
+  verticalPosition(time, world);
+  for (shared_ptr<Entity> &collision : world.collidesWith(*this))
+  {
+    if (dynamic_cast<Block *>(collision.get()) || dynamic_cast<Player *>(collision.get()))
+    {
+      center = vold;
+      sprite.setPosition(vold);
+    }
   }
 
   sf::Vector2f hold{center};

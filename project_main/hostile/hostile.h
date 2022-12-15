@@ -51,7 +51,7 @@ public:
    */
   void takeDamage(float damage) override;
 
-  virtual void verticalPosition();
+  virtual void verticalPosition(sf::Time const &time, World &world);
 
   virtual void horizontalPosition(sf::Time const &time, World &world);
 
