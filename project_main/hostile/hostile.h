@@ -93,7 +93,10 @@ protected:
    *
    */
   sf::Time blinkDuration{};
+
   sf::Time attackCooldown{};
 
   sf::Time movementDuration{};
+
+  sf::Time chargeUp{};
 };

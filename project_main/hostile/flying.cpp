@@ -50,7 +50,6 @@ void Flying::verticalPosition(sf::Time const &time, World &world) {
   for (shared_ptr<Entity> &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Block *>(collision.get())) {
       center = vold;
-      center.y -= 1;
     }
   }
 }

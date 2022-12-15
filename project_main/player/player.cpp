@@ -5,37 +5,28 @@
 #include "../hostile/hostile.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
+#include <SFML/System/Time.hpp>
 
 Player::Player(sf::Vector2f center)
     : Entity(center, "sprites/warrior1_new.png", 'p'), health{10}, speed{5.0},
       isJumping{true} {}
 
-sf::Vector2f Player::verticalPosition()
-{
-  if (dashing)
-  {
+sf::Vector2f Player::verticalPosition() {
+  if (dashing) {
     return sf::Vector2f{0, 0};
   }
-  if (isJumping && acceleration.y < 25)
-  {
-    if (acceleration.y < 0)
-    {
+  if (isJumping && acceleration.y < 25) {
+    if (acceleration.y < 0) {
       acceleration.y += 1;
-    }
-    else if (acceleration.y < 10)
-    {
+    } else if (acceleration.y < 10) {
       acceleration.y += 1.5;
-    }
-    else
-    {
+    } else {
       acceleration.y += 1.8;
     }
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) ||
-      sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-  {
-    if (!isJumping)
-    {
+      sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+    if (!isJumping) {
       isJumping = true;
       acceleration.y = -10;
     }
@@ -43,88 +34,66 @@ sf::Vector2f Player::verticalPosition()
   return acceleration;
 }
 
-void Player::attack(World &world)
-{
+void Player::attack(World &world) {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::J) &&
-      attackCooldown == sf::seconds(0.0f))
-  {
+      attackCooldown == sf::seconds(0.0f)) {
     direction = 'l';
     world.add(std::make_shared<Attack>(center, 5, ptrGet()));
     attackCooldown = sf::seconds(0.4f);
-  }
-  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L) &&
-           attackCooldown == sf::seconds(0.0f))
-  {
+  } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L) &&
+             attackCooldown == sf::seconds(0.0f)) {
     direction = 'r';
     world.add(std::make_shared<Attack>(center, 5, ptrGet()));
     attackCooldown = sf::seconds(0.4f);
-  }
-  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::I) && attackCooldown == sf::seconds(0.0f))
-  {
+  } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::I) &&
+             attackCooldown == sf::seconds(0.0f)) {
     direction = 'u';
     world.add(std::make_shared<Attack>(center, 5, ptrGet()));
     attackCooldown = sf::seconds(0.4f);
   }
 }
 
-float Player::dash()
-{
+float Player::dash() {
   float position{};
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) && !dashing &&
-      dashCooldown == sf::seconds(0))
-  {
+      dashCooldown == sf::seconds(0)) {
     dashing = true;
     dashDuration = sf::seconds(0.1);
   }
 
-  if (direction == 'l' && dashing)
-  {
+  if (direction == 'l' && dashing) {
     position -= 2.5;
-  }
-  else if (direction == 'r' && dashing)
-  {
+  } else if (direction == 'r' && dashing) {
     position += 2.5;
   }
 
   return position;
 }
 
-sf::Vector2f Player::horizontalPosition(sf::Time const &time)
-{
+sf::Vector2f Player::horizontalPosition(sf::Time const &time) {
   sf::Vector2f position{};
-  if (dashCooldown == sf::seconds(0))
-  {
+  if (dashCooldown == sf::seconds(0)) {
     position.x += dash();
   }
 
-  if (thrown)
-  {
+  if (thrown) {
     position.x += acceleration.x;
-    if (direction == 'l')
-    {
-      if (acceleration.x != 0)
-      {
+    if (direction == 'l') {
+      if (acceleration.x != 0) {
         acceleration.x -= 0.5;
       }
-    }
-    else if (direction == 'r')
-    {
-      if (acceleration.x != 0)
-      {
+    } else if (direction == 'r') {
+      if (acceleration.x != 0) {
         acceleration.x += 0.5;
       }
     }
-  }
-  else
-  {
+  } else {
     acceleration.x = 0;
   }
 
-  if (dashing)
-  {
+  if (dashing) {
     dashDuration -= time;
-    if (dashDuration <= sf::seconds(0))
-    {
+    if (dashDuration <= sf::seconds(0)) {
       dashDuration = sf::seconds(0);
       dashing = false;
       dashCooldown = sf::seconds(1.5);
@@ -132,14 +101,12 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time)
   }
 
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && !dashing &&
-      !thrown)
-  { // left
+      !thrown) { // left
     position.x -= 1;
     direction = 'l';
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && !dashing &&
-      !thrown)
-  { // right
+      !thrown) { // right
     position.x += 1;
     direction = 'r';
   }
@@ -149,19 +116,26 @@ sf::Vector2f Player::horizontalPosition(sf::Time const &time)
 // TODO:
 // Consider moving the collision with blocks to the base class
 
-bool Player::tick(sf::Time time, World &world)
-{
-  if (iFrame <= sf::seconds(0))
-  {
+bool Player::tick(sf::Time time, World &world) {
+  if (iFrame <= sf::seconds(0)) {
     iFrame = sf::seconds(0);
-  }
-  else
-  {
+  } else {
     iFrame -= time;
   }
 
-  if (!isAlive())
-  {
+  if (iFrame != sf::seconds(0.0f)) {
+    if (blink) {
+      sprite.setColor(sf::Color(255, 255, 255, 0));
+      blink = !blink;
+    } else {
+      sprite.setColor(sf::Color(255, 255, 255, 255));
+      blink = !blink;
+    }
+  } else {
+    sprite.setColor(sf::Color(255, 255, 255, 255));
+  }
+
+  if (!isAlive()) {
     return false;
   }
 
@@ -174,45 +148,34 @@ bool Player::tick(sf::Time time, World &world)
 
   // checks with all entities currently colliding with the player
   for (shared_ptr<Entity> &collision :
-       world.collidesWith(*this))
-  { // vertical collision
+       world.collidesWith(*this)) { // vertical collision
 
-    if (dynamic_cast<Block *>(collision.get()))
-    {
+    if (dynamic_cast<Block *>(collision.get())) {
       center = vold;
       // this case manages pixel perfect contact with the ground
-      if (collision->center.y > center.y)
-      {
+      if (collision->center.y > center.y) {
         center -= sf::Vector2f{0, (center.y - collision.get()->center.y + 15) -
                                       float{0.5}};
         acceleration.y = 2; // standard gravitational pull
         isJumping = false;
         thrown = false;
-      }
-      else
-      { // ensures we stop when hitting something above us
+      } else { // ensures we stop when hitting something above us
         acceleration.y = 0;
       }
       break;
-    }
-    else if (dynamic_cast<Hostile *>(collision.get()) && acceleration.y > 0)
-    {
+    } else if (dynamic_cast<Hostile *>(collision.get()) && acceleration.y > 0) {
       // vertical collision with an enemy will get the player thrown back
       // provided the player is falling downwards, and not already being thrown
-      if (!dynamic_cast<Flying *>(collision.get()))
-      {
+      if (!dynamic_cast<Flying *>(collision.get())) {
         center = vold;
         acceleration.y = -6;
         isJumping = false;
         thrown = true;
 
         // these variables control the distance a player hets thrown
-        if (direction == 'l')
-        {
+        if (direction == 'l') {
           acceleration.x += 4; // increase to throw further
-        }
-        else
-        {
+        } else {
           acceleration.x -= 4; // set to same value as previous case
         }
       }
@@ -225,97 +188,74 @@ bool Player::tick(sf::Time time, World &world)
   sprite.setPosition(center);
 
   for (shared_ptr<Entity> &collision :
-       world.collidesWith(*this))
-  { // horiontal collision
+       world.collidesWith(*this)) { // horiontal collision
     if (dynamic_cast<Block *>(collision.get()) ||
-        dynamic_cast<Hostile *>(collision.get()))
-    {
+        dynamic_cast<Hostile *>(collision.get())) {
       center = hold;
       sprite.setPosition(hold);
     }
   }
 
   // checks if the player is at a border
-  if (center.x < 0 || center.x > 1280)
-  {
+  if (center.x < 0 || center.x > 1280) {
     center = hold;
     sprite.setPosition(hold);
     atBorder = true;
-  }
-  else
-  {
+  } else {
     atBorder = false;
   }
 
-  if (center.y != vold.y)
-  {
+  if (center.y != vold.y) {
     isJumping = true;
   }
 
-  if (dashCooldown >= sf::seconds(0))
-  {
+  if (dashCooldown >= sf::seconds(0)) {
     dashCooldown -= time;
-    if (dashCooldown <= sf::seconds(0))
-    {
+    if (dashCooldown <= sf::seconds(0)) {
       dashCooldown = sf::seconds(0);
     }
   }
 
-  if (direction == 'l')
-  {
+  if (direction == 'l') {
     // attack(attacking, attackDuration, direction, attackDelay);
     sprite.setScale(-1.0f, 1.0f);
-  }
-  else
-  {
+  } else {
     sprite.setScale(1.f, 1.f);
   }
 
   this->attack(world);
 
-  if (attackCooldown <= sf::seconds(0.0f))
-  {
+  if (attackCooldown <= sf::seconds(0.0f)) {
     attackCooldown = sf::seconds(0.0f);
-  }
-  else
-  {
+  } else {
     attackCooldown -= time;
   }
 
   return true;
 }
 
-bool Player::isAlive()
-{
-  if (health <= 0)
-  {
+bool Player::isAlive() {
+  if (health <= 0) {
     return false;
-  }
-  else
-  {
+  } else {
     return true;
   }
 }
 
-void Player::takeDamage(float damage)
-{
-  if (isAlive() && !isHit && iFrame == sf::seconds(0))
-  {
+void Player::takeDamage(float damage) {
+  if (isAlive() && !isHit && iFrame == sf::seconds(0)) {
     isHit = true;
     iFrame = sf::seconds(2);
-    if (!dashing)
-    {
+    if (!dashing) {
       health -= damage;
     }
   }
-  if (isHit && iFrame == sf::seconds(0))
-  {
+  if (isHit && iFrame == sf::seconds(0)) {
     isHit = false;
   }
 }
 
-void Player::set(int x, int y)
-{
+void Player::set(int x, int y) {
   center = sf::Vector2f(x, y);
   sprite.setPosition(center);
 }
