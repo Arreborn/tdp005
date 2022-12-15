@@ -86,7 +86,7 @@ void World::clear() {
 }
 
 bool World::victory() {
-  if (completedLevels == 15) {
+  if (completedLevels == 6) {
     return true;
   } else {
     return false;
