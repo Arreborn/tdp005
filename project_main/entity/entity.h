@@ -101,8 +101,19 @@ public:
    */
   virtual void takeDamage(float damage) = 0;
 
+  /**
+   * @brief Set the Frame object. DEPRECATED?
+   *
+   * @param frame
+   */
   virtual void setFrame(sf::IntRect frame);
 
+  /**
+   * @brief Gets a shared pointer from this entity to ensure no friendly fire
+   * when attacking.
+   *
+   * @return shared_ptr<Entity>
+   */
   virtual shared_ptr<Entity> ptrGet();
 
   /**

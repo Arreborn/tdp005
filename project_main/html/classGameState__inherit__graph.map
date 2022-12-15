@@ -1,0 +1,5 @@
+<map id="GameState" name="GameState">
+<area shape="rect" id="node1" title="This state is active when the game is running, and handles the main update loop for the world &#45; which..." alt="" coords="17,372,133,471"/>
+<area shape="rect" id="node2" href="$classState.html" title="This state represents the larger state of the game, for instance if a menu is active,..." alt="" coords="17,108,132,324"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,144,60"/>
+</map>

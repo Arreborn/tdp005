@@ -1,0 +1,5 @@
+<map id="World" name="World">
+<area shape="rect" id="node1" title="This class tracks all objects in the game world, and keeps them in one place to update all objects...." alt="" coords="15,211,141,456"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,108,151,148"/>
+<area shape="rect" id="node3" title=" " alt="" coords="35,5,121,45"/>
+</map>

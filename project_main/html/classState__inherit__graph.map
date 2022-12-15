@@ -1,0 +1,7 @@
+<map id="State" name="State">
+<area shape="rect" id="node1" title="This state represents the larger state of the game, for instance if a menu is active,..." alt="" coords="111,108,225,324"/>
+<area shape="rect" id="node3" href="$classExitState.html" title="Special state that indicates the game should exit." alt="" coords="5,387,85,456"/>
+<area shape="rect" id="node4" href="$classGameState.html" title="This state is active when the game is running, and handles the main update loop for the world &#45; which..." alt="" coords="110,372,226,471"/>
+<area shape="rect" id="node5" href="$classMenuState.html" title="This state handles menu inputs, whether for the main menu, pause menu or if the game is over in any w..." alt="" coords="250,372,361,471"/>
+<area shape="rect" id="node2" title=" " alt="" coords="99,5,237,60"/>
+</map>

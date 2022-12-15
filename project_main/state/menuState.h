@@ -4,6 +4,11 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <functional>
 
+/**
+ * @brief This state handles menu inputs, whether for the main menu, pause menu
+ * or if the game is over in any way.
+ *
+ */
 class MenuState : public State {
 public:
   /**

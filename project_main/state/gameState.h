@@ -4,6 +4,11 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <memory>
 
+/**
+ * @brief This state is active when the game is running, and handles the main
+ * update loop for the world - which is also stored within this class.
+ *
+ */
 class GameState : public State {
 public:
   /**

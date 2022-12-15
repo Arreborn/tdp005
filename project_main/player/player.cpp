@@ -1,6 +1,7 @@
 #include "player.h"
 #include "../attack/attack.h"
 #include "../attack/rangedAttack.h"
+#include "../hostile/flying.h"
 #include "../hostile/hostile.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
@@ -146,8 +147,7 @@ bool Player::tick(sf::Time time, World &world) {
         acceleration.y = 2; // standard gravitational pull
         isJumping = false;
         thrown = false;
-        lastY = collision.get()->center.y;
-      } else { // unclear when we enter this
+      } else { // ensures we stop when hitting something above us
         acceleration.y = 0;
       }
       // break the loop if we collide with a block
@@ -155,18 +155,20 @@ bool Player::tick(sf::Time time, World &world) {
     } else if (dynamic_cast<Hostile *>(collision.get()) && acceleration.y > 0) {
       // vertical collision with an enemy will get the player thrown back
       // provided the player is falling downwards, and not already being thrown
-      center = vold;
-      // gives some lift when being thrown
-      acceleration.y = -6;
-      // ensures that the player is not considered landing
-      isJumping = false;
-      // is used to trigger another path in vertical movement
-      thrown = true;
-      // these variables control the distance a player hets thrown
-      if (direction == 'l') {
-        acceleration.x += 4; // increase to throw further
-      } else {
-        acceleration.x -= 4; // set to same value as previous case
+      if (!dynamic_cast<Flying *>(collision.get())) {
+        center = vold;
+        // gives some lift when being thrown
+        acceleration.y = -6;
+        // ensures that the player is not considered landing
+        isJumping = false;
+        // is used to trigger another path in vertical movement
+        thrown = true;
+        // these variables control the distance a player hets thrown
+        if (direction == 'l') {
+          acceleration.x += 4; // increase to throw further
+        } else {
+          acceleration.x -= 4; // set to same value as previous case
+        }
       }
     }
   }
@@ -257,6 +259,4 @@ bool Player::damageTaken() { return isHit; }
 
 int Player::getHealth() { return health; }
 
-float Player::getLastY() { return lastY; }
-
-void Player::heal() { health = 10; }
+void Player::heal() { health = 2; }
