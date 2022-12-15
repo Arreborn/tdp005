@@ -123,7 +123,7 @@ bool Player::tick(sf::Time time, World &world) {
     iFrame -= time;
   }
 
-  if (iFrame != sf::seconds(0.0f)) {
+  if (iFrame != sf::seconds(0.0f) || dashing) {
     if (blink) {
       sprite.setColor(sf::Color(255, 255, 255, 0));
       blink = !blink;

@@ -73,7 +73,18 @@ void Archer::attack(World &world) {
       (world.playerCharacter->getCenter().x > center.x - 200 ||
        world.playerCharacter->getCenter().x < center.x + 200) &&
       world.playerCharacter->getCenter().y == center.y + 1.5) {
+
+    if (chargeUp == sf::seconds(0.0)) {
+      chargeUp = sf::seconds(0.4);
+    }
+  }
+
+  if (chargeUp < sf::seconds(0.0f)) {
+    chargeUp = sf::seconds(0);
+    sprite.setColor(sf::Color::White);
     world.add(std::make_shared<RangedAttack>(center, 1, ptrGet()));
     attackCooldown = sf::seconds(2.0f);
+  } else if (chargeUp != sf::seconds(0.0f)) {
+    sprite.setColor(sf::Color(176, 224, 230));
   }
 }
