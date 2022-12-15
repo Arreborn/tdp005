@@ -55,14 +55,7 @@ public:
    *
    * @param window
    */
-  virtual void render(sf::RenderWindow &window) = 0;
-
-  /**
-   * @brief Returns the border of the object, in order to check collision.
-   *
-   * @return sf::Sprite*
-   */
-  virtual sf::Sprite *getBorder();
+  void render(sf::RenderWindow &window);
 
   /**
    * @brief Gets the bounds for the object.
@@ -88,7 +81,7 @@ public:
   virtual bool isAlive();
 
   /**
-   * @brief Returns the type of the object. (DEPRECATED?)
+   * @brief Returns the type of the object.
    *
    * @return char
    */
@@ -100,13 +93,6 @@ public:
    * @param damage
    */
   virtual void takeDamage(float damage) = 0;
-
-  /**
-   * @brief Set the Frame object. DEPRECATED?
-   *
-   * @param frame
-   */
-  virtual void setFrame(sf::IntRect frame);
 
   /**
    * @brief Gets a shared pointer from this entity to ensure no friendly fire

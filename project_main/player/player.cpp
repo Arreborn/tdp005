@@ -5,9 +5,6 @@
 #include "../hostile/hostile.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
-#include <SFML/System/Time.hpp>
-#include <SFML/Window/Keyboard.hpp>
-#include <memory>
 
 Player::Player(sf::Vector2f center)
     : Entity(center, "sprites/warrior1_new.png", 'p'), health{10}, speed{5.0},
@@ -223,8 +220,6 @@ bool Player::tick(sf::Time time, World &world) {
 
   return true;
 }
-
-void Player::render(sf::RenderWindow &drawTo) { Entity::render(drawTo); }
 
 bool Player::isAlive() {
   if (health <= 0) {

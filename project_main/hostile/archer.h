@@ -29,14 +29,8 @@ public:
   bool tick(sf::Time time, World &world) override;
 
   /**
-   * @brief Renders the object.
-   *
-   * @param drawto
-   */
-  void render(sf::RenderWindow &drawto) override;
-
-  /**
-   * @brief Handles the behaviour for vertical movement. DEPRECATED?
+   * @brief Handles the behaviour for vertical movement. Only utilized in
+   * flying.h, only here to allow for the same tick to be used for all hostiles.
    *
    */
   void verticalPosition(sf::Time const &time, World &world) override;

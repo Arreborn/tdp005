@@ -27,13 +27,6 @@ public:
    */
   bool tick(sf::Time time, World &world) override;
 
-  /**
-   * @brief Renders the object in the provided window.
-   *
-   * @param drawTo
-   */
-  void render(sf::RenderWindow &drawTo) override;
-
   void takeDamage(float damage) override;
 
 protected:

@@ -37,13 +37,6 @@ public:
   bool tick(sf::Time time, World &world) override;
 
   /**
-   * @brief Renders the attack in the game world.
-   *
-   * @param window
-   */
-  void render(sf::RenderWindow &window) override;
-
-  /**
    * @brief Override for takeDamage. Will not be used by this entity.
    *
    * @param damage

@@ -80,6 +80,4 @@ bool RangedAttack::tick(sf::Time, World &world) {
   }
 }
 
-void RangedAttack::render(sf::RenderWindow &render) { Entity::render(render); }
-
 void RangedAttack::takeDamage(float) { cout << "Collided with itself" << endl; }

@@ -30,13 +30,6 @@ public:
   bool tick(sf::Time time, World &world) override;
 
   /**
-   * @brief Renders the object.
-   *
-   * @param drawTo
-   */
-  void render(sf::RenderWindow &drawTo) override;
-
-  /**
    * @brief Returns whether the hostile is alive or not.
    *
    * @return true
@@ -52,7 +45,8 @@ public:
   void takeDamage(float damage) override;
 
   /**
-   * @brief Handles the behaviour for vertical movement. DEPRECATED?
+   * @brief Handles the behaviour for vertical movement. Only utilized in
+   * flying.h.
    *
    */
   virtual void verticalPosition(sf::Time const &time, World &world);
