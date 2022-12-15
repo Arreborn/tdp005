@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.20) # Ändra denna om den skriker
+cmake_minimum_required(VERSION 3.16.6) # Ändra denna om den skriker
 project(demo)
 
 set(CMAKE_CXX_STANDARD 17)
