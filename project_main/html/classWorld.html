@@ -100,13 +100,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a746880c22f59ee233feba30d0c4cc16a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows an entity to detect if it's about to walk off an edge in the game world.  <a href="classWorld.html#a746880c22f59ee233feba30d0c4cc16a">More...</a><br /></td></tr>
 <tr class="separator:a746880c22f59ee233feba30d0c4cc16a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab14e5f27cc3bc2133e760c18272c201a"><td class="memItemLeft" align="right" valign="top">const sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#ab14e5f27cc3bc2133e760c18272c201a">getCenter</a> ()</td></tr>
-<tr class="memdesc:ab14e5f27cc3bc2133e760c18272c201a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches positions. (DEPRECATED?)  <a href="classWorld.html#ab14e5f27cc3bc2133e760c18272c201a">More...</a><br /></td></tr>
+<tr class="memdesc:ab14e5f27cc3bc2133e760c18272c201a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches positions.  <a href="classWorld.html#ab14e5f27cc3bc2133e760c18272c201a">More...</a><br /></td></tr>
 <tr class="separator:ab14e5f27cc3bc2133e760c18272c201a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc547b270dfdd3695a2f66b87853b465"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#adc547b270dfdd3695a2f66b87853b465">isPlayerAlive</a> ()</td></tr>
-<tr class="memdesc:adc547b270dfdd3695a2f66b87853b465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the player is alive. (DEPRECATED?)  <a href="classWorld.html#adc547b270dfdd3695a2f66b87853b465">More...</a><br /></td></tr>
-<tr class="separator:adc547b270dfdd3695a2f66b87853b465"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20f812a5533b8070a38f243449ad410e"><td class="memItemLeft" align="right" valign="top"><a id="a20f812a5533b8070a38f243449ad410e" name="a20f812a5533b8070a38f243449ad410e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>victory</b> ()</td></tr>
+<tr class="memitem:a20f812a5533b8070a38f243449ad410e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#a20f812a5533b8070a38f243449ad410e">victory</a> ()</td></tr>
+<tr class="memdesc:a20f812a5533b8070a38f243449ad410e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the player has won the game.  <a href="classWorld.html#a20f812a5533b8070a38f243449ad410e">More...</a><br /></td></tr>
 <tr class="separator:a20f812a5533b8070a38f243449ad410e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24f6906f2e4f0c761653a8f9e42588a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWorld.html#a24f6906f2e4f0c761653a8f9e42588a6">clear</a> ()</td></tr>
 <tr class="memdesc:a24f6906f2e4f0c761653a8f9e42588a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the game board when transitioning between segments.  <a href="classWorld.html#a24f6906f2e4f0c761653a8f9e42588a6">More...</a><br /></td></tr>
@@ -279,7 +276,7 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Fetches positions. (DEPRECATED?) </p>
+<p>Fetches positions. </p>
 <dl class="section return"><dt>Returns</dt><dd>const sf::Vector2f </dd></dl>
 
 </div>
@@ -318,28 +315,6 @@ false </dd></dl>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="adc547b270dfdd3695a2f66b87853b465" name="adc547b270dfdd3695a2f66b87853b465"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc547b270dfdd3695a2f66b87853b465">&#9670;&#160;</a></span>isPlayerAlive()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool World::isPlayerAlive </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns if the player is alive. (DEPRECATED?) </p>
-<dl class="section return"><dt>Returns</dt><dd>true </dd>
-<dd>
-false </dd></dl>
 
 </div>
 </div>
@@ -433,6 +408,28 @@ false </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a20f812a5533b8070a38f243449ad410e" name="a20f812a5533b8070a38f243449ad410e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20f812a5533b8070a38f243449ad410e">&#9670;&#160;</a></span>victory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool World::victory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if the player has won the game. </p>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
 
 </div>
 </div>
