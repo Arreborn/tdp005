@@ -36,6 +36,8 @@ shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
     view.setCenter(640.0f, 400.0f);
     view.setSize(1280.0, 800.0);
+    hpBar.setPosition(2000, 2000);
+    hpBarBackground.setPosition(2000, 2000);
     return std::make_shared<MenuState>(shared_from_this());
   }
 
