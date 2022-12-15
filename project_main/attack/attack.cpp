@@ -29,8 +29,8 @@ bool Attack::tick(sf::Time time, World &world)
   }
   else if (meleeDirection == 'u')
   {
-    center.x += 2;
-    center.y -= 65;
+    center.x -= 5;
+    center.y -= 68;
     sprite.setRotation(-90);
   }
 
