@@ -86,8 +86,8 @@ Inheritance diagram for Block:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBlock__inherit__graph.png" border="0" usemap="#aBlock_inherit__map" alt="Inheritance graph"/></div>
 <map name="aBlock_inherit__map" id="aBlock_inherit__map">
-<area shape="rect" title="This is a general base class handling the creation of block&#45;objects." alt="" coords="18,460,134,573"/>
-<area shape="rect" href="classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="18,108,134,412"/>
+<area shape="rect" title="This is a general base class handling the creation of block&#45;objects." alt="" coords="18,431,134,529"/>
+<area shape="rect" href="classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="18,108,134,383"/>
 <area shape="rect" title=" " alt="" coords="5,5,147,60"/>
 </map>
 </div>
@@ -100,9 +100,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a31c734289446423f6deed05301076cf6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a31c734289446423f6deed05301076cf6">tick</a> (sf::Time time, <a class="el" href="classWorld.html">World</a> &amp;world) override</td></tr>
 <tr class="memdesc:a31c734289446423f6deed05301076cf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles updates for collision checking.  <a href="classBlock.html#a31c734289446423f6deed05301076cf6">More...</a><br /></td></tr>
 <tr class="separator:a31c734289446423f6deed05301076cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab57fb2c7eca530c691356bf040c7369"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#aab57fb2c7eca530c691356bf040c7369">render</a> (sf::RenderWindow &amp;drawTo) override</td></tr>
-<tr class="memdesc:aab57fb2c7eca530c691356bf040c7369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the object in the provided window.  <a href="classBlock.html#aab57fb2c7eca530c691356bf040c7369">More...</a><br /></td></tr>
-<tr class="separator:aab57fb2c7eca530c691356bf040c7369"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41272a782b423029a321561d46c4e81c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a41272a782b423029a321561d46c4e81c">takeDamage</a> (float damage) override</td></tr>
 <tr class="memdesc:a41272a782b423029a321561d46c4e81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual function that allows entities to take damage.  <a href="classBlock.html#a41272a782b423029a321561d46c4e81c">More...</a><br /></td></tr>
 <tr class="separator:a41272a782b423029a321561d46c4e81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,12 +113,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac848982e3a9c90e51dae85ea897b6558 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#ac848982e3a9c90e51dae85ea897b6558">tick</a> (sf::Time time, <a class="el" href="classWorld.html">World</a> &amp;world)=0</td></tr>
 <tr class="memdesc:ac848982e3a9c90e51dae85ea897b6558 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the object for each frame, returns 'false' if the object is to be removed.  <a href="classEntity.html#ac848982e3a9c90e51dae85ea897b6558">More...</a><br /></td></tr>
 <tr class="separator:ac848982e3a9c90e51dae85ea897b6558 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab44c966e16a11f89d5190dc36bfd8aed inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#ab44c966e16a11f89d5190dc36bfd8aed">render</a> (sf::RenderWindow &amp;window)=0</td></tr>
-<tr class="memdesc:ab44c966e16a11f89d5190dc36bfd8aed inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the object.  <a href="classEntity.html#ab44c966e16a11f89d5190dc36bfd8aed">More...</a><br /></td></tr>
-<tr class="separator:ab44c966e16a11f89d5190dc36bfd8aed inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a664f8945d79700825b9e552c937644c0 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual sf::Sprite *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a664f8945d79700825b9e552c937644c0">getBorder</a> ()</td></tr>
-<tr class="memdesc:a664f8945d79700825b9e552c937644c0 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the border of the object, in order to check collision.  <a href="classEntity.html#a664f8945d79700825b9e552c937644c0">More...</a><br /></td></tr>
-<tr class="separator:a664f8945d79700825b9e552c937644c0 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb41c02e1808124417b1ac2bdfdf09f inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a0cb41c02e1808124417b1ac2bdfdf09f">render</a> (sf::RenderWindow &amp;window)</td></tr>
+<tr class="memdesc:a0cb41c02e1808124417b1ac2bdfdf09f inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the object.  <a href="classEntity.html#a0cb41c02e1808124417b1ac2bdfdf09f">More...</a><br /></td></tr>
+<tr class="separator:a0cb41c02e1808124417b1ac2bdfdf09f inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9727d15d18ccb10fa72dfe15799adcdd inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a9727d15d18ccb10fa72dfe15799adcdd">getBounds</a> ()</td></tr>
 <tr class="memdesc:a9727d15d18ccb10fa72dfe15799adcdd inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounds for the object.  <a href="classEntity.html#a9727d15d18ccb10fa72dfe15799adcdd">More...</a><br /></td></tr>
 <tr class="separator:a9727d15d18ccb10fa72dfe15799adcdd inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,16 +126,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab0986ba7a1b24f022b5623781050c0f1 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the object is alive (when applicable):  <a href="classEntity.html#ab0986ba7a1b24f022b5623781050c0f1">More...</a><br /></td></tr>
 <tr class="separator:ab0986ba7a1b24f022b5623781050c0f1 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">getType</a> ()</td></tr>
-<tr class="memdesc:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the object. (DEPRECATED?)  <a href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">More...</a><br /></td></tr>
+<tr class="memdesc:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the object.  <a href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">More...</a><br /></td></tr>
 <tr class="separator:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">takeDamage</a> (float damage)=0</td></tr>
 <tr class="memdesc:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual function that allows entities to take damage.  <a href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">More...</a><br /></td></tr>
 <tr class="separator:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2258d924e7ef9929dd0988cf0674116 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top"><a id="ad2258d924e7ef9929dd0988cf0674116" name="ad2258d924e7ef9929dd0988cf0674116"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setFrame</b> (sf::IntRect frame)</td></tr>
-<tr class="separator:ad2258d924e7ef9929dd0988cf0674116 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top"><a id="a0dcee8151b1eab8251d315b98ed65921" name="a0dcee8151b1eab8251d315b98ed65921"></a>
-virtual shared_ptr&lt; <a class="el" href="classEntity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ptrGet</b> ()</td></tr>
+<tr class="memitem:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classEntity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">ptrGet</a> ()</td></tr>
+<tr class="memdesc:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a shared pointer from this entity to ensure no friendly fire when attacking.  <a href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">More...</a><br /></td></tr>
 <tr class="separator:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad079c1df23ce6ba92e4803a18019551b inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#ad079c1df23ce6ba92e4803a18019551b">getDirection</a> ()</td></tr>
 <tr class="memdesc:ad079c1df23ce6ba92e4803a18019551b inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the direction the entity is facing.  <a href="classEntity.html#ad079c1df23ce6ba92e4803a18019551b">More...</a><br /></td></tr>
@@ -213,42 +204,6 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aab57fb2c7eca530c691356bf040c7369" name="aab57fb2c7eca530c691356bf040c7369"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab57fb2c7eca530c691356bf040c7369">&#9670;&#160;</a></span>render()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Block::render </td>
-          <td>(</td>
-          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
-          <td class="paramname"><em>drawTo</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Renders the object in the provided window. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">drawTo</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implements <a class="el" href="classEntity.html#ab44c966e16a11f89d5190dc36bfd8aed">Entity</a>.</p>
-
-</div>
-</div>
 <a id="a41272a782b423029a321561d46c4e81c" name="a41272a782b423029a321561d46c4e81c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41272a782b423029a321561d46c4e81c">&#9670;&#160;</a></span>takeDamage()</h2>
 

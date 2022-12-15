@@ -11,10 +11,6 @@ Archer::Archer(sf::Vector2f center) : Hostile(center) {
   sprite.setOrigin(0, 0);
 }
 
-bool Archer::tick(sf::Time time, World &world) {
-  return Hostile::tick(time, world);
-}
-
 // Not used for this entity but must be defined
 void Archer::verticalPosition(sf::Time const &, World &) {}
 

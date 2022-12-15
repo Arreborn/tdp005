@@ -82,6 +82,7 @@ bool Hostile::tick(sf::Time time, World &world) {
   } else {
     attackCooldown -= time;
   }
+
   sf::Vector2f vold{center};
   verticalPosition(time, world);
   for (shared_ptr<Entity> &collision : world.collidesWith(*this)) {

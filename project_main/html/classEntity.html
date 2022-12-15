@@ -87,15 +87,15 @@ Inheritance diagram for Entity:</div>
 <div class="dyncontent">
 <div class="center"><img src="classEntity__inherit__graph.png" border="0" usemap="#aEntity_inherit__map" alt="Inheritance graph"/></div>
 <map name="aEntity_inherit__map" id="aEntity_inherit__map">
-<area shape="rect" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="231,108,347,412"/>
-<area shape="rect" href="classAttack.html" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="9,592,129,749"/>
-<area shape="rect" href="classBlock.html" title="This is a general base class handling the creation of block&#45;objects." alt="" coords="154,614,270,727"/>
-<area shape="rect" href="classHostile.html" title="This is a base class for hostiles. From this, sub&#45;classes for more avanced enemies can be added." alt="" coords="294,548,439,793"/>
-<area shape="rect" href="classPlayer.html" title="This class defines and handles the player character." alt="" coords="463,460,609,881"/>
+<area shape="rect" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="231,108,347,383"/>
+<area shape="rect" href="classAttack.html" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="9,563,129,705"/>
+<area shape="rect" href="classBlock.html" title="This is a general base class handling the creation of block&#45;objects." alt="" coords="154,585,270,683"/>
+<area shape="rect" href="classHostile.html" title="This is a base class for hostiles. From this, sub&#45;classes for more avanced enemies can be added." alt="" coords="294,519,439,749"/>
+<area shape="rect" href="classPlayer.html" title="This class defines and handles the player character." alt="" coords="463,431,609,837"/>
 <area shape="rect" title=" " alt="" coords="219,5,360,60"/>
-<area shape="rect" href="classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="5,937,133,1123"/>
-<area shape="rect" href="classArcher.html" title="This sub&#45;class is a basic ranged enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="226,966,371,1094"/>
-<area shape="rect" href="classFlying.html" title=" " alt="" coords="395,929,541,1131"/>
+<area shape="rect" href="classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="5,893,133,1065"/>
+<area shape="rect" href="classArcher.html" title="This sub&#45;class is a basic ranged enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="226,922,371,1035"/>
+<area shape="rect" href="classFlying.html" title=" " alt="" coords="395,885,541,1072"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -110,12 +110,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac848982e3a9c90e51dae85ea897b6558"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#ac848982e3a9c90e51dae85ea897b6558">tick</a> (sf::Time time, <a class="el" href="classWorld.html">World</a> &amp;world)=0</td></tr>
 <tr class="memdesc:ac848982e3a9c90e51dae85ea897b6558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the object for each frame, returns 'false' if the object is to be removed.  <a href="classEntity.html#ac848982e3a9c90e51dae85ea897b6558">More...</a><br /></td></tr>
 <tr class="separator:ac848982e3a9c90e51dae85ea897b6558"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab44c966e16a11f89d5190dc36bfd8aed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#ab44c966e16a11f89d5190dc36bfd8aed">render</a> (sf::RenderWindow &amp;window)=0</td></tr>
-<tr class="memdesc:ab44c966e16a11f89d5190dc36bfd8aed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the object.  <a href="classEntity.html#ab44c966e16a11f89d5190dc36bfd8aed">More...</a><br /></td></tr>
-<tr class="separator:ab44c966e16a11f89d5190dc36bfd8aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a664f8945d79700825b9e552c937644c0"><td class="memItemLeft" align="right" valign="top">virtual sf::Sprite *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a664f8945d79700825b9e552c937644c0">getBorder</a> ()</td></tr>
-<tr class="memdesc:a664f8945d79700825b9e552c937644c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the border of the object, in order to check collision.  <a href="classEntity.html#a664f8945d79700825b9e552c937644c0">More...</a><br /></td></tr>
-<tr class="separator:a664f8945d79700825b9e552c937644c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb41c02e1808124417b1ac2bdfdf09f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a0cb41c02e1808124417b1ac2bdfdf09f">render</a> (sf::RenderWindow &amp;window)</td></tr>
+<tr class="memdesc:a0cb41c02e1808124417b1ac2bdfdf09f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the object.  <a href="classEntity.html#a0cb41c02e1808124417b1ac2bdfdf09f">More...</a><br /></td></tr>
+<tr class="separator:a0cb41c02e1808124417b1ac2bdfdf09f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9727d15d18ccb10fa72dfe15799adcdd"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a9727d15d18ccb10fa72dfe15799adcdd">getBounds</a> ()</td></tr>
 <tr class="memdesc:a9727d15d18ccb10fa72dfe15799adcdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounds for the object.  <a href="classEntity.html#a9727d15d18ccb10fa72dfe15799adcdd">More...</a><br /></td></tr>
 <tr class="separator:a9727d15d18ccb10fa72dfe15799adcdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,16 +123,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab0986ba7a1b24f022b5623781050c0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the object is alive (when applicable):  <a href="classEntity.html#ab0986ba7a1b24f022b5623781050c0f1">More...</a><br /></td></tr>
 <tr class="separator:ab0986ba7a1b24f022b5623781050c0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeffdfacd2f3d702646d0578207a5d5e2"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">getType</a> ()</td></tr>
-<tr class="memdesc:aeffdfacd2f3d702646d0578207a5d5e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the object. (DEPRECATED?)  <a href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">More...</a><br /></td></tr>
+<tr class="memdesc:aeffdfacd2f3d702646d0578207a5d5e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the object.  <a href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">More...</a><br /></td></tr>
 <tr class="separator:aeffdfacd2f3d702646d0578207a5d5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acba3aef953ec394be8b40231a7ce70b1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">takeDamage</a> (float damage)=0</td></tr>
 <tr class="memdesc:acba3aef953ec394be8b40231a7ce70b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual function that allows entities to take damage.  <a href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">More...</a><br /></td></tr>
 <tr class="separator:acba3aef953ec394be8b40231a7ce70b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2258d924e7ef9929dd0988cf0674116"><td class="memItemLeft" align="right" valign="top"><a id="ad2258d924e7ef9929dd0988cf0674116" name="ad2258d924e7ef9929dd0988cf0674116"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setFrame</b> (sf::IntRect frame)</td></tr>
-<tr class="separator:ad2258d924e7ef9929dd0988cf0674116"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dcee8151b1eab8251d315b98ed65921"><td class="memItemLeft" align="right" valign="top"><a id="a0dcee8151b1eab8251d315b98ed65921" name="a0dcee8151b1eab8251d315b98ed65921"></a>
-virtual shared_ptr&lt; <a class="el" href="classEntity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ptrGet</b> ()</td></tr>
+<tr class="memitem:a0dcee8151b1eab8251d315b98ed65921"><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classEntity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">ptrGet</a> ()</td></tr>
+<tr class="memdesc:a0dcee8151b1eab8251d315b98ed65921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a shared pointer from this entity to ensure no friendly fire when attacking.  <a href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">More...</a><br /></td></tr>
 <tr class="separator:a0dcee8151b1eab8251d315b98ed65921"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad079c1df23ce6ba92e4803a18019551b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#ad079c1df23ce6ba92e4803a18019551b">getDirection</a> ()</td></tr>
 <tr class="memdesc:ad079c1df23ce6ba92e4803a18019551b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the direction the entity is facing.  <a href="classEntity.html#ad079c1df23ce6ba92e4803a18019551b">More...</a><br /></td></tr>
@@ -236,34 +230,6 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a664f8945d79700825b9e552c937644c0" name="a664f8945d79700825b9e552c937644c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a664f8945d79700825b9e552c937644c0">&#9670;&#160;</a></span>getBorder()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">sf::Sprite * Entity::getBorder </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the border of the object, in order to check collision. </p>
-<dl class="section return"><dt>Returns</dt><dd>sf::Sprite* </dd></dl>
-
-</div>
-</div>
 <a id="a9727d15d18ccb10fa72dfe15799adcdd" name="a9727d15d18ccb10fa72dfe15799adcdd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9727d15d18ccb10fa72dfe15799adcdd">&#9670;&#160;</a></span>getBounds()</h2>
 
@@ -339,7 +305,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the type of the object. (DEPRECATED?) </p>
+<p>Returns the type of the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>char </dd></dl>
 
 </div>
@@ -376,14 +342,39 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="ab44c966e16a11f89d5190dc36bfd8aed" name="ab44c966e16a11f89d5190dc36bfd8aed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab44c966e16a11f89d5190dc36bfd8aed">&#9670;&#160;</a></span>render()</h2>
+<a id="a0dcee8151b1eab8251d315b98ed65921" name="a0dcee8151b1eab8251d315b98ed65921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dcee8151b1eab8251d315b98ed65921">&#9670;&#160;</a></span>ptrGet()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classEntity.html">Entity</a> &gt; Entity::ptrGet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a shared pointer from this entity to ensure no friendly fire when attacking. </p>
+<dl class="section return"><dt>Returns</dt><dd>shared_ptr&lt;Entity&gt; </dd></dl>
+
+</div>
+</div>
+<a id="a0cb41c02e1808124417b1ac2bdfdf09f" name="a0cb41c02e1808124417b1ac2bdfdf09f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb41c02e1808124417b1ac2bdfdf09f">&#9670;&#160;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Entity::render </td>
@@ -393,11 +384,6 @@ false </dd></dl>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Renders the object. </p>
@@ -407,8 +393,6 @@ false </dd></dl>
   </table>
   </dd>
 </dl>
-
-<p>Implemented in <a class="el" href="classArcher.html#a79b3baca78aa6af3483d50c6b789e013">Archer</a>, <a class="el" href="classFlying.html#a49a20ca02c0970288e40576957f7143b">Flying</a>, <a class="el" href="classHostile.html#a26adc20869e3b7e31df91aaa86442738">Hostile</a>, <a class="el" href="classPlayer.html#aad7d08235319e039a17e6f112b3b9930">Player</a>, <a class="el" href="classBlock.html#aab57fb2c7eca530c691356bf040c7369">Block</a>, <a class="el" href="classAttack.html#a439154b9317ee889f172e024eecc68b7">Attack</a>, and <a class="el" href="classRangedAttack.html#acb38eac2598d2a1ecff48d52e583ec3b">RangedAttack</a>.</p>
 
 </div>
 </div>

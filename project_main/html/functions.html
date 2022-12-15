@@ -102,6 +102,7 @@ $(function() {
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
 <li>damage&#160;:&#160;<a class="el" href="classAttack.html#aebc541003702819369c4645d425b8ba0">Attack</a>, <a class="el" href="classRangedAttack.html#ae121958c9bc53b578e7af2d910533f0d">RangedAttack</a></li>
 <li>damageTaken()&#160;:&#160;<a class="el" href="classPlayer.html#ad5027c17d8467c5c113f5f9f29beaffa">Player</a></li>
+<li>dash()&#160;:&#160;<a class="el" href="classPlayer.html#a8b8826fa784292fa8b17326d0fbbe703">Player</a></li>
 <li>dashCooldown&#160;:&#160;<a class="el" href="classPlayer.html#a0b333651cef0c8176af1a30a4c9faa8e">Player</a></li>
 <li>dashDuration&#160;:&#160;<a class="el" href="classPlayer.html#a21a82db69cdd2127b47ccdd20c76cc73">Player</a></li>
 <li>dashing&#160;:&#160;<a class="el" href="classPlayer.html#add722e816cd9156867b7987ca8b13ec3">Player</a></li>
@@ -120,7 +121,6 @@ $(function() {
 <li>GameState()&#160;:&#160;<a class="el" href="classGameState.html#a4fa0a2bf50315c4a35a3890a0adcee5c">GameState</a></li>
 <li>generateLevel()&#160;:&#160;<a class="el" href="classLevelConstructor.html#a16cf3411785351551e27a914ed7604e3">LevelConstructor</a></li>
 <li>get()&#160;:&#160;<a class="el" href="classSegmentManager.html#a3d8a0d6766de4472ef4ff4324e2d1d21">SegmentManager</a>, <a class="el" href="classSpriteManager.html#a74e51197b4b21efff73431f388e26e54">SpriteManager</a></li>
-<li>getBorder()&#160;:&#160;<a class="el" href="classEntity.html#a664f8945d79700825b9e552c937644c0">Entity</a></li>
 <li>getBounds()&#160;:&#160;<a class="el" href="classEntity.html#a9727d15d18ccb10fa72dfe15799adcdd">Entity</a></li>
 <li>getCenter()&#160;:&#160;<a class="el" href="classEntity.html#a0ab7ed4a329c08c77c59f4c5db5faf56">Entity</a>, <a class="el" href="classWorld.html#ab14e5f27cc3bc2133e760c18272c201a">World</a></li>
 <li>getDirection()&#160;:&#160;<a class="el" href="classEntity.html#ad079c1df23ce6ba92e4803a18019551b">Entity</a></li>
@@ -134,7 +134,7 @@ $(function() {
 <li>heal()&#160;:&#160;<a class="el" href="classPlayer.html#a2c3365211f8a89d275bc630dcb550dae">Player</a></li>
 <li>health&#160;:&#160;<a class="el" href="classHostile.html#a1e80eaf306c146e3cb220e001fc4a5b4">Hostile</a>, <a class="el" href="classPlayer.html#aad33b52bfe73c4c978a3135172f286a0">Player</a></li>
 <li>hittingBorder()&#160;:&#160;<a class="el" href="classPlayer.html#ac742ea09d0c4813d3aa00af202210c36">Player</a></li>
-<li>horizontalPosition()&#160;:&#160;<a class="el" href="classArcher.html#a832ac582be0ed613a7c7de6918b7cb8d">Archer</a>, <a class="el" href="classFlying.html#a94e0e0890142d3a9c7e5e9d34bdae0f0">Flying</a>, <a class="el" href="classHostile.html#a732d3a8db5ceb538746abdf26645beb8">Hostile</a></li>
+<li>horizontalPosition()&#160;:&#160;<a class="el" href="classArcher.html#a832ac582be0ed613a7c7de6918b7cb8d">Archer</a>, <a class="el" href="classFlying.html#a94e0e0890142d3a9c7e5e9d34bdae0f0">Flying</a>, <a class="el" href="classHostile.html#a732d3a8db5ceb538746abdf26645beb8">Hostile</a>, <a class="el" href="classPlayer.html#a0585b4de487254a66672cdfe5097261b">Player</a></li>
 <li>Hostile()&#160;:&#160;<a class="el" href="classHostile.html#a32a54b10f344b2ea3ae7b831724d2e1e">Hostile</a></li>
 </ul>
 
@@ -145,7 +145,6 @@ $(function() {
 <li>isGameOver()&#160;:&#160;<a class="el" href="classState.html#a1814b0b55371bc83a1a607b77328909c">State</a></li>
 <li>isHit&#160;:&#160;<a class="el" href="classPlayer.html#af603dcb5bee2cf1fa3c01ebfd7b2b9dd">Player</a></li>
 <li>isJumping&#160;:&#160;<a class="el" href="classPlayer.html#aab294bec9f8fed91bb7d599e37bfd5f6">Player</a></li>
-<li>isPlayerAlive()&#160;:&#160;<a class="el" href="classWorld.html#adc547b270dfdd3695a2f66b87853b465">World</a></li>
 </ul>
 
 
@@ -170,6 +169,7 @@ $(function() {
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
 <li>Player()&#160;:&#160;<a class="el" href="classPlayer.html#adc7fbcd37c9c93077099b9d19e021710">Player</a></li>
 <li>playerCharacter&#160;:&#160;<a class="el" href="classWorld.html#af59e95076ba4df753668e91170d63e81">World</a></li>
+<li>ptrGet()&#160;:&#160;<a class="el" href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">Entity</a></li>
 </ul>
 
 
@@ -177,7 +177,7 @@ $(function() {
 <li>radius&#160;:&#160;<a class="el" href="classEntity.html#ae6941e2890babbae875154757880e12d">Entity</a></li>
 <li>RangedAttack()&#160;:&#160;<a class="el" href="classRangedAttack.html#ae695a5fcf57c43c15598c7dc14ba1c78">RangedAttack</a></li>
 <li>removeEnemy()&#160;:&#160;<a class="el" href="classWorld.html#a308c05ed987469cdc2e983510686861e">World</a></li>
-<li>render()&#160;:&#160;<a class="el" href="classArcher.html#a79b3baca78aa6af3483d50c6b789e013">Archer</a>, <a class="el" href="classAttack.html#a439154b9317ee889f172e024eecc68b7">Attack</a>, <a class="el" href="classBlock.html#aab57fb2c7eca530c691356bf040c7369">Block</a>, <a class="el" href="classEntity.html#ab44c966e16a11f89d5190dc36bfd8aed">Entity</a>, <a class="el" href="classExitState.html#a7d756e07e2c56f08b582bd3f752e0ea1">ExitState</a>, <a class="el" href="classFlying.html#a49a20ca02c0970288e40576957f7143b">Flying</a>, <a class="el" href="classGameState.html#a56691f1fb7ed6ef1e43bee582d1a59eb">GameState</a>, <a class="el" href="classHostile.html#a26adc20869e3b7e31df91aaa86442738">Hostile</a>, <a class="el" href="classMenuState.html#a50a0e47dd3bca35031d5669f537dd41d">MenuState</a>, <a class="el" href="classPlayer.html#aad7d08235319e039a17e6f112b3b9930">Player</a>, <a class="el" href="classRangedAttack.html#acb38eac2598d2a1ecff48d52e583ec3b">RangedAttack</a>, <a class="el" href="classState.html#aed558c6b578efb70ee2ba7f6df9aebb9">State</a>, <a class="el" href="classWorld.html#ad11d9dbce78556342441f2b60c6557e0">World</a></li>
+<li>render()&#160;:&#160;<a class="el" href="classEntity.html#a0cb41c02e1808124417b1ac2bdfdf09f">Entity</a>, <a class="el" href="classExitState.html#a7d756e07e2c56f08b582bd3f752e0ea1">ExitState</a>, <a class="el" href="classGameState.html#a56691f1fb7ed6ef1e43bee582d1a59eb">GameState</a>, <a class="el" href="classMenuState.html#a50a0e47dd3bca35031d5669f537dd41d">MenuState</a>, <a class="el" href="classState.html#aed558c6b578efb70ee2ba7f6df9aebb9">State</a>, <a class="el" href="classWorld.html#ad11d9dbce78556342441f2b60c6557e0">World</a></li>
 <li>run()&#160;:&#160;<a class="el" href="classState.html#a1cb8f29d65651c7f0e744f106f1cd831">State</a></li>
 </ul>
 
@@ -201,8 +201,8 @@ $(function() {
 
 
 <h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
-<li>verticalPosition()&#160;:&#160;<a class="el" href="classArcher.html#a4d89a9469c22a678757a3b5b00b135b3">Archer</a>, <a class="el" href="classFlying.html#a5a3f00cf9fee54adc9d399091de0088b">Flying</a>, <a class="el" href="classHostile.html#a95d485dc94eb2589478d4347e9c3360b">Hostile</a></li>
-<li>victory&#160;:&#160;<a class="el" href="classState.html#a546efd66e0e62b2da2f4ecf0ca10fa9d">State</a></li>
+<li>verticalPosition()&#160;:&#160;<a class="el" href="classArcher.html#a4d89a9469c22a678757a3b5b00b135b3">Archer</a>, <a class="el" href="classFlying.html#a5a3f00cf9fee54adc9d399091de0088b">Flying</a>, <a class="el" href="classHostile.html#a95d485dc94eb2589478d4347e9c3360b">Hostile</a>, <a class="el" href="classPlayer.html#af70bb251b1110261bd2e7cc87a0fa07c">Player</a></li>
+<li>victory&#160;:&#160;<a class="el" href="classState.html#a546efd66e0e62b2da2f4ecf0ca10fa9d">State</a>, <a class="el" href="classWorld.html#a20f812a5533b8070a38f243449ad410e">World</a></li>
 <li>victoryState()&#160;:&#160;<a class="el" href="classState.html#aab5b35f29e0970844bbfe06c8dea670b">State</a></li>
 <li>view&#160;:&#160;<a class="el" href="classState.html#ae4be56fe4989ead7297e061e805549d3">State</a></li>
 </ul>

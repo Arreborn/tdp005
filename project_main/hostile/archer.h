@@ -19,16 +19,6 @@ public:
   Archer(sf::Vector2f center);
 
   /**
-   * @brief Updates the object. Will return false when the unit has died.
-   *
-   * @param time
-   * @param world
-   * @return true
-   * @return false
-   */
-  bool tick(sf::Time time, World &world) override;
-
-  /**
    * @brief Handles the behaviour for vertical movement. Only utilized in
    * flying.h, only here to allow for the same tick to be used for all hostiles.
    *
