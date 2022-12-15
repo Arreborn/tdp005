@@ -6,7 +6,8 @@
 
 void updateHud(std::shared_ptr<Player> player, sf::Sprite &hpBar);
 
-GameState::GameState() {
+GameState::GameState()
+{
   // Loading textures
   loadTextures();
   // Creating objects
@@ -17,7 +18,8 @@ GameState::GameState() {
   world.getLevel(true, player);  // generates a first level
 }
 
-shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
+shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window)
+{
 
   updateHud(player, hpBar);
 
@@ -33,7 +35,8 @@ shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
 
   //
   // resets viewport
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+  {
     view.setCenter(640.0f, 400.0f);
     view.setSize(1280.0, 800.0);
     hpBar.setPosition(2000, 2000);
@@ -41,8 +44,10 @@ shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
     return std::make_shared<MenuState>(shared_from_this());
   }
 
-  if (world.levelCleared() && player->hittingBorder()) {
-    if (world.victory()) {
+  if (world.levelCleared() && player->hittingBorder())
+  {
+    if (world.victory())
+    {
       victory = true;
       view.setCenter(640.0f, 400.0f);
       view.setSize(1280.0, 800.0);
@@ -52,18 +57,22 @@ shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
     world.getLevel((player->getCenter().x > 640), player);
   }
 
-  if (gameOver) {
+  if (gameOver)
+  {
     // resets viewport
     view.setCenter(640.0f, 400.0f);
     view.setSize(1280.0, 800.0);
     window.setView(view);
     return std::make_shared<MenuState>(shared_from_this());
-  } else {
+  }
+  else
+  {
     return nullptr;
   }
 }
 
-void GameState::loadTextures() {
+void GameState::loadTextures()
+{
   // Texture loading
   sf::Texture *hpText = SpriteManager::get("sprites/Healthbar.png");
   sf::Texture *hpBg = SpriteManager::get("sprites/uiBackground.png");
@@ -95,13 +104,14 @@ void GameState::loadTextures() {
   bgBack.setPosition(sf::Vector2f(0.0f, 0.0f));
   bgTree.setScale(5.0f, 5.0f);
   bgTree.setPosition(sf::Vector2f(0.0f, 0.0f));
-  bgLights.setScale(5.0f, 5.0f);
-  bgLights.setPosition(sf::Vector2f(0.0f, 0.0f));
+  bgLights.setScale(3.0f, 3.0f);
+  bgLights.setPosition(sf::Vector2f(400.0f, 0.0f));
   bgFore.setScale(5.0f, 5.0f);
   bgFore.setPosition(sf::Vector2f(0.0f, 0.0f));
 }
 
-void GameState::render(sf::RenderWindow &drawTo) {
+void GameState::render(sf::RenderWindow &drawTo)
+{
   drawTo.draw(bgBack);
   drawTo.draw(bgLights);
   drawTo.draw(bgTree);
@@ -112,13 +122,17 @@ void GameState::render(sf::RenderWindow &drawTo) {
   drawTo.draw(hpBar);
 };
 
-void updateHud(shared_ptr<Player> player, sf::Sprite &hpBar) {
+void updateHud(shared_ptr<Player> player, sf::Sprite &hpBar)
+{
   int currFrame{};
-  if (player->getHealth() % 2 == 0) {
+  if (player->getHealth() % 2 == 0)
+  {
     currFrame =
         ((player->getHealth() / 2) * 9 + ((player->getHealth() / 2)) * 3);
     hpBar.setTextureRect(sf::IntRect(0, 0, currFrame, 8));
-  } else {
+  }
+  else
+  {
     currFrame = ((player->getHealth() - 1) / 2) * 9 + 5 +
                 (((player->getHealth() + 1) / 2) - 1) * 3;
     hpBar.setTextureRect(sf::IntRect(0, 0, currFrame, 8));
