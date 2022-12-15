@@ -3,6 +3,8 @@
 #include "../attack/rangedAttack.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/System/Time.hpp>
 #include <tuple>
 
 Hostile::Hostile(sf::Vector2f center)
@@ -12,6 +14,9 @@ Hostile::Hostile(sf::Vector2f center)
 }
 
 void Hostile::horizontalPosition(const sf::Time &time, World &world) {
+  if (chargeUp != sf::seconds(0.0f)) {
+    return;
+  }
   float xOffset{};
   float yOffset{getBounds().top + 16 + 1};
   if (direction == 'l') {
@@ -76,6 +81,10 @@ bool Hostile::tick(sf::Time time, World &world) {
   // runs the code for attacking for this specific hostile
   attack(world);
 
+  if (chargeUp > sf::seconds(0)) {
+    chargeUp -= time;
+  }
+
   // manages attack cooldown
   if (attackCooldown <= sf::seconds(0.0f)) {
     attackCooldown = sf::seconds(0.0f);
@@ -85,7 +94,6 @@ bool Hostile::tick(sf::Time time, World &world) {
 
   // manages vertical collision when applicable
   verticalPosition(time, world);
-
   sf::Vector2f hold{center};
   // collision detection for horizontal movement
   horizontalPosition(time, world);
@@ -126,11 +134,20 @@ void Hostile::attack(World &world) {
   }
 
   // if the player is close to the hostile, it will attack
-  if (world.playerCharacter->getBounds().contains(xCoord, center.y + 12)) {
-    if (attackCooldown == sf::seconds(0.0f)) {
-      world.add(std::make_shared<Attack>(center, 1, ptrGet()));
-      attackCooldown = sf::seconds(2.0f);
+  if (world.playerCharacter->getBounds().contains(xCoord, center.y + 12) &&
+      attackCooldown == sf::seconds(0.0f)) {
+    if (chargeUp == sf::seconds(0.0)) {
+      chargeUp = sf::seconds(0.4);
     }
+  }
+
+  if (chargeUp < sf::seconds(0.0f)) {
+    chargeUp = sf::seconds(0);
+    sprite.setColor(sf::Color::White);
+    world.add(std::make_shared<Attack>(center, 1, ptrGet()));
+    attackCooldown = sf::seconds(2.0f);
+  } else if (chargeUp != sf::seconds(0.0f)) {
+    sprite.setColor(sf::Color(176, 224, 230));
   }
 }
 

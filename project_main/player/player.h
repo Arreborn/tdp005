@@ -197,4 +197,6 @@ protected:
    *
    */
   bool atBorder{};
+
+  bool blink{};
 };
