@@ -53,8 +53,8 @@ public:
    * @param world
    * @param player
    */
-  static string generateLevel(World &world, shared_ptr<Player> player,
-                              bool loadHostiles, string str);
+  static void generateLevel(World &world, shared_ptr<Player> player,
+                            bool loadHostiles, string str);
 
   /**
    * @brief This function utilizes the SegmentManager to construct and return a

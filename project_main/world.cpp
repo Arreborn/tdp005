@@ -35,6 +35,7 @@ static bool collides(Entity &a, Entity &b) {
 vector<shared_ptr<Entity>> World::collidesWith(Entity &me) {
   vector<shared_ptr<Entity>> result;
 
+  // the vector populated here contains all objects that &me collides with
   for (shared_ptr<Entity> &x : objects) {
     if (x.get() == &me) {
       continue;
@@ -108,18 +109,21 @@ bool World::levelCleared() {
 }
 
 void World::getLevel(bool right, shared_ptr<Player> player) {
-  if (loadedSegments.empty()) {
-    loadedSegments = LevelConstructor::loadLevels(15);
+  if (loadedSegments.empty()) { // if we have no levels at all yet
+    loadedSegments = LevelConstructor::loadLevels(16);
     LevelConstructor::generateLevel(*this, player, true,
                                     loadedSegments[currentStage]);
   } else {
     if (right) {
       ++currentStage;
-    } else {
+    } else { // if we have levels stored
       if (currentStage == 0) {
         return;
       }
       --currentStage;
+    }
+    if (currentStage != completedLevels) {
+      player->heal();
     }
     clear();
     LevelConstructor::generateLevel(*this, player,

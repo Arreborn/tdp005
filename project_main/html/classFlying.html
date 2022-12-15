@@ -71,7 +71,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classFlying-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Flying Class Reference</div></div>
 </div><!--header-->
@@ -81,7 +80,18 @@ Inheritance diagram for Flying:</div>
 <div class="dyncontent">
 <div class="center"><img src="classFlying__inherit__graph.png" border="0" usemap="#aFlying_inherit__map" alt="Inheritance graph"/></div>
 <map name="aFlying_inherit__map" id="aFlying_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,709,151,896"/>
+<area shape="rect" title=" " alt="" coords="5,709,151,808"/>
+<area shape="rect" href="classHostile.html" title="This is a base class for hostiles. From this, sub&#45;classes for more avanced enemies can be added." alt="" coords="5,431,151,661"/>
+<area shape="rect" href="classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="20,108,136,383"/>
+<area shape="rect" title=" " alt="" coords="7,5,149,60"/>
+</map>
+</div>
+<div class="dynheader">
+Collaboration diagram for Flying:</div>
+<div class="dyncontent">
+<div class="center"><img src="classFlying__coll__graph.png" border="0" usemap="#aFlying_coll__map" alt="Collaboration graph"/></div>
+<map name="aFlying_coll__map" id="aFlying_coll__map">
+<area shape="rect" title=" " alt="" coords="5,709,151,808"/>
 <area shape="rect" href="classHostile.html" title="This is a base class for hostiles. From this, sub&#45;classes for more avanced enemies can be added." alt="" coords="5,431,151,661"/>
 <area shape="rect" href="classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="20,108,136,383"/>
 <area shape="rect" title=" " alt="" coords="7,5,149,60"/>
@@ -93,9 +103,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0243ebc03a8b54f5c5793eb0423c8356"><td class="memItemLeft" align="right" valign="top"><a id="a0243ebc03a8b54f5c5793eb0423c8356" name="a0243ebc03a8b54f5c5793eb0423c8356"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Flying</b> (sf::Vector2f <a class="el" href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">center</a>)</td></tr>
 <tr class="separator:a0243ebc03a8b54f5c5793eb0423c8356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64a69e6baa6f4d1329c8f2a767fc8b24"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlying.html#a64a69e6baa6f4d1329c8f2a767fc8b24">tick</a> (sf::Time time, <a class="el" href="classWorld.html">World</a> &amp;world) override</td></tr>
-<tr class="memdesc:a64a69e6baa6f4d1329c8f2a767fc8b24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the object for each frame, returns 'false' if the object is to be removed.  <a href="classFlying.html#a64a69e6baa6f4d1329c8f2a767fc8b24">More...</a><br /></td></tr>
-<tr class="separator:a64a69e6baa6f4d1329c8f2a767fc8b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a3f00cf9fee54adc9d399091de0088b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlying.html#a5a3f00cf9fee54adc9d399091de0088b">verticalPosition</a> (sf::Time const &amp;time, <a class="el" href="classWorld.html">World</a> &amp;world) override</td></tr>
 <tr class="memdesc:a5a3f00cf9fee54adc9d399091de0088b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the behaviour for vertical movement. Only utilized in <a class="el" href="flying_8h_source.html">flying.h</a>.  <a href="classFlying.html#a5a3f00cf9fee54adc9d399091de0088b">More...</a><br /></td></tr>
 <tr class="separator:a5a3f00cf9fee54adc9d399091de0088b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,9 +159,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">getType</a> ()</td></tr>
 <tr class="memdesc:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the object.  <a href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">More...</a><br /></td></tr>
 <tr class="separator:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">takeDamage</a> (float damage)=0</td></tr>
-<tr class="memdesc:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual function that allows entities to take damage.  <a href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">More...</a><br /></td></tr>
-<tr class="separator:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa863cbb2f678afefb5574ccd32051cbf inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aa863cbb2f678afefb5574ccd32051cbf">takeDamage</a> (float damage)=0</td></tr>
+<tr class="memdesc:aa863cbb2f678afefb5574ccd32051cbf inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual function that allows entities to take damage.  <a href="classEntity.html#aa863cbb2f678afefb5574ccd32051cbf">More...</a><br /></td></tr>
+<tr class="separator:aa863cbb2f678afefb5574ccd32051cbf inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classEntity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">ptrGet</a> ()</td></tr>
 <tr class="memdesc:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a shared pointer from this entity to ensure no friendly fire when attacking.  <a href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">More...</a><br /></td></tr>
 <tr class="separator:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,23 +169,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad079c1df23ce6ba92e4803a18019551b inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the direction the entity is facing.  <a href="classEntity.html#ad079c1df23ce6ba92e4803a18019551b">More...</a><br /></td></tr>
 <tr class="separator:ad079c1df23ce6ba92e4803a18019551b inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a43b34a35112bfb35725d08ba967a6574"><td class="memItemLeft" align="right" valign="top"><a id="a43b34a35112bfb35725d08ba967a6574" name="a43b34a35112bfb35725d08ba967a6574"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>health</b> {}</td></tr>
-<tr class="separator:a43b34a35112bfb35725d08ba967a6574"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61ad8bc56e2e41eb7239c18c06ac1fc9"><td class="memItemLeft" align="right" valign="top"><a id="a61ad8bc56e2e41eb7239c18c06ac1fc9" name="a61ad8bc56e2e41eb7239c18c06ac1fc9"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b> {}</td></tr>
-<tr class="separator:a61ad8bc56e2e41eb7239c18c06ac1fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a960982c1702645237c0997f5581a87c1"><td class="memItemLeft" align="right" valign="top"><a id="a960982c1702645237c0997f5581a87c1" name="a960982c1702645237c0997f5581a87c1"></a>
-sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><b>acceleration</b> {0, 2}</td></tr>
-<tr class="separator:a960982c1702645237c0997f5581a87c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8e0d83343fc153024703076c2b95e75"><td class="memItemLeft" align="right" valign="top">sf::Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlying.html#af8e0d83343fc153024703076c2b95e75">blinkDuration</a> {}</td></tr>
-<tr class="memdesc:af8e0d83343fc153024703076c2b95e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">When taking damage, the hostile will turn red momentarily. This variable stores the current color.  <a href="classFlying.html#af8e0d83343fc153024703076c2b95e75">More...</a><br /></td></tr>
-<tr class="separator:af8e0d83343fc153024703076c2b95e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47c7caf0417ff8e93249ec7f344b5295"><td class="memItemLeft" align="right" valign="top"><a id="a47c7caf0417ff8e93249ec7f344b5295" name="a47c7caf0417ff8e93249ec7f344b5295"></a>
-sf::Time&#160;</td><td class="memItemRight" valign="bottom"><b>movementDuration</b> {}</td></tr>
-<tr class="separator:a47c7caf0417ff8e93249ec7f344b5295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_attribs_classEntity"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classEntity')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classEntity.html">Entity</a></td></tr>
+<tr class="memitem:aef7e4ad6c0431541bf51d93d7d759878 inherit pub_attribs_classEntity"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">center</a></td></tr>
+<tr class="memdesc:aef7e4ad6c0431541bf51d93d7d759878 inherit pub_attribs_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position of the objects center. Will be manipulated in order to move different entities.  <a href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">More...</a><br /></td></tr>
+<tr class="separator:aef7e4ad6c0431541bf51d93d7d759878 inherit pub_attribs_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6941e2890babbae875154757880e12d inherit pub_attribs_classEntity"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#ae6941e2890babbae875154757880e12d">radius</a></td></tr>
+<tr class="memdesc:ae6941e2890babbae875154757880e12d inherit pub_attribs_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Radius of this object.  <a href="classEntity.html#ae6941e2890babbae875154757880e12d">More...</a><br /></td></tr>
+<tr class="separator:ae6941e2890babbae875154757880e12d inherit pub_attribs_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classHostile"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classHostile')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classHostile.html">Hostile</a></td></tr>
 <tr class="memitem:a1e80eaf306c146e3cb220e001fc4a5b4 inherit pro_attribs_classHostile"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHostile.html#a1e80eaf306c146e3cb220e001fc4a5b4">health</a> {}</td></tr>
 <tr class="memdesc:a1e80eaf306c146e3cb220e001fc4a5b4 inherit pro_attribs_classHostile"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the health of the hostile.  <a href="classHostile.html#a1e80eaf306c146e3cb220e001fc4a5b4">More...</a><br /></td></tr>
@@ -208,16 +207,6 @@ sf::Time&#160;</td><td class="memItemRight" valign="bottom"><b>movementDuration<
 <tr class="memitem:a3f582387bb73bceb84cd1145fca0f974 inherit pro_attribs_classEntity"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a3f582387bb73bceb84cd1145fca0f974">direction</a> {}</td></tr>
 <tr class="memdesc:a3f582387bb73bceb84cd1145fca0f974 inherit pro_attribs_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">The direction the entity is looking.  <a href="classEntity.html#a3f582387bb73bceb84cd1145fca0f974">More...</a><br /></td></tr>
 <tr class="separator:a3f582387bb73bceb84cd1145fca0f974 inherit pro_attribs_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_classEntity"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classEntity')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classEntity.html">Entity</a></td></tr>
-<tr class="memitem:aef7e4ad6c0431541bf51d93d7d759878 inherit pub_attribs_classEntity"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">center</a></td></tr>
-<tr class="memdesc:aef7e4ad6c0431541bf51d93d7d759878 inherit pub_attribs_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position of the objects center. Will be manipulated in order to move different entities.  <a href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">More...</a><br /></td></tr>
-<tr class="separator:aef7e4ad6c0431541bf51d93d7d759878 inherit pub_attribs_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6941e2890babbae875154757880e12d inherit pub_attribs_classEntity"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#ae6941e2890babbae875154757880e12d">radius</a></td></tr>
-<tr class="memdesc:ae6941e2890babbae875154757880e12d inherit pub_attribs_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Radius of this object.  <a href="classEntity.html#ae6941e2890babbae875154757880e12d">More...</a><br /></td></tr>
-<tr class="separator:ae6941e2890babbae875154757880e12d inherit pub_attribs_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="aaf1ec242ef909faa70a1358042eeb635" name="aaf1ec242ef909faa70a1358042eeb635"></a>
@@ -303,56 +292,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a64a69e6baa6f4d1329c8f2a767fc8b24" name="a64a69e6baa6f4d1329c8f2a767fc8b24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64a69e6baa6f4d1329c8f2a767fc8b24">&#9670;&#160;</a></span>tick()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Flying::tick </td>
-          <td>(</td>
-          <td class="paramtype">sf::Time&#160;</td>
-          <td class="paramname"><em>time</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classWorld.html">World</a> &amp;&#160;</td>
-          <td class="paramname"><em>world</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Updates the object for each frame, returns 'false' if the object is to be removed. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">time</td><td></td></tr>
-    <tr><td class="paramname">world</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true </dd>
-<dd>
-false </dd></dl>
-
-<p>Implements <a class="el" href="classEntity.html#ac848982e3a9c90e51dae85ea897b6558">Entity</a>.</p>
-
-</div>
-</div>
 <a id="a5a3f00cf9fee54adc9d399091de0088b" name="a5a3f00cf9fee54adc9d399091de0088b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5a3f00cf9fee54adc9d399091de0088b">&#9670;&#160;</a></span>verticalPosition()</h2>
 
@@ -390,31 +329,6 @@ false </dd></dl>
 <p>Handles the behaviour for vertical movement. Only utilized in <a class="el" href="flying_8h_source.html">flying.h</a>. </p>
 
 <p>Reimplemented from <a class="el" href="classHostile.html#a95d485dc94eb2589478d4347e9c3360b">Hostile</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="af8e0d83343fc153024703076c2b95e75" name="af8e0d83343fc153024703076c2b95e75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8e0d83343fc153024703076c2b95e75">&#9670;&#160;</a></span>blinkDuration</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">sf::Time Flying::blinkDuration {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>When taking damage, the hostile will turn red momentarily. This variable stores the current color. </p>
 
 </div>
 </div>

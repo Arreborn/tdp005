@@ -3,7 +3,7 @@
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Vector2.hpp>
 
-RangedAttack::RangedAttack(sf::Vector2f center, float damage,
+RangedAttack::RangedAttack(sf::Vector2f center, float const damage,
                            shared_ptr<Entity> attacker)
     : Attack{center, damage, attacker} {
   sf::Texture *t = SpriteManager::get("sprites/Arrow.png");
@@ -14,14 +14,13 @@ RangedAttack::RangedAttack(sf::Vector2f center, float damage,
   type = 'a';
 
   thisAttacker = attacker.get();
-
-  // center = thisAttacker->center;
-  if (thisAttacker->getDirection() == 'l') {
-    attackDirection = 'l';
+  attackDirection = thisAttacker->getDirection();
+  // sets the position of the spite depending on the direction the character
+  // using it
+  if (attackDirection == 'l') {
     center -= sf::Vector2f(64, 0);
     sprite.setScale(-0.75, 0.75);
-  } else if (thisAttacker->getDirection() == 'r') {
-    attackDirection = 'r';
+  } else if (attackDirection == 'r') {
     center += sf::Vector2f(64, 0);
     sprite.setScale(0.75, 0.75);
   }
@@ -29,14 +28,19 @@ RangedAttack::RangedAttack(sf::Vector2f center, float damage,
 
 bool RangedAttack::tick(sf::Time, World &world) {
 
+  // travels in the correct direction
   if (attackDirection == 'l') {
     center.x -= 6;
   } else if (attackDirection == 'r') {
     center.x += 6;
   }
+
+  // checks for collision and damages anything that isn't a block and the same
+  // type as this, asks to be removed after collision
   for (auto &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Entity *>(collision.get())->getType() !=
-        thisAttacker->getType()) {
+            thisAttacker->getType() &&
+        !dynamic_cast<Attack *>(collision.get())) {
       if (!dynamic_cast<Block *>(collision.get())) {
         collision->takeDamage(damage);
       }
@@ -44,6 +48,7 @@ bool RangedAttack::tick(sf::Time, World &world) {
     }
   }
 
+  // handles animations after 7 ticks
   if (tickCount == 7) {
     tickCount = 0;
     switch (animation) {
@@ -69,10 +74,12 @@ bool RangedAttack::tick(sf::Time, World &world) {
     if (animation == 5) {
       animation = 1;
     }
-  } else {
+  } else { // ups the tickcount after every tick that doesn't update the
+           // animation
     ++tickCount;
   }
 
+  // removes the object if it is out of bounds
   if (center.x == 0 || center.x == 1280) {
     return false;
   } else {

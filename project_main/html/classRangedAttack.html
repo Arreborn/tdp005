@@ -86,22 +86,33 @@ Inheritance diagram for RangedAttack:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRangedAttack__inherit__graph.png" border="0" usemap="#aRangedAttack_inherit__map" alt="Inheritance graph"/></div>
 <map name="aRangedAttack_inherit__map" id="aRangedAttack_inherit__map">
-<area shape="rect" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="12,621,140,793"/>
+<area shape="rect" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="12,621,140,749"/>
 <area shape="rect" href="classAttack.html" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="16,431,136,573"/>
 <area shape="rect" href="classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="18,108,134,383"/>
+<area shape="rect" title=" " alt="" coords="5,5,147,60"/>
+</map>
+</div>
+<div class="dynheader">
+Collaboration diagram for RangedAttack:</div>
+<div class="dyncontent">
+<div class="center"><img src="classRangedAttack__coll__graph.png" border="0" usemap="#aRangedAttack_coll__map" alt="Collaboration graph"/></div>
+<map name="aRangedAttack_coll__map" id="aRangedAttack_coll__map">
+<area shape="rect" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="12,624,140,752"/>
+<area shape="rect" href="classAttack.html" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="16,447,136,575"/>
+<area shape="rect" href="classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="18,109,134,384"/>
 <area shape="rect" title=" " alt="" coords="5,5,147,60"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae695a5fcf57c43c15598c7dc14ba1c78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRangedAttack.html#ae695a5fcf57c43c15598c7dc14ba1c78">RangedAttack</a> (sf::Vector2f <a class="el" href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">center</a>, float const <a class="el" href="classRangedAttack.html#ae121958c9bc53b578e7af2d910533f0d">damage</a>, shared_ptr&lt; <a class="el" href="classEntity.html">Entity</a> &gt; attacker)</td></tr>
+<tr class="memitem:ae695a5fcf57c43c15598c7dc14ba1c78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRangedAttack.html#ae695a5fcf57c43c15598c7dc14ba1c78">RangedAttack</a> (sf::Vector2f <a class="el" href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">center</a>, float const <a class="el" href="classAttack.html#aebc541003702819369c4645d425b8ba0">damage</a>, shared_ptr&lt; <a class="el" href="classEntity.html">Entity</a> &gt; attacker)</td></tr>
 <tr class="memdesc:ae695a5fcf57c43c15598c7dc14ba1c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor accepts the center of the unit producing the attack, the damage of the attack as well as a pointer to the entity producing the attack.  <a href="classRangedAttack.html#ae695a5fcf57c43c15598c7dc14ba1c78">More...</a><br /></td></tr>
 <tr class="separator:ae695a5fcf57c43c15598c7dc14ba1c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e7487b47c3dd38139be7e24138e4d90"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRangedAttack.html#a0e7487b47c3dd38139be7e24138e4d90">tick</a> (sf::Time time, <a class="el" href="classWorld.html">World</a> &amp;world) override</td></tr>
 <tr class="memdesc:a0e7487b47c3dd38139be7e24138e4d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">General tick function to remove the attack from the game world once it's done.  <a href="classRangedAttack.html#a0e7487b47c3dd38139be7e24138e4d90">More...</a><br /></td></tr>
 <tr class="separator:a0e7487b47c3dd38139be7e24138e4d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef21471a2ba156f578f01393e1b274aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRangedAttack.html#aef21471a2ba156f578f01393e1b274aa">takeDamage</a> (float <a class="el" href="classRangedAttack.html#ae121958c9bc53b578e7af2d910533f0d">damage</a>) override</td></tr>
+<tr class="memitem:aef21471a2ba156f578f01393e1b274aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRangedAttack.html#aef21471a2ba156f578f01393e1b274aa">takeDamage</a> (float <a class="el" href="classAttack.html#aebc541003702819369c4645d425b8ba0">damage</a>) override</td></tr>
 <tr class="memdesc:aef21471a2ba156f578f01393e1b274aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override for takeDamage. Will not be used by this entity.  <a href="classRangedAttack.html#aef21471a2ba156f578f01393e1b274aa">More...</a><br /></td></tr>
 <tr class="separator:aef21471a2ba156f578f01393e1b274aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classAttack"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classAttack')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classAttack.html">Attack</a></td></tr>
@@ -139,9 +150,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">getType</a> ()</td></tr>
 <tr class="memdesc:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the object.  <a href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">More...</a><br /></td></tr>
 <tr class="separator:aeffdfacd2f3d702646d0578207a5d5e2 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">takeDamage</a> (float damage)=0</td></tr>
-<tr class="memdesc:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual function that allows entities to take damage.  <a href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">More...</a><br /></td></tr>
-<tr class="separator:acba3aef953ec394be8b40231a7ce70b1 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa863cbb2f678afefb5574ccd32051cbf inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aa863cbb2f678afefb5574ccd32051cbf">takeDamage</a> (float damage)=0</td></tr>
+<tr class="memdesc:aa863cbb2f678afefb5574ccd32051cbf inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual function that allows entities to take damage.  <a href="classEntity.html#aa863cbb2f678afefb5574ccd32051cbf">More...</a><br /></td></tr>
+<tr class="separator:aa863cbb2f678afefb5574ccd32051cbf inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classEntity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">ptrGet</a> ()</td></tr>
 <tr class="memdesc:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a shared pointer from this entity to ensure no friendly fire when attacking.  <a href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">More...</a><br /></td></tr>
 <tr class="separator:a0dcee8151b1eab8251d315b98ed65921 inherit pub_methods_classEntity"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,18 +162,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ae121958c9bc53b578e7af2d910533f0d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRangedAttack.html#ae121958c9bc53b578e7af2d910533f0d">damage</a> {}</td></tr>
-<tr class="memdesc:ae121958c9bc53b578e7af2d910533f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the damage of the attack while the object lives.  <a href="classRangedAttack.html#ae121958c9bc53b578e7af2d910533f0d">More...</a><br /></td></tr>
-<tr class="separator:ae121958c9bc53b578e7af2d910533f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa09382f0ee1cfcf721130c180fd05fa7"><td class="memItemLeft" align="right" valign="top"><a id="aa09382f0ee1cfcf721130c180fd05fa7" name="aa09382f0ee1cfcf721130c180fd05fa7"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>attackDirection</b> {}</td></tr>
+<tr class="memitem:aa09382f0ee1cfcf721130c180fd05fa7"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRangedAttack.html#aa09382f0ee1cfcf721130c180fd05fa7">attackDirection</a> {}</td></tr>
+<tr class="memdesc:aa09382f0ee1cfcf721130c180fd05fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The direction of this attack.  <a href="classRangedAttack.html#aa09382f0ee1cfcf721130c180fd05fa7">More...</a><br /></td></tr>
 <tr class="separator:aa09382f0ee1cfcf721130c180fd05fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9786238a8cbf14f7bea48a5fd2fe8759"><td class="memItemLeft" align="right" valign="top">sf::Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRangedAttack.html#a9786238a8cbf14f7bea48a5fd2fe8759">attackDuration</a> {}</td></tr>
-<tr class="memdesc:a9786238a8cbf14f7bea48a5fd2fe8759"><td class="mdescLeft">&#160;</td><td class="mdescRight">The duration of the attack.  <a href="classRangedAttack.html#a9786238a8cbf14f7bea48a5fd2fe8759">More...</a><br /></td></tr>
-<tr class="separator:a9786238a8cbf14f7bea48a5fd2fe8759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f061a0e9defb9f9f2e115e4d3dec333"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEntity.html">Entity</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRangedAttack.html#a9f061a0e9defb9f9f2e115e4d3dec333">thisAttacker</a> {}</td></tr>
-<tr class="memdesc:a9f061a0e9defb9f9f2e115e4d3dec333"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to the attacking unit to avoid friendly fire.  <a href="classRangedAttack.html#a9f061a0e9defb9f9f2e115e4d3dec333">More...</a><br /></td></tr>
-<tr class="separator:a9f061a0e9defb9f9f2e115e4d3dec333"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80e0fe6261db7d8c7af5839c95df6fb3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRangedAttack.html#a80e0fe6261db7d8c7af5839c95df6fb3">animation</a> {1}</td></tr>
 <tr class="memdesc:a80e0fe6261db7d8c7af5839c95df6fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This integer tracks the current animation frame for this object.  <a href="classRangedAttack.html#a80e0fe6261db7d8c7af5839c95df6fb3">More...</a><br /></td></tr>
 <tr class="separator:a80e0fe6261db7d8c7af5839c95df6fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -362,8 +364,8 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a9786238a8cbf14f7bea48a5fd2fe8759" name="a9786238a8cbf14f7bea48a5fd2fe8759"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9786238a8cbf14f7bea48a5fd2fe8759">&#9670;&#160;</a></span>attackDuration</h2>
+<a id="aa09382f0ee1cfcf721130c180fd05fa7" name="aa09382f0ee1cfcf721130c180fd05fa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa09382f0ee1cfcf721130c180fd05fa7">&#9670;&#160;</a></span>attackDirection</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,7 +374,7 @@ false </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">sf::Time RangedAttack::attackDuration {}</td>
+          <td class="memname">char RangedAttack::attackDirection {}</td>
         </tr>
       </table>
   </td>
@@ -382,55 +384,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>The duration of the attack. </p>
-
-</div>
-</div>
-<a id="ae121958c9bc53b578e7af2d910533f0d" name="ae121958c9bc53b578e7af2d910533f0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae121958c9bc53b578e7af2d910533f0d">&#9670;&#160;</a></span>damage</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float RangedAttack::damage {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Stores the damage of the attack while the object lives. </p>
-
-</div>
-</div>
-<a id="a9f061a0e9defb9f9f2e115e4d3dec333" name="a9f061a0e9defb9f9f2e115e4d3dec333"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f061a0e9defb9f9f2e115e4d3dec333">&#9670;&#160;</a></span>thisAttacker</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classEntity.html">Entity</a>* RangedAttack::thisAttacker {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A pointer to the attacking unit to avoid friendly fire. </p>
+<p>The direction of this attack. </p>
 
 </div>
 </div>

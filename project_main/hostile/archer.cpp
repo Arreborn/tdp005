@@ -11,10 +11,8 @@ Archer::Archer(sf::Vector2f center) : Hostile(center) {
   sprite.setOrigin(0, 0);
 }
 
-// Not used for this entity but must be defined
-void Archer::verticalPosition(sf::Time const &, World &) {}
-
 void Archer::horizontalPosition(sf::Time const &time, World &world) {
+  // detects an edge to not walk off it
   float xOffset{};
   float yOffset{getBounds().top + 16 + 1};
   if (direction == 'l') {
@@ -23,6 +21,9 @@ void Archer::horizontalPosition(sf::Time const &time, World &world) {
     xOffset = getBounds().left + getBounds().width + 1;
   }
 
+  // defines movement
+  // will walk towards player if they're on the same y coordinate
+  // will stop if 200 pixels away from the player
   sf::Vector2f playerPos{world.playerCharacter->getCenter()};
   if (playerPos.y == center.y + 1.5) {
     if (playerPos.x < center.x) {
@@ -39,7 +40,7 @@ void Archer::horizontalPosition(sf::Time const &time, World &world) {
         center.x += 1;
       }
     }
-  } else {
+  } else { // if not on the same coordinate, uses random behaviour
     int random{rand() % 100 + 1};
     if (random == 100) {
       direction = 'l';
@@ -55,7 +56,9 @@ void Archer::horizontalPosition(sf::Time const &time, World &world) {
       if (world.detectEdge(xOffset, yOffset)) {
         center.x -= 1;
       }
+
       movementDuration -= time;
+
     } else if (direction == 'r' && movementDuration > sf::seconds(0)) {
       if (world.detectEdge(xOffset, yOffset)) {
         center.x += 1;

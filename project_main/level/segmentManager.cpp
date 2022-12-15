@@ -23,8 +23,7 @@ string SegmentManager::get() {
     std::default_random_engine engine(device());
     shuffle(begin(storedSegments), end(storedSegments), engine);
   }
-  string randomSegment{
-      storedSegments.back()}; // Nånting tappas vid konvertering mellan chars
+  string randomSegment{storedSegments.back()};
   storedSegments.pop_back();
   return randomSegment;
 }

@@ -49,7 +49,6 @@ shared_ptr<State> GameState::tick(sf::Time time, sf::RenderWindow &window) {
       window.setView(view);
       return std::make_shared<MenuState>(shared_from_this());
     }
-    player->heal();
     world.getLevel((player->getCenter().x > 640), player);
   }
 
@@ -72,7 +71,7 @@ void GameState::loadTextures() {
   sf::Texture *bgT = SpriteManager::get("sprites/bgTrees.png");
   sf::Texture *bgF = SpriteManager::get("sprites/bgForeground.png");
   sf::Texture *bgL = SpriteManager::get("sprites/bgLights.png");
-  // Texture assign
+  // Texture assignment
   hpBar.setTexture(*hpText);
   hpBarBackground.setTexture(*hpBg);
   bgBack.setTexture(*bg);

@@ -87,15 +87,25 @@ Inheritance diagram for Entity:</div>
 <div class="dyncontent">
 <div class="center"><img src="classEntity__inherit__graph.png" border="0" usemap="#aEntity_inherit__map" alt="Inheritance graph"/></div>
 <map name="aEntity_inherit__map" id="aEntity_inherit__map">
-<area shape="rect" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="231,108,347,383"/>
-<area shape="rect" href="classAttack.html" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="9,563,129,705"/>
-<area shape="rect" href="classBlock.html" title="This is a general base class handling the creation of block&#45;objects." alt="" coords="154,585,270,683"/>
-<area shape="rect" href="classHostile.html" title="This is a base class for hostiles. From this, sub&#45;classes for more avanced enemies can be added." alt="" coords="294,519,439,749"/>
-<area shape="rect" href="classPlayer.html" title="This class defines and handles the player character." alt="" coords="463,431,609,837"/>
-<area shape="rect" title=" " alt="" coords="219,5,360,60"/>
-<area shape="rect" href="classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="5,893,133,1065"/>
-<area shape="rect" href="classArcher.html" title="This sub&#45;class is a basic ranged enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="226,922,371,1035"/>
-<area shape="rect" href="classFlying.html" title=" " alt="" coords="395,885,541,1072"/>
+<area shape="rect" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="335,108,451,383"/>
+<area shape="rect" href="classAttack.html" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="113,563,233,705"/>
+<area shape="rect" href="classBlock.html" title="This is a general base class handling the creation of block&#45;objects." alt="" coords="258,585,374,683"/>
+<area shape="rect" href="classHostile.html" title="This is a base class for hostiles. From this, sub&#45;classes for more avanced enemies can be added." alt="" coords="398,519,543,749"/>
+<area shape="rect" href="classPlayer.html" title="This class defines and handles the player character." alt="" coords="567,431,713,837"/>
+<area shape="rect" title=" " alt="" coords="323,5,464,60"/>
+<area shape="rect" href="classDropAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="5,915,120,984"/>
+<area shape="rect" href="classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="144,885,272,1013"/>
+<area shape="rect" href="classArcher.html" title="This sub&#45;class is a basic ranged enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="365,907,510,991"/>
+<area shape="rect" href="classFlying.html" title=" " alt="" coords="534,900,679,999"/>
+</map>
+</div>
+<div class="dynheader">
+Collaboration diagram for Entity:</div>
+<div class="dyncontent">
+<div class="center"><img src="classEntity__coll__graph.png" border="0" usemap="#aEntity_coll__map" alt="Collaboration graph"/></div>
+<map name="aEntity_coll__map" id="aEntity_coll__map">
+<area shape="rect" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="18,108,134,383"/>
+<area shape="rect" title=" " alt="" coords="5,5,147,60"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -125,9 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeffdfacd2f3d702646d0578207a5d5e2"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">getType</a> ()</td></tr>
 <tr class="memdesc:aeffdfacd2f3d702646d0578207a5d5e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the object.  <a href="classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2">More...</a><br /></td></tr>
 <tr class="separator:aeffdfacd2f3d702646d0578207a5d5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acba3aef953ec394be8b40231a7ce70b1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">takeDamage</a> (float damage)=0</td></tr>
-<tr class="memdesc:acba3aef953ec394be8b40231a7ce70b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual function that allows entities to take damage.  <a href="classEntity.html#acba3aef953ec394be8b40231a7ce70b1">More...</a><br /></td></tr>
-<tr class="separator:acba3aef953ec394be8b40231a7ce70b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa863cbb2f678afefb5574ccd32051cbf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aa863cbb2f678afefb5574ccd32051cbf">takeDamage</a> (float damage)=0</td></tr>
+<tr class="memdesc:aa863cbb2f678afefb5574ccd32051cbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual function that allows entities to take damage.  <a href="classEntity.html#aa863cbb2f678afefb5574ccd32051cbf">More...</a><br /></td></tr>
+<tr class="separator:aa863cbb2f678afefb5574ccd32051cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dcee8151b1eab8251d315b98ed65921"><td class="memItemLeft" align="right" valign="top">virtual shared_ptr&lt; <a class="el" href="classEntity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">ptrGet</a> ()</td></tr>
 <tr class="memdesc:a0dcee8151b1eab8251d315b98ed65921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a shared pointer from this entity to ensure no friendly fire when attacking.  <a href="classEntity.html#a0dcee8151b1eab8251d315b98ed65921">More...</a><br /></td></tr>
 <tr class="separator:a0dcee8151b1eab8251d315b98ed65921"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -396,8 +406,8 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="acba3aef953ec394be8b40231a7ce70b1" name="acba3aef953ec394be8b40231a7ce70b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acba3aef953ec394be8b40231a7ce70b1">&#9670;&#160;</a></span>takeDamage()</h2>
+<a id="aa863cbb2f678afefb5574ccd32051cbf" name="aa863cbb2f678afefb5574ccd32051cbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa863cbb2f678afefb5574ccd32051cbf">&#9670;&#160;</a></span>takeDamage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -406,7 +416,7 @@ false </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Entity::takeDamage </td>
+          <td class="memname">virtual void Entity::takeDamage </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>damage</em></td><td>)</td>
@@ -478,7 +488,7 @@ false </dd></dl>
 <dd>
 false </dd></dl>
 
-<p>Implemented in <a class="el" href="classAttack.html#a295552064b2acb9c49b8b394e15adfdb">Attack</a>, <a class="el" href="classRangedAttack.html#a0e7487b47c3dd38139be7e24138e4d90">RangedAttack</a>, <a class="el" href="classArcher.html#a2dcadd5db60f027f3688dee3b6826e46">Archer</a>, <a class="el" href="classFlying.html#a64a69e6baa6f4d1329c8f2a767fc8b24">Flying</a>, <a class="el" href="classHostile.html#a5624d65d5de8f42103b62ab43a168326">Hostile</a>, <a class="el" href="classPlayer.html#ad79b6eff5d0bef2e8d85ec0e7eddc0fb">Player</a>, and <a class="el" href="classBlock.html#a31c734289446423f6deed05301076cf6">Block</a>.</p>
+<p>Implemented in <a class="el" href="classAttack.html#a295552064b2acb9c49b8b394e15adfdb">Attack</a>, <a class="el" href="classDropAttack.html#a5b94abf1cdf20877a7831d5a5205917c">DropAttack</a>, <a class="el" href="classRangedAttack.html#a0e7487b47c3dd38139be7e24138e4d90">RangedAttack</a>, <a class="el" href="classHostile.html#a5624d65d5de8f42103b62ab43a168326">Hostile</a>, <a class="el" href="classPlayer.html#ad79b6eff5d0bef2e8d85ec0e7eddc0fb">Player</a>, and <a class="el" href="classBlock.html#a31c734289446423f6deed05301076cf6">Block</a>.</p>
 
 </div>
 </div>
