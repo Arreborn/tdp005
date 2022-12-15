@@ -55,7 +55,7 @@ public:
    * @brief Handles the behaviour for vertical movement. DEPRECATED?
    *
    */
-  virtual void verticalPosition();
+  virtual void verticalPosition(sf::Time const &time, World &world);
 
   /**
    * @brief Handles the behaviour for horizontal movement.

@@ -39,7 +39,7 @@ public:
    * @brief Handles the behaviour for vertical movement. DEPRECATED?
    *
    */
-  void verticalPosition() override;
+  void verticalPosition(sf::Time const &time, World &world) override;
 
   /**
    * @brief Handles the behaviour for horizontal movement.

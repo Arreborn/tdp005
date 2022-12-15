@@ -13,7 +13,8 @@
  * @brief This class manages construction of levels from segments.
  *
  */
-class LevelConstructor {
+class LevelConstructor
+{
 private:
   /**
    * @brief General switch function that creates a new object depending on the

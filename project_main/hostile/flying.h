@@ -11,7 +11,7 @@ public:
     bool tick(sf::Time time, World &world) override;
     void render(sf::RenderWindow &drawto) override;
 
-    void verticalPosition() override;
+    void verticalPosition(sf::Time const &time, World &world) override;
     void horizontalPosition(sf::Time const &time, World &world) override;
     void attack(World &world) override;
 
