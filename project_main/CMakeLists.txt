@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16.6) # Ändra denna om den skriker
-project(demo)
+project(DuckSouls3)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -std=c++17")
@@ -45,5 +45,5 @@ if (NOT (${SFML_FOUND} STREQUAL "TRUE"))
   endforeach (i)
 endif ()
 
-add_executable (demo ${SOURCE_FILES})
-target_link_libraries (demo ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+add_executable (DuckSouls3 ${SOURCE_FILES})
+target_link_libraries (DuckSouls3 ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})

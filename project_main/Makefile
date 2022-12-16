@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kasken/Documents/TDP005/project_main
+CMAKE_SOURCE_DIR = /home/arreborn/Documents/TDP005/project_main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kasken/Documents/TDP005/project_main
+CMAKE_BINARY_DIR = /home/arreborn/Documents/TDP005/project_main
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kasken/Documents/TDP005/project_main/CMakeFiles /home/kasken/Documents/TDP005/project_main//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arreborn/Documents/TDP005/project_main/CMakeFiles /home/arreborn/Documents/TDP005/project_main//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kasken/Documents/TDP005/project_main/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arreborn/Documents/TDP005/project_main/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named demo
+# Target rules for targets named DuckSouls3
 
 # Build rule for target.
-demo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 demo
-.PHONY : demo
+DuckSouls3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DuckSouls3
+.PHONY : DuckSouls3
 
 # fast build rule for target.
-demo/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
-.PHONY : demo/fast
+DuckSouls3/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/build
+.PHONY : DuckSouls3/fast
 
 attack/attack.o: attack/attack.cpp.o
 .PHONY : attack/attack.o
 
 # target to build an object file
 attack/attack.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/attack.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/attack/attack.cpp.o
 .PHONY : attack/attack.cpp.o
 
 attack/attack.i: attack/attack.cpp.i
@@ -142,7 +142,7 @@ attack/attack.i: attack/attack.cpp.i
 
 # target to preprocess a source file
 attack/attack.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/attack.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/attack/attack.cpp.i
 .PHONY : attack/attack.cpp.i
 
 attack/attack.s: attack/attack.cpp.s
@@ -150,7 +150,7 @@ attack/attack.s: attack/attack.cpp.s
 
 # target to generate assembly for a file
 attack/attack.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/attack.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/attack/attack.cpp.s
 .PHONY : attack/attack.cpp.s
 
 attack/dropAttack.o: attack/dropAttack.cpp.o
@@ -158,7 +158,7 @@ attack/dropAttack.o: attack/dropAttack.cpp.o
 
 # target to build an object file
 attack/dropAttack.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/dropAttack.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/attack/dropAttack.cpp.o
 .PHONY : attack/dropAttack.cpp.o
 
 attack/dropAttack.i: attack/dropAttack.cpp.i
@@ -166,7 +166,7 @@ attack/dropAttack.i: attack/dropAttack.cpp.i
 
 # target to preprocess a source file
 attack/dropAttack.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/dropAttack.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/attack/dropAttack.cpp.i
 .PHONY : attack/dropAttack.cpp.i
 
 attack/dropAttack.s: attack/dropAttack.cpp.s
@@ -174,7 +174,7 @@ attack/dropAttack.s: attack/dropAttack.cpp.s
 
 # target to generate assembly for a file
 attack/dropAttack.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/dropAttack.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/attack/dropAttack.cpp.s
 .PHONY : attack/dropAttack.cpp.s
 
 attack/rangedAttack.o: attack/rangedAttack.cpp.o
@@ -182,7 +182,7 @@ attack/rangedAttack.o: attack/rangedAttack.cpp.o
 
 # target to build an object file
 attack/rangedAttack.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/rangedAttack.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/attack/rangedAttack.cpp.o
 .PHONY : attack/rangedAttack.cpp.o
 
 attack/rangedAttack.i: attack/rangedAttack.cpp.i
@@ -190,7 +190,7 @@ attack/rangedAttack.i: attack/rangedAttack.cpp.i
 
 # target to preprocess a source file
 attack/rangedAttack.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/rangedAttack.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/attack/rangedAttack.cpp.i
 .PHONY : attack/rangedAttack.cpp.i
 
 attack/rangedAttack.s: attack/rangedAttack.cpp.s
@@ -198,7 +198,7 @@ attack/rangedAttack.s: attack/rangedAttack.cpp.s
 
 # target to generate assembly for a file
 attack/rangedAttack.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/attack/rangedAttack.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/attack/rangedAttack.cpp.s
 .PHONY : attack/rangedAttack.cpp.s
 
 entity/entity.o: entity/entity.cpp.o
@@ -206,7 +206,7 @@ entity/entity.o: entity/entity.cpp.o
 
 # target to build an object file
 entity/entity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/entity/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/entity/entity.cpp.o
 .PHONY : entity/entity.cpp.o
 
 entity/entity.i: entity/entity.cpp.i
@@ -214,7 +214,7 @@ entity/entity.i: entity/entity.cpp.i
 
 # target to preprocess a source file
 entity/entity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/entity/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/entity/entity.cpp.i
 .PHONY : entity/entity.cpp.i
 
 entity/entity.s: entity/entity.cpp.s
@@ -222,7 +222,7 @@ entity/entity.s: entity/entity.cpp.s
 
 # target to generate assembly for a file
 entity/entity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/entity/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/entity/entity.cpp.s
 .PHONY : entity/entity.cpp.s
 
 hostile/archer.o: hostile/archer.cpp.o
@@ -230,7 +230,7 @@ hostile/archer.o: hostile/archer.cpp.o
 
 # target to build an object file
 hostile/archer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/archer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/hostile/archer.cpp.o
 .PHONY : hostile/archer.cpp.o
 
 hostile/archer.i: hostile/archer.cpp.i
@@ -238,7 +238,7 @@ hostile/archer.i: hostile/archer.cpp.i
 
 # target to preprocess a source file
 hostile/archer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/archer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/hostile/archer.cpp.i
 .PHONY : hostile/archer.cpp.i
 
 hostile/archer.s: hostile/archer.cpp.s
@@ -246,7 +246,7 @@ hostile/archer.s: hostile/archer.cpp.s
 
 # target to generate assembly for a file
 hostile/archer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/archer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/hostile/archer.cpp.s
 .PHONY : hostile/archer.cpp.s
 
 hostile/flying.o: hostile/flying.cpp.o
@@ -254,7 +254,7 @@ hostile/flying.o: hostile/flying.cpp.o
 
 # target to build an object file
 hostile/flying.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/flying.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/hostile/flying.cpp.o
 .PHONY : hostile/flying.cpp.o
 
 hostile/flying.i: hostile/flying.cpp.i
@@ -262,7 +262,7 @@ hostile/flying.i: hostile/flying.cpp.i
 
 # target to preprocess a source file
 hostile/flying.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/flying.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/hostile/flying.cpp.i
 .PHONY : hostile/flying.cpp.i
 
 hostile/flying.s: hostile/flying.cpp.s
@@ -270,7 +270,7 @@ hostile/flying.s: hostile/flying.cpp.s
 
 # target to generate assembly for a file
 hostile/flying.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/flying.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/hostile/flying.cpp.s
 .PHONY : hostile/flying.cpp.s
 
 hostile/hostile.o: hostile/hostile.cpp.o
@@ -278,7 +278,7 @@ hostile/hostile.o: hostile/hostile.cpp.o
 
 # target to build an object file
 hostile/hostile.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/hostile.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/hostile/hostile.cpp.o
 .PHONY : hostile/hostile.cpp.o
 
 hostile/hostile.i: hostile/hostile.cpp.i
@@ -286,7 +286,7 @@ hostile/hostile.i: hostile/hostile.cpp.i
 
 # target to preprocess a source file
 hostile/hostile.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/hostile.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/hostile/hostile.cpp.i
 .PHONY : hostile/hostile.cpp.i
 
 hostile/hostile.s: hostile/hostile.cpp.s
@@ -294,7 +294,7 @@ hostile/hostile.s: hostile/hostile.cpp.s
 
 # target to generate assembly for a file
 hostile/hostile.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/hostile/hostile.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/hostile/hostile.cpp.s
 .PHONY : hostile/hostile.cpp.s
 
 level/levelConstructor.o: level/levelConstructor.cpp.o
@@ -302,7 +302,7 @@ level/levelConstructor.o: level/levelConstructor.cpp.o
 
 # target to build an object file
 level/levelConstructor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/level/levelConstructor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/level/levelConstructor.cpp.o
 .PHONY : level/levelConstructor.cpp.o
 
 level/levelConstructor.i: level/levelConstructor.cpp.i
@@ -310,7 +310,7 @@ level/levelConstructor.i: level/levelConstructor.cpp.i
 
 # target to preprocess a source file
 level/levelConstructor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/level/levelConstructor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/level/levelConstructor.cpp.i
 .PHONY : level/levelConstructor.cpp.i
 
 level/levelConstructor.s: level/levelConstructor.cpp.s
@@ -318,7 +318,7 @@ level/levelConstructor.s: level/levelConstructor.cpp.s
 
 # target to generate assembly for a file
 level/levelConstructor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/level/levelConstructor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/level/levelConstructor.cpp.s
 .PHONY : level/levelConstructor.cpp.s
 
 level/segmentManager.o: level/segmentManager.cpp.o
@@ -326,7 +326,7 @@ level/segmentManager.o: level/segmentManager.cpp.o
 
 # target to build an object file
 level/segmentManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/level/segmentManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/level/segmentManager.cpp.o
 .PHONY : level/segmentManager.cpp.o
 
 level/segmentManager.i: level/segmentManager.cpp.i
@@ -334,7 +334,7 @@ level/segmentManager.i: level/segmentManager.cpp.i
 
 # target to preprocess a source file
 level/segmentManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/level/segmentManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/level/segmentManager.cpp.i
 .PHONY : level/segmentManager.cpp.i
 
 level/segmentManager.s: level/segmentManager.cpp.s
@@ -342,7 +342,7 @@ level/segmentManager.s: level/segmentManager.cpp.s
 
 # target to generate assembly for a file
 level/segmentManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/level/segmentManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/level/segmentManager.cpp.s
 .PHONY : level/segmentManager.cpp.s
 
 main.o: main.cpp.o
@@ -350,7 +350,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -358,7 +358,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -366,7 +366,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 player/player.o: player/player.cpp.o
@@ -374,7 +374,7 @@ player/player.o: player/player.cpp.o
 
 # target to build an object file
 player/player.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/player/player.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/player/player.cpp.o
 .PHONY : player/player.cpp.o
 
 player/player.i: player/player.cpp.i
@@ -382,7 +382,7 @@ player/player.i: player/player.cpp.i
 
 # target to preprocess a source file
 player/player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/player/player.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/player/player.cpp.i
 .PHONY : player/player.cpp.i
 
 player/player.s: player/player.cpp.s
@@ -390,7 +390,7 @@ player/player.s: player/player.cpp.s
 
 # target to generate assembly for a file
 player/player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/player/player.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/player/player.cpp.s
 .PHONY : player/player.cpp.s
 
 sprites/spriteManager.o: sprites/spriteManager.cpp.o
@@ -398,7 +398,7 @@ sprites/spriteManager.o: sprites/spriteManager.cpp.o
 
 # target to build an object file
 sprites/spriteManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/sprites/spriteManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/sprites/spriteManager.cpp.o
 .PHONY : sprites/spriteManager.cpp.o
 
 sprites/spriteManager.i: sprites/spriteManager.cpp.i
@@ -406,7 +406,7 @@ sprites/spriteManager.i: sprites/spriteManager.cpp.i
 
 # target to preprocess a source file
 sprites/spriteManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/sprites/spriteManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/sprites/spriteManager.cpp.i
 .PHONY : sprites/spriteManager.cpp.i
 
 sprites/spriteManager.s: sprites/spriteManager.cpp.s
@@ -414,7 +414,7 @@ sprites/spriteManager.s: sprites/spriteManager.cpp.s
 
 # target to generate assembly for a file
 sprites/spriteManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/sprites/spriteManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/sprites/spriteManager.cpp.s
 .PHONY : sprites/spriteManager.cpp.s
 
 state/gameState.o: state/gameState.cpp.o
@@ -422,7 +422,7 @@ state/gameState.o: state/gameState.cpp.o
 
 # target to build an object file
 state/gameState.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/state/gameState.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/state/gameState.cpp.o
 .PHONY : state/gameState.cpp.o
 
 state/gameState.i: state/gameState.cpp.i
@@ -430,7 +430,7 @@ state/gameState.i: state/gameState.cpp.i
 
 # target to preprocess a source file
 state/gameState.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/state/gameState.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/state/gameState.cpp.i
 .PHONY : state/gameState.cpp.i
 
 state/gameState.s: state/gameState.cpp.s
@@ -438,7 +438,7 @@ state/gameState.s: state/gameState.cpp.s
 
 # target to generate assembly for a file
 state/gameState.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/state/gameState.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/state/gameState.cpp.s
 .PHONY : state/gameState.cpp.s
 
 state/menuState.o: state/menuState.cpp.o
@@ -446,7 +446,7 @@ state/menuState.o: state/menuState.cpp.o
 
 # target to build an object file
 state/menuState.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/state/menuState.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/state/menuState.cpp.o
 .PHONY : state/menuState.cpp.o
 
 state/menuState.i: state/menuState.cpp.i
@@ -454,7 +454,7 @@ state/menuState.i: state/menuState.cpp.i
 
 # target to preprocess a source file
 state/menuState.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/state/menuState.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/state/menuState.cpp.i
 .PHONY : state/menuState.cpp.i
 
 state/menuState.s: state/menuState.cpp.s
@@ -462,7 +462,7 @@ state/menuState.s: state/menuState.cpp.s
 
 # target to generate assembly for a file
 state/menuState.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/state/menuState.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/state/menuState.cpp.s
 .PHONY : state/menuState.cpp.s
 
 state/state.o: state/state.cpp.o
@@ -470,7 +470,7 @@ state/state.o: state/state.cpp.o
 
 # target to build an object file
 state/state.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/state/state.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/state/state.cpp.o
 .PHONY : state/state.cpp.o
 
 state/state.i: state/state.cpp.i
@@ -478,7 +478,7 @@ state/state.i: state/state.cpp.i
 
 # target to preprocess a source file
 state/state.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/state/state.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/state/state.cpp.i
 .PHONY : state/state.cpp.i
 
 state/state.s: state/state.cpp.s
@@ -486,7 +486,7 @@ state/state.s: state/state.cpp.s
 
 # target to generate assembly for a file
 state/state.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/state/state.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/state/state.cpp.s
 .PHONY : state/state.cpp.s
 
 staticEntity/block.o: staticEntity/block.cpp.o
@@ -494,7 +494,7 @@ staticEntity/block.o: staticEntity/block.cpp.o
 
 # target to build an object file
 staticEntity/block.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/staticEntity/block.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/staticEntity/block.cpp.o
 .PHONY : staticEntity/block.cpp.o
 
 staticEntity/block.i: staticEntity/block.cpp.i
@@ -502,7 +502,7 @@ staticEntity/block.i: staticEntity/block.cpp.i
 
 # target to preprocess a source file
 staticEntity/block.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/staticEntity/block.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/staticEntity/block.cpp.i
 .PHONY : staticEntity/block.cpp.i
 
 staticEntity/block.s: staticEntity/block.cpp.s
@@ -510,7 +510,7 @@ staticEntity/block.s: staticEntity/block.cpp.s
 
 # target to generate assembly for a file
 staticEntity/block.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/staticEntity/block.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/staticEntity/block.cpp.s
 .PHONY : staticEntity/block.cpp.s
 
 world.o: world.cpp.o
@@ -518,7 +518,7 @@ world.o: world.cpp.o
 
 # target to build an object file
 world.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/world.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/world.cpp.o
 .PHONY : world.cpp.o
 
 world.i: world.cpp.i
@@ -526,7 +526,7 @@ world.i: world.cpp.i
 
 # target to preprocess a source file
 world.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/world.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/world.cpp.i
 .PHONY : world.cpp.i
 
 world.s: world.cpp.s
@@ -534,7 +534,7 @@ world.s: world.cpp.s
 
 # target to generate assembly for a file
 world.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/world.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DuckSouls3.dir/build.make CMakeFiles/DuckSouls3.dir/world.cpp.s
 .PHONY : world.cpp.s
 
 # Help Target
@@ -545,7 +545,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... demo"
+	@echo "... DuckSouls3"
 	@echo "... attack/attack.o"
 	@echo "... attack/attack.i"
 	@echo "... attack/attack.s"

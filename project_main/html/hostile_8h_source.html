@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: hostile/hostile.h Source File</title>
+<title>Duck Souls 3: hostile/hostile.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">Duck Souls 3
    </div>
+   <div id="projectbrief">Duck Souls 3 is a pseudo-roguelite side scrolling adventure game.</div>
   </td>
  </tr>
  </tbody>
@@ -106,22 +107,25 @@ $(function() {
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classHostile.html#a685ae4e29c82f9afe1babf89e9cd3b63">   88</a></span>  sf::Vector2f <a class="code hl_variable" href="classHostile.html#a685ae4e29c82f9afe1babf89e9cd3b63">acceleration</a>{0, 2};</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classHostile.html#a586cf807b1fcd374afc38edaf1e6f6ec">   95</a></span>  sf::Time <a class="code hl_variable" href="classHostile.html#a586cf807b1fcd374afc38edaf1e6f6ec">blinkDuration</a>{};</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  sf::Time attackCooldown{};</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  sf::Time movementDuration{};</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>};</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  sf::Time attackCooldown{};</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  sf::Time movementDuration{};</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  sf::Time chargeUp{};</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>};</div>
 <div class="ttc" id="aclassEntity_html"><div class="ttname"><a href="classEntity.html">Entity</a></div><div class="ttdoc">An abstract game object for all types of entities that will be drawn in the game world.</div><div class="ttdef"><b>Definition:</b> entity.h:11</div></div>
 <div class="ttc" id="aclassEntity_html_aef7e4ad6c0431541bf51d93d7d759878"><div class="ttname"><a href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">Entity::center</a></div><div class="ttdeci">sf::Vector2f center</div><div class="ttdoc">Position of the objects center. Will be manipulated in order to move different entities.</div><div class="ttdef"><b>Definition:</b> entity.h:34</div></div>
 <div class="ttc" id="aclassHostile_html"><div class="ttname"><a href="classHostile.html">Hostile</a></div><div class="ttdoc">This is a base class for hostiles. From this, sub-classes for more avanced enemies can be added.</div><div class="ttdef"><b>Definition:</b> hostile.h:12</div></div>
 <div class="ttc" id="aclassHostile_html_a1e80eaf306c146e3cb220e001fc4a5b4"><div class="ttname"><a href="classHostile.html#a1e80eaf306c146e3cb220e001fc4a5b4">Hostile::health</a></div><div class="ttdeci">int health</div><div class="ttdoc">Stores the health of the hostile.</div><div class="ttdef"><b>Definition:</b> hostile.h:75</div></div>
-<div class="ttc" id="aclassHostile_html_a561696964930b682d15a39c39327d073"><div class="ttname"><a href="classHostile.html#a561696964930b682d15a39c39327d073">Hostile::isAlive</a></div><div class="ttdeci">bool isAlive() override</div><div class="ttdoc">Returns whether the hostile is alive or not.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:137</div></div>
-<div class="ttc" id="aclassHostile_html_a5624d65d5de8f42103b62ab43a168326"><div class="ttname"><a href="classHostile.html#a5624d65d5de8f42103b62ab43a168326">Hostile::tick</a></div><div class="ttdeci">bool tick(sf::Time time, World &amp;world) override</div><div class="ttdoc">Updates the object. Will return false when the unit has died.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:66</div></div>
+<div class="ttc" id="aclassHostile_html_a561696964930b682d15a39c39327d073"><div class="ttname"><a href="classHostile.html#a561696964930b682d15a39c39327d073">Hostile::isAlive</a></div><div class="ttdeci">bool isAlive() override</div><div class="ttdoc">Returns whether the hostile is alive or not.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:154</div></div>
+<div class="ttc" id="aclassHostile_html_a5624d65d5de8f42103b62ab43a168326"><div class="ttname"><a href="classHostile.html#a5624d65d5de8f42103b62ab43a168326">Hostile::tick</a></div><div class="ttdeci">bool tick(sf::Time time, World &amp;world) override</div><div class="ttdoc">Updates the object. Will return false when the unit has died.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:71</div></div>
 <div class="ttc" id="aclassHostile_html_a586cf807b1fcd374afc38edaf1e6f6ec"><div class="ttname"><a href="classHostile.html#a586cf807b1fcd374afc38edaf1e6f6ec">Hostile::blinkDuration</a></div><div class="ttdeci">sf::Time blinkDuration</div><div class="ttdoc">When taking damage, the hostile will turn red momentarily. This variable stores the current color.</div><div class="ttdef"><b>Definition:</b> hostile.h:95</div></div>
 <div class="ttc" id="aclassHostile_html_a685ae4e29c82f9afe1babf89e9cd3b63"><div class="ttname"><a href="classHostile.html#a685ae4e29c82f9afe1babf89e9cd3b63">Hostile::acceleration</a></div><div class="ttdeci">sf::Vector2f acceleration</div><div class="ttdoc">Stores the acceleration for the hostile, which allows them to be affected by gravity.</div><div class="ttdef"><b>Definition:</b> hostile.h:88</div></div>
-<div class="ttc" id="aclassHostile_html_a732d3a8db5ceb538746abdf26645beb8"><div class="ttname"><a href="classHostile.html#a732d3a8db5ceb538746abdf26645beb8">Hostile::horizontalPosition</a></div><div class="ttdeci">virtual void horizontalPosition(sf::Time const &amp;time, World &amp;world)</div><div class="ttdoc">Handles the behaviour for horizontal movement.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:14</div></div>
-<div class="ttc" id="aclassHostile_html_a9042e0d0ee6c9051de7e6892e4016e2e"><div class="ttname"><a href="classHostile.html#a9042e0d0ee6c9051de7e6892e4016e2e">Hostile::attack</a></div><div class="ttdeci">virtual void attack(World &amp;world)</div><div class="ttdoc">Checks if an attack is appropriate, and creates a ranged attack object if it is.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:118</div></div>
-<div class="ttc" id="aclassHostile_html_a95d485dc94eb2589478d4347e9c3360b"><div class="ttname"><a href="classHostile.html#a95d485dc94eb2589478d4347e9c3360b">Hostile::verticalPosition</a></div><div class="ttdeci">virtual void verticalPosition(sf::Time const &amp;time, World &amp;world)</div><div class="ttdoc">Handles the behaviour for vertical movement. Only utilized in flying.h.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:63</div></div>
-<div class="ttc" id="aclassHostile_html_a992a7819aca9fea868d54f5971cbdb0c"><div class="ttname"><a href="classHostile.html#a992a7819aca9fea868d54f5971cbdb0c">Hostile::takeDamage</a></div><div class="ttdeci">void takeDamage(float damage) override</div><div class="ttdoc">Allows the entity to take damage.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:145</div></div>
+<div class="ttc" id="aclassHostile_html_a732d3a8db5ceb538746abdf26645beb8"><div class="ttname"><a href="classHostile.html#a732d3a8db5ceb538746abdf26645beb8">Hostile::horizontalPosition</a></div><div class="ttdeci">virtual void horizontalPosition(sf::Time const &amp;time, World &amp;world)</div><div class="ttdoc">Handles the behaviour for horizontal movement.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:16</div></div>
+<div class="ttc" id="aclassHostile_html_a9042e0d0ee6c9051de7e6892e4016e2e"><div class="ttname"><a href="classHostile.html#a9042e0d0ee6c9051de7e6892e4016e2e">Hostile::attack</a></div><div class="ttdeci">virtual void attack(World &amp;world)</div><div class="ttdoc">Checks if an attack is appropriate, and creates a ranged attack object if it is.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:126</div></div>
+<div class="ttc" id="aclassHostile_html_a95d485dc94eb2589478d4347e9c3360b"><div class="ttname"><a href="classHostile.html#a95d485dc94eb2589478d4347e9c3360b">Hostile::verticalPosition</a></div><div class="ttdeci">virtual void verticalPosition(sf::Time const &amp;time, World &amp;world)</div><div class="ttdoc">Handles the behaviour for vertical movement. Only utilized in flying.h.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:68</div></div>
+<div class="ttc" id="aclassHostile_html_a992a7819aca9fea868d54f5971cbdb0c"><div class="ttname"><a href="classHostile.html#a992a7819aca9fea868d54f5971cbdb0c">Hostile::takeDamage</a></div><div class="ttdeci">void takeDamage(float damage) override</div><div class="ttdoc">Allows the entity to take damage.</div><div class="ttdef"><b>Definition:</b> hostile.cpp:162</div></div>
 <div class="ttc" id="aclassHostile_html_abee214aeaeeec71b8bb411c59a239edf"><div class="ttname"><a href="classHostile.html#abee214aeaeeec71b8bb411c59a239edf">Hostile::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">The units movement speed.</div><div class="ttdef"><b>Definition:</b> hostile.h:81</div></div>
 <div class="ttc" id="aclassWorld_html"><div class="ttname"><a href="classWorld.html">World</a></div><div class="ttdoc">This class tracks all objects in the game world, and keeps them in one place to update all objects....</div><div class="ttdef"><b>Definition:</b> world.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
