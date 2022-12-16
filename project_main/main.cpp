@@ -7,7 +7,7 @@ const size_t height = 800;
 
 int main() {
   sf::RenderWindow *window =
-      new sf::RenderWindow{sf::VideoMode{width, height}, "Hello Warrior!"};
+      new sf::RenderWindow{sf::VideoMode{width, height}, "Duck Souls 3"};
 
   window->setKeyRepeatEnabled(false);
   window->setVerticalSyncEnabled(true);
