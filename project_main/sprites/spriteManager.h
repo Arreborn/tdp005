@@ -1,6 +1,5 @@
 #pragma once
 #include "../common.h"
-#include <map>
 
 /**
  * @brief This class keeps track of loaded

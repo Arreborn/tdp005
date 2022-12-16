@@ -1,5 +1,9 @@
 #pragma once
 #include "../common.h"
+#include <filesystem>
+#include <fstream>
+#include <random>
+#include <sstream>
 
 /**
  * @brief This class manages all segments in order to generate random maps.

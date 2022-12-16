@@ -1,11 +1,5 @@
 #include "hostile.h"
 #include "../attack/attack.h"
-#include "../attack/rangedAttack.h"
-#include "../staticEntity/block.h"
-#include "../world.h"
-#include <SFML/Graphics/Color.hpp>
-#include <SFML/System/Time.hpp>
-#include <tuple>
 
 Hostile::Hostile(sf::Vector2f center)
     : Entity(center, "sprites/Enemie_sheet.png", 'h'), health{100}, speed(5.0) {

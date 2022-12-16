@@ -1,5 +1,4 @@
 #include "dropAttack.h"
-#include "../sprites/spriteManager.h"
 
 DropAttack::DropAttack(sf::Vector2f center, float const damage,
                        shared_ptr<Entity> attacker)

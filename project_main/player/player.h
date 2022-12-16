@@ -1,7 +1,5 @@
 #pragma once
 #include "../entity/entity.h"
-#include <SFML/System/Vector2.hpp>
-#include <memory>
 
 /**
  * @brief This class defines and handles the player character.

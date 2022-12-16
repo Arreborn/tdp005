@@ -1,11 +1,5 @@
 #include "player.h"
 #include "../attack/attack.h"
-#include "../attack/rangedAttack.h"
-#include "../hostile/flying.h"
-#include "../hostile/hostile.h"
-#include "../staticEntity/block.h"
-#include "../world.h"
-#include <SFML/System/Time.hpp>
 
 Player::Player(sf::Vector2f center)
     : Entity(center, "sprites/warrior1_new.png", 'p'), health{10}, speed{5.0},

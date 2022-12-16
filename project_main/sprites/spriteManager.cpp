@@ -1,5 +1,4 @@
 #include "spriteManager.h"
-#include <stdexcept>
 
 sf::Texture *SpriteManager::get(const string &name) {
   auto found{instance.sprites.find(name)};

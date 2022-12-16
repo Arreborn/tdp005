@@ -1,6 +1,4 @@
 #include "block.h"
-#include "../entity/entity.h"
-#include "../world.h"
 
 Block::Block(sf::Vector2f center, const sf::IntRect &tile)
     : Entity(center, "sprites/Tileset.png", 'B') {

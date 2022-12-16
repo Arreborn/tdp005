@@ -1,7 +1,4 @@
 #include "rangedAttack.h"
-#include "../sprites/spriteManager.h"
-#include <SFML/System/Time.hpp>
-#include <SFML/System/Vector2.hpp>
 
 RangedAttack::RangedAttack(sf::Vector2f center, float const damage,
                            shared_ptr<Entity> attacker)

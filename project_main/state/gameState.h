@@ -1,8 +1,7 @@
 #pragma once
 #include "../world.h"
+#include "menuState.h"
 #include "state.h"
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <memory>
 
 /**
  * @brief This state is active when the game is running, and handles the main

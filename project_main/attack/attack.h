@@ -5,7 +5,6 @@
 #include "../player/player.h"
 #include "../staticEntity/block.h"
 #include "../world.h"
-#include <SFML/Graphics.hpp>
 
 /**
  * @brief This class produces general attacks in the game world. These will be

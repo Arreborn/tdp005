@@ -1,7 +1,6 @@
 #pragma once
-#include "../player/player.h"
+#include "gameState.h"
 #include "state.h"
-#include <SFML/Graphics/RenderWindow.hpp>
 #include <functional>
 
 /**
@@ -9,8 +8,7 @@
  * or if the game is over in any way.
  *
  */
-class MenuState : public State
-{
+class MenuState : public State {
 public:
   /**
    * @brief Creates the state, if 'resume' is set the menu will show a
@@ -48,8 +46,7 @@ private:
    */
   using Action = std::function<shared_ptr<State>()>;
 
-  struct Entry
-  {
+  struct Entry {
     /**
      * @brief What text to draw.
      *

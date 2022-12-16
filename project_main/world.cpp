@@ -1,9 +1,4 @@
 #include "world.h"
-#include "level/levelConstructor.h"
-#include "level/segmentManager.h"
-#include "player/player.h"
-#include "staticEntity/block.h"
-#include <SFML/Graphics/Rect.hpp>
 
 void World::tick(sf::Time time) {
   for (size_t i{}; i < objects.size(); ++i) {
@@ -12,8 +7,6 @@ void World::tick(sf::Time time) {
       --i;
     }
   }
-  cout << "Current stage: " << currentStage << endl;
-  cout << "Competed levels: " << completedLevels << endl;
 }
 
 void World::render(sf::RenderWindow &drawTo) {

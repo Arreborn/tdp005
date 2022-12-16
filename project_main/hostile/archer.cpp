@@ -1,7 +1,5 @@
 #include "archer.h"
 #include "../attack/rangedAttack.h"
-#include "../staticEntity/block.h"
-#include "../world.h"
 
 Archer::Archer(sf::Vector2f center) : Hostile(center) {
   type = 'h';

@@ -1,9 +1,4 @@
 #include "segmentManager.h"
-#include <algorithm>
-#include <filesystem>
-#include <fstream>
-#include <random>
-#include <sstream>
 
 void SegmentManager::get(size_t numberOfLevels, vector<string> &levels) {
   while (levels.size() < numberOfLevels) {

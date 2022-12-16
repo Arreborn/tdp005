@@ -1,7 +1,4 @@
 #include "levelConstructor.h"
-#include "segmentManager.h"
-#include <fstream>
-#include <memory>
 
 void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player,
                                      bool const loadHostiles, string &str) {

@@ -1,8 +1,6 @@
 #pragma once
 #include "../common.h"
 #include "hostile.h"
-#include <SFML/System/Time.hpp>
-#include <SFML/System/Vector2.hpp>
 
 /**
  * @brief This sub-class is a basic ranged enemy, which has unique behaviour and

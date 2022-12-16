@@ -1,8 +1,6 @@
 #pragma once
 #include "../common.h"
 #include "../entity/entity.h"
-#include <SFML/System/Time.hpp>
-#include <SFML/System/Vector2.hpp>
 
 /**
  * @brief This is a base class for hostiles. From this, sub-classes for more

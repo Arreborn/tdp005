@@ -1,6 +1,4 @@
 #include "entity.h"
-#include "../sprites/spriteManager.h"
-#include <SFML/System/Vector2.hpp>
 
 // this interfacce class manages base behaviour for all classes that inherit
 // from it

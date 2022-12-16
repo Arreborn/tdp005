@@ -1,8 +1,4 @@
 #include "gameState.h"
-#include "../level/levelConstructor.h"
-#include "../player/player.h"
-#include "../sprites/spriteManager.h"
-#include "menuState.h"
 
 void updateHud(std::shared_ptr<Player> player, sf::Sprite &hpBar);
 

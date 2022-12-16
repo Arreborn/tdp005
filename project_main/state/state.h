@@ -1,6 +1,5 @@
 #pragma once
 #include "../common.h"
-#include <SFML/Graphics/RenderWindow.hpp>
 
 /**
  * @brief This state represents the larger state of the game, for instance

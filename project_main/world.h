@@ -1,10 +1,7 @@
 #pragma once
 #include "common.h"
-#include "entity/entity.h"
-#include "player/player.h"
-#include <SFML/Graphics/Rect.hpp>
-#include <SFML/System/Vector2.hpp>
-#include <memory>
+#include "level/levelConstructor.h"
+#include "level/segmentManager.h"
 
 /**
  * @brief This class tracks all objects in the game world, and keeps them in one

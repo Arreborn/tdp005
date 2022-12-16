@@ -1,6 +1,5 @@
 #include "common.h"
 #include "state/menuState.h"
-#include <SFML/Graphics/RenderWindow.hpp>
 
 const size_t width = 1280;
 const size_t height = 800;

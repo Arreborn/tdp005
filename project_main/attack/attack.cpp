@@ -1,5 +1,4 @@
 #include "attack.h"
-#include <SFML/System/Vector2.hpp>
 
 Attack::Attack(sf::Vector2f center, float const damage,
                shared_ptr<Entity> attacker)

@@ -1,9 +1,4 @@
 #include "state.h"
-#include "../sprites/spriteManager.h"
-#include "menuState.h"
-#include <SFML/Graphics/Color.hpp>
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <memory>
 
 State::State() {}
 
