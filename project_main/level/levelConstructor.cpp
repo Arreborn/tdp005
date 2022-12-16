@@ -3,14 +3,6 @@
 #include <fstream>
 #include <memory>
 
-vector<string> LevelConstructor::loadLevels(int numberOfLevels) {
-  vector<string> loaded{};
-  for (int i{}; i < numberOfLevels; ++i) {
-    loaded.push_back(SegmentManager::get());
-  }
-  return loaded;
-}
-
 void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player,
                                      bool loadHostiles, string str) {
 

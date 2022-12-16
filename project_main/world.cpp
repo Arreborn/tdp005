@@ -1,5 +1,6 @@
 #include "world.h"
 #include "level/levelConstructor.h"
+#include "level/segmentManager.h"
 #include "player/player.h"
 #include "staticEntity/block.h"
 #include <SFML/Graphics/Rect.hpp>
@@ -110,7 +111,7 @@ bool World::levelCleared() {
 
 void World::getLevel(bool right, shared_ptr<Player> player) {
   if (loadedSegments.empty()) { // if we have no levels at all yet
-    loadedSegments = LevelConstructor::loadLevels(16);
+    loadedSegments = SegmentManager::get(7);
     LevelConstructor::generateLevel(*this, player, true,
                                     loadedSegments[currentStage]);
   } else {

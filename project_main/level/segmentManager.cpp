@@ -5,10 +5,9 @@
 #include <random>
 #include <sstream>
 
-vector<string> storedSegments;
-
-string SegmentManager::get() {
-  if (storedSegments.size() == 0) {
+vector<string> SegmentManager::get(size_t numberOfLevels) {
+  vector<string> storedSegments;
+  while (storedSegments.size() < numberOfLevels) {
     string path{"segments/"};
     std::stringstream ss{};
 
@@ -19,11 +18,14 @@ string SegmentManager::get() {
       storedSegments.push_back(ss.str());
       ss.str("");
     }
-    std::random_device device;
-    std::default_random_engine engine(device());
-    shuffle(begin(storedSegments), end(storedSegments), engine);
   }
-  string randomSegment{storedSegments.back()};
-  storedSegments.pop_back();
-  return randomSegment;
+
+  while (storedSegments.size() != numberOfLevels) {
+    storedSegments.pop_back();
+  }
+
+  std::random_device device;
+  std::default_random_engine engine(device());
+  shuffle(begin(storedSegments), end(storedSegments), engine);
+  return storedSegments;
 }

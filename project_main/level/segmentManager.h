@@ -31,11 +31,11 @@ private:
 
 public:
   /**
-   * @brief Fecthes a random segment when called upon, and returns the segment
-   * as a string which can be read into the game. Static function to be able
-   * to use this outside of the class.
+   * @brief Fecthes a random segment when called upon, and returns a shuffled
+   * vector with all paths. Static function to be able to use this outside of
+   * the class.
    *
    * @return string
    */
-  static string get();
+  static vector<string> get(size_t numberOfLevels);
 };
