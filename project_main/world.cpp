@@ -125,12 +125,12 @@ void World::getLevel(bool right, shared_ptr<Player> player) {
       }
       --currentStage;
     }
-    if (currentStage == completedLevels + 1) {
+    if (currentStage > completedLevels) {
       player->heal();
     }
     clear();
     LevelConstructor::generateLevel(*this, player,
-                                    (currentStage == completedLevels + 1),
+                                    (currentStage > completedLevels),
                                     loadedSegments[currentStage]);
   }
 }

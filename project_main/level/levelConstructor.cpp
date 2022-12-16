@@ -121,8 +121,10 @@ void LevelConstructor::selector(char a, int x, int y, World &world,
     }
     break;
   case 'f':
-    world.add(std::make_shared<Flying>(sf::Vector2f(x, y)));
-    world.addEnemy();
+    if (loadHostiles) {
+      world.add(std::make_shared<Flying>(sf::Vector2f(x, y)));
+      world.addEnemy();
+    }
     break;
 
   /* Player spawning */

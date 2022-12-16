@@ -128,7 +128,7 @@ private:
    * @brief Stores the current stage.
    *
    */
-  size_t currentStage{};
+  size_t currentStage{0};
 
   /**
    * @brief Stores the loaded segments.
