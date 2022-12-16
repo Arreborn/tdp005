@@ -80,7 +80,7 @@ void MenuState::render(sf::RenderWindow &drawTo) {
   if (bg) {
     bg->render(drawTo);
   }
-  float y{100};
+  float y{160};
   auto windowSize{drawTo.getSize()};
 
   for (Entry &e : entries) {

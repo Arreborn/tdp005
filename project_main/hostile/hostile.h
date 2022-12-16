@@ -94,9 +94,24 @@ protected:
    */
   sf::Time blinkDuration{};
 
+  /**
+   * @brief So that enemies won't attack conrinuously, this variable stores the
+   * cooldown for their attacks.
+   *
+   */
   sf::Time attackCooldown{};
 
+  /**
+   * @brief Random movement will be handled in short intervals, tracked by this
+   * variable.
+   *
+   */
   sf::Time movementDuration{};
 
+  /**
+   * @brief So that attacks aren't instant, this time handles a short charge up
+   * for their attacks.
+   *
+   */
   sf::Time chargeUp{};
 };

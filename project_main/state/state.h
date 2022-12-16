@@ -105,6 +105,17 @@ protected:
  */
 class ExitState : public State {
 public:
+  /**
+   * @brief Mandatory tick override.
+   *
+   * @param window
+   * @return shared_ptr<State>
+   */
   shared_ptr<State> tick(sf::Time, sf::RenderWindow &window);
+
+  /**
+   * @brief Mandatory render override.
+   *
+   */
   void render(sf::RenderWindow &) {}
 };

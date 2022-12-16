@@ -198,5 +198,9 @@ protected:
    */
   bool atBorder{};
 
+  /**
+   * @brief This bool enables player blinking during invincibility.
+   *
+   */
   bool blink{};
 };
