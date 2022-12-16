@@ -92,15 +92,15 @@ Collaboration diagram for SegmentManager:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3d8a0d6766de4472ef4ff4324e2d1d21"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSegmentManager.html#a3d8a0d6766de4472ef4ff4324e2d1d21">get</a> ()</td></tr>
-<tr class="memdesc:a3d8a0d6766de4472ef4ff4324e2d1d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fecthes a random segment when called upon, and returns the segment as a string which can be read into the game. Static function to be able to use this outside of the class.  <a href="classSegmentManager.html#a3d8a0d6766de4472ef4ff4324e2d1d21">More...</a><br /></td></tr>
-<tr class="separator:a3d8a0d6766de4472ef4ff4324e2d1d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad52da303b2f93c11fc0f5a90553606b6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSegmentManager.html#ad52da303b2f93c11fc0f5a90553606b6">get</a> (size_t numberOfLevels, vector&lt; string &gt; &amp;levels)</td></tr>
+<tr class="memdesc:ad52da303b2f93c11fc0f5a90553606b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fecthes a random segment when called upon, and returns a shuffled vector with all paths. Static function to be able to use this outside of the class.  <a href="classSegmentManager.html#ad52da303b2f93c11fc0f5a90553606b6">More...</a><br /></td></tr>
+<tr class="separator:ad52da303b2f93c11fc0f5a90553606b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This class manages all segments in order to generate random maps. This class also ensures manipulated random segments in order to avoid duplicate segments per map. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3d8a0d6766de4472ef4ff4324e2d1d21" name="a3d8a0d6766de4472ef4ff4324e2d1d21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d8a0d6766de4472ef4ff4324e2d1d21">&#9670;&#160;</a></span>get()</h2>
+<a id="ad52da303b2f93c11fc0f5a90553606b6" name="ad52da303b2f93c11fc0f5a90553606b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad52da303b2f93c11fc0f5a90553606b6">&#9670;&#160;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -109,10 +109,21 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string SegmentManager::get </td>
+          <td class="memname">void SegmentManager::get </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numberOfLevels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">vector&lt; string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>levels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -122,7 +133,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Fecthes a random segment when called upon, and returns the segment as a string which can be read into the game. Static function to be able to use this outside of the class. </p>
+<p>Fecthes a random segment when called upon, and returns a shuffled vector with all paths. Static function to be able to use this outside of the class. </p>
 <dl class="section return"><dt>Returns</dt><dd>string </dd></dl>
 
 </div>
