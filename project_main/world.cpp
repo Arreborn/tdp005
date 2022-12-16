@@ -12,6 +12,8 @@ void World::tick(sf::Time time) {
       --i;
     }
   }
+  cout << "Current stage: " << currentStage << endl;
+  cout << "Competed levels: " << completedLevels << endl;
 }
 
 void World::render(sf::RenderWindow &drawTo) {
@@ -123,12 +125,12 @@ void World::getLevel(bool right, shared_ptr<Player> player) {
       }
       --currentStage;
     }
-    if (currentStage != completedLevels) {
+    if (currentStage == completedLevels + 1) {
       player->heal();
     }
     clear();
     LevelConstructor::generateLevel(*this, player,
-                                    (currentStage > completedLevels),
+                                    (currentStage == completedLevels + 1),
                                     loadedSegments[currentStage]);
   }
 }

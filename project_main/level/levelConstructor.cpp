@@ -7,9 +7,9 @@ void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player,
                                      bool const loadHostiles, string &str) {
 
   // takes a string with a path, and opens the file in said path
-  str = str.substr(1, str.size() - 2);
+  string current = str.substr(1, str.size() - 2);
   std::ifstream file{};
-  file.open(str);
+  file.open(current);
   string segment{};
   string temp{};
   bool playerSet{false};
