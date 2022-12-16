@@ -153,9 +153,9 @@ bool Player::tick(sf::Time time, World &world) {
     if (dynamic_cast<Block *>(collision.get())) {
       center = vold;
       // this case manages pixel perfect contact with the ground
-      if (collision->center.y > center.y) {
-        center -= sf::Vector2f{0, (center.y - collision.get()->center.y + 15) -
-                                      float{0.5}};
+      if (collision->getCenter().y > center.y) {
+        center -= sf::Vector2f{
+            0, (center.y - collision.get()->getCenter().y + 15) - float{0.5}};
         acceleration.y = 2; // standard gravitational pull
         isJumping = false;
         thrown = false;
