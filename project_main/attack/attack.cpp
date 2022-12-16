@@ -12,7 +12,7 @@ Attack::Attack(sf::Vector2f center, float const damage,
 }
 
 bool Attack::tick(sf::Time time, World &world) {
-  center = thisAttacker->center;
+  center = thisAttacker->getCenter();
 
   // sets position for the sprite depending on direction
   if (meleeDirection == 'l') {

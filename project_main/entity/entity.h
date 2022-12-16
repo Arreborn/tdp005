@@ -27,19 +27,6 @@ public:
   virtual ~Entity() = default;
 
   /**
-   * @brief Position of the objects center. Will be manipulated in order
-   * to move different entities.
-   *
-   */
-  sf::Vector2f center;
-
-  /**
-   * @brief Radius of this object.
-   *
-   */
-  float radius; // may need to change? what are you used for!?
-
-  /**
    * @brief Updates the object for each frame, returns
    * 'false' if the object is to be removed.
    *
@@ -127,4 +114,11 @@ protected:
    *
    */
   char direction{};
+
+  /**
+   * @brief Position of the objects center. Will be manipulated in order
+   * to move different entities.
+   *
+   */
+  sf::Vector2f center;
 };

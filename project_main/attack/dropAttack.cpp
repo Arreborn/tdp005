@@ -23,7 +23,7 @@ bool DropAttack::tick(sf::Time, World &world) {
   for (auto &collision : world.collidesWith(*this)) {
     if (dynamic_cast<Entity *>(collision.get())->getType() !=
             thisAttacker->getType() &&
-        !dynamic_cast<DropAttack *>(collision.get())) {
+        !dynamic_cast<Attack *>(collision.get())) {
       if (!dynamic_cast<Block *>(collision.get())) {
         collision->takeDamage(damage);
       }

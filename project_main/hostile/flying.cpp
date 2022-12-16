@@ -102,7 +102,7 @@ void Flying::horizontalPosition(sf::Time const &time, World &world) {
 
 void Flying::attack(World &world) {
   if (attackCooldown == sf::seconds(0.0f) && canAttack) {
-    world.add(std::make_shared<DropAttack>(center, 1, ptrGet()));
+    world.add(std::make_shared<DropAttack>(center, 2, ptrGet()));
     attackCooldown = sf::seconds(5.0f);
   }
 }

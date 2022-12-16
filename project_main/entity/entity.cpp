@@ -6,7 +6,7 @@
 // from it
 
 Entity::Entity(sf::Vector2f center, string const &renderSprite, char const type)
-    : center(center), type{type} {
+    : type{type}, center(center) {
 
   // fetches the correct sprite with the sprite manager
   sf::Texture *t = SpriteManager::get(renderSprite);
@@ -14,7 +14,6 @@ Entity::Entity(sf::Vector2f center, string const &renderSprite, char const type)
   // sprite.setSize(sf::Vector2f(size.x, size.y));
   sprite.setTexture(*t);
   sprite.setOrigin(size.x / 2.0, size.y / 2.0);
-  radius = max(size.x, size.y) / 2.0f;
   direction = 'r';
 }
 
