@@ -9,7 +9,8 @@
  * or if the game is over in any way.
  *
  */
-class MenuState : public State {
+class MenuState : public State
+{
 public:
   /**
    * @brief Creates the state, if 'resume' is set the menu will show a
@@ -47,7 +48,8 @@ private:
    */
   using Action = std::function<shared_ptr<State>()>;
 
-  struct Entry {
+  struct Entry
+  {
     /**
      * @brief What text to draw.
      *
@@ -108,6 +110,8 @@ private:
    *
    */
   shared_ptr<State> bg;
+
+  sf::Sprite background;
 
   /**
    * @brief Helper to add an element.
