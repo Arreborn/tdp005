@@ -111,7 +111,7 @@ bool World::levelCleared() {
 
 void World::getLevel(bool right, shared_ptr<Player> player) {
   if (loadedSegments.empty()) { // if we have no levels at all yet
-    loadedSegments = SegmentManager::get(7);
+    SegmentManager::get(7, loadedSegments);
     LevelConstructor::generateLevel(*this, player, true,
                                     loadedSegments[currentStage]);
   } else {

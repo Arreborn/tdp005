@@ -37,5 +37,5 @@ public:
    *
    * @return string
    */
-  static vector<string> get(size_t numberOfLevels);
+  static void get(size_t numberOfLevels, vector<string> &levels);
 };

@@ -4,7 +4,7 @@
 #include <memory>
 
 void LevelConstructor::generateLevel(World &world, shared_ptr<Player> player,
-                                     bool loadHostiles, string str) {
+                                     bool const loadHostiles, string &str) {
 
   // takes a string with a path, and opens the file in said path
   str = str.substr(1, str.size() - 2);

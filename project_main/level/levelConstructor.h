@@ -54,14 +54,5 @@ public:
    * @param player
    */
   static void generateLevel(World &world, shared_ptr<Player> player,
-                            bool loadHostiles, string str);
-
-  /**
-   * @brief This function utilizes the SegmentManager to construct and return a
-   * number of levels in a vector to the game world.
-   *
-   * @param numberOfLevels
-   * @return vector<string>
-   */
-  static vector<string> loadLevels(int numberOfLevels);
+                            bool const loadHostiles, string &str);
 };
