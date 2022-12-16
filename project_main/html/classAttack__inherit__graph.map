@@ -1,7 +1,7 @@
 <map id="Attack" name="Attack">
-<area shape="rect" id="node1" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="75,431,195,573"/>
-<area shape="rect" id="node4" href="$classDropAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="5,651,120,720"/>
-<area shape="rect" id="node5" href="$classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="144,621,272,749"/>
-<area shape="rect" id="node2" href="$classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="77,108,193,383"/>
+<area shape="rect" id="node1" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="75,416,195,559"/>
+<area shape="rect" id="node4" href="$classDropAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="5,636,120,705"/>
+<area shape="rect" id="node5" href="$classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="144,607,272,735"/>
+<area shape="rect" id="node2" href="$classEntity.html" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="77,108,193,368"/>
 <area shape="rect" id="node3" title=" " alt="" coords="64,5,205,60"/>
 </map>

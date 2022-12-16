@@ -1,4 +1,4 @@
 <map id="Entity" name="Entity">
-<area shape="rect" id="node1" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="18,108,134,383"/>
+<area shape="rect" id="node1" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="18,108,134,368"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,5,147,60"/>
 </map>

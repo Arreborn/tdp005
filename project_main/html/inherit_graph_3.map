@@ -9,7 +9,7 @@
 <area shape="rect" id="node4" href="$classDropAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="434,5,522,31"/>
 <area shape="rect" id="node5" href="$classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="425,55,531,80"/>
 <area shape="rect" id="node8" href="$classArcher.html" title="This sub&#45;class is a basic ranged enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="448,116,508,141"/>
-<area shape="rect" id="node9" href="$classFlying.html" title=" " alt="" coords="449,165,507,191"/>
+<area shape="rect" id="node9" href="$classFlying.html" title="This sub&#45;class is a basic flying enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="449,165,507,191"/>
 <area shape="rect" id="node12" href="$classExitState.html" title="Special state that indicates the game should exit." alt="" coords="295,239,371,264"/>
 <area shape="rect" id="node13" href="$classGameState.html" title="This state is active when the game is running, and handles the main update loop for the world &#45; which..." alt="" coords="289,288,377,313"/>
 <area shape="rect" id="node14" href="$classMenuState.html" title="This state handles menu inputs, whether for the main menu, pause menu or if the game is over in any w..." alt="" coords="291,337,376,363"/>

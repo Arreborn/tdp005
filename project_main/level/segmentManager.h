@@ -29,20 +29,6 @@ private:
    */
   static SegmentManager instance;
 
-protected:
-  /**
-   * @brief This container stores all segments loaded in from the file(s).
-   *
-   */
-  // vector<string> storedSegments;
-
-  /**
-   * @brief Stores the index of all previously generated segments to avoid
-   * duplicate segments per level.
-   *
-   */
-  // vector<int> alreadyGenerated;
-
 public:
   /**
    * @brief Fecthes a random segment when called upon, and returns the segment

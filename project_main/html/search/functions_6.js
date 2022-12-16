@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['heal_0',['heal',['../classPlayer.html#a2c3365211f8a89d275bc630dcb550dae',1,'Player']]],
-  ['hittingborder_1',['hittingBorder',['../classPlayer.html#ac742ea09d0c4813d3aa00af202210c36',1,'Player']]],
-  ['horizontalposition_2',['horizontalPosition',['../classArcher.html#a832ac582be0ed613a7c7de6918b7cb8d',1,'Archer::horizontalPosition()'],['../classFlying.html#a94e0e0890142d3a9c7e5e9d34bdae0f0',1,'Flying::horizontalPosition()'],['../classHostile.html#a732d3a8db5ceb538746abdf26645beb8',1,'Hostile::horizontalPosition()'],['../classPlayer.html#a0585b4de487254a66672cdfe5097261b',1,'Player::horizontalPosition()']]],
-  ['hostile_3',['Hostile',['../classHostile.html#a32a54b10f344b2ea3ae7b831724d2e1e',1,'Hostile']]]
+  ['gamestate_0',['GameState',['../classGameState.html#a4fa0a2bf50315c4a35a3890a0adcee5c',1,'GameState']]],
+  ['generatelevel_1',['generateLevel',['../classLevelConstructor.html#aec0f94707d9113dde2e557d8782ae7d2',1,'LevelConstructor']]],
+  ['get_2',['get',['../classSegmentManager.html#a3d8a0d6766de4472ef4ff4324e2d1d21',1,'SegmentManager::get()'],['../classSpriteManager.html#a74e51197b4b21efff73431f388e26e54',1,'SpriteManager::get()']]],
+  ['getbounds_3',['getBounds',['../classEntity.html#a9727d15d18ccb10fa72dfe15799adcdd',1,'Entity']]],
+  ['getcenter_4',['getCenter',['../classEntity.html#a0ab7ed4a329c08c77c59f4c5db5faf56',1,'Entity::getCenter()'],['../classWorld.html#ab14e5f27cc3bc2133e760c18272c201a',1,'World::getCenter()']]],
+  ['getdirection_5',['getDirection',['../classEntity.html#ad079c1df23ce6ba92e4803a18019551b',1,'Entity']]],
+  ['gethealth_6',['getHealth',['../classPlayer.html#abcb15d249bed9a4ab0ab86b52b0d747a',1,'Player']]],
+  ['getlevel_7',['getLevel',['../classWorld.html#a34ee8c0540245ca5b34746334dcc015e',1,'World']]],
+  ['gettype_8',['getType',['../classEntity.html#aeffdfacd2f3d702646d0578207a5d5e2',1,'Entity']]]
 ];

@@ -72,7 +72,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classEntity-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Entity Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
@@ -88,16 +87,16 @@ Inheritance diagram for Entity:</div>
 <div class="dyncontent">
 <div class="center"><img src="classEntity__inherit__graph.png" border="0" usemap="#aEntity_inherit__map" alt="Inheritance graph"/></div>
 <map name="aEntity_inherit__map" id="aEntity_inherit__map">
-<area shape="rect" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="335,108,451,383"/>
-<area shape="rect" href="classAttack.html" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="113,570,233,713"/>
-<area shape="rect" href="classBlock.html" title="This is a general base class handling the creation of block&#45;objects." alt="" coords="258,592,374,691"/>
-<area shape="rect" href="classHostile.html" title="This is a base class for hostiles. From this, sub&#45;classes for more avanced enemies can be added." alt="" coords="398,519,543,764"/>
-<area shape="rect" href="classPlayer.html" title="This class defines and handles the player character." alt="" coords="567,431,713,852"/>
+<area shape="rect" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="335,108,451,368"/>
+<area shape="rect" href="classAttack.html" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="113,555,233,698"/>
+<area shape="rect" href="classBlock.html" title="This is a general base class handling the creation of block&#45;objects." alt="" coords="258,577,374,676"/>
+<area shape="rect" href="classHostile.html" title="This is a base class for hostiles. From this, sub&#45;classes for more avanced enemies can be added." alt="" coords="398,504,543,749"/>
+<area shape="rect" href="classPlayer.html" title="This class defines and handles the player character." alt="" coords="567,416,713,837"/>
 <area shape="rect" title=" " alt="" coords="323,5,464,60"/>
-<area shape="rect" href="classDropAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="5,929,120,999"/>
-<area shape="rect" href="classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="144,900,272,1028"/>
-<area shape="rect" href="classArcher.html" title="This sub&#45;class is a basic ranged enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="365,922,510,1006"/>
-<area shape="rect" href="classFlying.html" title=" " alt="" coords="534,915,679,1013"/>
+<area shape="rect" href="classDropAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="5,915,120,984"/>
+<area shape="rect" href="classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="144,885,272,1013"/>
+<area shape="rect" href="classArcher.html" title="This sub&#45;class is a basic ranged enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="365,907,510,991"/>
+<area shape="rect" href="classFlying.html" title="This sub&#45;class is a basic flying enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="534,900,679,999"/>
 </map>
 </div>
 <div class="dynheader">
@@ -105,7 +104,7 @@ Collaboration diagram for Entity:</div>
 <div class="dyncontent">
 <div class="center"><img src="classEntity__coll__graph.png" border="0" usemap="#aEntity_coll__map" alt="Collaboration graph"/></div>
 <map name="aEntity_coll__map" id="aEntity_coll__map">
-<area shape="rect" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="18,108,134,383"/>
+<area shape="rect" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="18,108,134,368"/>
 <area shape="rect" title=" " alt="" coords="5,5,147,60"/>
 </map>
 </div>
@@ -146,15 +145,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad079c1df23ce6ba92e4803a18019551b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the direction the entity is facing.  <a href="classEntity.html#ad079c1df23ce6ba92e4803a18019551b">More...</a><br /></td></tr>
 <tr class="separator:ad079c1df23ce6ba92e4803a18019551b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aef7e4ad6c0431541bf51d93d7d759878"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">center</a></td></tr>
-<tr class="memdesc:aef7e4ad6c0431541bf51d93d7d759878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position of the objects center. Will be manipulated in order to move different entities.  <a href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">More...</a><br /></td></tr>
-<tr class="separator:aef7e4ad6c0431541bf51d93d7d759878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6941e2890babbae875154757880e12d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#ae6941e2890babbae875154757880e12d">radius</a></td></tr>
-<tr class="memdesc:ae6941e2890babbae875154757880e12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Radius of this object.  <a href="classEntity.html#ae6941e2890babbae875154757880e12d">More...</a><br /></td></tr>
-<tr class="separator:ae6941e2890babbae875154757880e12d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a48ef4ab143b8d0211877c9f6be42e824"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a48ef4ab143b8d0211877c9f6be42e824">sprite</a></td></tr>
@@ -166,6 +156,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a3f582387bb73bceb84cd1145fca0f974"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a3f582387bb73bceb84cd1145fca0f974">direction</a> {}</td></tr>
 <tr class="memdesc:a3f582387bb73bceb84cd1145fca0f974"><td class="mdescLeft">&#160;</td><td class="mdescRight">The direction the entity is looking.  <a href="classEntity.html#a3f582387bb73bceb84cd1145fca0f974">More...</a><br /></td></tr>
 <tr class="separator:a3f582387bb73bceb84cd1145fca0f974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef7e4ad6c0431541bf51d93d7d759878"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">center</a></td></tr>
+<tr class="memdesc:aef7e4ad6c0431541bf51d93d7d759878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position of the objects center. Will be manipulated in order to move different entities.  <a href="classEntity.html#aef7e4ad6c0431541bf51d93d7d759878">More...</a><br /></td></tr>
+<tr class="separator:aef7e4ad6c0431541bf51d93d7d759878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >An abstract game object for all types of entities that will be drawn in the game world. </p>
@@ -499,11 +492,19 @@ false </dd></dl>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">sf::Vector2f Entity::center</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Position of the objects center. Will be manipulated in order to move different entities. </p>
@@ -531,22 +532,6 @@ false </dd></dl>
 </div><div class="memdoc">
 
 <p>The direction the entity is looking. </p>
-
-</div>
-</div>
-<a id="ae6941e2890babbae875154757880e12d" name="ae6941e2890babbae875154757880e12d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6941e2890babbae875154757880e12d">&#9670;&#160;</a></span>radius</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Entity::radius</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Radius of this object. </p>
 
 </div>
 </div>

@@ -105,10 +105,10 @@ Collaboration diagram for ExitState:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a87944ce8453b68974345e7adbe4c3da7"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classState.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExitState.html#a87944ce8453b68974345e7adbe4c3da7">tick</a> (sf::Time, sf::RenderWindow &amp;window)</td></tr>
-<tr class="memdesc:a87944ce8453b68974345e7adbe4c3da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tick is called before each screen refresh, and may switch states.  <a href="classExitState.html#a87944ce8453b68974345e7adbe4c3da7">More...</a><br /></td></tr>
+<tr class="memdesc:a87944ce8453b68974345e7adbe4c3da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mandatory tick override.  <a href="classExitState.html#a87944ce8453b68974345e7adbe4c3da7">More...</a><br /></td></tr>
 <tr class="separator:a87944ce8453b68974345e7adbe4c3da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d756e07e2c56f08b582bd3f752e0ea1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExitState.html#a7d756e07e2c56f08b582bd3f752e0ea1">render</a> (sf::RenderWindow &amp;)</td></tr>
-<tr class="memdesc:a7d756e07e2c56f08b582bd3f752e0ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called to draw the screen.  <a href="classExitState.html#a7d756e07e2c56f08b582bd3f752e0ea1">More...</a><br /></td></tr>
+<tr class="memdesc:a7d756e07e2c56f08b582bd3f752e0ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mandatory render override.  <a href="classExitState.html#a7d756e07e2c56f08b582bd3f752e0ea1">More...</a><br /></td></tr>
 <tr class="separator:a7d756e07e2c56f08b582bd3f752e0ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classState"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classState')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classState.html">State</a></td></tr>
 <tr class="memitem:ab91bb1dd5aa6260ab2a456581daf9ec2 inherit pub_methods_classState"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classState.html#ab91bb1dd5aa6260ab2a456581daf9ec2">State</a> ()</td></tr>
@@ -169,7 +169,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void ExitState::render </td>
           <td>(</td>
           <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
-          <td class="paramname"><em>to</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -180,13 +180,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>This function is called to draw the screen. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">to</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Mandatory render override. </p>
 
 <p>Implements <a class="el" href="classState.html#aed558c6b578efb70ee2ba7f6df9aebb9">State</a>.</p>
 
@@ -205,7 +199,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">shared_ptr&lt; <a class="el" href="classState.html">State</a> &gt; ExitState::tick </td>
           <td>(</td>
           <td class="paramtype">sf::Time&#160;</td>
-          <td class="paramname"><em>time</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -226,10 +220,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Tick is called before each screen refresh, and may switch states. </p>
+<p>Mandatory tick override. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">time</td><td></td></tr>
+    <tr><td class="paramname">window</td><td></td></tr>
   </table>
   </dd>
 </dl>

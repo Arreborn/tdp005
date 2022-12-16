@@ -1,12 +1,12 @@
 <map id="Entity" name="Entity">
-<area shape="rect" id="node1" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="335,108,451,383"/>
-<area shape="rect" id="node3" href="$classAttack.html" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="113,570,233,713"/>
-<area shape="rect" id="node6" href="$classBlock.html" title="This is a general base class handling the creation of block&#45;objects." alt="" coords="258,592,374,691"/>
-<area shape="rect" id="node7" href="$classHostile.html" title="This is a base class for hostiles. From this, sub&#45;classes for more avanced enemies can be added." alt="" coords="398,519,543,764"/>
-<area shape="rect" id="node10" href="$classPlayer.html" title="This class defines and handles the player character." alt="" coords="567,431,713,852"/>
+<area shape="rect" id="node1" title="An abstract game object for all types of entities that will be drawn in the game world." alt="" coords="335,108,451,368"/>
+<area shape="rect" id="node3" href="$classAttack.html" title="This class produces general attacks in the game world. These will be used by both the player characte..." alt="" coords="113,555,233,698"/>
+<area shape="rect" id="node6" href="$classBlock.html" title="This is a general base class handling the creation of block&#45;objects." alt="" coords="258,577,374,676"/>
+<area shape="rect" id="node7" href="$classHostile.html" title="This is a base class for hostiles. From this, sub&#45;classes for more avanced enemies can be added." alt="" coords="398,504,543,749"/>
+<area shape="rect" id="node10" href="$classPlayer.html" title="This class defines and handles the player character." alt="" coords="567,416,713,837"/>
 <area shape="rect" id="node2" title=" " alt="" coords="323,5,464,60"/>
-<area shape="rect" id="node4" href="$classDropAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="5,929,120,999"/>
-<area shape="rect" id="node5" href="$classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="144,900,272,1028"/>
-<area shape="rect" id="node8" href="$classArcher.html" title="This sub&#45;class is a basic ranged enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="365,922,510,1006"/>
-<area shape="rect" id="node9" href="$classFlying.html" title=" " alt="" coords="534,915,679,1013"/>
+<area shape="rect" id="node4" href="$classDropAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="5,915,120,984"/>
+<area shape="rect" id="node5" href="$classRangedAttack.html" title="This class produces ranged attacks in the game world. These can be used by both the player character ..." alt="" coords="144,885,272,1013"/>
+<area shape="rect" id="node8" href="$classArcher.html" title="This sub&#45;class is a basic ranged enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="365,907,510,991"/>
+<area shape="rect" id="node9" href="$classFlying.html" title="This sub&#45;class is a basic flying enemy, which has unique behaviour and attacks compared to the main h..." alt="" coords="534,900,679,999"/>
 </map>

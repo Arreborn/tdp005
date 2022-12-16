@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['_7eentity_0',['~Entity',['../classEntity.html#ac479d009ddde62dfb378ca0a70d81307',1,'Entity']]],
-  ['_7estate_1',['~State',['../classState.html#afab438d92b90dc18d194dbd9c9c8bab3',1,'State']]]
+  ['verticalposition_0',['verticalPosition',['../classFlying.html#a5a3f00cf9fee54adc9d399091de0088b',1,'Flying::verticalPosition()'],['../classHostile.html#a95d485dc94eb2589478d4347e9c3360b',1,'Hostile::verticalPosition()'],['../classPlayer.html#af70bb251b1110261bd2e7cc87a0fa07c',1,'Player::verticalPosition()']]],
+  ['victory_1',['victory',['../classWorld.html#a20f812a5533b8070a38f243449ad410e',1,'World']]],
+  ['victorystate_2',['victoryState',['../classState.html#aab5b35f29e0970844bbfe06c8dea670b',1,'State']]]
 ];
