@@ -92,15 +92,6 @@ public:
   bool hittingBorder();
 
   /**
-   * @brief This function allows the world and states check if the player has
-   * taken damage recently.
-   *
-   * @return true
-   * @return false
-   */
-  bool damageTaken();
-
-  /**
    * @brief Returns the players current health. Allows states to check current
    * health for the HUD as well as checking of the player has died.
    *

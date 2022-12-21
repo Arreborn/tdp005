@@ -256,8 +256,6 @@ void Player::set(int x, int y) {
 
 bool Player::hittingBorder() { return atBorder; }
 
-bool Player::damageTaken() { return isHit; }
-
 int Player::getHealth() { return health; }
 
 void Player::heal() {
